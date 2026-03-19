@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_menu_home">홈</string>
+    <string name="home_menu_kor">KOR</string>
+    <string name="home_menu_eng">ENG</string>
+    <string name="home_menu_app_info">앱정보</string>
+    <string name="home_menu_guide">가이드</string>
+    <string name="home_menu_contact">문의</string>
+    <string name="home_menu_exit">앱종료</string>
+
+    <string name="home_card_task">업무관리</string>
+    <string name="home_card_port">항만정보</string>
+    <string name="home_card_cargo">화물정보</string>
+    <string name="home_card_coming_soon">업데이트 예정</string>
+
+    <string name="home_title_app">EoD</string>
+
+    <string name="home_app_info_title">앱정보</string>
+    <string name="home_app_info_name_label">앱명</string>
+    <string name="home_app_info_name_value">EoD (Eccentric of the Deck)</string>
+    <string name="home_app_info_version_label">버전</string>
+    <string name="home_app_info_version_value">v1.0.0</string>
+    <string name="home_app_info_confirm">확인</string>
+
+    <string name="home_guide_title">가이드</string>
+    <string name="home_guide_search_hint">가이드 검색</string>
+    <string name="home_guide_search_clear">검색 초기화</string>
+    <string name="home_guide_no_result">검색 결과 없음</string>
+    <string name="home_guide_close">닫기</string>
+
+    <string name="home_contact_mail_subject">EoD 문의</string>
+    <string name="home_contact_mail_device">기기</string>
+    <string name="home_contact_mail_android">Android</string>
+    <string name="home_contact_mail_language">언어</string>
+    <string name="home_contact_mail_body_label">문의 내용</string>
+    <string name="home_contact_mail_app">앱명</string>
+    <string name="home_contact_mail_version">버전</string>
+    <string name="home_contact_mail_open_error">메일 앱을 열 수 없습니다</string>
+    <string name="home_contact_mail_to">pyhitect@gmail.com</string>
+
+    <string name="task_top_title">업무 관리</string>
+    <string name="task_top_preset">업무 프리셋</string>
+    <string name="task_top_preset_with_name">업무 프리셋 %1$s</string>
+    <string name="task_top_alarm">알림 목록</string>
+    <string name="task_top_add_vessel">선박 추가</string>
+    <string name="task_top_data_manage">데이터 관리</string>
+    <string name="task_top_vessel_default">선박명</string>
+    <string name="task_top_vessel_name_hint">선박명</string>
+    <string name="task_top_add_confirm">확인</string>
+
+    <string name="task_preset_top_title">업무 프리셋</string>
+    <string name="task_preset_top_add">프리셋 추가</string>
+    <string name="task_preset_top_name_hint">프리셋명</string>
+    <string name="task_preset_top_name_example">예: C/O, 2/E</string>
+    <string name="task_preset_top_add_confirm">확인</string>
+    <string name="task_preset_top_empty">프리셋 없음</string>
+    <string name="task_preset_top_switch_on">활성</string>
+    <string name="task_preset_top_switch_off">비활성</string>
+
+    <string name="task_preset_lower_title">%1$s</string>
+    <string name="task_preset_lower_search_hint">업무 검색</string>
+    <string name="task_preset_lower_add_icon_desc">업무 추가</string>
+    <string name="task_preset_lower_column_work">업무</string>
+    <string name="task_preset_lower_column_cycle">주기</string>
+    <string name="task_preset_lower_empty">등록된 업무 프리셋 없음</string>
+    <string name="task_preset_lower_alarm_default_on">알림 기본 활성</string>
+
+    <string name="cycle_unit_day_short">D</string>
+    <string name="cycle_unit_week_short">W</string>
+    <string name="cycle_unit_month_short">M</string>
+    <string name="cycle_unit_year_short">Y</string>
+    <string name="cycle_unit_day">Day</string>
+    <string name="cycle_unit_week">Week</string>
+    <string name="cycle_unit_month">Month</string>
+    <string name="cycle_unit_year">Year</string>
+
+    <string name="task_preset_work_detail_title_add">업무 추가</string>
+    <string name="task_preset_work_detail_title_edit">업무 상세</string>
+    <string name="task_preset_work_name_hint">이름</string>
+    <string name="task_preset_work_reference_hint">절차서 / 참조자료</string>
+    <string name="task_preset_work_cycle_number_hint">숫자</string>
+    <string name="task_preset_work_cycle_unit_hint">단위</string>
+    <string name="task_preset_work_save">저장</string>
+    <string name="task_preset_work_delete">삭제</string>
+    <string name="task_preset_work_delete_confirm_title">삭제 확인</string>
+    <string name="task_preset_work_delete_confirm_body">이 업무를 삭제하시겠습니까?</string>
+    <string name="task_preset_work_save_confirm_title">저장 확인</string>
+    <string name="task_preset_work_save_confirm_body">이 업무를 저장하시겠습니까?</string>
+    <string name="task_preset_work_confirm_yes">확인</string>
+    <string name="task_preset_work_confirm_no">취소</string>
+
+    <string name="alert_list_title">알림목록</string>
+    <string name="alert_list_column_work">업무</string>
+    <string name="alert_list_column_cycle">주기</string>
+    <string name="alert_list_column_alarm">알림</string>
+    <string name="alert_list_filter">정렬 및 필터</string>
+    <string name="alert_list_sort_default">기본</string>
+    <string name="alert_list_sort_az">a-z</string>
+    <string name="alert_list_sort_za">z-a</string>
+    <string name="alert_list_sort_day">Day</string>
+    <string name="alert_list_sort_week">Week</string>
+    <string name="alert_list_sort_month">Month</string>
+    <string name="alert_list_sort_year">Year</string>
+    <string name="alert_list_cycle_none">-</string>
+
+    <string name="work_record_home_title">업무기록</string>
+    <string name="work_record_home_calendar_year_month">년월 선택</string>
+    <string name="work_record_home_summary_date">일자</string>
+    <string name="work_record_home_summary_regular">정기</string>
+    <string name="work_record_home_summary_irregular">비정기</string>
+    <string name="work_record_home_edit">편집</string>
+    <string name="work_record_home_search_hint">업무 검색</string>
+    <string name="work_record_home_empty">해당 날짜 업무 없음</string>
+
+    <string name="badge_status_planned">예정</string>
+    <string name="badge_status_delayed">지연</string>
+    <string name="badge_status_completed">완료</string>
+    <string name="badge_type_regular">정기</string>
+    <string name="badge_type_irregular">비정기</string>
+
+    <string name="work_detail_title_date">%1$s</string>
+    <string name="work_detail_search">검색</string>
+    <string name="work_detail_new_record">신규기록</string>
+    <string name="work_detail_save">저장</string>
+    <string name="work_detail_delete">삭제</string>
+    <string name="work_detail_field_work">업무</string>
+    <string name="work_detail_field_reference">절차서 / 참조자료</string>
+    <string name="work_detail_field_cycle">업무주기</string>
+    <string name="work_detail_field_status">상태</string>
+    <string name="work_detail_field_comment">코멘트</string>
+    <string name="work_detail_field_attachment">첨부</string>
+    <string name="work_detail_recent_record">최근기록 보기</string>
+    <string name="work_detail_recent_record_none">기록없음</string>
+    <string name="work_detail_today_list">금일 업무 리스트</string>
+    <string name="work_detail_type_select_title">업무 구분 선택</string>
+    <string name="work_detail_type_regular">정기</string>
+    <string name="work_detail_type_irregular">비정기</string>
+    <string name="work_detail_unsaved_change_title">저장되지 않은 변경사항</string>
+    <string name="work_detail_unsaved_change_body">현재 기록을 저장하시겠습니까?</string>
+    <string name="work_detail_unsaved_change_save">저장</string>
+    <string name="work_detail_unsaved_change_discard">저장 안 함</string>
+    <string name="work_detail_unsaved_change_cancel">취소</string>
+    <string name="work_detail_delete_confirm_title">기록 삭제</string>
+    <string name="work_detail_delete_confirm_body">이 기록을 삭제하시겠습니까?</string>
+
+    <string name="preset_picker_title">업무</string>
+    <string name="preset_picker_current_preset">%1$s</string>
+    <string name="preset_picker_close">닫기</string>
+    <string name="preset_picker_apply">적용</string>
+    <string name="preset_picker_empty">선택 가능한 업무 없음</string>
+
+    <string name="common_home">홈</string>
+    <string name="common_ok">확인</string>
+    <string name="common_cancel">취소</string>
+    <string name="common_close">닫기</string>
+    <string name="common_save">저장</string>
+    <string name="common_delete">삭제</string>
+    <string name="common_search">검색</string>
+    <string name="common_edit">편집</string>
+    <string name="common_add">추가</string>
+    <string name="common_none">없음</string>
+    <string name="common_empty">비어있음</string>
+    <string name="common_on">켜짐</string>
+    <string name="common_off">꺼짐</string>
+    <string name="app_name">EoD</string>
+</resources>

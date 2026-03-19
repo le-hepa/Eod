@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_menu_home">Home</string>
+    <string name="home_menu_kor">KOR</string>
+    <string name="home_menu_eng">ENG</string>
+    <string name="home_menu_app_info">App Info</string>
+    <string name="home_menu_guide">Guide</string>
+    <string name="home_menu_contact">Contact</string>
+    <string name="home_menu_exit">Exit</string>
+
+    <string name="home_card_task">Task\nManager</string>
+    <string name="home_card_port">Port\nInfo</string>
+    <string name="home_card_cargo">Cargo\nInfo</string>
+    <string name="home_card_coming_soon">Coming\nSoon</string>
+
+    <string name="home_title_app">EoD</string>
+
+    <string name="home_app_info_title">App Info</string>
+    <string name="home_app_info_name_label">App Name</string>
+    <string name="home_app_info_name_value">EoD (Eccentric of the Deck)</string>
+    <string name="home_app_info_version_label">Version</string>
+    <string name="home_app_info_version_value">v1.0.0</string>
+    <string name="home_app_info_confirm">OK</string>
+
+    <string name="home_guide_title">Guide</string>
+    <string name="home_guide_search_hint">Search Guide</string>
+    <string name="home_guide_search_clear">Clear Search</string>
+    <string name="home_guide_no_result">No results found</string>
+    <string name="home_guide_close">Close</string>
+
+    <string name="home_contact_mail_subject">EoD Inquiry</string>
+    <string name="home_contact_mail_device">Device</string>
+    <string name="home_contact_mail_android">Android</string>
+    <string name="home_contact_mail_language">Language</string>
+    <string name="home_contact_mail_body_label">Inquiry Details</string>
+    <string name="home_contact_mail_app">App</string>
+    <string name="home_contact_mail_version">Version</string>
+    <string name="home_contact_mail_open_error">Unable to open a mail app</string>
+    <string name="home_contact_mail_to">pyhitect@gmail.com</string>
+
+    <string name="task_top_title">Task Manager</string>
+    <string name="task_top_preset">Work Preset</string>
+    <string name="task_top_preset_with_name">Work Preset %1$s</string>
+    <string name="task_top_alarm">Alarm list</string>
+    <string name="task_top_add_vessel">Add Vessel</string>
+    <string name="task_top_data_manage">Data Management</string>
+    <string name="task_top_vessel_default">Vessel Name</string>
+    <string name="task_top_vessel_name_hint">Vessel Name</string>
+    <string name="task_top_add_confirm">Confirm</string>
+
+    <string name="task_preset_top_title">Work Preset</string>
+    <string name="task_preset_top_add">Add Preset</string>
+    <string name="task_preset_top_name_hint">Preset Name</string>
+    <string name="task_preset_top_name_example">e.g. C/O, 2/E</string>
+    <string name="task_preset_top_add_confirm">Confirm</string>
+    <string name="task_preset_top_empty">No Presets</string>
+    <string name="task_preset_top_switch_on">Active</string>
+    <string name="task_preset_top_switch_off">Inactive</string>
+
+    <string name="task_preset_lower_title">%1$s</string>
+    <string name="task_preset_lower_search_hint">Search Work</string>
+    <string name="task_preset_lower_add_icon_desc">Add Work</string>
+    <string name="task_preset_lower_column_work">Work</string>
+    <string name="task_preset_lower_column_cycle">Cycle</string>
+    <string name="task_preset_lower_empty">No preset work items</string>
+    <string name="task_preset_lower_alarm_default_on">Alarm enabled by default</string>
+
+    <string name="cycle_unit_day_short">D</string>
+    <string name="cycle_unit_week_short">W</string>
+    <string name="cycle_unit_month_short">M</string>
+    <string name="cycle_unit_year_short">Y</string>
+    <string name="cycle_unit_day">Day</string>
+    <string name="cycle_unit_week">Week</string>
+    <string name="cycle_unit_month">Month</string>
+    <string name="cycle_unit_year">Year</string>
+
+    <string name="task_preset_work_detail_title_add">Add Work</string>
+    <string name="task_preset_work_detail_title_edit">Work Detail</string>
+    <string name="task_preset_work_name_hint">Name</string>
+    <string name="task_preset_work_reference_hint">Procedure / Reference</string>
+    <string name="task_preset_work_cycle_number_hint">Number</string>
+    <string name="task_preset_work_cycle_unit_hint">Unit</string>
+    <string name="task_preset_work_save">Save</string>
+    <string name="task_preset_work_delete">Delete</string>
+    <string name="task_preset_work_delete_confirm_title">Confirm Delete</string>
+    <string name="task_preset_work_delete_confirm_body">Do you want to delete this work item?</string>
+    <string name="task_preset_work_save_confirm_title">Confirm Save</string>
+    <string name="task_preset_work_save_confirm_body">Do you want to save this work item?</string>
+    <string name="task_preset_work_confirm_yes">Confirm</string>
+    <string name="task_preset_work_confirm_no">Cancel</string>
+
+    <string name="alert_list_title">Alarm list</string>
+    <string name="alert_list_column_work">Work</string>
+    <string name="alert_list_column_cycle">Cycle</string>
+    <string name="alert_list_column_alarm">Alarm</string>
+    <string name="alert_list_filter">Sort &amp; Filter</string>
+    <string name="alert_list_sort_default">Default</string>
+    <string name="alert_list_sort_az">a-z</string>
+    <string name="alert_list_sort_za">z-a</string>
+    <string name="alert_list_sort_day">Day</string>
+    <string name="alert_list_sort_week">Week</string>
+    <string name="alert_list_sort_month">Month</string>
+    <string name="alert_list_sort_year">Year</string>
+    <string name="alert_list_cycle_none">-</string>
+
+    <string name="work_record_home_title">Work Record</string>
+    <string name="work_record_home_calendar_year_month">Select Year &amp; Month</string>
+    <string name="work_record_home_summary_date">Date</string>
+    <string name="work_record_home_summary_regular">Planned</string>
+    <string name="work_record_home_summary_irregular">Unplanned</string>
+    <string name="work_record_home_edit">Edit</string>
+    <string name="work_record_home_search_hint">Search Work</string>
+    <string name="work_record_home_empty">No work on selected date</string>
+
+    <string name="badge_status_planned">Plan</string>
+    <string name="badge_status_delayed">Overdue</string>
+    <string name="badge_status_completed">Completed</string>
+    <string name="badge_type_regular">Planned</string>
+    <string name="badge_type_irregular">Unplanned</string>
+
+    <string name="work_detail_title_date">%1$s</string>
+    <string name="work_detail_search">Search</string>
+    <string name="work_detail_new_record">New Record</string>
+    <string name="work_detail_save">Save</string>
+    <string name="work_detail_delete">Delete</string>
+    <string name="work_detail_field_work">Work</string>
+    <string name="work_detail_field_reference">Procedure / Reference</string>
+    <string name="work_detail_field_cycle">Cycle</string>
+    <string name="work_detail_field_status">Status</string>
+    <string name="work_detail_field_comment">Comment</string>
+    <string name="work_detail_field_attachment">Attachment</string>
+    <string name="work_detail_recent_record">View Recent Record</string>
+    <string name="work_detail_recent_record_none">No Record</string>
+    <string name="work_detail_today_list">Today\'s Work List</string>
+    <string name="work_detail_type_select_title">Select Work Type</string>
+    <string name="work_detail_type_regular">Planned</string>
+    <string name="work_detail_type_irregular">Unplanned</string>
+    <string name="work_detail_unsaved_change_title">Unsaved Changes</string>
+    <string name="work_detail_unsaved_change_body">Do you want to save the current record?</string>
+    <string name="work_detail_unsaved_change_save">Save</string>
+    <string name="work_detail_unsaved_change_discard">Discard</string>
+    <string name="work_detail_unsaved_change_cancel">Cancel</string>
+    <string name="work_detail_delete_confirm_title">Delete Record</string>
+    <string name="work_detail_delete_confirm_body">Do you want to delete this record?</string>
+
+    <string name="preset_picker_title">Work</string>
+    <string name="preset_picker_current_preset">%1$s</string>
+    <string name="preset_picker_close">Close</string>
+    <string name="preset_picker_apply">Apply</string>
+    <string name="preset_picker_empty">No selectable work items</string>
+
+    <string name="common_home">Home</string>
+    <string name="common_ok">OK</string>
+    <string name="common_cancel">Cancel</string>
+    <string name="common_close">Close</string>
+    <string name="common_save">Save</string>
+    <string name="common_delete">Delete</string>
+    <string name="common_search">Search</string>
+    <string name="common_edit">Edit</string>
+    <string name="common_add">Add</string>
+    <string name="common_none">None</string>
+    <string name="common_empty">Empty</string>
+    <string name="common_on">On</string>
+    <string name="common_off">Off</string>
+    <string name="app_name">EoD</string>
+</resources>
