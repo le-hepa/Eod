@@ -1,6 +1,7 @@
 package com.gomgom.eod.feature.home.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -39,7 +40,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -48,11 +52,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import androidx.compose.foundation.Image
 import com.gomgom.eod.R
 import com.gomgom.eod.core.common.AutoResizeText
 
 private data class HomeCardItem(
     val title: String,
+    val backgroundBrush: Brush,
     val onClick: () -> Unit
 )
 
@@ -71,18 +77,42 @@ fun EodHomeScreen(
     onHomeClick: () -> Unit,
     onKorClick: () -> Unit,
     onEngClick: () -> Unit,
+    onGuideClick: () -> Unit,
     onContactClick: () -> Unit,
     onExitClick: () -> Unit
 ) {
     var menuExpanded by remember { mutableStateOf(false) }
     var appInfoVisible by remember { mutableStateOf(false) }
-    var guideVisible by remember { mutableStateOf(false) }
 
     val cards = listOf(
-        HomeCardItem(stringResource(R.string.home_card_task), onTaskClick),
-        HomeCardItem(stringResource(R.string.home_card_port), onPortInfoClick),
-        HomeCardItem(stringResource(R.string.home_card_cargo), onCargoInfoClick),
-        HomeCardItem(stringResource(R.string.home_card_coming_soon), onClick = {})
+        HomeCardItem(
+            title = stringResource(R.string.home_card_task),
+            backgroundBrush = Brush.linearGradient(
+                colors = listOf(Color(0xFFF9FBFF), Color(0xFFEFF4FF))
+            ),
+            onClick = onTaskClick
+        ),
+        HomeCardItem(
+            title = stringResource(R.string.home_card_port),
+            backgroundBrush = Brush.linearGradient(
+                colors = listOf(Color(0xFFF8FBFB), Color(0xFFEEF6F4))
+            ),
+            onClick = onPortInfoClick
+        ),
+        HomeCardItem(
+            title = stringResource(R.string.home_card_cargo),
+            backgroundBrush = Brush.linearGradient(
+                colors = listOf(Color(0xFFF9F9FC), Color(0xFFF1F0F8))
+            ),
+            onClick = onCargoInfoClick
+        ),
+        HomeCardItem(
+            title = stringResource(R.string.home_card_coming_soon),
+            backgroundBrush = Brush.linearGradient(
+                colors = listOf(Color(0xFFFAFAFA), Color(0xFFF2F3F5))
+            ),
+            onClick = {}
+        )
     )
 
     if (appInfoVisible) {
@@ -99,21 +129,6 @@ fun EodHomeScreen(
                 label = stringResource(R.string.home_app_info_version_label),
                 value = stringResource(R.string.home_app_info_version_value)
             )
-        }
-    }
-
-    if (guideVisible) {
-        HomePopupFrame(
-            title = stringResource(R.string.home_guide_title),
-            confirmText = stringResource(R.string.home_guide_close),
-            onDismiss = { guideVisible = false }
-        ) {
-            PopupGuideLine(text = stringResource(R.string.home_guide_search_hint))
-            PopupGuideLine(text = stringResource(R.string.task_top_title))
-            PopupGuideLine(text = stringResource(R.string.task_preset_top_title))
-            PopupGuideLine(text = stringResource(R.string.alert_list_title))
-            PopupGuideLine(text = stringResource(R.string.work_record_home_title))
-            PopupGuideLine(text = stringResource(R.string.work_detail_new_record))
         }
     }
 
@@ -138,15 +153,14 @@ fun EodHomeScreen(
             ) {
                 Box(
                     modifier = Modifier
-                        .size(42.dp)
-                        .background(HomeAccentSurface, CircleShape),
+                        .size(42.dp),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(
-                        text = "E",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = HomePrimaryText
+                    Image(
+                        painter = painterResource(R.drawable.eod_home_logo),
+                        contentDescription = stringResource(R.string.home_title_app),
+                        modifier = Modifier.size(34.dp),
+                        contentScale = ContentScale.Fit
                     )
                 }
 
@@ -165,7 +179,8 @@ fun EodHomeScreen(
                         Icon(
                             imageVector = Icons.Outlined.Menu,
                             contentDescription = stringResource(R.string.common_home),
-                            tint = HomePrimaryText
+                            tint = HomePrimaryText,
+                            modifier = Modifier.size(56.dp)
                         )
                     }
 
@@ -208,7 +223,7 @@ fun EodHomeScreen(
                             text = { MenuText(stringResource(R.string.home_menu_guide)) },
                             onClick = {
                                 menuExpanded = false
-                                guideVisible = true
+                                onGuideClick()
                             }
                         )
                         DropdownMenuItem(
@@ -233,7 +248,7 @@ fun EodHomeScreen(
             LazyVerticalGrid(
                 columns = GridCells.Fixed(2),
                 modifier = Modifier.fillMaxSize(),
-                contentPadding = PaddingValues(0.dp),
+                contentPadding = PaddingValues(top = 6.dp),
                 horizontalArrangement = Arrangement.spacedBy(14.dp),
                 verticalArrangement = Arrangement.spacedBy(14.dp)
             ) {
@@ -241,6 +256,7 @@ fun EodHomeScreen(
                     val item = cards[index]
                     HomeEntryCard(
                         title = item.title,
+                        backgroundBrush = item.backgroundBrush,
                         onClick = item.onClick
                     )
                 }
@@ -264,6 +280,7 @@ private fun MenuText(
 @Composable
 private fun HomeEntryCard(
     title: String,
+    backgroundBrush: Brush,
     onClick: () -> Unit
 ) {
     Card(
@@ -271,13 +288,18 @@ private fun HomeEntryCard(
             .fillMaxWidth()
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(28.dp),
-        colors = CardDefaults.cardColors(containerColor = HomeCardColor),
+        colors = CardDefaults.cardColors(containerColor = Color.Transparent),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(HomeCardColor)
+                .border(
+                    width = 1.dp,
+                    color = Color.White.copy(alpha = 0.92f),
+                    shape = RoundedCornerShape(28.dp)
+                )
+                .background(backgroundBrush)
                 .padding(vertical = 42.dp, horizontal = 12.dp),
             contentAlignment = Alignment.Center
         ) {

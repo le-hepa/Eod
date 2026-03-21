@@ -2,6 +2,8 @@ package com.gomgom.eod.feature.task.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.combinedClickable
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -23,13 +25,12 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material.icons.outlined.ArrowBack
-import androidx.compose.material.icons.outlined.Menu
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.DropdownMenu
-import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
@@ -43,6 +44,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -75,6 +77,7 @@ fun TaskPresetScreen(
     onHomeClick: () -> Unit,
     onKorClick: () -> Unit,
     onEngClick: () -> Unit,
+    onGuideClick: () -> Unit,
     onContactClick: () -> Unit,
     onExitClick: () -> Unit
 ) {
@@ -83,7 +86,11 @@ fun TaskPresetScreen(
 
     var menuExpanded by remember { mutableStateOf(false) }
     var appInfoVisible by remember { mutableStateOf(false) }
-    var guideVisible by remember { mutableStateOf(false) }
+    var addPresetVisible by remember { mutableStateOf(false) }
+    var manageTarget by remember { mutableStateOf<TaskPresetGroupItem?>(null) }
+    var renameVisible by remember { mutableStateOf(false) }
+    var renameText by remember { mutableStateOf("") }
+    var deleteConfirmVisible by remember { mutableStateOf(false) }
 
     if (appInfoVisible) {
         PresetPopupFrame(
@@ -102,17 +109,67 @@ fun TaskPresetScreen(
         }
     }
 
-    if (guideVisible) {
-        PresetPopupFrame(
-            title = stringResource(R.string.home_guide_title),
-            confirmText = stringResource(R.string.home_guide_close),
-            onDismiss = { guideVisible = false }
-        ) {
-            PopupGuideLine(text = stringResource(R.string.task_preset_top_title))
-            PopupGuideLine(text = stringResource(R.string.task_preset_top_add))
-            PopupGuideLine(text = stringResource(R.string.task_preset_top_name_hint))
-            PopupGuideLine(text = stringResource(R.string.task_preset_top_name_example))
-        }
+    if (addPresetVisible) {
+        TaskPresetAddDialog(
+            onDismiss = { addPresetVisible = false },
+            onPresetSaved = { addPresetVisible = false }
+        )
+    }
+
+    manageTarget?.let { target ->
+        PresetManageDialog(
+            presetName = target.name,
+            onDismiss = { manageTarget = null },
+            onEditClick = {
+                renameText = target.name
+                renameVisible = true
+            },
+            onDeleteClick = {
+                deleteConfirmVisible = true
+            }
+        )
+    }
+
+    if (renameVisible && manageTarget != null) {
+        PresetRenameDialog(
+            value = renameText,
+            onValueChange = { renameText = it },
+            onDismiss = { renameVisible = false },
+            onConfirm = {
+                val target = manageTarget ?: return@PresetRenameDialog
+                if (viewModel.renamePreset(target.id, renameText)) {
+                    renameVisible = false
+                    manageTarget = null
+                }
+            }
+        )
+    }
+
+    if (deleteConfirmVisible && manageTarget != null) {
+        AlertDialog(
+            onDismissRequest = { deleteConfirmVisible = false },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        val target = manageTarget ?: return@TextButton
+                        if (viewModel.deletePreset(target.id)) {
+                            deleteConfirmVisible = false
+                            manageTarget = null
+                        }
+                    }
+                ) {
+                    Text(stringResource(R.string.common_delete))
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { deleteConfirmVisible = false }) {
+                    Text(stringResource(R.string.common_cancel))
+                }
+            },
+            title = { Text(stringResource(R.string.task_preset_top_delete_confirm_title)) },
+            text = { Text(stringResource(R.string.task_preset_top_delete_confirm_body)) },
+            containerColor = Color.White
+        )
     }
 
     Scaffold(
@@ -130,11 +187,12 @@ fun TaskPresetScreen(
                     onClick = onBackClick,
                     modifier = Modifier.size(42.dp)
                 ) {
-                    Icon(
-                        imageVector = Icons.Outlined.ArrowBack,
-                        contentDescription = stringResource(R.string.common_close),
-                        tint = PresetPrimaryText
-                    )
+                        Icon(
+                            imageVector = Icons.Outlined.ArrowBack,
+                            contentDescription = stringResource(R.string.common_close),
+                            tint = PresetPrimaryText,
+                            modifier = Modifier.size(56.dp)
+                        )
                 }
 
                 Text(
@@ -144,77 +202,21 @@ fun TaskPresetScreen(
                     color = PresetPrimaryText
                 )
 
-                Box {
-                    TextButton(
-                        onClick = { menuExpanded = true },
-                        modifier = Modifier.size(42.dp)
-                    ) {
-                        Icon(
-                            imageVector = Icons.Outlined.Menu,
-                            contentDescription = stringResource(R.string.common_home),
-                            tint = PresetPrimaryText
-                        )
-                    }
-
-                    DropdownMenu(
-                        expanded = menuExpanded,
-                        onDismissRequest = { menuExpanded = false },
-                        modifier = Modifier.background(PresetCardColor)
-                    ) {
-                        DropdownMenuItem(
-                            text = { MenuText(stringResource(R.string.home_menu_home)) },
-                            onClick = {
-                                menuExpanded = false
-                                onHomeClick()
-                            }
-                        )
-                        HorizontalDivider(color = PresetDivider)
-                        DropdownMenuItem(
-                            text = { MenuText(stringResource(R.string.home_menu_kor)) },
-                            onClick = {
-                                menuExpanded = false
-                                onKorClick()
-                            }
-                        )
-                        DropdownMenuItem(
-                            text = { MenuText(stringResource(R.string.home_menu_eng)) },
-                            onClick = {
-                                menuExpanded = false
-                                onEngClick()
-                            }
-                        )
-                        HorizontalDivider(color = PresetDivider)
-                        DropdownMenuItem(
-                            text = { MenuText(stringResource(R.string.home_menu_app_info)) },
-                            onClick = {
-                                menuExpanded = false
-                                appInfoVisible = true
-                            }
-                        )
-                        DropdownMenuItem(
-                            text = { MenuText(stringResource(R.string.home_menu_guide)) },
-                            onClick = {
-                                menuExpanded = false
-                                guideVisible = true
-                            }
-                        )
-                        DropdownMenuItem(
-                            text = { MenuText(stringResource(R.string.home_menu_contact)) },
-                            onClick = {
-                                menuExpanded = false
-                                onContactClick()
-                            }
-                        )
-                        HorizontalDivider(color = PresetDivider)
-                        DropdownMenuItem(
-                            text = { MenuText(stringResource(R.string.home_menu_exit)) },
-                            onClick = {
-                                menuExpanded = false
-                                onExitClick()
-                            }
-                        )
-                    }
-                }
+                TaskHamburgerMenuButton(
+                    expanded = menuExpanded,
+                    onExpandedChange = { menuExpanded = it },
+                    iconTint = PresetPrimaryText,
+                    menuBackgroundColor = PresetCardColor,
+                    dividerColor = PresetDivider,
+                    textColor = PresetPrimaryText,
+                    onHomeClick = onHomeClick,
+                    onKorClick = onKorClick,
+                    onEngClick = onEngClick,
+                    onAppInfoClick = { appInfoVisible = true },
+                    onGuideClick = onGuideClick,
+                    onContactClick = onContactClick,
+                    onExitClick = onExitClick
+                )
             }
         }
     ) { innerPadding ->
@@ -227,12 +229,6 @@ fun TaskPresetScreen(
                 .padding(horizontal = 18.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            item {
-                AddPresetCard(
-                    onClick = onPresetAddClick
-                )
-            }
-
             if (uiState.presetGroups.isEmpty()) {
                 item {
                     EmptyStateCard(
@@ -244,26 +240,21 @@ fun TaskPresetScreen(
                     PresetRowCard(
                         preset = preset,
                         onClick = { onPresetDetailClick(preset.id) },
+                        onLongClick = { manageTarget = preset },
                         onToggle = { checked ->
                             viewModel.onPresetToggle(preset.id, checked)
                         }
                     )
                 }
             }
+
+            item {
+                AddPresetCard(
+                    onClick = { addPresetVisible = true }
+                )
+            }
         }
     }
-}
-
-@Composable
-private fun MenuText(
-    text: String
-) {
-    Text(
-        text = text,
-        color = PresetPrimaryText,
-        fontSize = 15.sp,
-        fontWeight = FontWeight.Medium
-    )
 }
 
 @Composable
@@ -281,7 +272,7 @@ private fun AddPresetCard(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 18.dp, vertical = 18.dp),
+                .padding(horizontal = 18.dp, vertical = 14.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
@@ -295,7 +286,7 @@ private fun AddPresetCard(
                     imageVector = Icons.Outlined.Add,
                     contentDescription = stringResource(R.string.task_preset_top_add),
                     tint = Color.White,
-                    modifier = Modifier.size(14.dp)
+                    modifier = Modifier.size(28.dp)
                 )
             }
 
@@ -310,16 +301,21 @@ private fun AddPresetCard(
     }
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun PresetRowCard(
     preset: TaskPresetGroupItem,
     onClick: () -> Unit,
+    onLongClick: () -> Unit,
     onToggle: (Boolean) -> Unit
 ) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .clickable(onClick = onClick),
+            .combinedClickable(
+                onClick = onClick,
+                onLongClick = onLongClick
+            ),
         shape = RoundedCornerShape(26.dp),
         colors = CardDefaults.cardColors(containerColor = PresetCardColor),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
@@ -327,35 +323,184 @@ private fun PresetRowCard(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 18.dp, vertical = 18.dp),
+                .padding(horizontal = 18.dp, vertical = 12.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            AutoResizeText(
-                text = preset.name,
+            Box(
                 modifier = Modifier.weight(1f),
-                style = TextStyle(
-                    fontSize = 20.sp,
-                    lineHeight = 22.sp,
-                    fontWeight = FontWeight.SemiBold,
-                    color = PresetPrimaryText,
-                    textAlign = TextAlign.Start
-                ),
-                maxLines = 2,
-                minFontSize = 14.sp,
-                textAlign = TextAlign.Start
-            )
-
-            Switch(
-                checked = preset.enabled,
-                onCheckedChange = onToggle,
-                colors = SwitchDefaults.colors(
-                    checkedThumbColor = Color.White,
-                    checkedTrackColor = PresetSwitchCheckedTrack,
-                    uncheckedThumbColor = Color.White,
-                    uncheckedTrackColor = PresetSwitchUncheckedTrack
+                contentAlignment = Alignment.Center
+            ) {
+                AutoResizeText(
+                    text = preset.name,
+                    modifier = Modifier.padding(horizontal = 44.dp),
+                    style = TextStyle(
+                        fontSize = 20.sp,
+                        lineHeight = 22.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = PresetPrimaryText,
+                        textAlign = TextAlign.Center
+                    ),
+                    maxLines = 2,
+                    minFontSize = 14.sp,
+                    textAlign = TextAlign.Center
                 )
-            )
+            }
+
+            Box(
+                modifier = Modifier.size(32.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Switch(
+                    checked = preset.enabled,
+                    onCheckedChange = onToggle,
+                    modifier = Modifier.scale(0.6f),
+                    colors = SwitchDefaults.colors(
+                        checkedThumbColor = Color.White,
+                        checkedTrackColor = PresetSwitchCheckedTrack,
+                        uncheckedThumbColor = Color.White,
+                        uncheckedTrackColor = PresetSwitchUncheckedTrack
+                    )
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun PresetManageDialog(
+    presetName: String,
+    onDismiss: () -> Unit,
+    onEditClick: () -> Unit,
+    onDeleteClick: () -> Unit
+) {
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = DialogProperties(
+            dismissOnBackPress = true,
+            dismissOnClickOutside = true
+        )
+    ) {
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .widthIn(max = 360.dp),
+            shape = RoundedCornerShape(24.dp),
+            colors = CardDefaults.cardColors(containerColor = PresetCardColor),
+            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+        ) {
+            Column(
+                modifier = Modifier.padding(18.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                Text(
+                    text = presetName,
+                    modifier = Modifier.fillMaxWidth(),
+                    color = PresetPrimaryText,
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center
+                )
+                HorizontalDivider(color = PresetDivider)
+                TextButton(
+                    onClick = onEditClick,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(
+                        text = stringResource(R.string.common_edit),
+                        color = PresetPrimaryText,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                }
+                TextButton(
+                    onClick = onDeleteClick,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(
+                        text = stringResource(R.string.common_delete),
+                        color = PresetPrimaryText,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun PresetRenameDialog(
+    value: String,
+    onValueChange: (String) -> Unit,
+    onDismiss: () -> Unit,
+    onConfirm: () -> Unit
+) {
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = DialogProperties(
+            dismissOnBackPress = true,
+            dismissOnClickOutside = true
+        )
+    ) {
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .widthIn(max = 360.dp),
+            shape = RoundedCornerShape(24.dp),
+            colors = CardDefaults.cardColors(containerColor = PresetCardColor),
+            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+        ) {
+            Column(
+                modifier = Modifier.padding(18.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Text(
+                    text = stringResource(R.string.task_preset_top_rename_title),
+                    modifier = Modifier.fillMaxWidth(),
+                    color = PresetPrimaryText,
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center
+                )
+                OutlinedTextField(
+                    value = value,
+                    onValueChange = onValueChange,
+                    modifier = Modifier.fillMaxWidth(),
+                    singleLine = true,
+                    colors = taskOutlinedTextFieldColors(PresetPrimaryText, PresetSecondaryText),
+                    textStyle = TextStyle(
+                        color = PresetPrimaryText,
+                        textAlign = TextAlign.Center,
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.SemiBold
+                    ),
+                    placeholder = {
+                        Text(
+                            text = stringResource(R.string.task_preset_top_name_hint),
+                            modifier = Modifier.fillMaxWidth(),
+                            textAlign = TextAlign.Center,
+                            color = PresetSecondaryText
+                        )
+                    },
+                    shape = RoundedCornerShape(18.dp)
+                )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    TextButton(
+                        onClick = onDismiss,
+                        modifier = Modifier.weight(1f)
+                    ) {
+                        Text(stringResource(R.string.common_cancel), color = PresetPrimaryText)
+                    }
+                    TextButton(
+                        onClick = onConfirm,
+                        modifier = Modifier.weight(1f)
+                    ) {
+                        Text(stringResource(R.string.common_save), color = PresetPrimaryText)
+                    }
+                }
+            }
         }
     }
 }
@@ -374,7 +519,10 @@ private fun EmptyStateCard(
             text = text,
             fontSize = 15.sp,
             color = PresetSecondaryText,
-            modifier = Modifier.padding(horizontal = 18.dp, vertical = 20.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 18.dp, vertical = 20.dp),
+            textAlign = TextAlign.Center
         )
     }
 }
@@ -462,14 +610,3 @@ private fun PopupInfoRow(
     }
 }
 
-@Composable
-private fun PopupGuideLine(
-    text: String
-) {
-    Text(
-        text = "• $text",
-        fontSize = 14.sp,
-        lineHeight = 20.sp,
-        color = PresetPrimaryText
-    )
-}

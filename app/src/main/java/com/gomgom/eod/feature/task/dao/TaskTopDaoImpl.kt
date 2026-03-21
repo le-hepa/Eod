@@ -1,23 +1,55 @@
 package com.gomgom.eod.feature.task.dao
 
+import com.gomgom.eod.feature.task.db.TaskRoomDatabase
+import com.gomgom.eod.feature.task.db.toEntity
+import com.gomgom.eod.feature.task.db.toItem
+import com.gomgom.eod.feature.task.viewmodel.CycleUnit
 import com.gomgom.eod.feature.task.viewmodel.TaskPresetGroupItem
+import com.gomgom.eod.feature.task.viewmodel.TaskPresetStateStore
 import com.gomgom.eod.feature.task.viewmodel.TaskPresetWorkItem
+import com.gomgom.eod.feature.task.viewmodel.TaskPresetWorkStateStore
 import com.gomgom.eod.feature.task.viewmodel.TaskTopUiState
 import com.gomgom.eod.feature.task.viewmodel.TaskTopVesselItem
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 
-class TaskTopDaoImpl : TaskTopDao {
+class TaskTopDaoImpl(
+    private val alarmSettingsDao: TaskAlarmSettingsDao
+) : TaskTopDao {
+    private val roomDao by lazy { TaskRoomDatabase.getInstance().taskDao() }
+    private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+    private val persistMutex = Mutex()
 
-    private val _uiState = MutableStateFlow(TaskTopUiState())
+    private val _uiState = MutableStateFlow(
+        TaskTopUiState(
+            alarmEnabled = alarmSettingsDao.settings.value.masterAlarmEnabled,
+            vesselItems = emptyList()
+        )
+    )
     override val uiState: StateFlow<TaskTopUiState> = _uiState.asStateFlow()
 
     private var nextVesselId: Long = 1L
     private var nextPresetId: Long = 1L
     private var nextPresetWorkId: Long = 1L
 
+    init {
+        scope.launch {
+            val loaded = loadVessels()
+            nextVesselId = (loaded.maxOfOrNull { it.id } ?: 0L) + 1L
+            _uiState.value = _uiState.value.copy(vesselItems = sortVessels(loaded))
+        }
+    }
+
     override fun updateAlarmEnabled(enabled: Boolean) {
+        alarmSettingsDao.setMasterAlarmEnabled(enabled)
         _uiState.value = _uiState.value.copy(alarmEnabled = enabled)
     }
 
@@ -41,6 +73,7 @@ class TaskTopDaoImpl : TaskTopDao {
         _uiState.value = _uiState.value.copy(
             vesselItems = sortVessels(updated)
         )
+        persistVessels(_uiState.value.vesselItems)
     }
 
     override fun addVessel(
@@ -70,6 +103,7 @@ class TaskTopDaoImpl : TaskTopDao {
         _uiState.value = _uiState.value.copy(
             vesselItems = sortVessels(updated)
         )
+        persistVessels(_uiState.value.vesselItems)
 
         return newId
     }
@@ -91,6 +125,7 @@ class TaskTopDaoImpl : TaskTopDao {
         _uiState.value = _uiState.value.copy(
             vesselItems = sortVessels(updated)
         )
+        persistVessels(_uiState.value.vesselItems)
     }
 
     override fun deleteVessel(vesselId: Long) {
@@ -99,35 +134,18 @@ class TaskTopDaoImpl : TaskTopDao {
                 _uiState.value.vesselItems.filterNot { it.id == vesselId }
             )
         )
+        persistVessels(_uiState.value.vesselItems)
     }
 
     override fun addPresetGroup(name: String) {
-        val trimmedName = name.trim()
-        if (trimmedName.isEmpty()) return
-
-        _uiState.value = _uiState.value.copy(
-            presetGroups = _uiState.value.presetGroups + TaskPresetGroupItem(
-                id = nextPresetId++,
-                name = trimmedName,
-                enabled = false,
-                works = emptyList()
-            )
-        )
+        TaskPresetStateStore.addPreset(name)
     }
 
     override fun setPresetGroupEnabled(
         presetId: Long,
         enabled: Boolean
     ) {
-        _uiState.value = _uiState.value.copy(
-            presetGroups = _uiState.value.presetGroups.map { item ->
-                when {
-                    item.id == presetId -> item.copy(enabled = enabled)
-                    enabled -> item.copy(enabled = false)
-                    else -> item
-                }
-            }
-        )
+        TaskPresetStateStore.setPresetEnabled(presetId, enabled)
     }
 
     override fun savePresetWork(
@@ -138,26 +156,16 @@ class TaskTopDaoImpl : TaskTopDao {
     ) {
         val trimmedWorkName = workName.trim()
         val trimmedReference = reference.trim()
-        val trimmedCycle = cycle.trim()
+        val parsedCycle = parseCycle(cycle) ?: return
 
         if (trimmedWorkName.isEmpty()) return
-        if (trimmedCycle.isEmpty()) return
 
-        _uiState.value = _uiState.value.copy(
-            presetGroups = _uiState.value.presetGroups.map { item ->
-                if (item.id == presetId) {
-                    item.copy(
-                        works = item.works + TaskPresetWorkItem(
-                            id = nextPresetWorkId++,
-                            workName = trimmedWorkName,
-                            reference = trimmedReference,
-                            cycle = trimmedCycle
-                        )
-                    )
-                } else {
-                    item
-                }
-            }
+        TaskPresetWorkStateStore.addWork(
+            presetId = presetId,
+            name = trimmedWorkName,
+            reference = trimmedReference,
+            cycleNumber = parsedCycle.first,
+            cycleUnit = parsedCycle.second
         )
     }
 
@@ -170,31 +178,16 @@ class TaskTopDaoImpl : TaskTopDao {
     ) {
         val trimmedWorkName = workName.trim()
         val trimmedReference = reference.trim()
-        val trimmedCycle = cycle.trim()
+        val parsedCycle = parseCycle(cycle) ?: return
 
         if (trimmedWorkName.isEmpty()) return
-        if (trimmedCycle.isEmpty()) return
 
-        _uiState.value = _uiState.value.copy(
-            presetGroups = _uiState.value.presetGroups.map { item ->
-                if (item.id == presetId) {
-                    item.copy(
-                        works = item.works.map { work ->
-                            if (work.id == workId) {
-                                work.copy(
-                                    workName = trimmedWorkName,
-                                    reference = trimmedReference,
-                                    cycle = trimmedCycle
-                                )
-                            } else {
-                                work
-                            }
-                        }
-                    )
-                } else {
-                    item
-                }
-            }
+        TaskPresetWorkStateStore.updateWork(
+            workId = workId,
+            name = trimmedWorkName,
+            reference = trimmedReference,
+            cycleNumber = parsedCycle.first,
+            cycleUnit = parsedCycle.second
         )
     }
 
@@ -202,30 +195,20 @@ class TaskTopDaoImpl : TaskTopDao {
         presetId: Long,
         workId: Long
     ) {
-        _uiState.value = _uiState.value.copy(
-            presetGroups = _uiState.value.presetGroups.map { item ->
-                if (item.id == presetId) {
-                    item.copy(
-                        works = item.works.filterNot { it.id == workId }
-                    )
-                } else {
-                    item
-                }
-            }
-        )
+        TaskPresetWorkStateStore.deleteWork(workId)
     }
 
     override fun deletePresetGroup(presetId: Long) {
-        _uiState.value = _uiState.value.copy(
-            presetGroups = _uiState.value.presetGroups.filterNot { it.id == presetId }
-        )
+        TaskPresetStateStore.deletePreset(presetId)
     }
 
     override fun clearAll() {
-        _uiState.value = TaskTopUiState()
+        alarmSettingsDao.setMasterAlarmEnabled(false)
+        _uiState.value = TaskTopUiState(alarmEnabled = false)
         nextVesselId = 1L
         nextPresetId = 1L
         nextPresetWorkId = 1L
+        persistVessels(emptyList())
     }
 
     private fun sortVessels(items: List<TaskTopVesselItem>): List<TaskTopVesselItem> {
@@ -233,5 +216,40 @@ class TaskTopDaoImpl : TaskTopDao {
             compareByDescending<TaskTopVesselItem> { it.enabled }
                 .thenBy { it.name.lowercase() }
         )
+    }
+
+    private fun parseCycle(cycle: String): Pair<Int, CycleUnit>? {
+        val trimmedCycle = cycle.trim()
+        if (trimmedCycle.isEmpty()) return null
+
+        val cycleNumber = trimmedCycle.takeWhile(Char::isDigit).toIntOrNull() ?: return null
+        val cycleUnitToken = trimmedCycle.dropWhile(Char::isDigit).trim().uppercase()
+
+        val cycleUnit = when (cycleUnitToken) {
+            "D", "DAY", "DAYS" -> CycleUnit.DAY
+            "W", "WEEK", "WEEKS" -> CycleUnit.WEEK
+            "M", "MONTH", "MONTHS" -> CycleUnit.MONTH
+            "Y", "YEAR", "YEARS" -> CycleUnit.YEAR
+            else -> return null
+        }
+
+        return cycleNumber to cycleUnit
+    }
+
+    private fun loadVessels(): List<TaskTopVesselItem> {
+        return runBlocking(Dispatchers.IO) {
+            TaskRoomDatabase.ensureMigrated()
+            roomDao.getVessels()
+        }.map { it.toItem() }
+    }
+
+    private fun persistVessels(items: List<TaskTopVesselItem>) {
+        scope.launch {
+            persistMutex.withLock {
+                TaskRoomDatabase.ensureMigrated()
+                roomDao.clearVessels()
+                roomDao.upsertVessels(items.map { it.toEntity() })
+            }
+        }
     }
 }

@@ -19,10 +19,3 @@ data class TaskPresetGroupItem(
     val enabled: Boolean = false,
     val works: List<TaskPresetWorkItem> = emptyList()
 )
-
-data class TaskPresetWorkItem(
-    val id: Long,
-    val workName: String,
-    val reference: String,
-    val cycle: String
-)

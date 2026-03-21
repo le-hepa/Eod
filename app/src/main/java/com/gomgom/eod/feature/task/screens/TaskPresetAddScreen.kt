@@ -18,13 +18,10 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowBack
-import androidx.compose.material.icons.outlined.Menu
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.DropdownMenu
-import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
@@ -40,7 +37,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
@@ -63,6 +62,7 @@ fun TaskPresetAddScreen(
     onHomeClick: () -> Unit,
     onKorClick: () -> Unit,
     onEngClick: () -> Unit,
+    onGuideClick: () -> Unit,
     onContactClick: () -> Unit,
     onExitClick: () -> Unit
 ) {
@@ -70,7 +70,6 @@ fun TaskPresetAddScreen(
 
     var menuExpanded by remember { mutableStateOf(false) }
     var appInfoVisible by remember { mutableStateOf(false) }
-    var guideVisible by remember { mutableStateOf(false) }
     var presetName by remember { mutableStateOf("") }
 
     if (appInfoVisible) {
@@ -90,18 +89,6 @@ fun TaskPresetAddScreen(
         }
     }
 
-    if (guideVisible) {
-        PresetAddPopupFrame(
-            title = stringResource(R.string.home_guide_title),
-            confirmText = stringResource(R.string.home_guide_close),
-            onDismiss = { guideVisible = false }
-        ) {
-            PopupGuideLine(text = stringResource(R.string.task_preset_top_add))
-            PopupGuideLine(text = stringResource(R.string.task_preset_top_name_hint))
-            PopupGuideLine(text = stringResource(R.string.task_preset_top_name_example))
-        }
-    }
-
     Scaffold(
         modifier = Modifier.windowInsetsPadding(WindowInsets.safeDrawing),
         containerColor = PresetAddBackground,
@@ -117,11 +104,12 @@ fun TaskPresetAddScreen(
                     onClick = onBackClick,
                     modifier = Modifier.size(42.dp)
                 ) {
-                    Icon(
-                        imageVector = Icons.Outlined.ArrowBack,
-                        contentDescription = stringResource(R.string.common_close),
-                        tint = PresetAddPrimaryText
-                    )
+                        Icon(
+                            imageVector = Icons.Outlined.ArrowBack,
+                            contentDescription = stringResource(R.string.common_close),
+                            tint = PresetAddPrimaryText,
+                            modifier = Modifier.size(56.dp)
+                        )
                 }
 
                 Text(
@@ -131,77 +119,21 @@ fun TaskPresetAddScreen(
                     color = PresetAddPrimaryText
                 )
 
-                Box {
-                    TextButton(
-                        onClick = { menuExpanded = true },
-                        modifier = Modifier.size(42.dp)
-                    ) {
-                        Icon(
-                            imageVector = Icons.Outlined.Menu,
-                            contentDescription = stringResource(R.string.common_home),
-                            tint = PresetAddPrimaryText
-                        )
-                    }
-
-                    DropdownMenu(
-                        expanded = menuExpanded,
-                        onDismissRequest = { menuExpanded = false },
-                        modifier = Modifier.background(PresetAddCardColor)
-                    ) {
-                        DropdownMenuItem(
-                            text = { MenuText(stringResource(R.string.home_menu_home)) },
-                            onClick = {
-                                menuExpanded = false
-                                onHomeClick()
-                            }
-                        )
-                        HorizontalDivider(color = PresetAddDivider)
-                        DropdownMenuItem(
-                            text = { MenuText(stringResource(R.string.home_menu_kor)) },
-                            onClick = {
-                                menuExpanded = false
-                                onKorClick()
-                            }
-                        )
-                        DropdownMenuItem(
-                            text = { MenuText(stringResource(R.string.home_menu_eng)) },
-                            onClick = {
-                                menuExpanded = false
-                                onEngClick()
-                            }
-                        )
-                        HorizontalDivider(color = PresetAddDivider)
-                        DropdownMenuItem(
-                            text = { MenuText(stringResource(R.string.home_menu_app_info)) },
-                            onClick = {
-                                menuExpanded = false
-                                appInfoVisible = true
-                            }
-                        )
-                        DropdownMenuItem(
-                            text = { MenuText(stringResource(R.string.home_menu_guide)) },
-                            onClick = {
-                                menuExpanded = false
-                                guideVisible = true
-                            }
-                        )
-                        DropdownMenuItem(
-                            text = { MenuText(stringResource(R.string.home_menu_contact)) },
-                            onClick = {
-                                menuExpanded = false
-                                onContactClick()
-                            }
-                        )
-                        HorizontalDivider(color = PresetAddDivider)
-                        DropdownMenuItem(
-                            text = { MenuText(stringResource(R.string.home_menu_exit)) },
-                            onClick = {
-                                menuExpanded = false
-                                onExitClick()
-                            }
-                        )
-                    }
-                }
+                TaskHamburgerMenuButton(
+                    expanded = menuExpanded,
+                    onExpandedChange = { menuExpanded = it },
+                    iconTint = PresetAddPrimaryText,
+                    menuBackgroundColor = PresetAddCardColor,
+                    dividerColor = PresetAddDivider,
+                    textColor = PresetAddPrimaryText,
+                    onHomeClick = onHomeClick,
+                    onKorClick = onKorClick,
+                    onEngClick = onEngClick,
+                    onAppInfoClick = { appInfoVisible = true },
+                    onGuideClick = onGuideClick,
+                    onContactClick = onContactClick,
+                    onExitClick = onExitClick
+                )
             }
         }
     ) { innerPadding ->
@@ -223,80 +155,138 @@ fun TaskPresetAddScreen(
                 colors = CardDefaults.cardColors(containerColor = PresetAddCardColor),
                 elevation = CardDefaults.cardElevation(defaultElevation = 5.dp)
             ) {
-                Column(
-                    modifier = Modifier.padding(18.dp),
-                    verticalArrangement = Arrangement.spacedBy(14.dp)
-                ) {
-                    Text(
-                        text = stringResource(R.string.task_preset_top_add),
-                        fontSize = 22.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = PresetAddPrimaryText
-                    )
-
-                    HorizontalDivider(color = PresetAddDivider)
-
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(10.dp)
-                    ) {
-                        OutlinedTextField(
-                            value = presetName,
-                            onValueChange = { presetName = it },
-                            modifier = Modifier.weight(1f),
-                            singleLine = true,
-                            shape = RoundedCornerShape(18.dp),
-                            placeholder = {
-                                Text(
-                                    text = stringResource(R.string.task_preset_top_name_hint),
-                                    color = PresetAddSecondaryText
-                                )
-                            }
-                        )
-
-                        Button(
-                            onClick = {
-                                val createdId = viewModel.addPreset(presetName)
-                                if (createdId != null) {
-                                    onPresetSaved()
-                                }
-                            },
-                            enabled = presetName.trim().isNotEmpty(),
-                            shape = RoundedCornerShape(18.dp),
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor = PresetAddPrimaryText,
-                                contentColor = Color.White,
-                                disabledContainerColor = PresetAddAccentSurface,
-                                disabledContentColor = PresetAddSecondaryText
-                            )
-                        ) {
-                            Text(
-                                text = stringResource(R.string.task_preset_top_add_confirm),
-                                fontWeight = FontWeight.SemiBold
-                            )
+                TaskPresetAddForm(
+                    presetName = presetName,
+                    onPresetNameChange = { presetName = it },
+                    onDismiss = onBackClick,
+                    onSave = {
+                        val createdId = viewModel.addPreset(presetName)
+                        if (createdId != null) {
+                            onPresetSaved()
                         }
                     }
-
-                    Text(
-                        text = stringResource(R.string.task_preset_top_name_example),
-                        fontSize = 13.sp,
-                        color = PresetAddSecondaryText
-                    )
-                }
+                )
             }
         }
     }
 }
 
 @Composable
-private fun MenuText(text: String) {
-    Text(
-        text = text,
-        color = PresetAddPrimaryText,
-        fontSize = 15.sp,
-        fontWeight = FontWeight.Medium
-    )
+fun TaskPresetAddDialog(
+    onDismiss: () -> Unit,
+    onPresetSaved: () -> Unit
+) {
+    val viewModel: TaskPresetViewModel = viewModel()
+    var presetName by remember { mutableStateOf("") }
+
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = DialogProperties(
+            dismissOnBackPress = true,
+            dismissOnClickOutside = true
+        )
+    ) {
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .widthIn(max = 420.dp),
+            shape = RoundedCornerShape(28.dp),
+            colors = CardDefaults.cardColors(containerColor = PresetAddCardColor),
+            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+        ) {
+            TaskPresetAddForm(
+                presetName = presetName,
+                onPresetNameChange = { presetName = it },
+                onDismiss = onDismiss,
+                onSave = {
+                    val createdId = viewModel.addPreset(presetName)
+                    if (createdId != null) {
+                        onPresetSaved()
+                    }
+                }
+            )
+        }
+    }
+}
+
+@Composable
+private fun TaskPresetAddForm(
+    presetName: String,
+    onPresetNameChange: (String) -> Unit,
+    onDismiss: () -> Unit,
+    onSave: () -> Unit
+) {
+    Column(
+        modifier = Modifier.padding(18.dp),
+        verticalArrangement = Arrangement.spacedBy(14.dp)
+    ) {
+        Text(
+            text = stringResource(R.string.task_preset_top_add),
+            modifier = Modifier.fillMaxWidth(),
+            fontSize = 22.sp,
+            fontWeight = FontWeight.Bold,
+            color = PresetAddPrimaryText,
+            textAlign = TextAlign.Center
+        )
+
+        HorizontalDivider(color = PresetAddDivider)
+
+        OutlinedTextField(
+            value = presetName,
+            onValueChange = onPresetNameChange,
+            modifier = Modifier.fillMaxWidth(),
+            singleLine = true,
+            shape = RoundedCornerShape(18.dp),
+            colors = taskOutlinedTextFieldColors(PresetAddPrimaryText, PresetAddSecondaryText),
+            textStyle = TextStyle(textAlign = TextAlign.Center),
+            placeholder = {
+                Text(
+                    text = stringResource(R.string.task_preset_top_name_hint),
+                    modifier = Modifier.fillMaxWidth(),
+                    textAlign = TextAlign.Center,
+                    color = PresetAddSecondaryText
+                )
+            }
+        )
+
+        Text(
+            text = stringResource(R.string.task_preset_top_name_example),
+            modifier = Modifier.fillMaxWidth(),
+            fontSize = 13.sp,
+            color = PresetAddSecondaryText,
+            textAlign = TextAlign.Center
+        )
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.End
+        ) {
+            TextButton(onClick = onDismiss) {
+                Text(
+                    text = stringResource(R.string.common_cancel),
+                    textAlign = TextAlign.Center
+                )
+            }
+
+            Button(
+                onClick = onSave,
+                enabled = presetName.trim().isNotEmpty(),
+                shape = RoundedCornerShape(18.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = PresetAddPrimaryText,
+                    contentColor = Color.White,
+                    disabledContainerColor = PresetAddAccentSurface,
+                    disabledContentColor = PresetAddSecondaryText
+                )
+            ) {
+                Text(
+                    text = stringResource(R.string.task_preset_top_add_confirm),
+                    fontWeight = FontWeight.SemiBold,
+                    textAlign = TextAlign.Center
+                )
+            }
+        }
+    }
 }
 
 @Composable
@@ -380,16 +370,4 @@ private fun PopupInfoRow(
             fontWeight = FontWeight.SemiBold
         )
     }
-}
-
-@Composable
-private fun PopupGuideLine(
-    text: String
-) {
-    Text(
-        text = "• $text",
-        fontSize = 14.sp,
-        lineHeight = 20.sp,
-        color = PresetAddPrimaryText
-    )
 }

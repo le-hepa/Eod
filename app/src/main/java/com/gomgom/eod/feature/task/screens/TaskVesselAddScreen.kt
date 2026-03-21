@@ -2,38 +2,48 @@ package com.gomgom.eod.feature.task.screens
 
 import android.widget.Toast
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableLongStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.gomgom.eod.feature.task.viewmodel.TaskTopViewModel
+import com.gomgom.eod.R
+import com.gomgom.eod.feature.task.viewmodel.TaskPresetStateStore
 import com.gomgom.eod.feature.task.viewmodel.TaskVesselAddViewModel
 
 @Composable
@@ -44,32 +54,56 @@ fun TaskVesselAddScreen(
 ) {
     val context = LocalContext.current
     val addViewModel: TaskVesselAddViewModel = viewModel()
-    val topViewModel: TaskTopViewModel = viewModel()
     val vesselName by addViewModel.vesselName.collectAsState()
-    val uiState by topViewModel.uiState.collectAsState()
+    val presetGroups by TaskPresetStateStore.presetGroups.collectAsState()
 
-    var selectedPresetId by remember { mutableLongStateOf(-1L) }
-
-    val enabledPresetGroups = uiState.presetGroups.filter { it.enabled && it.works.isNotEmpty() }
-    val selectedPresetName = enabledPresetGroups.firstOrNull { it.id == selectedPresetId }?.name.orEmpty()
+    val activePresetName = presetGroups.firstOrNull { it.enabled }?.name.orEmpty()
+    val hasActivePreset = activePresetName.isNotBlank()
 
     Scaffold(
         modifier = Modifier.windowInsetsPadding(WindowInsets.safeDrawing),
         containerColor = Color(0xFFF5F8FC),
         topBar = {
-            TextButton(
-                onClick = onBackClick,
-                modifier = Modifier.padding(start = 10.dp, top = 8.dp)
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 8.dp, end = 12.dp, top = 8.dp, bottom = 8.dp),
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(
-                    text = "←",
-                    fontSize = 22.sp,
-                    color = Color(0xFF123A73)
-                )
+                Box(
+                    modifier = Modifier.size(42.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    TextButton(
+                        onClick = onBackClick,
+                        modifier = Modifier.size(42.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Outlined.ArrowBack,
+                            contentDescription = stringResource(R.string.common_close),
+                            tint = Color(0xFF123A73),
+                            modifier = Modifier.size(56.dp)
+                        )
+                    }
+                }
+
+                Box(
+                    modifier = Modifier.weight(1f),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = stringResource(R.string.task_top_add_vessel),
+                        fontSize = 22.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color(0xFF123A73)
+                    )
+                }
+
+                Box(modifier = Modifier.size(42.dp))
             }
         }
     ) { innerPadding ->
-        androidx.compose.foundation.layout.Column(
+        Column(
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color(0xFFF5F8FC))
@@ -83,96 +117,161 @@ fun TaskVesselAddScreen(
                 colors = CardDefaults.cardColors(containerColor = Color.White),
                 elevation = CardDefaults.cardElevation(defaultElevation = 3.dp)
             ) {
-                androidx.compose.foundation.layout.Column(
-                    modifier = Modifier.padding(18.dp),
-                    verticalArrangement = Arrangement.spacedBy(12.dp)
-                ) {
-                    Text(
-                        text = "선박 추가",
-                        fontSize = 22.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = Color(0xFF123A73)
-                    )
-
-                    if (enabledPresetGroups.isEmpty()) {
-                        Text(
-                            text = "먼저 업무가 있는 활성 프리셋을 만들어 주세요",
-                            fontSize = 15.sp,
-                            color = Color(0xFF5D7598)
-                        )
-
-                        Button(onClick = onGoPresetClick) {
-                            Text("프리셋 화면으로 이동")
-                        }
-                    } else {
-                        OutlinedTextField(
-                            value = vesselName,
-                            onValueChange = addViewModel::onVesselNameChange,
-                            modifier = Modifier.fillMaxWidth(),
-                            singleLine = true,
-                            label = { Text("선박명") }
-                        )
-
-                        Text(
-                            text = "적용 프리셋 선택",
-                            fontSize = 16.sp,
-                            fontWeight = FontWeight.SemiBold,
-                            color = Color(0xFF123A73)
-                        )
-
-                        enabledPresetGroups.forEach { preset ->
-                            Card(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .clickable { selectedPresetId = preset.id },
-                                shape = RoundedCornerShape(20.dp),
-                                colors = CardDefaults.cardColors(containerColor = Color(0xFFF9FBFE)),
-                                elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
-                            ) {
-                                androidx.compose.foundation.layout.Row(
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .padding(horizontal = 12.dp, vertical = 8.dp),
-                                    horizontalArrangement = Arrangement.SpaceBetween
-                                ) {
-                                    androidx.compose.foundation.layout.Column(
-                                        verticalArrangement = Arrangement.spacedBy(4.dp),
-                                        modifier = Modifier.padding(top = 8.dp)
-                                    ) {
-                                        Text(
-                                            text = preset.name,
-                                            fontSize = 15.sp,
-                                            color = Color(0xFF123A73)
-                                        )
-                                        Text(
-                                            text = "업무 ${preset.works.size}개",
-                                            fontSize = 12.sp,
-                                            color = Color(0xFF6F84A2)
-                                        )
-                                    }
-
-                                    RadioButton(
-                                        selected = selectedPresetId == preset.id,
-                                        onClick = { selectedPresetId = preset.id }
-                                    )
-                                }
-                            }
-                        }
-
-                        Button(
-                            onClick = {
-                                val newId = addViewModel.save(selectedPresetName)
-                                if (newId != null) {
-                                    Toast.makeText(context, "선박이 추가되었습니다", Toast.LENGTH_SHORT).show()
-                                    onVesselSaved(newId)
-                                }
-                            },
-                            enabled = vesselName.trim().isNotEmpty() && selectedPresetId != -1L
-                        ) {
-                            Text("저장")
+                TaskVesselAddForm(
+                    vesselName = vesselName,
+                    hasActivePreset = hasActivePreset,
+                    onVesselNameChange = addViewModel::onVesselNameChange,
+                    onGoPresetClick = onGoPresetClick,
+                    onDismiss = onBackClick,
+                    onSave = {
+                        val newId = addViewModel.save(activePresetName)
+                        if (newId != null) {
+                            Toast.makeText(
+                                context,
+                                context.getString(R.string.task_vessel_add_saved),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            onVesselSaved(newId)
                         }
                     }
+                )
+            }
+        }
+    }
+}
+
+@Composable
+fun TaskVesselAddDialog(
+    onDismiss: () -> Unit,
+    onGoPresetClick: () -> Unit,
+    onVesselSaved: (Long) -> Unit
+) {
+    val context = LocalContext.current
+    val addViewModel: TaskVesselAddViewModel = viewModel()
+    val vesselName by addViewModel.vesselName.collectAsState()
+    val presetGroups by TaskPresetStateStore.presetGroups.collectAsState()
+
+    val activePresetName = presetGroups.firstOrNull { it.enabled }?.name.orEmpty()
+    val hasActivePreset = activePresetName.isNotBlank()
+
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = DialogProperties(
+            dismissOnBackPress = true,
+            dismissOnClickOutside = true
+        )
+    ) {
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .widthIn(max = 420.dp),
+            shape = RoundedCornerShape(28.dp),
+            colors = CardDefaults.cardColors(containerColor = Color.White),
+            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+        ) {
+            TaskVesselAddForm(
+                vesselName = vesselName,
+                hasActivePreset = hasActivePreset,
+                onVesselNameChange = addViewModel::onVesselNameChange,
+                onGoPresetClick = onGoPresetClick,
+                onDismiss = onDismiss,
+                onSave = {
+                    val newId = addViewModel.save(activePresetName)
+                    if (newId != null) {
+                        Toast.makeText(
+                            context,
+                            context.getString(R.string.task_vessel_add_saved),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        onVesselSaved(newId)
+                    }
                 }
+            )
+        }
+    }
+}
+
+@Composable
+private fun TaskVesselAddForm(
+    vesselName: String,
+    hasActivePreset: Boolean,
+    onVesselNameChange: (String) -> Unit,
+    onGoPresetClick: () -> Unit,
+    onDismiss: () -> Unit,
+    onSave: () -> Unit
+) {
+    Column(
+        modifier = Modifier.padding(18.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp)
+    ) {
+        Text(
+            text = stringResource(R.string.task_top_add_vessel),
+            modifier = Modifier.fillMaxWidth(),
+            fontSize = 22.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color(0xFF123A73),
+            textAlign = TextAlign.Center
+        )
+
+        if (!hasActivePreset) {
+            Text(
+                text = stringResource(R.string.task_vessel_add_no_active_preset),
+                modifier = Modifier.fillMaxWidth(),
+                fontSize = 14.sp,
+                color = Color(0xFF5D7598),
+                textAlign = TextAlign.Center
+            )
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center
+            ) {
+                TextButton(onClick = onGoPresetClick) {
+                    Text(
+                        text = stringResource(R.string.task_vessel_add_go_preset),
+                        textAlign = TextAlign.Center
+                    )
+                }
+            }
+        }
+
+        OutlinedTextField(
+            value = vesselName,
+            onValueChange = onVesselNameChange,
+            modifier = Modifier.fillMaxWidth(),
+            singleLine = true,
+            shape = RoundedCornerShape(18.dp),
+            colors = taskOutlinedTextFieldColors(Color(0xFF123A73), Color(0xFF6E85A3)),
+            textStyle = androidx.compose.ui.text.TextStyle(textAlign = TextAlign.Center),
+            placeholder = {
+                Text(
+                    text = stringResource(R.string.task_top_vessel_name_hint),
+                    modifier = Modifier.fillMaxWidth(),
+                    textAlign = TextAlign.Center
+                )
+            }
+        )
+
+        HorizontalDivider(color = Color(0xFFD6E0EC))
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.End
+        ) {
+            TextButton(onClick = onDismiss) {
+                Text(
+                    text = stringResource(R.string.common_cancel),
+                    textAlign = TextAlign.Center
+                )
+            }
+            Button(
+                onClick = onSave,
+                enabled = vesselName.trim().isNotEmpty() && hasActivePreset
+            ) {
+                Text(
+                    text = stringResource(R.string.common_save),
+                    textAlign = TextAlign.Center
+                )
             }
         }
     }

@@ -2,4 +2,8 @@
 <resources>
 
     <style name="Theme.Eod" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.Eod.Splash" parent="Theme.Eod">
+        <item name="android:windowBackground">@drawable/splash_screen_background</item>
+    </style>
 </resources>

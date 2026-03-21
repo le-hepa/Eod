@@ -16,6 +16,7 @@ object EodRoute {
     const val TASK_ALARM = "task_alarm"
     const val TASK_VESSEL_ADD = "task_vessel_add"
     const val TASK_DATA_MANAGE = "task_data_manage"
+    const val TASK_GUIDE = "task_guide"
     const val TASK_VESSEL_DETAIL = "task_vessel_detail/{vesselId}"
 
     const val PORTINFO_TOP = "portinfo_top"

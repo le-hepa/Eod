@@ -2,7 +2,9 @@ package com.gomgom.eod.feature.home.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,8 +15,11 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ArrowBack
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -24,11 +29,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.gomgom.eod.R
 
 private data class GuideItem(
     val title: String,
@@ -41,26 +50,43 @@ fun HomeGuideScreen(
 ) {
     var keyword by remember { mutableStateOf("") }
 
-    val guideItems = remember {
-        listOf(
-            GuideItem("홈", "업무관리, 항만정보, 화물정보로 진입하는 시작 화면입니다."),
-            GuideItem("업무관리", "업무 프리셋, 알림 목록, 선박 목록, 선박 추가를 관리합니다."),
-            GuideItem("업무 프리셋", "상위 프리셋을 만들고 활성화한 뒤 하위 업무 프리셋을 관리합니다."),
-            GuideItem("하위 업무 프리셋", "업무명, 참조정보, 업무주기를 저장하고 수정합니다."),
-            GuideItem("알림 목록", "활성 선박 기준 업무 목록과 알림 상태를 확인합니다."),
-            GuideItem("업무기록 홈", "달력 기준으로 날짜별 업무를 확인하는 화면입니다."),
-            GuideItem("업무상세기록", "정기/비정기 업무 기록과 코멘트, 첨부를 작성하는 화면입니다.")
+    val guideItems = listOf(
+        GuideItem(
+            title = stringResource(R.string.task_guide_feature_home_title),
+            body = stringResource(R.string.task_guide_feature_home_body)
+        ),
+        GuideItem(
+            title = stringResource(R.string.task_guide_feature_task_main_title),
+            body = stringResource(R.string.task_guide_feature_task_main_body)
+        ),
+        GuideItem(
+            title = stringResource(R.string.task_guide_feature_preset_title),
+            body = stringResource(R.string.task_guide_feature_preset_body)
+        ),
+        GuideItem(
+            title = stringResource(R.string.task_guide_feature_regular_work_title),
+            body = stringResource(R.string.task_guide_feature_regular_work_body)
+        ),
+        GuideItem(
+            title = stringResource(R.string.task_guide_feature_alarm_list_title),
+            body = stringResource(R.string.task_guide_feature_alarm_list_body)
+        ),
+        GuideItem(
+            title = stringResource(R.string.task_guide_feature_record_home_title),
+            body = stringResource(R.string.task_guide_feature_record_home_body)
+        ),
+        GuideItem(
+            title = stringResource(R.string.task_guide_feature_record_write_title),
+            body = stringResource(R.string.task_guide_feature_record_write_body)
         )
-    }
+    )
 
-    val filteredItems = remember(keyword, guideItems) {
-        if (keyword.isBlank()) {
-            guideItems
-        } else {
-            guideItems.filter {
-                it.title.contains(keyword, ignoreCase = true) ||
-                        it.body.contains(keyword, ignoreCase = true)
-            }
+    val filteredItems = if (keyword.isBlank()) {
+        guideItems
+    } else {
+        guideItems.filter {
+            it.title.contains(keyword, ignoreCase = true) ||
+                it.body.contains(keyword, ignoreCase = true)
         }
     }
 
@@ -68,14 +94,24 @@ fun HomeGuideScreen(
         modifier = Modifier.windowInsetsPadding(WindowInsets.safeDrawing),
         containerColor = Color(0xFFF5F8FC),
         topBar = {
-            TextButton(
-                onClick = onBackClick,
-                modifier = Modifier.padding(start = 10.dp, top = 8.dp)
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 10.dp, vertical = 8.dp),
+                verticalAlignment = Alignment.CenterVertically
             ) {
+                TextButton(onClick = onBackClick) {
+                    Icon(
+                        imageVector = Icons.Outlined.ArrowBack,
+                        contentDescription = stringResource(R.string.home_guide_close),
+                        tint = Color(0xFF123A73)
+                    )
+                }
                 Text(
-                    text = "←",
+                    text = stringResource(R.string.home_guide_title),
                     color = Color(0xFF123A73),
-                    fontSize = 22.sp
+                    fontSize = 22.sp,
+                    fontWeight = FontWeight.Bold
                 )
             }
         }
@@ -95,7 +131,7 @@ fun HomeGuideScreen(
                     onValueChange = { keyword = it },
                     modifier = Modifier.fillMaxWidth(),
                     singleLine = true,
-                    label = { Text("가이드 검색") }
+                    label = { Text(stringResource(R.string.home_guide_search_hint)) }
                 )
             }
 
@@ -107,10 +143,13 @@ fun HomeGuideScreen(
                         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp)
                     ) {
                         Text(
-                            text = "검색 결과 없음",
-                            modifier = Modifier.padding(18.dp),
+                            text = stringResource(R.string.home_guide_no_result),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(18.dp),
                             fontSize = 16.sp,
-                            color = Color(0xFF123A73)
+                            color = Color(0xFF123A73),
+                            textAlign = TextAlign.Center
                         )
                     }
                 }
@@ -121,7 +160,7 @@ fun HomeGuideScreen(
                         colors = CardDefaults.cardColors(containerColor = Color.White),
                         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp)
                     ) {
-                        androidx.compose.foundation.layout.Column(
+                        Column(
                             modifier = Modifier.padding(18.dp),
                             verticalArrangement = Arrangement.spacedBy(8.dp)
                         ) {

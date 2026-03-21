@@ -22,12 +22,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material.icons.outlined.ArrowBack
-import androidx.compose.material.icons.outlined.Menu
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.DropdownMenu
-import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
@@ -74,6 +71,7 @@ fun TaskPresetDetailScreen(
     onHomeClick: () -> Unit,
     onKorClick: () -> Unit,
     onEngClick: () -> Unit,
+    onGuideClick: () -> Unit,
     onContactClick: () -> Unit,
     onExitClick: () -> Unit
 ) {
@@ -86,7 +84,6 @@ fun TaskPresetDetailScreen(
     var searchText by remember { mutableStateOf("") }
     var menuExpanded by remember { mutableStateOf(false) }
     var appInfoVisible by remember { mutableStateOf(false) }
-    var guideVisible by remember { mutableStateOf(false) }
 
     val filteredWorks = works.filter {
         searchText.isBlank() || it.name.contains(searchText, ignoreCase = true)
@@ -106,19 +103,6 @@ fun TaskPresetDetailScreen(
                 label = stringResource(R.string.home_app_info_version_label),
                 value = stringResource(R.string.home_app_info_version_value)
             )
-        }
-    }
-
-    if (guideVisible) {
-        LowerPopupFrame(
-            title = stringResource(R.string.home_guide_title),
-            confirmText = stringResource(R.string.home_guide_close),
-            onDismiss = { guideVisible = false }
-        ) {
-            PopupGuideLine(text = stringResource(R.string.task_preset_lower_search_hint))
-            PopupGuideLine(text = stringResource(R.string.task_preset_lower_add_icon_desc))
-            PopupGuideLine(text = stringResource(R.string.task_preset_lower_column_work))
-            PopupGuideLine(text = stringResource(R.string.task_preset_lower_column_cycle))
         }
     }
 
@@ -143,11 +127,12 @@ fun TaskPresetDetailScreen(
                             onClick = onBackClick,
                             modifier = Modifier.size(42.dp)
                         ) {
-                            Icon(
-                                imageVector = Icons.Outlined.ArrowBack,
-                                contentDescription = stringResource(R.string.common_close),
-                                tint = LowerPrimaryText
-                            )
+                        Icon(
+                            imageVector = Icons.Outlined.ArrowBack,
+                            contentDescription = stringResource(R.string.common_close),
+                            tint = LowerPrimaryText,
+                            modifier = Modifier.size(56.dp)
+                        )
                         }
                     }
 
@@ -164,80 +149,21 @@ fun TaskPresetDetailScreen(
                         )
                     }
 
-                    Box(
-                        modifier = Modifier.size(42.dp),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        TextButton(
-                            onClick = { menuExpanded = true },
-                            modifier = Modifier.size(42.dp)
-                        ) {
-                            Icon(
-                                imageVector = Icons.Outlined.Menu,
-                                contentDescription = stringResource(R.string.common_home),
-                                tint = LowerPrimaryText
-                            )
-                        }
-
-                        DropdownMenu(
-                            expanded = menuExpanded,
-                            onDismissRequest = { menuExpanded = false },
-                            modifier = Modifier.background(LowerCardColor)
-                        ) {
-                            DropdownMenuItem(
-                                text = { MenuText(stringResource(R.string.home_menu_home)) },
-                                onClick = {
-                                    menuExpanded = false
-                                    onHomeClick()
-                                }
-                            )
-                            HorizontalDivider(color = LowerDivider)
-                            DropdownMenuItem(
-                                text = { MenuText(stringResource(R.string.home_menu_kor)) },
-                                onClick = {
-                                    menuExpanded = false
-                                    onKorClick()
-                                }
-                            )
-                            DropdownMenuItem(
-                                text = { MenuText(stringResource(R.string.home_menu_eng)) },
-                                onClick = {
-                                    menuExpanded = false
-                                    onEngClick()
-                                }
-                            )
-                            HorizontalDivider(color = LowerDivider)
-                            DropdownMenuItem(
-                                text = { MenuText(stringResource(R.string.home_menu_app_info)) },
-                                onClick = {
-                                    menuExpanded = false
-                                    appInfoVisible = true
-                                }
-                            )
-                            DropdownMenuItem(
-                                text = { MenuText(stringResource(R.string.home_menu_guide)) },
-                                onClick = {
-                                    menuExpanded = false
-                                    guideVisible = true
-                                }
-                            )
-                            DropdownMenuItem(
-                                text = { MenuText(stringResource(R.string.home_menu_contact)) },
-                                onClick = {
-                                    menuExpanded = false
-                                    onContactClick()
-                                }
-                            )
-                            HorizontalDivider(color = LowerDivider)
-                            DropdownMenuItem(
-                                text = { MenuText(stringResource(R.string.home_menu_exit)) },
-                                onClick = {
-                                    menuExpanded = false
-                                    onExitClick()
-                                }
-                            )
-                        }
-                    }
+                    TaskHamburgerMenuButton(
+                        expanded = menuExpanded,
+                        onExpandedChange = { menuExpanded = it },
+                        iconTint = LowerPrimaryText,
+                        menuBackgroundColor = LowerCardColor,
+                        dividerColor = LowerDivider,
+                        textColor = LowerPrimaryText,
+                        onHomeClick = onHomeClick,
+                        onKorClick = onKorClick,
+                        onEngClick = onEngClick,
+                        onAppInfoClick = { appInfoVisible = true },
+                        onGuideClick = onGuideClick,
+                        onContactClick = onContactClick,
+                        onExitClick = onExitClick
+                    )
                 }
 
                 Row(
@@ -254,7 +180,8 @@ fun TaskPresetDetailScreen(
                         Icon(
                             imageVector = Icons.Outlined.Search,
                             contentDescription = stringResource(R.string.task_preset_lower_search_hint),
-                            tint = LowerPrimaryText
+                            tint = LowerPrimaryText,
+                            modifier = Modifier.size(56.dp)
                         )
                     }
 
@@ -265,7 +192,8 @@ fun TaskPresetDetailScreen(
                         Icon(
                             imageVector = Icons.Outlined.Add,
                             contentDescription = stringResource(R.string.task_preset_lower_add_icon_desc),
-                            tint = LowerPrimaryText
+                            tint = LowerPrimaryText,
+                            modifier = Modifier.size(56.dp)
                         )
                     }
                 }
@@ -279,6 +207,7 @@ fun TaskPresetDetailScreen(
                             .padding(horizontal = 18.dp, vertical = 4.dp),
                         singleLine = true,
                         shape = RoundedCornerShape(18.dp),
+                        colors = taskOutlinedTextFieldColors(LowerPrimaryText, LowerSecondaryText),
                         placeholder = {
                             Text(
                                 text = stringResource(R.string.task_preset_lower_search_hint),
@@ -315,16 +244,6 @@ fun TaskPresetDetailScreen(
             }
         }
     }
-}
-
-@Composable
-private fun MenuText(text: String) {
-    Text(
-        text = text,
-        color = LowerPrimaryText,
-        fontSize = 15.sp,
-        fontWeight = FontWeight.Medium
-    )
 }
 
 @Composable
@@ -387,17 +306,21 @@ private fun EmptyWorkCard(
             text = text,
             fontSize = 15.sp,
             color = LowerSecondaryText,
-            modifier = Modifier.padding(horizontal = 18.dp, vertical = 20.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 18.dp, vertical = 20.dp),
+            textAlign = TextAlign.Center
         )
     }
 }
 
+@Composable
 private fun toCycleShort(unit: CycleUnit): String {
     return when (unit) {
-        CycleUnit.DAY -> "D"
-        CycleUnit.WEEK -> "W"
-        CycleUnit.MONTH -> "M"
-        CycleUnit.YEAR -> "Y"
+        CycleUnit.DAY -> stringResource(R.string.cycle_unit_day_short)
+        CycleUnit.WEEK -> stringResource(R.string.cycle_unit_week_short)
+        CycleUnit.MONTH -> stringResource(R.string.cycle_unit_month_short)
+        CycleUnit.YEAR -> stringResource(R.string.cycle_unit_year_short)
     }
 }
 

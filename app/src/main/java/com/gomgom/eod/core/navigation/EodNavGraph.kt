@@ -6,6 +6,9 @@ import android.net.Uri
 import android.os.Build
 import android.widget.Toast
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavType
@@ -27,6 +30,7 @@ import com.gomgom.eod.feature.task.screens.TaskPresetDetailScreen
 import com.gomgom.eod.feature.task.screens.TaskPresetScreen
 import com.gomgom.eod.feature.task.screens.TaskPresetWorkAddScreen
 import com.gomgom.eod.feature.task.screens.TaskPresetWorkDetailScreen
+import com.gomgom.eod.feature.task.screens.TaskGuideScreen
 import com.gomgom.eod.feature.task.screens.TaskVesselAddScreen
 import com.gomgom.eod.feature.task.screens.TaskVesselDetailScreen
 import com.gomgom.eod.feature.task.wrapper.TaskToolWrapper
@@ -37,17 +41,11 @@ fun EodNavGraph(
 ) {
     val context = LocalContext.current
     val navController = rememberNavController()
+    val alarmTarget by TaskAlarmNavigationBridge.target.collectAsState()
 
     val mailTo = stringResource(R.string.home_contact_mail_to)
     val mailSubject = stringResource(R.string.home_contact_mail_subject)
-    val appLabel = stringResource(R.string.home_contact_mail_app)
-    val appValue = stringResource(R.string.home_title_app)
-    val versionLabel = stringResource(R.string.home_contact_mail_version)
     val versionValue = stringResource(R.string.home_app_info_version_value)
-    val deviceLabel = stringResource(R.string.home_contact_mail_device)
-    val androidLabel = stringResource(R.string.home_contact_mail_android)
-    val languageLabel = stringResource(R.string.home_contact_mail_language)
-    val bodyLabel = stringResource(R.string.home_contact_mail_body_label)
     val openMailError = stringResource(R.string.home_contact_mail_open_error)
 
     val goHome: () -> Unit = {
@@ -67,15 +65,11 @@ fun EodNavGraph(
     }
 
     val openContactMail: () -> Unit = {
-        val languageValue = AppLanguageManager.currentLanguageTag(context)
-
         val body = buildString {
-            append("$appLabel: $appValue\n")
-            append("$versionLabel: $versionValue\n")
-            append("$deviceLabel: ${Build.MANUFACTURER} ${Build.MODEL}\n")
-            append("$androidLabel: ${Build.VERSION.RELEASE}\n")
-            append("$languageLabel: $languageValue\n\n")
-            append("$bodyLabel:\n")
+            append("App Version: $versionValue\n")
+            append("Android Version: ${Build.VERSION.RELEASE}\n")
+            append("Device Model: ${Build.MANUFACTURER} ${Build.MODEL}\n")
+            append("Issue:\n")
         }
 
         val intent = Intent(Intent.ACTION_SENDTO).apply {
@@ -104,6 +98,7 @@ fun EodNavGraph(
                 onHomeClick = goHome,
                 onKorClick = applyKor,
                 onEngClick = applyEng,
+                onGuideClick = { navController.navigate(EodRoute.TASK_GUIDE) },
                 onContactClick = openContactMail,
                 onExitClick = onExitApp
             )
@@ -119,6 +114,7 @@ fun EodNavGraph(
                 },
                 onAddVesselClick = { navController.navigate(EodRoute.TASK_VESSEL_ADD) },
                 onDataManageClick = { navController.navigate(EodRoute.TASK_DATA_MANAGE) },
+                onGuideClick = { navController.navigate(EodRoute.TASK_GUIDE) },
                 onHomeClick = goHome,
                 onKorClick = applyKor,
                 onEngClick = applyEng,
@@ -137,6 +133,7 @@ fun EodNavGraph(
                 onHomeClick = goHome,
                 onKorClick = applyKor,
                 onEngClick = applyEng,
+                onGuideClick = { navController.navigate(EodRoute.TASK_GUIDE) },
                 onContactClick = openContactMail,
                 onExitClick = onExitApp
             )
@@ -149,6 +146,7 @@ fun EodNavGraph(
                 onHomeClick = goHome,
                 onKorClick = applyKor,
                 onEngClick = applyEng,
+                onGuideClick = { navController.navigate(EodRoute.TASK_GUIDE) },
                 onContactClick = openContactMail,
                 onExitClick = onExitApp
             )
@@ -174,6 +172,7 @@ fun EodNavGraph(
                 onHomeClick = goHome,
                 onKorClick = applyKor,
                 onEngClick = applyEng,
+                onGuideClick = { navController.navigate(EodRoute.TASK_GUIDE) },
                 onContactClick = openContactMail,
                 onExitClick = onExitApp
             )
@@ -194,6 +193,7 @@ fun EodNavGraph(
                 onHomeClick = goHome,
                 onKorClick = applyKor,
                 onEngClick = applyEng,
+                onGuideClick = { navController.navigate(EodRoute.TASK_GUIDE) },
                 onContactClick = openContactMail,
                 onExitClick = onExitApp
             )
@@ -218,6 +218,7 @@ fun EodNavGraph(
                 onHomeClick = goHome,
                 onKorClick = applyKor,
                 onEngClick = applyEng,
+                onGuideClick = { navController.navigate(EodRoute.TASK_GUIDE) },
                 onContactClick = openContactMail,
                 onExitClick = onExitApp
             )
@@ -225,7 +226,13 @@ fun EodNavGraph(
 
         composable(EodRoute.TASK_ALARM) {
             TaskAlarmScreen(
-                onBackClick = { navController.popBackStack() }
+                onBackClick = { navController.popBackStack() },
+                onHomeClick = goHome,
+                onKorClick = applyKor,
+                onEngClick = applyEng,
+                onGuideClick = { navController.navigate(EodRoute.TASK_GUIDE) },
+                onContactClick = openContactMail,
+                onExitClick = onExitApp
             )
         }
 
@@ -243,7 +250,24 @@ fun EodNavGraph(
 
         composable(EodRoute.TASK_DATA_MANAGE) {
             TaskDataManageScreen(
-                onBackClick = { navController.popBackStack() }
+                onBackClick = { navController.popBackStack() },
+                onHomeClick = goHome,
+                onKorClick = applyKor,
+                onEngClick = applyEng,
+                onGuideClick = { navController.navigate(EodRoute.TASK_GUIDE) },
+                onContactClick = openContactMail,
+                onExitClick = onExitApp
+            )
+        }
+
+        composable(EodRoute.TASK_GUIDE) {
+            TaskGuideScreen(
+                onBackClick = { navController.popBackStack() },
+                onHomeClick = goHome,
+                onKorClick = applyKor,
+                onEngClick = applyEng,
+                onContactClick = openContactMail,
+                onExitClick = onExitApp
             )
         }
 
@@ -257,7 +281,13 @@ fun EodNavGraph(
 
             TaskVesselDetailScreen(
                 vesselId = vesselId,
-                onBackClick = { navController.popBackStack() }
+                onBackClick = { navController.popBackStack() },
+                onHomeClick = goHome,
+                onKorClick = applyKor,
+                onEngClick = applyEng,
+                onGuideClick = { navController.navigate(EodRoute.TASK_GUIDE) },
+                onContactClick = openContactMail,
+                onExitClick = onExitApp
             )
         }
 
@@ -308,6 +338,13 @@ fun EodNavGraph(
             CargoInfoTopPlaceholderScreen(
                 onBackClick = { navController.popBackStack() }
             )
+        }
+    }
+
+    LaunchedEffect(alarmTarget) {
+        val target = alarmTarget ?: return@LaunchedEffect
+        navController.navigate(EodRoute.taskVesselDetail(target.vesselId)) {
+            launchSingleTop = true
         }
     }
 }
