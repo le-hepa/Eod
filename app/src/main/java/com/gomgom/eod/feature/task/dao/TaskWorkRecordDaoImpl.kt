@@ -5,14 +5,42 @@ import com.gomgom.eod.feature.task.model.TaskWorkRecordAttachmentItem
 import com.gomgom.eod.feature.task.model.TaskWorkRecordItem
 import com.gomgom.eod.feature.task.model.TaskWorkRecordStatus
 import com.gomgom.eod.feature.task.model.TaskWorkRecordType
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.update
 import java.time.LocalDate
 
 class TaskWorkRecordDaoImpl(
     private val database: TaskWorkRecordDatabase
 ) : TaskWorkRecordDao {
+    private data class RecordIndex(
+        val recordsById: Map<Long, TaskWorkRecordItem>,
+        val recordsByVesselNewest: Map<Long, List<TaskWorkRecordItem>>,
+        val groupedByVesselDate: Map<Long, Map<LocalDate, List<TaskWorkRecordItem>>>,
+        val recordsByVesselDate: Map<Pair<Long, LocalDate>, List<TaskWorkRecordItem>>,
+        val recordsByVesselDateType: Map<Triple<Long, LocalDate, TaskWorkRecordType>, List<TaskWorkRecordItem>>,
+        val latestRegularByWork: Map<Pair<Long, Long>, TaskWorkRecordItem>,
+        val recentRegularByWork: Map<Pair<Long, Long>, List<TaskWorkRecordItem>>,
+        val recentIrregularByWork: Map<Pair<Long, String>, List<TaskWorkRecordItem>>,
+        val irregularAlarmByVessel: Map<Long, List<TaskWorkRecordItem>>
+    )
+
+    private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
+    private val recordIndex = MutableStateFlow(buildRecordIndex(emptyList()))
+
+    init {
+        scope.launch {
+            database.records.collect { records ->
+                recordIndex.value = buildRecordIndex(records)
+            }
+        }
+    }
 
     override fun allRecords(): List<TaskWorkRecordItem> {
         database.ensureLoadedForMutation()
@@ -20,24 +48,20 @@ class TaskWorkRecordDaoImpl(
     }
 
     override fun recordsForVessel(vesselId: Long): Flow<List<TaskWorkRecordItem>> {
-        return database.records.map { all ->
-            all.filter { it.vesselId == vesselId }.sortedNewestFirst()
+        return recordIndex.map { indexed ->
+            indexed.recordsByVesselNewest[vesselId].orEmpty()
         }
     }
 
     override fun recordsGroupedByDate(vesselId: Long): Flow<Map<LocalDate, List<TaskWorkRecordItem>>> {
-        return database.records.map { all ->
-            all.asSequence()
-                .filter { it.vesselId == vesselId }
-                .groupBy { it.recordDate }
-                .mapValues { (_, items) -> items.sortedForDisplay() }
+        return recordIndex.map { indexed ->
+            indexed.groupedByVesselDate[vesselId].orEmpty()
         }
     }
 
     override fun recordsForDate(vesselId: Long, recordDate: LocalDate): Flow<List<TaskWorkRecordItem>> {
-        return database.records.map { all ->
-            all.filter { it.vesselId == vesselId && it.recordDate == recordDate }
-                .sortedForDisplay()
+        return recordIndex.map { indexed ->
+            indexed.recordsByVesselDate[vesselId to recordDate].orEmpty()
         }
     }
 
@@ -46,12 +70,8 @@ class TaskWorkRecordDaoImpl(
         recordDate: LocalDate,
         recordType: TaskWorkRecordType
     ): Flow<List<TaskWorkRecordItem>> {
-        return database.records.map { all ->
-            all.filter {
-                it.vesselId == vesselId &&
-                    it.recordDate == recordDate &&
-                    it.recordType == recordType
-            }.sortedForDisplay()
+        return recordIndex.map { indexed ->
+            indexed.recordsByVesselDateType[Triple(vesselId, recordDate, recordType)].orEmpty()
         }
     }
 
@@ -61,12 +81,17 @@ class TaskWorkRecordDaoImpl(
         includeAllDates: Boolean,
         query: String
     ): Flow<List<TaskWorkRecordItem>> {
-        return database.records.map { all ->
-            all.asSequence()
-                .filter { it.vesselId == vesselId }
-                .filter { includeAllDates || it.recordDate == recordDate }
+        val trimmedQuery = query.trim()
+        return recordIndex.map { indexed ->
+            val base = if (includeAllDates) {
+                indexed.recordsByVesselNewest[vesselId].orEmpty()
+            } else {
+                indexed.recordsByVesselDate[vesselId to recordDate].orEmpty()
+            }
+
+            base.asSequence()
                 .filter {
-                    query.isBlank() || it.workName.contains(query.trim(), ignoreCase = true)
+                    trimmedQuery.isBlank() || it.workName.contains(trimmedQuery, ignoreCase = true)
                 }
                 .toList()
                 .sortedForRecordList()
@@ -79,49 +104,35 @@ class TaskWorkRecordDaoImpl(
         presetWorkId: Long?,
         workName: String
     ): Flow<List<TaskWorkRecordItem>> {
-        return database.records.map { all ->
-            val trimmedName = workName.trim()
+        val trimmedName = workName.trim()
+        return recordIndex.map { indexed ->
+            when (recordType) {
+                TaskWorkRecordType.REGULAR ->
+                    presetWorkId?.let { indexed.recentRegularByWork[vesselId to it].orEmpty() }.orEmpty()
 
-            all.filter { record ->
-                when (recordType) {
-                    TaskWorkRecordType.REGULAR ->
-                        presetWorkId != null &&
-                            record.vesselId == vesselId &&
-                            record.recordType == TaskWorkRecordType.REGULAR &&
-                            record.presetWorkId == presetWorkId
-
-                    TaskWorkRecordType.IRREGULAR ->
-                        trimmedName.isNotBlank() &&
-                            record.vesselId == vesselId &&
-                            record.recordType == TaskWorkRecordType.IRREGULAR &&
-                            record.workName == trimmedName
-                }
-            }.sortedNewestFirst()
+                TaskWorkRecordType.IRREGULAR ->
+                    if (trimmedName.isBlank()) {
+                        emptyList()
+                    } else {
+                        indexed.recentIrregularByWork[vesselId to trimmedName].orEmpty()
+                    }
+            }
         }
     }
 
     override fun latestRegularRecordForWork(vesselId: Long, presetWorkId: Long): TaskWorkRecordItem? {
         database.ensureLoadedForMutation()
-        return database.records.value
-            .asSequence()
-            .filter {
-                it.vesselId == vesselId &&
-                    it.recordType == TaskWorkRecordType.REGULAR &&
-                    it.presetWorkId == presetWorkId
-            }
-            .toList()
-            .sortedNewestFirst()
-            .firstOrNull()
+        return recordIndex.value.latestRegularByWork[vesselId to presetWorkId]
     }
 
     override fun irregularAlarmCandidatesForVessel(vesselId: Long): List<TaskWorkRecordItem> {
         database.ensureLoadedForMutation()
-        return database.records.value.irregularAlarmCandidatesForVessel(vesselId)
+        return recordIndex.value.irregularAlarmByVessel[vesselId].orEmpty()
     }
 
     override fun irregularAlarmCandidatesForVesselFlow(vesselId: Long): Flow<List<TaskWorkRecordItem>> {
-        return database.records.map { all ->
-            all.irregularAlarmCandidatesForVessel(vesselId)
+        return recordIndex.map { indexed ->
+            indexed.irregularAlarmByVessel[vesselId].orEmpty()
         }
     }
 
@@ -276,5 +287,53 @@ class TaskWorkRecordDaoImpl(
                 grouped.sortedNewestFirst().firstOrNull()
             }
             .sortedBy { it.workName.lowercase() }
+    }
+
+    private fun buildRecordIndex(records: List<TaskWorkRecordItem>): RecordIndex {
+        val recordsById = records.associateBy { it.id }
+        val recordsByVessel = records.groupBy { it.vesselId }
+        val recordsByVesselNewest = recordsByVessel.mapValues { (_, items) ->
+            items.sortedNewestFirst()
+        }
+        val groupedByVesselDate = recordsByVessel.mapValues { (_, items) ->
+            items.groupBy { it.recordDate }
+                .mapValues { (_, grouped) -> grouped.sortedForDisplay() }
+        }
+        val recordsByVesselDate = groupedByVesselDate.flatMap { (vesselId, grouped) ->
+            grouped.map { (date, items) -> (vesselId to date) to items }
+        }.toMap()
+        val recordsByVesselDateType = recordsByVesselDate.flatMap { (key, items) ->
+            items.groupBy { it.recordType }
+                .map { (type, grouped) ->
+                    Triple(key.first, key.second, type) to grouped.sortedForDisplay()
+                }
+        }.toMap()
+        val regularRecords = records.asSequence()
+            .filter { it.recordType == TaskWorkRecordType.REGULAR && it.presetWorkId != null }
+            .toList()
+        val latestRegularByWork = regularRecords.groupBy { it.vesselId to requireNotNull(it.presetWorkId) }
+            .mapValues { (_, items) -> items.sortedNewestFirst().first() }
+        val recentRegularByWork = regularRecords.groupBy { it.vesselId to requireNotNull(it.presetWorkId) }
+            .mapValues { (_, items) -> items.sortedNewestFirst() }
+        val recentIrregularByWork = records.asSequence()
+            .filter { it.recordType == TaskWorkRecordType.IRREGULAR }
+            .filter { it.workName.trim().isNotBlank() }
+            .groupBy { it.vesselId to it.workName.trim() }
+            .mapValues { (_, items) -> items.sortedNewestFirst() }
+        val irregularAlarmByVessel = recordsByVessel.mapValues { (vesselId, items) ->
+            items.irregularAlarmCandidatesForVessel(vesselId)
+        }
+
+        return RecordIndex(
+            recordsById = recordsById,
+            recordsByVesselNewest = recordsByVesselNewest,
+            groupedByVesselDate = groupedByVesselDate,
+            recordsByVesselDate = recordsByVesselDate,
+            recordsByVesselDateType = recordsByVesselDateType,
+            latestRegularByWork = latestRegularByWork,
+            recentRegularByWork = recentRegularByWork,
+            recentIrregularByWork = recentIrregularByWork,
+            irregularAlarmByVessel = irregularAlarmByVessel
+        )
     }
 }

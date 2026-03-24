@@ -24,6 +24,7 @@ object EodRoute {
     const val PORTINFO_RECORD_EDITOR = "portinfo_record_editor/{recordId}"
 
     const val CARGOINFO_TOP = "cargoinfo_top"
+    const val GAUGING_TOP = "gauging_top"
 
     fun taskPresetDetail(presetId: Long): String = "task_preset_detail/$presetId"
     fun taskPresetWorkAdd(presetId: Long): String = "task_preset_work_add/$presetId"

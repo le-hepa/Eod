@@ -17,7 +17,7 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material.icons.outlined.Save
 import androidx.compose.material3.AlertDialog
@@ -201,7 +201,7 @@ fun TaskPresetWorkDetailScreen(
                         modifier = Modifier.size(42.dp)
                     ) {
                         Icon(
-                            imageVector = Icons.Outlined.ArrowBack,
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = stringResource(R.string.common_close),
                             tint = WorkDetailPrimaryText,
                             modifier = Modifier.size(28.dp)

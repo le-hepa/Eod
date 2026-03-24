@@ -1,5 +1,7 @@
 package com.gomgom.eod.feature.task.repository
 
+import com.gomgom.eod.EodApp
+import com.gomgom.eod.feature.task.alarm.TaskAlarmScheduler
 import com.gomgom.eod.feature.task.dao.TaskAlarmSettingsDao
 import com.gomgom.eod.feature.task.dao.TaskAlarmSettingsDaoProvider
 import com.gomgom.eod.feature.task.dao.TaskAlarmSettingsDaoImpl
@@ -22,6 +24,11 @@ class TaskAlarmSettingsRepositoryImpl(
 
     override fun setRegularWorkAlarmEnabled(workId: Long, enabled: Boolean) {
         dao.setRegularWorkAlarmEnabled(workId, enabled)
+        TaskTopRepositoryProvider.repository.uiState.value.vesselItems
+            .filter { it.enabled }
+            .forEach { vessel ->
+                TaskAlarmScheduler.syncForRegularWork(EodApp.appContext, vessel.id, workId)
+            }
     }
 
     override fun isRegularWorkAlarmEnabled(workId: Long, defaultValue: Boolean): Boolean {
@@ -30,6 +37,7 @@ class TaskAlarmSettingsRepositoryImpl(
 
     override fun setIrregularWorkAlarmEnabled(vesselId: Long, workName: String, enabled: Boolean) {
         dao.setIrregularWorkAlarmEnabled(vesselId, workName, enabled)
+        TaskAlarmScheduler.syncForIrregularWork(EodApp.appContext, vesselId, workName)
     }
 
     override fun isIrregularWorkAlarmEnabled(vesselId: Long, workName: String, defaultValue: Boolean): Boolean {
@@ -39,6 +47,7 @@ class TaskAlarmSettingsRepositoryImpl(
 
     override fun clearIrregularWorkAlarm(vesselId: Long, workName: String) {
         dao.clearIrregularWorkAlarm(vesselId, workName)
+        TaskAlarmScheduler.syncForIrregularWork(EodApp.appContext, vesselId, workName)
     }
 
     override fun clearAll() {

@@ -59,6 +59,7 @@ import com.gomgom.eod.core.common.AutoResizeText
 private data class HomeCardItem(
     val title: String,
     val backgroundBrush: Brush,
+    val compactTitle: Boolean = false,
     val onClick: () -> Unit
 )
 
@@ -74,6 +75,7 @@ fun EodHomeScreen(
     onTaskClick: () -> Unit,
     onPortInfoClick: () -> Unit,
     onCargoInfoClick: () -> Unit,
+    onGaugingClick: () -> Unit,
     onHomeClick: () -> Unit,
     onKorClick: () -> Unit,
     onEngClick: () -> Unit,
@@ -107,11 +109,12 @@ fun EodHomeScreen(
             onClick = onCargoInfoClick
         ),
         HomeCardItem(
-            title = stringResource(R.string.home_card_coming_soon),
+            title = "Tank\nGauging/Ullaging",
             backgroundBrush = Brush.linearGradient(
-                colors = listOf(Color(0xFFFAFAFA), Color(0xFFF2F3F5))
+                colors = listOf(Color(0xFFF8FBFC), Color(0xFFEFF5F8))
             ),
-            onClick = {}
+            compactTitle = true,
+            onClick = onGaugingClick
         )
     )
 
@@ -257,6 +260,7 @@ fun EodHomeScreen(
                     HomeEntryCard(
                         title = item.title,
                         backgroundBrush = item.backgroundBrush,
+                        compactTitle = item.compactTitle,
                         onClick = item.onClick
                     )
                 }
@@ -281,6 +285,7 @@ private fun MenuText(
 private fun HomeEntryCard(
     title: String,
     backgroundBrush: Brush,
+    compactTitle: Boolean,
     onClick: () -> Unit
 ) {
     Card(
@@ -300,20 +305,23 @@ private fun HomeEntryCard(
                     shape = RoundedCornerShape(28.dp)
                 )
                 .background(backgroundBrush)
-                .padding(vertical = 42.dp, horizontal = 12.dp),
+                .padding(
+                    vertical = if (compactTitle) 34.dp else 42.dp,
+                    horizontal = 12.dp
+                ),
             contentAlignment = Alignment.Center
         ) {
             AutoResizeText(
                 text = title,
                 style = TextStyle(
-                    fontSize = 20.sp,
-                    lineHeight = 24.sp,
+                    fontSize = if (compactTitle) 18.sp else 20.sp,
+                    lineHeight = if (compactTitle) 20.sp else 24.sp,
                     fontWeight = FontWeight.SemiBold,
                     color = HomePrimaryText,
                     textAlign = TextAlign.Center
                 ),
                 maxLines = 2,
-                minFontSize = 14.sp,
+                minFontSize = if (compactTitle) 13.sp else 14.sp,
                 textAlign = TextAlign.Center
             )
         }

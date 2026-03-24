@@ -24,7 +24,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material.icons.outlined.FilterList
 import androidx.compose.material.icons.outlined.Sort
@@ -154,7 +154,6 @@ fun TaskAlarmScreen(
     ) { granted ->
         if (granted) {
             pendingEnableAction?.invoke()
-            TaskAlarmScheduler.syncAll(context)
         }
         pendingEnableAction = null
         permissionGuideVisible = false
@@ -369,7 +368,7 @@ fun TaskAlarmScreen(
                             modifier = Modifier.size(42.dp)
                         ) {
                             Icon(
-                                imageVector = Icons.Outlined.ArrowBack,
+                                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                                 contentDescription = stringResource(R.string.common_close),
                                 tint = AlarmPrimaryText,
                                 modifier = Modifier.size(56.dp)
@@ -553,7 +552,6 @@ fun TaskAlarmScreen(
                                 val applyChange = {
                                     workViewModel.updateAlarmEnabled(item.id, checked)
                                     alarmSettingsViewModel.setRegularWorkAlarmEnabled(item.id, checked)
-                                    if (uiState.alarmEnabled) TaskAlarmScheduler.syncAll(context)
                                 }
                                 if (checked) requestNotificationPermissionIfNeeded(applyChange) else applyChange()
                             } else {
@@ -564,7 +562,6 @@ fun TaskAlarmScreen(
                                             workName = item.name.trim(),
                                             enabled = checked
                                         )
-                                        if (uiState.alarmEnabled) TaskAlarmScheduler.syncAll(context)
                                     }
                                     Unit
                                 }

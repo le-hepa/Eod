@@ -23,7 +23,7 @@ import com.gomgom.eod.feature.portinfo.porttool.entity.PortRecordEntity
         PortConditionEntity::class,
         PortAttachmentEntity::class
     ],
-    version = 2,
+    version = 4,
     exportSchema = false
 )
 abstract class PortLocalDatabase : RoomDatabase() {
@@ -42,7 +42,7 @@ abstract class PortLocalDatabase : RoomDatabase() {
         PortConditionEntity::class,
         PortAttachmentEntity::class
     ],
-    version = 2,
+    version = 4,
     exportSchema = false
 )
 abstract class PortSharedDatabase : RoomDatabase() {

@@ -10,6 +10,7 @@ import androidx.room.PrimaryKey
 import androidx.room.Query
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.Transaction
 import com.gomgom.eod.EodApp
 import com.gomgom.eod.feature.task.model.TaskAlarmSettings
 import com.gomgom.eod.feature.task.model.TaskWorkRecordAttachmentItem
@@ -121,6 +122,9 @@ interface TaskRoomDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun upsertVessels(items: List<TaskVesselEntity>)
 
+    @Query("DELETE FROM task_vessels WHERE id IN (:ids)")
+    fun deleteVesselsByIds(ids: List<Long>)
+
     @Query("DELETE FROM task_vessels")
     fun clearVessels()
 
@@ -130,6 +134,9 @@ interface TaskRoomDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun upsertWorkRecords(items: List<TaskWorkRecordEntity>)
 
+    @Query("DELETE FROM task_work_records WHERE id IN (:ids)")
+    fun deleteWorkRecordsByIds(ids: List<Long>)
+
     @Query("DELETE FROM task_work_records")
     fun clearWorkRecords()
 
@@ -138,6 +145,9 @@ interface TaskRoomDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun upsertAttachments(items: List<TaskWorkRecordAttachmentEntity>)
+
+    @Query("DELETE FROM task_work_record_attachments WHERE id IN (:ids)")
+    fun deleteAttachmentsByIds(ids: List<Long>)
 
     @Query("DELETE FROM task_work_record_attachments")
     fun clearAttachments()

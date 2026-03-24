@@ -22,6 +22,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.rounded.DeleteOutline
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.FilledTonalIconButton
@@ -40,10 +42,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.gomgom.eod.R
 import com.gomgom.eod.core.common.AppLanguageManager
 import com.gomgom.eod.feature.portinfo.porttool.repository.PortUnlocodeLookupRepository
 import com.gomgom.eod.feature.portinfo.porttool.wrapper.PortToolSession
@@ -69,6 +73,7 @@ fun PortInfoRecordDetailScreen(
     val dbState by viewModel.dbState.collectAsState()
     val tempState by viewModel.tempState.collectAsState()
     var showMenu by remember { mutableStateOf(false) }
+    var showDeleteConfirm by remember { mutableStateOf(false) }
 
     LaunchedEffect(recordId, source) {
         viewModel.selectSource(source)
@@ -84,7 +89,7 @@ fun PortInfoRecordDetailScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 IconButton(onClick = onBackClick) {
-                    Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back", tint = Color(0xFF123A73))
+                    Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.port_info_back), tint = Color(0xFF123A73))
                 }
                 Spacer(modifier = Modifier.weight(1f))
                 Text(
@@ -96,32 +101,36 @@ fun PortInfoRecordDetailScreen(
                 Spacer(modifier = Modifier.weight(1f))
                 if (source == PortToolSource.LOCAL) {
                     FilledTonalIconButton(onClick = onAugmentClick) {
-                        Icon(Icons.Filled.Edit, contentDescription = "Edit")
+                        Icon(Icons.Filled.Edit, contentDescription = stringResource(R.string.common_edit))
+                    }
+                } else {
+                    FilledTonalIconButton(onClick = { showDeleteConfirm = true }) {
+                        Icon(Icons.Rounded.DeleteOutline, contentDescription = stringResource(R.string.common_delete))
                     }
                 }
                 IconButton(onClick = { showMenu = true }) {
-                    Icon(Icons.Filled.Menu, contentDescription = "Menu", tint = Color(0xFF123A73))
+                    Icon(Icons.Filled.Menu, contentDescription = stringResource(R.string.common_home), tint = Color(0xFF123A73))
                 }
                 DropdownMenu(expanded = showMenu, onDismissRequest = { showMenu = false }) {
-                    DropdownMenuItem(text = { Text("Home") }, onClick = {
+                    DropdownMenuItem(text = { Text(stringResource(R.string.home_menu_home)) }, onClick = {
                         showMenu = false
                         onBackClick()
                     })
-                    DropdownMenuItem(text = { Text("KOR") }, onClick = {
+                    DropdownMenuItem(text = { Text(stringResource(R.string.home_menu_kor)) }, onClick = {
                         showMenu = false
                         AppLanguageManager.applyKor(context)
                         (context as? Activity)?.recreate()
                     })
-                    DropdownMenuItem(text = { Text("ENG") }, onClick = {
+                    DropdownMenuItem(text = { Text(stringResource(R.string.home_menu_eng)) }, onClick = {
                         showMenu = false
                         AppLanguageManager.applyEng(context)
                         (context as? Activity)?.recreate()
                     })
-                    DropdownMenuItem(text = { Text("App Info") }, onClick = {
+                    DropdownMenuItem(text = { Text(stringResource(R.string.home_menu_app_info)) }, onClick = {
                         showMenu = false
-                        Toast.makeText(context, "Version ${context.packageManager.getPackageInfo(context.packageName, 0).versionName}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, context.getString(R.string.port_info_version_toast, context.packageManager.getPackageInfo(context.packageName, 0).versionName), Toast.LENGTH_SHORT).show()
                     })
-                    DropdownMenuItem(text = { Text("Contact") }, onClick = {
+                    DropdownMenuItem(text = { Text(stringResource(R.string.home_menu_contact)) }, onClick = {
                         showMenu = false
                         val intent = Intent(Intent.ACTION_SENDTO).apply {
                             data = Uri.parse("mailto:")
@@ -133,7 +142,7 @@ fun PortInfoRecordDetailScreen(
                         }
                         runCatching { context.startActivity(intent) }
                     })
-                    DropdownMenuItem(text = { Text("Exit") }, onClick = {
+                    DropdownMenuItem(text = { Text(stringResource(R.string.home_menu_exit)) }, onClick = {
                         showMenu = false
                         (context as? Activity)?.finish()
                     })
@@ -142,6 +151,27 @@ fun PortInfoRecordDetailScreen(
         }
     ) { innerPadding ->
         val bundle = dbState.selectedRecord ?: tempState.editorBundle
+        if (showDeleteConfirm) {
+            AlertDialog(
+                onDismissRequest = { showDeleteConfirm = false },
+                title = { Text(stringResource(R.string.port_info_attachment_delete_title)) },
+                text = { Text(stringResource(R.string.port_info_record_delete_message)) },
+                confirmButton = {
+                    androidx.compose.material3.TextButton(onClick = {
+                        showDeleteConfirm = false
+                        viewModel.delete(recordId)
+                        onBackClick()
+                    }) {
+                        Text(stringResource(R.string.common_delete))
+                    }
+                },
+                dismissButton = {
+                    androidx.compose.material3.TextButton(onClick = { showDeleteConfirm = false }) {
+                        Text(stringResource(R.string.common_cancel))
+                    }
+                }
+            )
+        }
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -155,9 +185,11 @@ fun PortInfoRecordDetailScreen(
             if (bundle != null) {
                 PortInfoRecordContent(
                     editable = false,
-                    bundle = bundle,
-                    countrySuggestions = emptyList(),
-                    portSuggestions = emptyList(),
+                    searchCardEditable = false,
+                    record = bundle.record,
+                    operations = bundle.operations,
+                    locations = bundle.locations,
+                    attachments = bundle.attachments,
                     isVesselReportingExpanded = tempState.isVesselReportingExpanded,
                     isAnchorageExpanded = tempState.isAnchorageExpanded,
                     isBerthExpanded = tempState.isBerthExpanded,
@@ -165,8 +197,9 @@ fun PortInfoRecordDetailScreen(
                     onToggleAnchorage = viewModel::toggleAnchorage,
                     onToggleBerth = viewModel::toggleBerth,
                     onBundleChange = {},
-                    onCountrySuggestionClick = {},
-                    onPortSuggestionClick = {},
+                    onEditorFieldFocusChange = { _, _ -> },
+                    onFieldSearchInputChange = { _, _ -> },
+                    onFormFieldSearchInputChange = { _, _ -> },
                     onAddAttachmentClick = {},
                     onDeleteAttachmentClick = {}
                 )

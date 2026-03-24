@@ -4,65 +4,66 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
+import android.provider.MediaStore
 import android.provider.OpenableColumns
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.result.ActivityResult
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.Edit
-import androidx.compose.material.icons.filled.MoreVert
-import androidx.compose.material.icons.filled.Save
+import androidx.compose.material.icons.rounded.Download
+import androidx.compose.material.icons.rounded.FolderShared
+import androidx.compose.material.icons.rounded.Inventory2
+import androidx.compose.material.icons.rounded.PhotoCamera
+import androidx.compose.material.icons.rounded.AttachFile
+import androidx.compose.material.icons.rounded.SaveAlt
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.FilledTonalIconButton
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
+import androidx.core.content.FileProvider
 import com.gomgom.eod.R
 import com.gomgom.eod.core.common.AppLanguageManager
 import com.gomgom.eod.feature.portinfo.porttool.entity.PortRecordBundle
@@ -71,17 +72,30 @@ import com.gomgom.eod.feature.portinfo.porttool.entity.PortRecordEntity
 import com.gomgom.eod.feature.portinfo.porttool.entity.PortToolType
 import com.gomgom.eod.feature.portinfo.porttool.repository.PortUnlocodeEntry
 import com.gomgom.eod.feature.portinfo.porttool.viewmodel.PortToolDbState
-import com.gomgom.eod.feature.portinfo.porttool.viewmodel.PortToolSearchMode
+import com.gomgom.eod.feature.portinfo.porttool.viewmodel.PortEditorFocusField
+import com.gomgom.eod.feature.portinfo.porttool.viewmodel.PortSearchDisplayMode
+import com.gomgom.eod.feature.portinfo.porttool.viewmodel.PortSearchResultItem
+import com.gomgom.eod.feature.portinfo.porttool.viewmodel.PortSearchSourceField
 import com.gomgom.eod.feature.portinfo.porttool.viewmodel.PortToolSource
 import com.gomgom.eod.feature.portinfo.porttool.viewmodel.PortToolTempState
 import com.gomgom.eod.feature.portinfo.porttool.viewmodel.PortToolUiState
 import com.gomgom.eod.feature.task.screens.TaskHamburgerMenuButton
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.io.BufferedReader
+import java.io.File
 import java.io.OutputStreamWriter
 import android.media.MediaMetadataRetriever
+import androidx.compose.ui.text.style.TextAlign
 
 @Composable
 fun PortInfoTopScreen(
+    screenState: PortScreenState,
+    currentSource: PortToolSource,
+    listItems: List<PortRecordListItem>,
+    canCreate: Boolean,
+    canEditRecord: Boolean,
     uiState: PortToolUiState,
     dbState: PortToolDbState,
     tempState: PortToolTempState,
@@ -89,36 +103,190 @@ fun PortInfoTopScreen(
     onRecordClick: (Long) -> Unit,
     onAddRecordClick: () -> Unit,
     onSaveClick: () -> Unit,
+    onEnterSearch: () -> Unit,
+    onEnterList: () -> Unit,
+    onEnterEdit: () -> Unit,
+    onSaveComplete: () -> Unit,
+    onDeleteCurrent: () -> Unit,
+    onDiscardAndGoSearch: () -> Unit,
+    onDiscardAndGoBack: () -> Unit,
     onToggleVesselReporting: () -> Unit,
     onToggleAnchorage: () -> Unit,
     onToggleBerth: () -> Unit,
     onBundleChange: (PortRecordBundle) -> Unit,
-    onCountrySuggestionClick: (PortUnlocodeEntry) -> Unit,
-    onPortSuggestionClick: (PortUnlocodeEntry) -> Unit,
+    onEditorFieldFocusChange: (PortEditorFocusField, Boolean) -> Unit,
+    onFieldSearchInputChange: (PortSearchSourceField, String) -> Unit,
+    onFormFieldSearchInputChange: (String, String) -> Unit,
+    onSearchResultSelect: (PortSearchResultItem) -> Unit,
     onAttachmentsSelected: (List<PortAttachmentEntity>) -> Unit,
     onAttachmentDelete: (Long) -> Unit,
     onSourceSelect: (PortToolSource) -> Unit,
-    onCountryKeywordChange: (String) -> Unit,
-    onPortKeywordChange: (String) -> Unit,
+    onSearchQueryChange: (String) -> Unit,
+    onSearchDisplayModeChange: (PortSearchDisplayMode) -> Unit,
     onSearchModeChange: () -> Unit,
+    listCountryFilter: String,
+    listPortFilter: String,
+    listCodeFilter: String,
+    onListCountryFilterChange: (String) -> Unit,
+    onListPortFilterChange: (String) -> Unit,
+    onListCodeFilterChange: (String) -> Unit,
     onExportJson: ((String) -> Unit) -> Unit,
     onExportCsv: ((String) -> Unit) -> Unit,
     onImportJson: (String, (Result<Unit>) -> Unit) -> Unit,
     onLiveSearchConfirm: () -> Unit,
     onLiveSearchCancel: () -> Unit,
-    onLiveSearchHeaderDismiss: () -> Unit
+    onLiveSearchHeaderDismiss: () -> Unit,
+    hasEditableChanges: Boolean
 ) {
     val context = LocalContext.current
+    val scope = rememberCoroutineScope()
     var showMenu by remember { mutableStateOf(false) }
     var showFilterMenu by remember { mutableStateOf(false) }
     var showDataManage by remember { mutableStateOf(false) }
     var showSaveConfirm by remember { mutableStateOf(false) }
+    var showSharedSourceInfo by remember { mutableStateOf(false) }
+    var currentSourceInfoMessage by remember { mutableStateOf<String?>(null) }
+    var showAttachmentOptions by remember { mutableStateOf(false) }
     var attachmentError by remember { mutableStateOf<String?>(null) }
-    val canEdit = uiState.activeSource == PortToolSource.LOCAL
+    var showDiscardSearchConfirm by remember { mutableStateOf(false) }
+    var showDiscardBackConfirm by remember { mutableStateOf(false) }
+    var showDeleteConfirm by remember { mutableStateOf(false) }
+    var pendingPhotoUri by remember { mutableStateOf<Uri?>(null) }
+    var pendingVideoUri by remember { mutableStateOf<Uri?>(null) }
+    var switchingSourceTo by remember { mutableStateOf<PortToolSource?>(null) }
+    val sourceCanEdit = currentSource == PortToolSource.LOCAL
     val versionLabel = context.packageManager.getPackageInfo(context.packageName, 0).versionName
-    val hasSearchInput = uiState.portKeyword.isNotBlank()
-    val displayResults = if (hasSearchInput) uiState.searchResults else emptyList()
-    val activeBundle = tempState.editorBundle ?: dbState.selectedRecord
+    val displayResults by remember(uiState.searchResults) { derivedStateOf { uiState.searchResults } }
+    val activeBundle by remember(tempState.editorBundle, dbState.selectedRecord) {
+        derivedStateOf { tempState.editorBundle ?: dbState.selectedRecord }
+    }
+    val searchPlaceholder by remember(screenState, uiState.searchMode, context) {
+        derivedStateOf {
+            if (screenState == PortScreenState.LIST) {
+                context.getString(R.string.port_info_search_placeholder_record_mode)
+            } else if (uiState.searchMode == com.gomgom.eod.feature.portinfo.porttool.viewmodel.PortToolSearchMode.COUNTRY_PORT) {
+                context.getString(R.string.port_info_search_placeholder_unlocode_mode)
+            } else {
+                context.getString(R.string.port_info_search_placeholder_record_mode)
+            }
+        }
+    }
+    val scrollState = rememberScrollState()
+    val searchFocusRequester = remember { FocusRequester() }
+    var isTopSearchFocused by remember { mutableStateOf(false) }
+    var hideLiveSearchHeaderAtTop by remember(uiState.isLiveSearchHeaderVisible) { mutableStateOf(false) }
+    var liveSearchHeaderScrolledAfterShow by remember(uiState.isLiveSearchHeaderVisible) { mutableStateOf(false) }
+    val resultFloatThreshold = 120
+    val isScrollAtTop by remember(scrollState) {
+        derivedStateOf { scrollState.value == 0 }
+    }
+    val targetSearchDisplayMode by remember(scrollState) {
+        derivedStateOf {
+            if (scrollState.value < resultFloatThreshold) PortSearchDisplayMode.PUSH
+            else PortSearchDisplayMode.FLOAT
+        }
+    }
+    val showLiveSearchHeader by remember(
+        uiState.isLiveSearchHeaderVisible,
+        uiState.isLiveSearchEnabled,
+        uiState.pendingLiveSearchCount,
+        hideLiveSearchHeaderAtTop
+    ) {
+        derivedStateOf {
+            uiState.isLiveSearchHeaderVisible &&
+                !uiState.isLiveSearchEnabled &&
+                uiState.pendingLiveSearchCount > 0 &&
+                !hideLiveSearchHeaderAtTop
+        }
+    }
+    val showAttachmentOptionsDialog by remember(showAttachmentOptions) {
+        derivedStateOf { showAttachmentOptions }
+    }
+    val showDataManageDialog by remember(showDataManage) {
+        derivedStateOf { showDataManage }
+    }
+    val showSaveConfirmDialog by remember(showSaveConfirm) {
+        derivedStateOf { showSaveConfirm }
+    }
+    val showSharedSourceInfoDialog by remember(showSharedSourceInfo) {
+        derivedStateOf { showSharedSourceInfo }
+    }
+    val showCurrentSourceInfoDialog by remember(currentSourceInfoMessage) {
+        derivedStateOf { currentSourceInfoMessage != null }
+    }
+    val currentAttachmentError by remember(attachmentError) {
+        derivedStateOf { attachmentError }
+    }
+    val showSwitchingSourceDialog by remember(switchingSourceTo) {
+        derivedStateOf { switchingSourceTo != null }
+    }
+    val showPushResults by remember(uiState.isSearchResultVisible, uiState.searchDisplayMode, displayResults) {
+        derivedStateOf {
+            uiState.isSearchResultVisible &&
+                uiState.searchDisplayMode == PortSearchDisplayMode.PUSH &&
+                displayResults.isNotEmpty()
+        }
+    }
+    val showFloatResults by remember(uiState.isSearchResultVisible, uiState.searchDisplayMode, displayResults) {
+        derivedStateOf {
+            uiState.isSearchResultVisible &&
+                uiState.searchDisplayMode == PortSearchDisplayMode.FLOAT &&
+                displayResults.isNotEmpty()
+        }
+    }
+    val searchInputsEnabled by remember(screenState) {
+        derivedStateOf { screenState != PortScreenState.RECORD }
+    }
+    val recordBodyEditable by remember(screenState, sourceCanEdit) {
+        derivedStateOf {
+            when (screenState) {
+                PortScreenState.SEARCH -> true
+                PortScreenState.CREATE -> sourceCanEdit
+                PortScreenState.EDIT -> sourceCanEdit
+                else -> false
+            }
+        }
+    }
+    val showResultPanels by remember(screenState) {
+        derivedStateOf { screenState == PortScreenState.SEARCH || screenState == PortScreenState.CREATE || screenState == PortScreenState.EDIT }
+    }
+    val stateLabel by remember(screenState, currentSource) {
+        derivedStateOf {
+            when (screenState) {
+                PortScreenState.LIST -> if (currentSource == PortToolSource.LOCAL) "리스트" else "공유기록 리스트"
+                PortScreenState.SEARCH -> if (currentSource == PortToolSource.LOCAL) "검색" else "공유기록 검색"
+                PortScreenState.CREATE -> "기록작성"
+                PortScreenState.RECORD -> if (currentSource == PortToolSource.LOCAL) "내 기록" else "공유 기록"
+                PortScreenState.EDIT -> "기록편집"
+            }
+        }
+    }
+
+    LaunchedEffect(uiState.isLiveSearchHeaderVisible, isScrollAtTop) {
+        if (!uiState.isLiveSearchHeaderVisible) {
+            hideLiveSearchHeaderAtTop = false
+            liveSearchHeaderScrolledAfterShow = false
+        } else if (!isScrollAtTop) {
+            liveSearchHeaderScrolledAfterShow = true
+            hideLiveSearchHeaderAtTop = false
+        } else if (liveSearchHeaderScrolledAfterShow) {
+            hideLiveSearchHeaderAtTop = true
+        }
+    }
+
+    LaunchedEffect(uiState.searchSourceField, uiState.isSearchResultVisible, targetSearchDisplayMode) {
+        if (!uiState.isSearchResultVisible) return@LaunchedEffect
+        onSearchDisplayModeChange(targetSearchDisplayMode)
+    }
+
+    LaunchedEffect(currentSource) {
+        if (switchingSourceTo == currentSource) {
+            switchingSourceTo = null
+            if (currentSource == PortToolSource.SHARED) {
+                showSharedSourceInfo = true
+            }
+        }
+    }
 
     val createJsonLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.CreateDocument("application/json")
@@ -175,51 +343,183 @@ fun PortInfoTopScreen(
         }
     }
 
+    val cameraLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.StartActivityForResult()
+    ) { _: ActivityResult ->
+        val currentBundle = activeBundle
+        val recordId = currentBundle?.record?.id ?: run {
+            pendingPhotoUri = null
+            pendingVideoUri = null
+            return@rememberLauncherForActivityResult
+        }
+        val existing = currentBundle.attachments
+        val capturedUris = listOfNotNull(pendingPhotoUri, pendingVideoUri)
+            .filter { uri -> context.contentResolver.openInputStream(uri)?.use { true } == true }
+        pendingPhotoUri = null
+        pendingVideoUri = null
+        if (capturedUris.isEmpty()) return@rememberLauncherForActivityResult
+        scope.launch {
+            val processed = buildAttachmentPayload(context, recordId, existing, capturedUris)
+            processed.fold(
+                onSuccess = { attachments ->
+                    if (attachments.isNotEmpty()) onAttachmentsSelected(attachments)
+                },
+                onFailure = {
+                    attachmentError = it.message ?: context.getString(R.string.port_info_attachment_error)
+                }
+            )
+        }
+    }
+
     val attachmentLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.OpenMultipleDocuments()
     ) { uris ->
-        val recordId = activeBundle?.record?.id ?: return@rememberLauncherForActivityResult
-        val existing = activeBundle.attachments
-        val processed = buildAttachmentPayload(context, recordId, existing, uris)
-        processed.fold(
-            onSuccess = { attachments ->
-                if (attachments.isNotEmpty()) onAttachmentsSelected(attachments)
-            },
-            onFailure = {
-                attachmentError = it.message ?: context.getString(R.string.port_info_attachment_error)
-            }
-        )
+        val currentBundle = activeBundle ?: return@rememberLauncherForActivityResult
+        val recordId = currentBundle.record.id
+        val existing = currentBundle.attachments
+        scope.launch {
+            val processed = buildAttachmentPayload(context, recordId, existing, uris)
+            processed.fold(
+                onSuccess = { attachments ->
+                    if (attachments.isNotEmpty()) onAttachmentsSelected(attachments)
+                },
+                onFailure = {
+                    attachmentError = it.message ?: context.getString(R.string.port_info_attachment_error)
+                }
+            )
+        }
     }
 
-    if (showDataManage) {
+    if (showAttachmentOptionsDialog) {
         AlertDialog(
-            onDismissRequest = { showDataManage = false },
+            onDismissRequest = { showAttachmentOptions = false },
             title = {
                 Text(
-                    stringResource(R.string.port_info_data_manage),
+                    stringResource(R.string.port_info_add_attachment),
+                    modifier = Modifier.fillMaxWidth(),
+                    textAlign = TextAlign.Center,
                     color = Color(0xFF123A73),
                     fontWeight = FontWeight.Bold
                 )
             },
             text = {
-                Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                    TextButton(onClick = {
-                        onSourceSelect(PortToolSource.LOCAL)
-                        showDataManage = false
-                    }) { Text(stringResource(R.string.port_info_my_records)) }
-                    TextButton(onClick = {
-                        onSourceSelect(PortToolSource.SHARED)
-                        showDataManage = false
-                    }) { Text(stringResource(R.string.port_info_shared_records)) }
-                    TextButton(onClick = { importJsonLauncher.launch(arrayOf("application/json")) }) {
-                        Text(stringResource(R.string.port_info_import))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    DataManageActionCard(
+                        modifier = Modifier.weight(1f),
+                        icon = Icons.Rounded.PhotoCamera,
+                        label = stringResource(R.string.port_info_attachment_camera)
+                    ) {
+                        showAttachmentOptions = false
+                        val tempUris = createCameraOutputUris(context)
+                        pendingPhotoUri = tempUris.first
+                        pendingVideoUri = tempUris.second
+                        val chooser = createCameraChooserIntent(context, tempUris.first, tempUris.second)
+                        if (chooser != null) {
+                            cameraLauncher.launch(chooser)
+                        } else {
+                            attachmentError = context.getString(R.string.port_info_attachment_error)
+                        }
                     }
-                    TextButton(onClick = { createJsonLauncher.launch("port_records.json") }) {
-                        Text(stringResource(R.string.port_info_export_json))
+                    DataManageActionCard(
+                        modifier = Modifier.weight(1f),
+                        icon = Icons.Rounded.AttachFile,
+                        label = stringResource(R.string.port_info_attachment_file_add)
+                    ) {
+                        showAttachmentOptions = false
+                        attachmentLauncher.launch(arrayOf("image/*", "video/*", "application/pdf", "*/*"))
                     }
-                    TextButton(onClick = { createCsvLauncher.launch("port_records.csv") }) {
-                        Text(stringResource(R.string.port_info_export_csv))
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { showAttachmentOptions = false }) { Text(stringResource(R.string.common_close)) }
+            }
+        )
+    }
+
+    if (showDataManageDialog) {
+        AlertDialog(
+            onDismissRequest = { showDataManage = false },
+            title = {
+                Text(
+                    stringResource(R.string.port_info_data_manage),
+                    modifier = Modifier.fillMaxWidth(),
+                    textAlign = TextAlign.Center,
+                    color = Color(0xFF123A73),
+                    fontWeight = FontWeight.Bold
+                )
+            },
+            text = {
+                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                    ) {
+                        DataManageActionCard(
+                            modifier = Modifier.weight(1f),
+                            icon = Icons.Rounded.Inventory2,
+                            label = stringResource(R.string.port_info_my_records),
+                            selected = currentSource == PortToolSource.LOCAL,
+                            onClick = {
+                                if (currentSource == PortToolSource.LOCAL) {
+                                    currentSourceInfoMessage = context.getString(R.string.port_info_current_my_records)
+                                } else {
+                                    switchingSourceTo = PortToolSource.LOCAL
+                                    onSourceSelect(PortToolSource.LOCAL)
+                                }
+                                showDataManage = false
+                            }
+                        )
+                        DataManageActionCard(
+                            modifier = Modifier.weight(1f),
+                            icon = Icons.Rounded.FolderShared,
+                            label = stringResource(R.string.port_info_shared_records),
+                            selected = currentSource == PortToolSource.SHARED,
+                            onClick = {
+                                if (currentSource == PortToolSource.SHARED) {
+                                    currentSourceInfoMessage = context.getString(R.string.port_info_current_shared_records)
+                                } else {
+                                    switchingSourceTo = PortToolSource.SHARED
+                                    onSourceSelect(PortToolSource.SHARED)
+                                }
+                                showDataManage = false
+                            }
+                        )
                     }
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                    ) {
+                        DataManageActionCard(
+                            modifier = Modifier.weight(1f),
+                            icon = Icons.Rounded.Download,
+                            label = stringResource(R.string.port_info_import),
+                            onClick = {
+                                showDataManage = false
+                                importJsonLauncher.launch(arrayOf("application/json"))
+                            }
+                        )
+                        DataManageActionCard(
+                            modifier = Modifier.weight(1f),
+                            icon = Icons.Rounded.SaveAlt,
+                            label = stringResource(R.string.port_info_export_json),
+                            onClick = {
+                                showDataManage = false
+                                createJsonLauncher.launch("port_records.json")
+                            }
+                        )
+                    }
+                    DataManageActionCard(
+                        modifier = Modifier.fillMaxWidth(),
+                        icon = Icons.Rounded.SaveAlt,
+                        label = stringResource(R.string.port_info_export_csv),
+                        onClick = {
+                            showDataManage = false
+                            createCsvLauncher.launch("port_records.csv")
+                        }
+                    )
                 }
             },
             confirmButton = {
@@ -228,27 +528,7 @@ fun PortInfoTopScreen(
         )
     }
 
-    if (uiState.isLiveSearchPromptVisible) {
-        AlertDialog(
-            onDismissRequest = onLiveSearchCancel,
-            title = {
-                Text(
-                    stringResource(R.string.port_info_live_search_title),
-                    color = Color(0xFF123A73),
-                    fontWeight = FontWeight.Bold
-                )
-            },
-            text = { Text(stringResource(R.string.port_info_live_search_message)) },
-            confirmButton = {
-                TextButton(onClick = onLiveSearchConfirm) { Text(stringResource(R.string.common_ok)) }
-            },
-            dismissButton = {
-                TextButton(onClick = onLiveSearchCancel) { Text(stringResource(R.string.common_cancel)) }
-            }
-        )
-    }
-
-    if (showSaveConfirm) {
+    if (showSaveConfirmDialog) {
         AlertDialog(
             onDismissRequest = { showSaveConfirm = false },
             title = { Text(stringResource(R.string.port_info_save_title), color = Color(0xFF123A73), fontWeight = FontWeight.Bold) },
@@ -257,6 +537,7 @@ fun PortInfoTopScreen(
                 TextButton(onClick = {
                     showSaveConfirm = false
                     onSaveClick()
+                    onSaveComplete()
                 }) { Text(stringResource(R.string.common_ok)) }
             },
             dismissButton = {
@@ -265,15 +546,161 @@ fun PortInfoTopScreen(
         )
     }
 
-    if (attachmentError != null) {
+    if (showDeleteConfirm) {
+        AlertDialog(
+            onDismissRequest = { showDeleteConfirm = false },
+            title = {
+                Text(
+                    text = stringResource(R.string.port_info_attachment_delete_title),
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.fillMaxWidth(),
+                    color = Color(0xFF123A73),
+                    fontWeight = FontWeight.Bold
+                )
+            },
+            text = {
+                Text(
+                    text = stringResource(R.string.port_info_record_delete_message),
+                    modifier = Modifier.fillMaxWidth(),
+                    textAlign = TextAlign.Center
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    showDeleteConfirm = false
+                    onDeleteCurrent()
+                }) { Text(stringResource(R.string.common_ok)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDeleteConfirm = false }) { Text(stringResource(R.string.common_cancel)) }
+            }
+        )
+    }
+
+    if (showDiscardSearchConfirm) {
+        AlertDialog(
+            onDismissRequest = { showDiscardSearchConfirm = false },
+            title = { Text(stringResource(R.string.port_info_discard_changes_title), modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center, color = Color(0xFF123A73), fontWeight = FontWeight.Bold) },
+            text = { Text(stringResource(R.string.port_info_discard_changes_message), modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center) },
+            confirmButton = {
+                TextButton(onClick = {
+                    showDiscardSearchConfirm = false
+                    onDiscardAndGoSearch()
+                }) { Text(stringResource(R.string.common_ok)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDiscardSearchConfirm = false }) { Text(stringResource(R.string.common_cancel)) }
+            }
+        )
+    }
+
+    if (showDiscardBackConfirm) {
+        AlertDialog(
+            onDismissRequest = { showDiscardBackConfirm = false },
+            title = { Text(stringResource(R.string.port_info_discard_changes_title), modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center, color = Color(0xFF123A73), fontWeight = FontWeight.Bold) },
+            text = { Text(stringResource(R.string.port_info_discard_changes_message), modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center) },
+            confirmButton = {
+                TextButton(onClick = {
+                    showDiscardBackConfirm = false
+                    onDiscardAndGoBack()
+                }) { Text(stringResource(R.string.common_ok)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDiscardBackConfirm = false }) { Text(stringResource(R.string.common_cancel)) }
+            }
+        )
+    }
+
+    if (showSharedSourceInfoDialog) {
+        AlertDialog(
+            onDismissRequest = { showSharedSourceInfo = false },
+            title = {
+                Text(
+                    text = stringResource(R.string.port_info_shared_notice_title),
+                    color = Color(0xFF123A73),
+                    fontWeight = FontWeight.Bold
+                )
+            },
+            text = {
+                Text(
+                    text = stringResource(R.string.port_info_shared_notice_message)
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = { showSharedSourceInfo = false }) {
+                    Text(stringResource(R.string.common_ok))
+                }
+            }
+        )
+    }
+
+    if (showCurrentSourceInfoDialog) {
+        Dialog(onDismissRequest = { currentSourceInfoMessage = null }) {
+            androidx.compose.material3.Card(
+                shape = androidx.compose.foundation.shape.RoundedCornerShape(16.dp),
+                colors = androidx.compose.material3.CardDefaults.cardColors(containerColor = Color.White)
+            ) {
+                Column(
+                    modifier = Modifier.padding(horizontal = 18.dp, vertical = 16.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    Text(
+                        text = stringResource(R.string.port_info_current_source_title),
+                        color = Color(0xFF123A73),
+                        fontWeight = FontWeight.Medium,
+                        fontSize = 15.sp
+                    )
+                    Text(
+                        text = currentSourceInfoMessage.orEmpty(),
+                        color = Color(0xFF33445E),
+                        fontSize = 15.sp,
+                        textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                    )
+                    TextButton(onClick = { currentSourceInfoMessage = null }) {
+                        Text(stringResource(R.string.common_ok))
+                    }
+                }
+            }
+        }
+    }
+
+    if (currentAttachmentError != null) {
         AlertDialog(
             onDismissRequest = { attachmentError = null },
             title = { Text(stringResource(R.string.port_info_attachment_error_title), color = Color(0xFF123A73), fontWeight = FontWeight.Bold) },
-            text = { Text(attachmentError.orEmpty()) },
+            text = { Text(currentAttachmentError.orEmpty()) },
             confirmButton = {
                 TextButton(onClick = { attachmentError = null }) { Text(stringResource(R.string.common_ok)) }
             }
         )
+    }
+
+    if (showSwitchingSourceDialog) {
+        Dialog(onDismissRequest = {}) {
+            androidx.compose.material3.Card(
+                shape = androidx.compose.foundation.shape.RoundedCornerShape(16.dp),
+                colors = androidx.compose.material3.CardDefaults.cardColors(containerColor = Color.White)
+            ) {
+                Row(
+                    modifier = Modifier.padding(horizontal = 18.dp, vertical = 14.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    CircularProgressIndicator(
+                        modifier = Modifier.size(18.dp),
+                        strokeWidth = 2.dp,
+                        color = Color(0xFF3F5F93)
+                    )
+                    Text(
+                        text = stringResource(R.string.port_info_switching_source),
+                        color = Color(0xFF123A73),
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                }
+            }
+        }
     }
 
     Scaffold(
@@ -287,7 +714,13 @@ fun PortInfoTopScreen(
                     .padding(horizontal = 10.dp, vertical = 8.dp)
             ) {
                 Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                    IconButton(onClick = onBackClick) {
+                    IconButton(onClick = {
+                        if ((screenState == PortScreenState.CREATE || screenState == PortScreenState.EDIT) && hasEditableChanges) {
+                            showDiscardBackConfirm = true
+                        } else {
+                            onBackClick()
+                        }
+                    }) {
                         Icon(
                             Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = stringResource(R.string.port_info_back),
@@ -302,23 +735,6 @@ fun PortInfoTopScreen(
                         color = Color(0xFF123A73)
                     )
                     Spacer(modifier = Modifier.weight(1f))
-                    if (canEdit) {
-                        FilledTonalIconButton(
-                            onClick = onAddRecordClick,
-                            modifier = Modifier.padding(end = 4.dp)
-                        ) {
-                            Icon(Icons.Filled.Edit, contentDescription = stringResource(R.string.port_info_add_record))
-                        }
-                    }
-                    if (canEdit) {
-                        FilledTonalIconButton(
-                            onClick = { showSaveConfirm = true },
-                            enabled = tempState.hasPendingChanges,
-                            modifier = Modifier.padding(end = 4.dp)
-                        ) {
-                            Icon(Icons.Filled.Save, contentDescription = stringResource(R.string.port_info_save_record))
-                        }
-                    }
                     TaskHamburgerMenuButton(
                         expanded = showMenu,
                         onExpandedChange = { showMenu = it },
@@ -357,284 +773,419 @@ fun PortInfoTopScreen(
                         onExitClick = { (context as? Activity)?.finish() }
                     )
                 }
-
-                Text(
-                    text = stringResource(R.string.port_info_data_manage),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable { showDataManage = true }
-                        .padding(top = 2.dp),
-                    color = Color(0xFF5D7598),
-                    fontSize = 12.sp,
-                    maxLines = 1,
-                    textAlign = TextAlign.End
-                )
-
-                if (uiState.isLiveSearchHeaderVisible && !uiState.isLiveSearchEnabled && uiState.pendingLiveSearchCount > 0) {
-                    Card(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(top = 8.dp)
-                            .clickable(onClick = onLiveSearchConfirm),
-                        shape = RoundedCornerShape(18.dp),
-                        colors = CardDefaults.cardColors(containerColor = Color(0xCCEAF2FF))
-                    ) {
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(horizontal = 12.dp, vertical = 10.dp),
-                            horizontalArrangement = Arrangement.SpaceBetween,
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Text(
-                                text = stringResource(R.string.port_info_live_search_pending, uiState.pendingLiveSearchCount),
-                                color = Color(0xFF123A73),
-                                fontSize = 13.sp,
-                                maxLines = 1,
-                                overflow = TextOverflow.Ellipsis
-                            )
-                            Text(
-                                text = stringResource(R.string.common_close),
-                                color = Color(0xFF123A73),
-                                modifier = Modifier.clickable(onClick = onLiveSearchHeaderDismiss)
-                            )
-                        }
-                    }
-                }
-
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(top = 8.dp),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    OutlinedTextField(
-                        value = uiState.portKeyword,
-                        onValueChange = onPortKeywordChange,
-                        modifier = Modifier.weight(1f),
-                        singleLine = true,
-                        placeholder = {
-                            Text(stringResource(R.string.port_info_search_placeholder))
-                        }
-                    )
-                    Box {
-                        FilledTonalIconButton(onClick = { showFilterMenu = true }) {
-                        Icon(Icons.Filled.MoreVert, contentDescription = stringResource(R.string.port_info_filter))
-                        }
-                        androidx.compose.material3.DropdownMenu(
-                            expanded = showFilterMenu,
-                            onDismissRequest = { showFilterMenu = false }
-                        ) {
-                            DropdownMenuItem(
-                                text = { Text(stringResource(R.string.port_info_filter_country_port)) },
-                                onClick = {
-                                    showFilterMenu = false
-                                    if (uiState.searchMode != PortToolSearchMode.COUNTRY_PORT) onSearchModeChange()
-                                }
-                            )
-                            DropdownMenuItem(
-                                text = { Text(stringResource(R.string.port_info_filter_full)) },
-                                onClick = {
-                                    showFilterMenu = false
-                                    if (uiState.searchMode != PortToolSearchMode.FULL_TEXT) onSearchModeChange()
-                                }
-                            )
-                        }
-                    }
-                }
-
-                if (hasSearchInput && displayResults.isNotEmpty()) {
-                    Card(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(top = 8.dp),
-                        shape = RoundedCornerShape(18.dp),
-                        colors = CardDefaults.cardColors(containerColor = Color.White)
-                    ) {
-                        LazyColumn(
-                            modifier = Modifier.heightIn(max = 260.dp),
-                            contentPadding = PaddingValues(vertical = 4.dp)
-                        ) {
-                            items(displayResults.take(6), key = { it.id }) { record ->
-                                SearchResultRow(
-                                    record = record,
-                                    countryQuery = uiState.portKeyword,
-                                    detailQuery = uiState.portKeyword,
-                                    onClick = { onRecordClick(record.id) }
-                                )
-                            }
-                        }
-                    }
-                }
             }
         }
     ) { innerPadding ->
-        Column(
+        Box(
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color(0xFFF5F8FC))
                 .padding(innerPadding)
                 .navigationBarsPadding()
-                .verticalScroll(rememberScrollState())
-                .padding(horizontal = 18.dp, vertical = 10.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            if (activeBundle != null) {
-                PortInfoRecordContent(
-                    editable = canEdit,
-                    bundle = activeBundle,
-                    countrySuggestions = uiState.countrySuggestions,
-                    portSuggestions = uiState.portSuggestions,
-                    isVesselReportingExpanded = tempState.isVesselReportingExpanded,
-                    isAnchorageExpanded = tempState.isAnchorageExpanded,
-                    isBerthExpanded = tempState.isBerthExpanded,
-                    onToggleVesselReporting = onToggleVesselReporting,
-                    onToggleAnchorage = onToggleAnchorage,
-                    onToggleBerth = onToggleBerth,
-                    onBundleChange = onBundleChange,
-                    onCountrySuggestionClick = onCountrySuggestionClick,
-                    onPortSuggestionClick = onPortSuggestionClick,
-                    onAddAttachmentClick = { attachmentLauncher.launch(arrayOf("image/*", "video/*", "application/pdf", "*/*")) },
-                    onDeleteAttachmentClick = onAttachmentDelete
-                )
+            if (screenState == PortScreenState.LIST) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(horizontal = 18.dp, vertical = 5.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    SearchSection(
+                        searchEnabled = searchInputsEnabled,
+                        canSave = hasEditableChanges,
+                    stateLabel = stateLabel,
+                    topSearchQuery = uiState.topSearchQuery,
+                    searchPlaceholder = searchPlaceholder,
+                    showFilterButton = screenState != PortScreenState.LIST,
+                    searchMode = uiState.searchMode,
+                        pendingLiveSearchCount = uiState.pendingLiveSearchCount,
+                        showLiveSearchHeader = showLiveSearchHeader,
+                        isTopSearchFocused = isTopSearchFocused,
+                        searchFocusRequester = searchFocusRequester,
+                        showFilterMenu = showFilterMenu,
+                        onTopSearchFocusChanged = { isTopSearchFocused = it },
+                        onTopSearchQueryChange = onSearchQueryChange,
+                        onFilterMenuExpandedChange = { showFilterMenu = it },
+                        onSearchModeToggle = onSearchModeChange,
+                        onDataManageClick = { showDataManage = true },
+                        leftAction = PortHeaderAction(
+                            icon = PortHeaderIcons.Search,
+                            contentDescription = stringResource(R.string.port_info_search),
+                            onClick = onEnterSearch
+                        ),
+                        rightActions = if (canCreate) {
+                            listOf(
+                                PortHeaderAction(
+                                    icon = PortHeaderIcons.New,
+                                    contentDescription = stringResource(R.string.port_info_add_record),
+                                    onClick = onAddRecordClick
+                                )
+                            )
+                        } else emptyList(),
+                        onLiveSearchConfirm = onLiveSearchConfirm,
+                        onLiveSearchHeaderDismiss = onLiveSearchHeaderDismiss,
+                        onSearchBarClick = { searchFocusRequester.requestFocus() }
+                    )
+
+                    PortSearchCardSection(
+                        editable = true,
+                        countryValue = listCountryFilter,
+                        portValue = listPortFilter,
+                        unlocodeValue = listCodeFilter,
+                        onEditorFieldFocusChange = onEditorFieldFocusChange,
+                        onCountryChange = onListCountryFilterChange,
+                        onPortChange = onListPortFilterChange,
+                        onUnlocodeChange = onListCodeFilterChange
+                    )
+
+                    RecordListSection(
+                        modifier = Modifier.weight(1f),
+                        items = listItems,
+                        onRecordClick = onRecordClick
+                    )
+                }
+            } else {
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .verticalScroll(scrollState)
+                        .padding(horizontal = 18.dp, vertical = 5.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    SearchSection(
+                        searchEnabled = searchInputsEnabled,
+                        canSave = hasEditableChanges,
+                    stateLabel = stateLabel,
+                    topSearchQuery = uiState.topSearchQuery,
+                    searchPlaceholder = searchPlaceholder,
+                    showFilterButton = screenState != PortScreenState.LIST,
+                    searchMode = uiState.searchMode,
+                        pendingLiveSearchCount = uiState.pendingLiveSearchCount,
+                        showLiveSearchHeader = showLiveSearchHeader,
+                        isTopSearchFocused = isTopSearchFocused,
+                        searchFocusRequester = searchFocusRequester,
+                        showFilterMenu = showFilterMenu,
+                        onTopSearchFocusChanged = { isTopSearchFocused = it },
+                        onTopSearchQueryChange = onSearchQueryChange,
+                        onFilterMenuExpandedChange = { showFilterMenu = it },
+                        onSearchModeToggle = onSearchModeChange,
+                        onDataManageClick = { showDataManage = true },
+                        leftAction = when (screenState) {
+                            PortScreenState.SEARCH -> PortHeaderAction(
+                                icon = PortHeaderIcons.List,
+                                contentDescription = stringResource(R.string.port_info_record_list),
+                                onClick = onEnterList
+                            )
+                            PortScreenState.CREATE,
+                            PortScreenState.RECORD,
+                            PortScreenState.EDIT -> PortHeaderAction(
+                                icon = PortHeaderIcons.Search,
+                                contentDescription = stringResource(R.string.port_info_search),
+                                onClick = {
+                                    if ((screenState == PortScreenState.CREATE || screenState == PortScreenState.EDIT) && hasEditableChanges) {
+                                        showDiscardSearchConfirm = true
+                                    } else {
+                                        onEnterSearch()
+                                    }
+                                }
+                            )
+                            else -> PortHeaderAction(
+                                icon = PortHeaderIcons.Search,
+                                contentDescription = stringResource(R.string.port_info_search),
+                                onClick = onEnterSearch
+                            )
+                        },
+                        rightActions = when (screenState) {
+                            PortScreenState.SEARCH -> if (canCreate) {
+                                listOf(
+                                    PortHeaderAction(
+                                        icon = PortHeaderIcons.New,
+                                        contentDescription = stringResource(R.string.port_info_add_record),
+                                        onClick = onAddRecordClick
+                                    )
+                                )
+                            } else emptyList()
+                            PortScreenState.CREATE -> if (canCreate) {
+                                listOf(
+                                    PortHeaderAction(
+                                        icon = PortHeaderIcons.Save,
+                                        contentDescription = stringResource(R.string.port_info_save_record),
+                                        enabled = hasEditableChanges,
+                                        onClick = { showSaveConfirm = true }
+                                    )
+                                )
+                            } else emptyList()
+                            PortScreenState.RECORD -> if (canEditRecord) {
+                                listOf(
+                                    PortHeaderAction(
+                                        icon = PortHeaderIcons.Edit,
+                                        contentDescription = stringResource(R.string.port_info_edit_record),
+                                        onClick = onEnterEdit
+                                    )
+                                )
+                            } else {
+                                listOf(
+                                    PortHeaderAction(
+                                        icon = PortHeaderIcons.Delete,
+                                        contentDescription = stringResource(R.string.port_info_delete_record),
+                                        onClick = { showDeleteConfirm = true }
+                                    )
+                                )
+                            }
+                            PortScreenState.EDIT -> listOf(
+                                PortHeaderAction(
+                                    icon = PortHeaderIcons.Save,
+                                    contentDescription = stringResource(R.string.port_info_save_record),
+                                    enabled = hasEditableChanges,
+                                    onClick = { showSaveConfirm = true }
+                                ),
+                                PortHeaderAction(
+                                    icon = PortHeaderIcons.Delete,
+                                    contentDescription = stringResource(R.string.port_info_delete_record),
+                                    onClick = { showDeleteConfirm = true }
+                                )
+                            )
+                            else -> emptyList()
+                        },
+                        onLiveSearchConfirm = onLiveSearchConfirm,
+                        onLiveSearchHeaderDismiss = onLiveSearchHeaderDismiss,
+                        onSearchBarClick = { searchFocusRequester.requestFocus() }
+                    )
+
+                    if (showResultPanels) {
+                        ResultPanelSection(
+                            isVisible = showPushResults,
+                            displayMode = PortSearchDisplayMode.PUSH,
+                            results = displayResults,
+                            query = uiState.searchQuery,
+                            onClick = onSearchResultSelect
+                        )
+                    }
+
+                    val currentBundle = activeBundle
+                    if (currentBundle != null) {
+                        RecordContentSection(
+                            editable = recordBodyEditable,
+                            searchCardEditable = searchInputsEnabled,
+                            bundle = currentBundle,
+                            isVesselReportingExpanded = tempState.isVesselReportingExpanded,
+                            isAnchorageExpanded = tempState.isAnchorageExpanded,
+                            isBerthExpanded = tempState.isBerthExpanded,
+                            onToggleVesselReporting = onToggleVesselReporting,
+                            onToggleAnchorage = onToggleAnchorage,
+                            onToggleBerth = onToggleBerth,
+                            onBundleChange = onBundleChange,
+                            onEditorFieldFocusChange = onEditorFieldFocusChange,
+                            onFieldSearchInputChange = onFieldSearchInputChange,
+                            onFormFieldSearchInputChange = onFormFieldSearchInputChange,
+                            onAddAttachmentClick = { showAttachmentOptions = true },
+                            onDeleteAttachmentClick = onAttachmentDelete
+                        )
+                    }
+                }
+            }
+            Box(modifier = Modifier.align(Alignment.TopCenter)) {
+                if (showResultPanels) {
+                    ResultPanelSection(
+                        isVisible = showFloatResults,
+                        displayMode = PortSearchDisplayMode.FLOAT,
+                        results = displayResults,
+                        query = uiState.searchQuery,
+                        onClick = onSearchResultSelect
+                    )
+                }
             }
         }
     }
 }
 
 @Composable
-private fun SearchResultRow(
-    record: PortRecordEntity,
-    countryQuery: String,
-    detailQuery: String,
+private fun DataManageActionCard(
+    modifier: Modifier = Modifier,
+    icon: ImageVector,
+    label: String,
+    selected: Boolean = false,
     onClick: () -> Unit
 ) {
-    val country = record.countryCode.take(2).ifBlank { record.countryName.take(2) }
-    val port = record.portName.let { if (it.length > 6) "${it.take(6)}..." else it }
-    val preview = listOf(record.berthName, record.company, record.cargoName, record.generalRemark, record.caution)
-        .firstOrNull { it.isNotBlank() }
-        .orEmpty()
-        .take(24)
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable(onClick = onClick)
-            .padding(horizontal = 12.dp, vertical = 10.dp),
-        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    Card(
+        modifier = modifier.clickable(onClick = onClick),
+        shape = androidx.compose.foundation.shape.RoundedCornerShape(18.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = if (selected) Color(0xFFEAF2FF) else Color.White
+        ),
+        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
     ) {
-        Text(
-            text = highlightText(country, countryQuery),
-            color = Color(0xFF123A73),
-            fontWeight = FontWeight.Bold,
-            fontSize = 13.sp
-        )
-        Text(
-            text = highlightText(port, detailQuery),
-            color = Color(0xFF123A73),
-            fontSize = 13.sp,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis
-        )
-        Text(
-            text = highlightText(preview, detailQuery),
-            color = Color(0xFF5D7598),
-            fontSize = 12.sp,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis
-        )
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 14.dp, vertical = 14.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Icon(
+                imageVector = icon,
+                contentDescription = null,
+                tint = if (selected) Color(0xFF3F5F93) else Color(0xFF5D7598),
+                modifier = Modifier.size(24.dp)
+            )
+            Text(
+                text = label,
+                color = Color(0xFF123A73),
+                fontSize = 14.sp,
+                textAlign = TextAlign.Center,
+                fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Medium
+            )
+        }
     }
 }
 
-private fun buildAttachmentPayload(
+private suspend fun buildAttachmentPayload(
     context: android.content.Context,
     recordId: Long,
     existing: List<PortAttachmentEntity>,
     uris: List<Uri>
-): Result<List<PortAttachmentEntity>> = runCatching {
-    val resolver = context.contentResolver
-    val existingImageCount = existing.count { it.attachmentType == PortToolType.IMAGE }
-    val existingVideoCount = existing.count { it.attachmentType == PortToolType.VIDEO }
-    val existingFileCount = existing.count { it.attachmentType == PortToolType.FILE }
-    val existingSize = existing.sumOf { it.fileSize }
-    var imageCount = existingImageCount
-    var videoCount = existingVideoCount
-    var fileCount = existingFileCount
-    var totalSize = existingSize
-    val attachments = mutableListOf<PortAttachmentEntity>()
-    val now = System.currentTimeMillis()
+): Result<List<PortAttachmentEntity>> = withContext(Dispatchers.IO) {
+    runCatching {
+        if (uris.isEmpty()) return@runCatching emptyList()
+        val resolver = context.contentResolver
+        val existingImageCount = existing.count { it.attachmentType == PortToolType.IMAGE }
+        val existingVideoCount = existing.count { it.attachmentType == PortToolType.VIDEO }
+        val existingFileCount = existing.count { it.attachmentType == PortToolType.FILE }
+        val existingSize = existing.sumOf { it.fileSize }
+        val maxTotalSize = 10L * 1024 * 1024
+        var imageCount = existingImageCount
+        var videoCount = existingVideoCount
+        var fileCount = existingFileCount
+        var totalSize = existingSize
+        val attachments = mutableListOf<PortAttachmentEntity>()
+        val now = System.currentTimeMillis()
 
-    uris.forEachIndexed { index, uri ->
-        runCatching {
-            resolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION)
-        }
-        val mimeType = resolver.getType(uri).orEmpty()
-        val fileSize = resolver.openAssetFileDescriptor(uri, "r")?.use { afd -> afd.length.coerceAtLeast(0L) } ?: 0L
-        val attachmentType = when {
-            mimeType.startsWith("image/") -> PortToolType.IMAGE
-            mimeType.startsWith("video/") -> PortToolType.VIDEO
-            else -> PortToolType.FILE
-        }
-        when (attachmentType) {
-            PortToolType.IMAGE -> {
-                imageCount++
-                if (imageCount > 20) error(context.getString(R.string.port_info_attachment_limit_image))
-            }
-            PortToolType.VIDEO -> {
-                videoCount++
-                if (videoCount > 1) error(context.getString(R.string.port_info_attachment_limit_video_count))
-                val durationMs = MediaMetadataRetriever().run {
-                    setDataSource(context, uri)
-                    val duration = extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)?.toLongOrNull() ?: 0L
-                    release()
-                    duration
+        uris.forEachIndexed { index, uri ->
+            runCatching {
+                if (uri.scheme == android.content.ContentResolver.SCHEME_CONTENT) {
+                    resolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION)
                 }
-                if (durationMs > 60_000L) error(context.getString(R.string.port_info_attachment_limit_video_duration))
             }
-            else -> {
-                fileCount++
-                if (fileCount > 10) error(context.getString(R.string.port_info_attachment_limit_file))
+            val metadata = resolver.query(uri, arrayOf(OpenableColumns.DISPLAY_NAME, OpenableColumns.SIZE), null, null, null)
+                ?.use { cursor ->
+                    if (cursor.moveToFirst()) {
+                        val nameIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)
+                        val sizeIndex = cursor.getColumnIndex(OpenableColumns.SIZE)
+                        Pair(
+                            if (nameIndex >= 0) cursor.getString(nameIndex).orEmpty() else "",
+                            if (sizeIndex >= 0) cursor.getLong(sizeIndex).coerceAtLeast(0L) else 0L
+                        )
+                    } else {
+                        "" to 0L
+                    }
+                } ?: ("" to 0L)
+            val displayName = metadata.first
+            val mimeType = resolver.getType(uri).orEmpty()
+            val attachmentType = resolveAttachmentType(mimeType, displayName)
+            val fileSize = metadata.second.takeIf { it > 0L }
+                ?: resolver.openAssetFileDescriptor(uri, "r")?.use { afd -> afd.length.coerceAtLeast(0L) }
+                ?: 0L
+            val projectedTotalSize = totalSize + fileSize
+            if (projectedTotalSize > maxTotalSize) {
+                error(context.getString(R.string.port_info_attachment_limit_total))
             }
+            when (attachmentType) {
+                PortToolType.IMAGE -> {
+                    imageCount++
+                    if (imageCount > 20) error(context.getString(R.string.port_info_attachment_limit_image))
+                }
+                PortToolType.VIDEO -> {
+                    videoCount++
+                    if (videoCount > 1) error(context.getString(R.string.port_info_attachment_limit_video_count))
+                    val durationMs = MediaMetadataRetriever().use { retriever ->
+                        retriever.setDataSource(context, uri)
+                        retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)?.toLongOrNull() ?: 0L
+                    }
+                    if (durationMs > 60_000L) error(context.getString(R.string.port_info_attachment_limit_video_duration))
+                }
+                else -> {
+                    fileCount++
+                    if (fileCount > 10) error(context.getString(R.string.port_info_attachment_limit_file))
+                }
+            }
+            totalSize = projectedTotalSize
+            attachments += PortAttachmentEntity(
+                id = now + index,
+                recordId = recordId,
+                attachmentType = attachmentType,
+                displayName = displayName,
+                filePath = uri.toString(),
+                mimeType = mimeType,
+                fileSize = fileSize,
+                thumbnailPath = if (attachmentType == PortToolType.FILE) "" else uri.toString(),
+                normalizedText = displayName.lowercase(),
+                createdAt = now,
+                updatedAt = now
+            )
         }
-        totalSize += fileSize
-        if (totalSize > 10L * 1024 * 1024) error(context.getString(R.string.port_info_attachment_limit_total))
-
-        val displayName = resolver.query(uri, arrayOf(OpenableColumns.DISPLAY_NAME), null, null, null)?.use { cursor ->
-            if (cursor.moveToFirst()) cursor.getString(0) else null
-        }.orEmpty()
-        attachments += PortAttachmentEntity(
-            id = now + index,
-            recordId = recordId,
-            attachmentType = attachmentType,
-            displayName = displayName,
-            filePath = uri.toString(),
-            mimeType = mimeType,
-            fileSize = fileSize,
-            thumbnailPath = if (attachmentType == PortToolType.FILE) "" else uri.toString(),
-            normalizedText = displayName.lowercase(),
-            createdAt = now,
-            updatedAt = now
-        )
+        attachments
     }
-    attachments
 }
 
-@Composable
-private fun highlightText(text: String, query: String) = buildAnnotatedString {
-    if (query.isBlank()) {
-        append(text)
-        return@buildAnnotatedString
+private inline fun <T> MediaMetadataRetriever.use(block: (MediaMetadataRetriever) -> T): T {
+    return try {
+        block(this)
+    } finally {
+        runCatching { release() }
     }
-    val normalized = text.lowercase()
-    val needle = query.lowercase().trim()
-    val start = normalized.indexOf(needle)
-    if (start < 0) {
-        append(text)
-        return@buildAnnotatedString
+}
+
+private fun resolveAttachmentType(mimeType: String, displayName: String): String {
+    val normalizedMime = mimeType.lowercase()
+    val normalizedName = displayName.lowercase()
+    return when {
+        normalizedMime.startsWith("image/") -> PortToolType.IMAGE
+        normalizedMime.startsWith("video/") -> PortToolType.VIDEO
+        normalizedName.endsWith(".jpg") || normalizedName.endsWith(".jpeg") ||
+            normalizedName.endsWith(".png") || normalizedName.endsWith(".webp") -> PortToolType.IMAGE
+        normalizedName.endsWith(".mp4") || normalizedName.endsWith(".mov") ||
+            normalizedName.endsWith(".mkv") || normalizedName.endsWith(".avi") -> PortToolType.VIDEO
+        else -> PortToolType.FILE
     }
-    append(text.substring(0, start))
-    pushStyle(SpanStyle(color = Color(0xFFE0A100), fontWeight = FontWeight.Bold))
-    append(text.substring(start, start + needle.length.coerceAtMost(text.length - start)))
-    pop()
-    append(text.substring((start + needle.length).coerceAtMost(text.length)))
+}
+
+private fun createCameraOutputUris(context: android.content.Context): Pair<Uri, Uri> {
+    val cacheDir = File(context.cacheDir, "port_camera").apply { mkdirs() }
+    val now = System.currentTimeMillis()
+    val photoFile = File(cacheDir, "port_photo_$now.jpg")
+    val videoFile = File(cacheDir, "port_video_$now.mp4")
+    val authority = "${context.packageName}.fileprovider"
+    return FileProvider.getUriForFile(context, authority, photoFile) to
+        FileProvider.getUriForFile(context, authority, videoFile)
+}
+
+private fun createCameraChooserIntent(
+    context: android.content.Context,
+    photoUri: Uri,
+    videoUri: Uri
+): Intent? {
+    val photoIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE).apply {
+        putExtra(MediaStore.EXTRA_OUTPUT, photoUri)
+        addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+    }
+    val videoIntent = Intent(MediaStore.ACTION_VIDEO_CAPTURE).apply {
+        putExtra(MediaStore.EXTRA_OUTPUT, videoUri)
+        putExtra(MediaStore.EXTRA_DURATION_LIMIT, 60)
+        addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+    }
+
+    val pm = context.packageManager
+    val photoResolved = photoIntent.resolveActivity(pm)
+    val videoResolved = videoIntent.resolveActivity(pm)
+    if (photoResolved == null && videoResolved == null) return null
+
+    return when {
+        photoResolved != null && videoResolved != null -> {
+            Intent.createChooser(photoIntent, context.getString(R.string.port_info_attachment_camera)).apply {
+                putExtra(Intent.EXTRA_INITIAL_INTENTS, arrayOf(videoIntent))
+            }
+        }
+        photoResolved != null -> photoIntent
+        else -> videoIntent
+    }
 }

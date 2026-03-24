@@ -40,6 +40,50 @@ object TaskAlarmScheduler {
         }
     }
 
+    fun syncForVessel(context: Context, vesselId: Long) {
+        scope.launch {
+            runCatching {
+                syncScopedNow(
+                    context = context.applicationContext,
+                    vesselId = vesselId
+                )
+            }.getOrElse {
+                Log.e(TAG, "syncForVessel fallback to syncAll: vesselId=$vesselId", it)
+                syncAllNow(context.applicationContext)
+            }
+        }
+    }
+
+    fun syncForRegularWork(context: Context, vesselId: Long, workId: Long) {
+        scope.launch {
+            runCatching {
+                syncScopedNow(
+                    context = context.applicationContext,
+                    vesselId = vesselId,
+                    regularWorkId = workId
+                )
+            }.getOrElse {
+                Log.e(TAG, "syncForRegularWork fallback to syncAll: vesselId=$vesselId workId=$workId", it)
+                syncAllNow(context.applicationContext)
+            }
+        }
+    }
+
+    fun syncForIrregularWork(context: Context, vesselId: Long, workName: String) {
+        scope.launch {
+            runCatching {
+                syncScopedNow(
+                    context = context.applicationContext,
+                    vesselId = vesselId,
+                    irregularWorkName = workName.trim()
+                )
+            }.getOrElse {
+                Log.e(TAG, "syncForIrregularWork fallback to syncAll: vesselId=$vesselId workName=$workName", it)
+                syncAllNow(context.applicationContext)
+            }
+        }
+    }
+
     fun cancelAll(context: Context) {
         scope.launch {
             cancelAllNow(context.applicationContext)
@@ -47,6 +91,15 @@ object TaskAlarmScheduler {
     }
 
     private fun syncAllNow(context: Context) {
+        syncScopedNow(context)
+    }
+
+    private fun syncScopedNow(
+        context: Context,
+        vesselId: Long? = null,
+        regularWorkId: Long? = null,
+        irregularWorkName: String? = null
+    ) {
         try {
             ensureNotificationChannel(context)
             val alarmManager = context.getSystemService<AlarmManager>() ?: return
@@ -67,11 +120,17 @@ object TaskAlarmScheduler {
             val activePreset = TaskPresetStateStore.snapshot().firstOrNull { it.enabled }
             val works = TaskPresetWorkStateStore.snapshot()
             val vessels = topState.vesselItems.filter { it.enabled }
+                .filter { vesselId == null || it.id == vesselId }
             val activeKeys = linkedSetOf<String>()
             val commonTime = parseAlarmTime(alarmSettings.alarmTime) ?: LocalTime.of(8, 0)
+            val allRecordsById = TaskWorkRecordRepositoryProvider.repository
+                .allRecords()
+                .associateBy { it.id }
 
             vessels.forEach { vessel ->
-                works.filter { it.presetId == activePreset?.id }.forEach { work ->
+                works.filter { it.presetId == activePreset?.id }
+                    .filter { regularWorkId == null || it.id == regularWorkId }
+                    .forEach { work ->
                     val regularEnabled = TaskAlarmSettingsRepositoryProvider.repository
                         .isRegularWorkAlarmEnabled(work.id, work.alarmEnabled)
                     if (!regularEnabled) return@forEach
@@ -85,31 +144,39 @@ object TaskAlarmScheduler {
                     }
 
                     val dueDate = latestRecord.recordDate.plusCycle(work.cycleNumber, work.cycleUnit)
-                    reminderDatesForRegular(dueDate, work.cycleUnit).forEach { reminderDate ->
-                        try {
-                            scheduleIfNeeded(
-                                context = context,
-                                alarmManager = alarmManager,
-                                vesselId = vessel.id,
-                                vesselName = vessel.name,
-                                vesselPresetName = vessel.presetName,
-                                recordId = latestRecord.id,
-                                workName = work.name,
-                                statusName = latestRecord.status.name,
-                                targetDate = dueDate,
-                                triggerDate = reminderDate,
-                                triggerTime = commonTime,
-                                keyPrefix = "regular_${work.id}_${latestRecord.id}_$reminderDate",
-                                scheduledKeys = activeKeys
-                            )
-                        } catch (e: Exception) {
-                            Log.e(TAG, "regular schedule failed recordId=${latestRecord.id}", e)
-                        }
+                    val latestReminderDate = reminderDatesForRegular(dueDate, work.cycleUnit).maxOrNull()
+                        ?: return@forEach
+                    try {
+                        scheduleIfNeeded(
+                            context = context,
+                            alarmManager = alarmManager,
+                            vesselId = vessel.id,
+                            vesselName = vessel.name,
+                            vesselPresetName = vessel.presetName,
+                            recordId = latestRecord.id,
+                            workName = work.name,
+                            statusName = latestRecord.status.name,
+                            targetDate = dueDate,
+                            triggerDate = latestReminderDate,
+                            triggerTime = commonTime,
+                            keyPrefix = "regular_${work.id}_${latestRecord.id}_$latestReminderDate",
+                            scheduledKeys = activeKeys
+                        )
+                    } catch (e: Exception) {
+                        Log.e(TAG, "regular schedule failed recordId=${latestRecord.id}", e)
                     }
                 }
 
                 TaskWorkRecordRepositoryProvider.repository
                     .irregularAlarmCandidatesForVessel(vessel.id)
+                    .filter { irregularWorkName == null || it.workName.trim() == irregularWorkName }
+                    .groupBy { it.workName.trim() }
+                    .values
+                    .mapNotNull { candidates ->
+                        candidates.maxWithOrNull(
+                            compareBy<TaskWorkRecordItem>({ it.recordDate }, { it.id })
+                        )
+                    }
                     .forEach { record ->
                         val irregularEnabled = TaskAlarmSettingsRepositoryProvider.repository
                             .isIrregularWorkAlarmEnabled(vessel.id, record.workName, true)
@@ -141,16 +208,26 @@ object TaskAlarmScheduler {
                     }
             }
 
-            val toCancel = previousKeys - activeKeys
+            val scopedPreviousKeys = previousKeys.filterTo(linkedSetOf()) { key ->
+                key.matchesScope(
+                    allRecordsById = allRecordsById,
+                    vesselId = vesselId,
+                    regularWorkId = regularWorkId,
+                    irregularWorkName = irregularWorkName
+                )
+            }
+            val toCancel = scopedPreviousKeys - activeKeys
             toCancel.forEach { key ->
                 cancelPendingIntent(context, alarmManager, key)
             }
 
             Log.d(TAG, "active count = ${activeKeys.size}")
             Log.d(TAG, "cancel count = ${toCancel.size}")
-            prefs.edit().putStringSet(KEY_SCHEDULED_KEYS, activeKeys).apply()
+            val mergedKeys = (previousKeys - scopedPreviousKeys) + activeKeys
+            prefs.edit().putStringSet(KEY_SCHEDULED_KEYS, mergedKeys).apply()
         } catch (e: Exception) {
-            Log.e(TAG, "syncAllNow failed", e)
+            Log.e(TAG, "syncScopedNow failed", e)
+            throw e
         }
     }
 
@@ -290,5 +367,40 @@ object TaskAlarmScheduler {
             enableVibration(true)
         }
         manager.createNotificationChannel(channel)
+    }
+
+    private fun String.matchesScope(
+        allRecordsById: Map<Long, TaskWorkRecordItem>,
+        vesselId: Long?,
+        regularWorkId: Long?,
+        irregularWorkName: String?
+    ): Boolean {
+        if (vesselId == null && regularWorkId == null && irregularWorkName == null) return true
+
+        return when {
+            startsWith("irregular_") -> {
+                val parts = substringBefore("@").split("_")
+                if (parts.size < 4) return false
+                val keyVesselId = parts[1].toLongOrNull() ?: return false
+                val keyRecordId = parts.last().toLongOrNull()
+                val keyWorkName = parts.drop(2).dropLast(1).joinToString("_")
+                (vesselId == null || keyVesselId == vesselId) &&
+                    (irregularWorkName == null || keyWorkName == irregularWorkName) &&
+                    (regularWorkId == null || false) &&
+                    (keyRecordId == null || allRecordsById[keyRecordId]?.vesselId == null || vesselId == null || allRecordsById[keyRecordId]?.vesselId == vesselId)
+            }
+
+            startsWith("regular_") -> {
+                val parts = substringBefore("@").split("_")
+                if (parts.size < 4) return false
+                val keyWorkId = parts[1].toLongOrNull() ?: return false
+                val keyRecordId = parts[2].toLongOrNull() ?: return false
+                val record = allRecordsById[keyRecordId]
+                (regularWorkId == null || keyWorkId == regularWorkId) &&
+                    (vesselId == null || record?.vesselId == vesselId)
+            }
+
+            else -> false
+        }
     }
 }

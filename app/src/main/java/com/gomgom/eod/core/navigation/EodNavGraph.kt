@@ -19,6 +19,7 @@ import androidx.navigation.navArgument
 import com.gomgom.eod.R
 import com.gomgom.eod.core.common.AppLanguageManager
 import com.gomgom.eod.feature.cargoinfo.screens.CargoInfoTopPlaceholderScreen
+import com.gomgom.eod.feature.gauging.screens.GaugingToolScreen
 import com.gomgom.eod.feature.home.screens.EodHomeScreen
 import com.gomgom.eod.feature.portinfo.screens.PortInfoRecordDetailScreen
 import com.gomgom.eod.feature.portinfo.screens.PortInfoRecordEditorScreen
@@ -95,6 +96,7 @@ fun EodNavGraph(
                 onTaskClick = { navController.navigate(EodRoute.TASK_TOP) },
                 onPortInfoClick = { navController.navigate(EodRoute.PORTINFO_TOP) },
                 onCargoInfoClick = { navController.navigate(EodRoute.CARGOINFO_TOP) },
+                onGaugingClick = { navController.navigate(EodRoute.GAUGING_TOP) },
                 onHomeClick = goHome,
                 onKorClick = applyKor,
                 onEngClick = applyEng,
@@ -336,7 +338,25 @@ fun EodNavGraph(
 
         composable(EodRoute.CARGOINFO_TOP) {
             CargoInfoTopPlaceholderScreen(
-                onBackClick = { navController.popBackStack() }
+                onBackClick = { navController.popBackStack() },
+                onHomeClick = goHome,
+                onKorClick = applyKor,
+                onEngClick = applyEng,
+                onGuideClick = { navController.navigate(EodRoute.TASK_GUIDE) },
+                onContactClick = openContactMail,
+                onExitClick = onExitApp
+            )
+        }
+
+        composable(EodRoute.GAUGING_TOP) {
+            GaugingToolScreen(
+                onBackClick = { navController.popBackStack() },
+                onHomeClick = goHome,
+                onKorClick = applyKor,
+                onEngClick = applyEng,
+                onGuideClick = { navController.navigate(EodRoute.TASK_GUIDE) },
+                onContactClick = openContactMail,
+                onExitClick = onExitApp
             )
         }
     }

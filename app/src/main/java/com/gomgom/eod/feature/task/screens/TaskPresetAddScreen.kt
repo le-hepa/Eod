@@ -17,7 +17,7 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -105,7 +105,7 @@ fun TaskPresetAddScreen(
                     modifier = Modifier.size(42.dp)
                 ) {
                         Icon(
-                            imageVector = Icons.Outlined.ArrowBack,
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = stringResource(R.string.common_close),
                             tint = PresetAddPrimaryText,
                             modifier = Modifier.size(56.dp)

@@ -32,10 +32,15 @@ data class PortRecordEntity(
     val berthName: String = "",
     val company: String = "",
     val supplyStatus: String = "",
+    val freshWaterStatus: String = "",
+    val storeSpareStatus: String = "",
+    val provisionsStatus: String = "",
     val supplyRemark: String = "",
     val wasteStatus: String = "",
+    val slopStatus: String = "",
     val wasteRemark: String = "",
     val crewChangeStatus: String = "",
+    val externalAuditStatus: String = "",
     val crewChangeRemark: String = "",
     val cargoName: String = "",
     val cargoRemark: String = "",
@@ -73,6 +78,7 @@ data class PortOperationEntity(
     val operationType: String,
     val channelGroup: String = "",
     val channelValue: String = "",
+    val arrivalDate: String = "",
     val remark: String = "",
     val normalizedText: String = "",
     val isDeleted: Boolean = false,
@@ -156,6 +162,7 @@ object PortToolType {
     const val PILOT = "PILOT"
     const val TUG = "TUG"
     const val CIQ = "CIQ"
+    const val AGENT = "AGENT"
     const val ANCHORAGE = "ANCHORAGE"
     const val BERTH = "BERTH"
     const val IMAGE = "IMAGE"

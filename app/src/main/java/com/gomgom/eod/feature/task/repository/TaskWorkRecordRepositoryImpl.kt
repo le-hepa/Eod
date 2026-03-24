@@ -1,6 +1,8 @@
 package com.gomgom.eod.feature.task.repository
 
 import android.util.Log
+import com.gomgom.eod.EodApp
+import com.gomgom.eod.feature.task.alarm.TaskAlarmScheduler
 import com.gomgom.eod.feature.task.dao.TaskWorkRecordDao
 import com.gomgom.eod.feature.task.dao.TaskWorkRecordDaoProvider
 import com.gomgom.eod.feature.task.model.TaskWorkRecordAttachmentItem
@@ -144,6 +146,18 @@ class TaskWorkRecordRepositoryImpl(
                 comment = comment,
                 attachments = attachments
             )
+        }.onSuccess { savedRecordId ->
+            if (savedRecordId == null) return@onSuccess
+            when (recordType) {
+                TaskWorkRecordType.REGULAR -> {
+                    val targetWorkId = presetWorkId ?: return@onSuccess
+                    TaskAlarmScheduler.syncForRegularWork(EodApp.appContext, vesselId, targetWorkId)
+                }
+
+                TaskWorkRecordType.IRREGULAR -> {
+                    TaskAlarmScheduler.syncForIrregularWork(EodApp.appContext, vesselId, workName.trim())
+                }
+            }
         }.onFailure {
             Log.e(TAG, "saveRecord failed: recordId=$recordId", it)
         }.getOrNull()
@@ -160,11 +174,25 @@ class TaskWorkRecordRepositoryImpl(
         status: TaskWorkRecordStatus
     ): Boolean {
         Log.d(TAG, "updateRecordStatus triggered: recordId=$recordId status=$status")
+        val existingRecord = getRecord(recordId)
         return runCatching {
             dao.updateRecordStatus(
                 recordId = recordId,
                 status = status
             )
+        }.onSuccess { updated ->
+            if (!updated) return@onSuccess
+            val record = existingRecord ?: return@onSuccess
+            when (record.recordType) {
+                TaskWorkRecordType.REGULAR -> {
+                    val targetWorkId = record.presetWorkId ?: return@onSuccess
+                    TaskAlarmScheduler.syncForRegularWork(EodApp.appContext, record.vesselId, targetWorkId)
+                }
+
+                TaskWorkRecordType.IRREGULAR -> {
+                    TaskAlarmScheduler.syncForIrregularWork(EodApp.appContext, record.vesselId, record.workName.trim())
+                }
+            }
         }.onFailure {
             Log.e(TAG, "updateRecordStatus failed: recordId=$recordId", it)
         }.getOrDefault(false)
@@ -172,7 +200,13 @@ class TaskWorkRecordRepositoryImpl(
 
     override fun deleteRecord(recordId: Long): Boolean {
         Log.d(TAG, "deleteRecord triggered: recordId=$recordId")
+        val existingRecord = getRecord(recordId)
         return runCatching { dao.deleteRecord(recordId) }
+            .onSuccess { deleted ->
+                if (!deleted) return@onSuccess
+                existingRecord ?: return@onSuccess
+                TaskAlarmScheduler.syncAll(EodApp.appContext)
+            }
             .onFailure { Log.e(TAG, "deleteRecord failed: recordId=$recordId", it) }
             .getOrDefault(false)
     }

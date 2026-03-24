@@ -21,7 +21,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Add
-import androidx.compose.material.icons.outlined.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -128,7 +128,7 @@ fun TaskPresetDetailScreen(
                             modifier = Modifier.size(42.dp)
                         ) {
                         Icon(
-                            imageVector = Icons.Outlined.ArrowBack,
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = stringResource(R.string.common_close),
                             tint = LowerPrimaryText,
                             modifier = Modifier.size(56.dp)

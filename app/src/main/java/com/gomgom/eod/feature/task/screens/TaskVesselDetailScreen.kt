@@ -56,7 +56,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Add
-import androidx.compose.material.icons.outlined.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ChevronLeft
 import androidx.compose.material.icons.outlined.ChevronRight
@@ -574,7 +574,6 @@ fun TaskVesselDetailScreen(
                             enabled = false
                         )
                     }
-                    TaskAlarmScheduler.syncAll(context)
                     if (currentRecordId == targetRecord.id) {
                         selectedStatus = selectedOption
                         initialEditorSnapshot = initialEditorSnapshot?.copy(selectedStatus = selectedOption.workBadgeType)
@@ -714,7 +713,6 @@ fun TaskVesselDetailScreen(
                         val recordId = currentRecordId ?: return@TextButton
                         val deleted = workRecordViewModel.deleteRecord(recordId)
                         if (deleted) {
-                            TaskAlarmScheduler.syncAll(context)
                             currentRecordId = null
                             selectedPresetWorkId = null
                             workInputMode = WorkInputMode.NONE
@@ -991,7 +989,6 @@ fun TaskVesselDetailScreen(
                             initialEditorSnapshot = currentEditorSnapshot.copy(
                                 attachmentKeys = attachmentItems.map { "${it.type}:${it.uri}" }
                             )
-                            TaskAlarmScheduler.syncAll(context)
                         }
                     }
                 },
@@ -1099,7 +1096,7 @@ private fun TopBar(
         Box(modifier = Modifier.size(42.dp), contentAlignment = Alignment.Center) {
             TextButton(onClick = onBackClick, modifier = Modifier.size(42.dp)) {
                 Icon(
-                    imageVector = Icons.Outlined.ArrowBack,
+                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                     contentDescription = stringResource(R.string.common_close),
                     tint = RecordPrimaryText,
                     modifier = Modifier.size(56.dp)

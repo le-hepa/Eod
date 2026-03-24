@@ -1,5 +1,6 @@
 package com.gomgom.eod.feature.task.dao
 
+import androidx.room.withTransaction
 import com.gomgom.eod.feature.task.db.TaskRoomDatabase
 import com.gomgom.eod.feature.task.db.toEntity
 import com.gomgom.eod.feature.task.db.toItem
@@ -17,7 +18,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 
@@ -236,20 +236,42 @@ class TaskTopDaoImpl(
         return cycleNumber to cycleUnit
     }
 
-    private fun loadVessels(): List<TaskTopVesselItem> {
-        return runBlocking(Dispatchers.IO) {
-            TaskRoomDatabase.ensureMigrated()
-            roomDao.getVessels()
-        }.map { it.toItem() }
+    private suspend fun loadVessels(): List<TaskTopVesselItem> {
+        TaskRoomDatabase.ensureMigrated()
+        return roomDao.getVessels().map { it.toItem() }
     }
 
     private fun persistVessels(items: List<TaskTopVesselItem>) {
         scope.launch {
             persistMutex.withLock {
                 TaskRoomDatabase.ensureMigrated()
-                roomDao.clearVessels()
-                roomDao.upsertVessels(items.map { it.toEntity() })
+                val roomDatabase = TaskRoomDatabase.getInstance()
+                val existingEntities = roomDao.getVessels()
+                val newEntities = items.map { it.toEntity() }
+                val existingById = existingEntities.associateBy { it.id }
+                val newById = newEntities.associateBy { it.id }
+                val vesselsToUpsert = newEntities.filter { entity ->
+                    existingById[entity.id]?.isSameContentAs(entity) != true
+                }
+                val vesselIdsToDelete = existingById.keys.filterNot(newById::containsKey)
+
+                roomDatabase.withTransaction {
+                    if (vesselIdsToDelete.isNotEmpty()) {
+                        roomDao.deleteVesselsByIds(vesselIdsToDelete)
+                    }
+                    if (vesselsToUpsert.isNotEmpty()) {
+                        roomDao.upsertVessels(vesselsToUpsert)
+                    }
+                }
             }
         }
     }
+}
+
+private fun com.gomgom.eod.feature.task.db.TaskVesselEntity.isSameContentAs(
+    other: com.gomgom.eod.feature.task.db.TaskVesselEntity
+): Boolean {
+    return name == other.name &&
+        presetName == other.presetName &&
+        enabled == other.enabled
 }

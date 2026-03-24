@@ -736,7 +736,7 @@
 735,AW,ARUBA,DEU,AWDEU,Druif,druif,aruba,,AWDEU | AW | DEU | Druif | ARUBA | druif | aruba
 736,AW,ARUBA,ORJ,AWORJ,Oranjestad,oranjestad,aruba,,AWORJ | AW | ORJ | Oranjestad | ARUBA | oranjestad | aruba
 737,AW,ARUBA,SNL,AWSNL,Sint Nicolaas,sint nicolaas,aruba,,AWSNL | AW | SNL | Sint Nicolaas | ARUBA | sint nicolaas | aruba
-738,AX,ÅLAND ISLANDS,MHQ,AXMHQ,Maarianhamina (Mariehamn),maarianhamina mariehamn,aland islands,,AXMHQ | AX | MHQ | Maarianhamina (Mariehamn) | ÅLAND ISLANDS | maarianhamina mariehamn | aland islands
+738,AX,ÅLAND ISLANDS,MHQ,AXMHQ,Mariehamn (Maarianhamina),mariehamn (maarianhamina),åland islands,,AXMHQ | AX | MHQ | Mariehamn (Maarianhamina) | ÅLAND ISLANDS | mariehamn (maarianhamina) | åland islands
 739,AX,ÅLAND ISLANDS,MHQ,AXMHQ,Mariehamn (Maarianhamina),mariehamn maarianhamina,aland islands,,AXMHQ | AX | MHQ | Mariehamn (Maarianhamina) | ÅLAND ISLANDS | mariehamn maarianhamina | aland islands
 740,AZ,AZERBAIJAN,BAK,AZBAK,Baku,baku,azerbaijan,,AZBAK | AZ | BAK | Baku | AZERBAIJAN | baku | azerbaijan
 741,AZ,AZERBAIJAN,KMZ,AZKMZ,Khachmaz,khachmaz,azerbaijan,,AZKMZ | AZ | KMZ | Khachmaz | AZERBAIJAN | khachmaz | azerbaijan
@@ -790,7 +790,7 @@
 789,BE,BELGIUM,AST,BEAST,Astene,astene,belgium,,BEAST | BE | AST | Astene | BELGIUM | astene | belgium
 790,BE,BELGIUM,ATH,BEATH,Ath,ath,belgium,,BEATH | BE | ATH | Ath | BELGIUM | ath | belgium
 791,BE,BELGIUM,7PD,BE7PD,Athis,athis,belgium,,BE7PD | BE | 7PD | Athis | BELGIUM | athis | belgium
-792,BE,BELGIUM,ODE,BEODE,Auderghem (Oudergem)/Brussel (Bruxelles),auderghem oudergem brussel bruxelles,belgium,,BEODE | BE | ODE | Auderghem (Oudergem)/Brussel (Bruxelles) | BELGIUM | auderghem oudergem brussel bruxelles | belgium
+792,BE,BELGIUM,ODE,BEODE,Oudergem (Auderghem)/Brussel (Bruxelles),oudergem (auderghem)/brussel (bruxelles),belgium,,BEODE | BE | ODE | Oudergem (Auderghem)/Brussel (Bruxelles) | BELGIUM | oudergem (auderghem)/brussel (bruxelles) | belgium
 793,BE,BELGIUM,AVS,BEAVS,Auvelais,auvelais,belgium,,BEAVS | BE | AVS | Auvelais | BELGIUM | auvelais | belgium
 794,BE,BELGIUM,AVL,BEAVL,Avelgem,avelgem,belgium,,BEAVL | BE | AVL | Avelgem | BELGIUM | avelgem | belgium
 795,BE,BELGIUM,W5R,BEW5R,Awirs,awirs,belgium,,BEW5R | BE | W5R | Awirs | BELGIUM | awirs | belgium
@@ -831,13 +831,13 @@
 830,BE,BELGIUM,BRE,BEBRE,Bree,bree,belgium,,BEBRE | BE | BRE | Bree | BELGIUM | bree | belgium
 831,BE,BELGIUM,BGN,BEBGN,Briegden,briegden,belgium,,BEBGN | BE | BGN | Briegden | BELGIUM | briegden | belgium
 832,BE,BELGIUM,BGS,BEBGS,Brugge (Bruges),brugge bruges,belgium,,BEBGS | BE | BGS | Brugge (Bruges) | BELGIUM | brugge bruges | belgium
-833,BE,BELGIUM,BRU,BEBRU,Brussel (Bruxelles),brussel bruxelles,belgium,,BEBRU | BE | BRU | Brussel (Bruxelles) | BELGIUM | brussel bruxelles | belgium
+833,BE,BELGIUM,BRU,BEBRU,Bruxelles (Brussel),bruxelles (brussel),belgium,,BEBRU | BE | BRU | Bruxelles (Brussel) | BELGIUM | bruxelles (brussel) | belgium
 834,BE,BELGIUM,BRU,BEBRU,Bruxelles (Brussel),bruxelles brussel,belgium,,BEBRU | BE | BRU | Bruxelles (Brussel) | BELGIUM | bruxelles brussel | belgium
 835,BE,BELGIUM,BRY,BEBRY,Bruyelle,bruyelle,belgium,,BEBRY | BE | BRY | Bruyelle | BELGIUM | bruyelle | belgium
 836,BE,BELGIUM,BHU,BEBHU,Buggenhout,buggenhout,belgium,,BEBHU | BE | BHU | Buggenhout | BELGIUM | buggenhout | belgium
 837,BE,BELGIUM,BUD,BEBUD,Burcht,burcht,belgium,,BEBUD | BE | BUD | Burcht | BELGIUM | burcht | belgium
 838,BE,BELGIUM,CLN,BECLN,Calonne,calonne,belgium,,BECLN | BE | CLN | Calonne | BELGIUM | calonne | belgium
-839,BE,BELGIUM,KAN,BEKAN,Canne (Kanne),canne kanne,belgium,,BEKAN | BE | KAN | Canne (Kanne) | BELGIUM | canne kanne | belgium
+839,BE,BELGIUM,KAN,BEKAN,Kanne (Canne),kanne (canne),belgium,,BEKAN | BE | KAN | Kanne (Canne) | BELGIUM | kanne (canne) | belgium
 840,BE,BELGIUM,CRL,BECRL,Charleroi,charleroi,belgium,,BECRL | BE | CRL | Charleroi | BELGIUM | charleroi | belgium
 841,BE,BELGIUM,CTL,BECTL,Chatelineau,chatelineau,belgium,,BECTL | BE | CTL | Chatelineau | BELGIUM | chatelineau | belgium
 842,BE,BELGIUM,CRA,BECRA,Cheratte,cheratte,belgium,,BECRA | BE | CRA | Cheratte | BELGIUM | cheratte | belgium
@@ -864,7 +864,7 @@
 863,BE,BELGIUM,DLS,BEDLS,Dilsen,dilsen,belgium,,BEDLS | BE | DLS | Dilsen | BELGIUM | dilsen | belgium
 864,BE,BELGIUM,DIA,BEDIA,Dinant,dinant,belgium,,BEDIA | BE | DIA | Dinant | BELGIUM | dinant | belgium
 865,BE,BELGIUM,DEL,BEDEL,Doel,doel,belgium,,BEDEL | BE | DEL | Doel | BELGIUM | doel | belgium
-866,BE,BELGIUM,TRN,BETRN,Doornik (Tournai),doornik tournai,belgium,,BETRN | BE | TRN | Doornik (Tournai) | BELGIUM | doornik tournai | belgium
+866,BE,BELGIUM,TRN,BETRN,Tournai (Doornik),tournai (doornik),belgium,,BETRN | BE | TRN | Tournai (Doornik) | BELGIUM | tournai (doornik) | belgium
 867,BE,BELGIUM,DGN,BEDGN,Drongen,drongen,belgium,,BEDGN | BE | DGN | Drongen | BELGIUM | drongen | belgium
 868,BE,BELGIUM,DUF,BEDUF,Duffel,duffel,belgium,,BEDUF | BE | DUF | Duffel | BELGIUM | duffel | belgium
 869,BE,BELGIUM,9IR,BE9IR,Eben-Emael,eben emael,belgium,,BE9IR | BE | 9IR | Eben-Emael | BELGIUM | eben emael | belgium
@@ -882,7 +882,7 @@
 881,BE,BELGIUM,REQ,BEREQ,Erquelinnes,erquelinnes,belgium,,BEREQ | BE | REQ | Erquelinnes | BELGIUM | erquelinnes | belgium
 882,BE,BELGIUM,ERE,BEERE,Ertvelde,ertvelde,belgium,,BEERE | BE | ERE | Ertvelde | BELGIUM | ertvelde | belgium
 883,BE,BELGIUM,EFS,BEEFS,Escanaffles,escanaffles,belgium,,BEEFS | BE | EFS | Escanaffles | BELGIUM | escanaffles | belgium
-884,BE,BELGIUM,SPI,BESPI,Espierres (Spiere),espierres spiere,belgium,,BESPI | BE | SPI | Espierres (Spiere) | BELGIUM | espierres spiere | belgium
+884,BE,BELGIUM,SPI,BESPI,Spiere (Espierres),spiere (espierres),belgium,,BESPI | BE | SPI | Spiere (Espierres) | BELGIUM | spiere (espierres) | belgium
 885,BE,BELGIUM,EQM,BEEQM,Esquelmes,esquelmes,belgium,,BEEQM | BE | EQM | Esquelmes | BELGIUM | esquelmes | belgium
 886,BE,BELGIUM,EMP,BEEMP,Estaimpuis,estaimpuis,belgium,,BEEMP | BE | EMP | Estaimpuis | BELGIUM | estaimpuis | belgium
 887,BE,BELGIUM,EET,BEEET,Ethe,ethe,belgium,,BEEET | BE | EET | Ethe | BELGIUM | ethe | belgium
@@ -951,7 +951,7 @@
 950,BE,BELGIUM,HUY,BEHUY,Huy,huy,belgium,,BEHUY | BE | HUY | Huy | BELGIUM | huy | belgium
 951,BE,BELGIUM,IGE,BEIGE,Ingelmunster,ingelmunster,belgium,,BEIGE | BE | IGE | Ingelmunster | BELGIUM | ingelmunster | belgium
 952,BE,BELGIUM,ISR,BEISR,Isieres,isieres,belgium,,BEISR | BE | ISR | Isieres | BELGIUM | isieres | belgium
-953,BE,BELGIUM,ITR,BEITR,Itter (Ittre),itter ittre,belgium,,BEITR | BE | ITR | Itter (Ittre) | BELGIUM | itter ittre | belgium
+953,BE,BELGIUM,ITR,BEITR,Ittre (Itter),ittre (itter),belgium,,BEITR | BE | ITR | Ittre (Itter) | BELGIUM | ittre (itter) | belgium
 954,BE,BELGIUM,ITR,BEITR,Ittre (Itter),ittre itter,belgium,,BEITR | BE | ITR | Ittre (Itter) | BELGIUM | ittre itter | belgium
 955,BE,BELGIUM,YRT,BEYRT,Ivoz-Ramet,ivoz ramet,belgium,,BEYRT | BE | YRT | Ivoz-Ramet | BELGIUM | ivoz ramet | belgium
 956,BE,BELGIUM,IZG,BEIZG,Izegem,izegem,belgium,,BEIZG | BE | IZG | Izegem | BELGIUM | izegem | belgium
@@ -982,7 +982,7 @@
 981,BE,BELGIUM,BSI,BEBSI,Labuissiere,labuissiere,belgium,,BEBSI | BE | BSI | Labuissiere | BELGIUM | labuissiere | belgium
 982,BE,BELGIUM,LUZ,BELUZ,Ladeuze,ladeuze,belgium,,BELUZ | BE | LUZ | Ladeuze | BELGIUM | ladeuze | belgium
 983,BE,BELGIUM,LAN,BELAN,Lanaken,lanaken,belgium,,BELAN | BE | LAN | Lanaken | BELGIUM | lanaken | belgium
-984,BE,BELGIUM,LNY,BELNY,Lanaye (Ternaaien),lanaye ternaaien,belgium,,BELNY | BE | LNY | Lanaye (Ternaaien) | BELGIUM | lanaye ternaaien | belgium
+984,BE,BELGIUM,LNY,BELNY,Ternaaien (Lanaye),ternaaien (lanaye),belgium,,BELNY | BE | LNY | Ternaaien (Lanaye) | BELGIUM | ternaaien (lanaye) | belgium
 985,BE,BELGIUM,LGM,BELGM,Landegem,landegem,belgium,,BELGM | BE | LGM | Landegem | BELGIUM | landegem | belgium
 986,BE,BELGIUM,LDS,BELDS,Landelies,landelies,belgium,,BELDS | BE | LDS | Landelies | BELGIUM | landelies | belgium
 987,BE,BELGIUM,LGB,BELGB,Langerbrugge,langerbrugge,belgium,,BELGB | BE | LGB | Langerbrugge | BELGIUM | langerbrugge | belgium
@@ -1042,7 +1042,7 @@
 1041,BE,BELGIUM,MZK,BEMZK,Moerzeke,moerzeke,belgium,,BEMZK | BE | MZK | Moerzeke | BELGIUM | moerzeke | belgium
 1042,BE,BELGIUM,MGN,BEMGN,Moignelee,moignelee,belgium,,BEMGN | BE | MGN | Moignelee | BELGIUM | moignelee | belgium
 1043,BE,BELGIUM,MLO,BEMLO,Mol,mol,belgium,,BEMLO | BE | MLO | Mol | BELGIUM | mol | belgium
-1044,BE,BELGIUM,MSJ,BEMSJ,Molenbeek-Saint-Jean (Sint-Jans-Molenbeek)/Brussel (Bruxelles),molenbeek saint jean sint jans molenbeek brussel bruxelles,belgium,,BEMSJ | BE | MSJ | Molenbeek-Saint-Jean (Sint-Jans-Molenbeek)/Brussel (Bruxelles) | BELGIUM | molenbeek saint jean sint jans molenbeek brussel bruxelles | belgium
+1044,BE,BELGIUM,MSJ,BEMSJ,Sint-Jans-Molenbeek (Molenbeek-Saint-Jean)/Brussel (Bruxelles),sint-jans-molenbeek (molenbeek-saint-jean)/brussel (bruxelles),belgium,,BEMSJ | BE | MSJ | Sint-Jans-Molenbeek (Molenbeek-Saint-Jean)/Brussel (Bruxelles) | BELGIUM | sint-jans-molenbeek (molenbeek-saint-jean)/brussel (bruxelles) | belgium
 1045,BE,BELGIUM,MSS,BEMSS,Monceau-sur-Sambre,monceau sur sambre,belgium,,BEMSS | BE | MSS | Monceau-sur-Sambre | BELGIUM | monceau sur sambre | belgium
 1046,BE,BELGIUM,MQS,BEMQS,Mons,mons,belgium,,BEMQS | BE | MQS | Mons | BELGIUM | mons | belgium
 1047,BE,BELGIUM,MSI,BEMSI,Monsin,monsin,belgium,,BEMSI | BE | MSI | Monsin | BELGIUM | monsin | belgium
@@ -1075,7 +1075,7 @@
 1074,BE,BELGIUM,OBT,BEOBT,Ombret-Rawsa,ombret rawsa,belgium,,BEOBT | BE | OBT | Ombret-Rawsa | BELGIUM | ombret rawsa | belgium
 1075,BE,BELGIUM,OZL,BEOZL,Onkerzele,onkerzele,belgium,,BEOZL | BE | OZL | Onkerzele | BELGIUM | onkerzele | belgium
 1076,BE,BELGIUM,OOG,BEOOG,Ooigem,ooigem,belgium,,BEOOG | BE | OOG | Ooigem | BELGIUM | ooigem | belgium
-1077,BE,BELGIUM,OST,BEOST,Oostende (Ostend),oostende ostend,belgium,,BEOST | BE | OST | Oostende (Ostend) | BELGIUM | oostende ostend | belgium
+1077,BE,BELGIUM,OST,BEOST,Ostend (Oostende),ostend (oostende),belgium,,BEOST | BE | OST | Ostend (Oostende) | BELGIUM | ostend (oostende) | belgium
 1078,BE,BELGIUM,OTL,BEOTL,Oosterlo,oosterlo,belgium,,BEOTL | BE | OTL | Oosterlo | BELGIUM | oosterlo | belgium
 1079,BE,BELGIUM,OKP,BEOKP,Oostkamp,oostkamp,belgium,,BEOKP | BE | OKP | Oostkamp | BELGIUM | oostkamp | belgium
 1080,BE,BELGIUM,OTK,BEOTK,Oostkerke,oostkerke,belgium,,BEOTK | BE | OTK | Oostkerke | BELGIUM | oostkerke | belgium
@@ -1241,7 +1241,7 @@
 1240,BE,BELGIUM,ZGM,BEZGM,Zingem,zingem,belgium,,BEZGM | BE | ZGM | Zingem | BELGIUM | zingem | belgium
 1241,BE,BELGIUM,ZOD,BEZOD,Zolder,zolder,belgium,,BEZOD | BE | ZOD | Zolder | BELGIUM | zolder | belgium
 1242,BE,BELGIUM,ZRM,BEZRM,Zomergem,zomergem,belgium,,BEZRM | BE | ZRM | Zomergem | BELGIUM | zomergem | belgium
-1243,BE,BELGIUM,ZUN,BEZUN,Zuen (Zuun),zuen zuun,belgium,,BEZUN | BE | ZUN | Zuen (Zuun) | BELGIUM | zuen zuun | belgium
+1243,BE,BELGIUM,ZUN,BEZUN,Zuun (Zuen),zuun (zuen),belgium,,BEZUN | BE | ZUN | Zuun (Zuen) | BELGIUM | zuun (zuen) | belgium
 1244,BE,BELGIUM,ZUL,BEZUL,Zulte,zulte,belgium,,BEZUL | BE | ZUL | Zulte | BELGIUM | zulte | belgium
 1245,BE,BELGIUM,ZTL,BEZTL,Zutendaal,zutendaal,belgium,,BEZTL | BE | ZTL | Zutendaal | BELGIUM | zutendaal | belgium
 1246,BE,BELGIUM,ZUN,BEZUN,Zuun (Zuen),zuun zuen,belgium,,BEZUN | BE | ZUN | Zuun (Zuen) | BELGIUM | zuun zuen | belgium
@@ -1314,7 +1314,7 @@
 1313,BQ,"BONAIRE, SINT EUSTATIUS AND SABA",EUX,BQEUX,Sint Eustatius,sint eustatius,bonaire sint eustatius and saba,,"BQEUX | BQ | EUX | Sint Eustatius | BONAIRE, SINT EUSTATIUS AND SABA | sint eustatius | bonaire sint eustatius and saba"
 1314,BR,BRAZIL,ATB,BRATB,Abaetetuba,abaetetuba,brazil,,BRATB | BR | ATB | Abaetetuba | BRAZIL | abaetetuba | brazil
 1315,BR,BRAZIL,ADL,BRADL,Abelardo Luz,abelardo luz,brazil,,BRADL | BR | ADL | Abelardo Luz | BRAZIL | abelardo luz | brazil
-1316,BR,BRAZIL,ACX,BRACX,Acu Pt/Sao Joao da Barra,acu pt sao joao da barra,brazil,,BRACX | BR | ACX | Acu Pt/Sao Joao da Barra | BRAZIL | acu pt sao joao da barra | brazil
+1316,BR,BRAZIL,ACX,BRACX,Acu/Sao Joao da Barra,acu/sao joao da barra,brazil,,BRACX | BR | ACX | Acu/Sao Joao da Barra | BRAZIL | acu/sao joao da barra | brazil
 1317,BR,BRAZIL,AGS,BRAGS,Alagoinhas,alagoinhas,brazil,,BRAGS | BR | AGS | Alagoinhas | BRAZIL | alagoinhas | brazil
 1318,BR,BRAZIL,ALH,BRALH,Alhandra,alhandra,brazil,,BRALH | BR | ALH | Alhandra | BRAZIL | alhandra | brazil
 1319,BR,BRAZIL,ALP,BRALP,Alpinopolis,alpinopolis,brazil,,BRALP | BR | ALP | Alpinopolis | BRAZIL | alpinopolis | brazil
@@ -1325,12 +1325,12 @@
 1324,BR,BRAZIL,AJU,BRAJU,Aracaju,aracaju,brazil,,BRAJU | BR | AJU | Aracaju | BRAZIL | aracaju | brazil
 1325,BR,BRAZIL,ARB,BRARB,Aratu,aratu,brazil,,BRARB | BR | ARB | Aratu | BRAZIL | aratu | brazil
 1326,BR,BRAZIL,BUN,BRBUN,Barauna,barauna,brazil,,BRBUN | BR | BUN | Barauna | BRAZIL | barauna | brazil
-1327,BR,BRAZIL,RCH,BRRCH,Barra do Riacho Pt / Aracruz,barra do riacho pt aracruz,brazil,,BRRCH | BR | RCH | Barra do Riacho Pt / Aracruz | BRAZIL | barra do riacho pt aracruz | brazil
+1327,BR,BRAZIL,RCH,BRRCH,Barra do Riacho / Aracruz,barra do riacho / aracruz,brazil,,BRRCH | BR | RCH | Barra do Riacho / Aracruz | BRAZIL | barra do riacho / aracruz | brazil
 1328,BR,BRAZIL,BAR,BRBAR,Barra dos Coqueiros,barra dos coqueiros,brazil,,BRBAR | BR | BAR | Barra dos Coqueiros | BRAZIL | barra dos coqueiros | brazil
 1329,BR,BRAZIL,BEL,BRBEL,Belem,belem,brazil,,BRBEL | BR | BEL | Belem | BRAZIL | belem | brazil
 1330,BR,BRAZIL,BNU,BRBNU,Blumenau,blumenau,brazil,,BRBNU | BR | BNU | Blumenau | BRAZIL | blumenau | brazil
 1331,BR,BRAZIL,BVS,BRBVS,Breves,breves,brazil,,BRBVS | BR | BVS | Breves | BRAZIL | breves | brazil
-1332,BR,BRAZIL,CDO,BRCDO,Cabedelo Pt,cabedelo pt,brazil,,BRCDO | BR | CDO | Cabedelo Pt | BRAZIL | cabedelo pt | brazil
+1332,BR,BRAZIL,CDO,BRCDO,Cabedelo,cabedelo,brazil,,BRCDO | BR | CDO | Cabedelo | BRAZIL | cabedelo | brazil
 1333,BR,BRAZIL,CDM,BRCDM,Cachoeiras de Macacu,cachoeiras de macacu,brazil,,BRCDM | BR | CDM | Cachoeiras de Macacu | BRAZIL | cachoeiras de macacu | brazil
 1334,BR,BRAZIL,CMC,BRCMC,Camocim,camocim,brazil,,BRCMC | BR | CMC | Camocim | BRAZIL | camocim | brazil
 1335,BR,BRAZIL,CPI,BRCPI,Capivari,capivari,brazil,,BRCPI | BR | CPI | Capivari | BRAZIL | capivari | brazil
@@ -1344,7 +1344,7 @@
 1343,BR,BRAZIL,ESA,BRESA,Estrema,estrema,brazil,,BRESA | BR | ESA | Estrema | BRAZIL | estrema | brazil
 1344,BR,BRAZIL,FEN,BRFEN,Fernando de Noronha,fernando de noronha,brazil,,BRFEN | BR | FEN | Fernando de Noronha | BRAZIL | fernando de noronha | brazil
 1345,BR,BRAZIL,FLN,BRFLN,Florianopolis,florianopolis,brazil,,BRFLN | BR | FLN | Florianopolis | BRAZIL | florianopolis | brazil
-1346,BR,BRAZIL,FNO,BRFNO,Forno Pt/Arraial do Cabo,forno pt arraial do cabo,brazil,,BRFNO | BR | FNO | Forno Pt/Arraial do Cabo | BRAZIL | forno pt arraial do cabo | brazil
+1346,BR,BRAZIL,FNO,BRFNO,Forno/Arraial do Cabo,forno/arraial do cabo,brazil,,BRFNO | BR | FNO | Forno/Arraial do Cabo | BRAZIL | forno/arraial do cabo | brazil
 1347,BR,BRAZIL,FOR,BRFOR,Fortaleza,fortaleza,brazil,,BRFOR | BR | FOR | Fortaleza | BRAZIL | fortaleza | brazil
 1348,BR,BRAZIL,GEB,BRGEB,Gebig,gebig,brazil,,BRGEB | BR | GEB | Gebig | BRAZIL | gebig | brazil
 1349,BR,BRAZIL,GTB,BRGTB,Guaratuba,guaratuba,brazil,,BRGTB | BR | GTB | Guaratuba | BRAZIL | guaratuba | brazil
@@ -1352,7 +1352,7 @@
 1351,BR,BRAZIL,IBB,BRIBB,Imbituba,imbituba,brazil,,BRIBB | BR | IBB | Imbituba | BRAZIL | imbituba | brazil
 1352,BR,BRAZIL,IPO,BRIPO,Ipojuca,ipojuca,brazil,,BRIPO | BR | IPO | Ipojuca | BRAZIL | ipojuca | brazil
 1353,BR,BRAZIL,IRO,BRIRO,Itabirito,itabirito,brazil,,BRIRO | BR | IRO | Itabirito | BRAZIL | itabirito | brazil
-1354,BR,BRAZIL,SPB,BRSPB,Itaguai Pt = Sepetiba Pt,itaguai pt sepetiba pt,brazil,,BRSPB | BR | SPB | Itaguai Pt = Sepetiba Pt | BRAZIL | itaguai pt sepetiba pt | brazil
+1354,BR,BRAZIL,SPB,BRSPB,Itaguai = Sepetiba,itaguai = sepetiba,brazil,,BRSPB | BR | SPB | Itaguai = Sepetiba | BRAZIL | itaguai = sepetiba | brazil
 1355,BR,BRAZIL,ITJ,BRITJ,Itajai,itajai,brazil,,BRITJ | BR | ITJ | Itajai | BRAZIL | itajai | brazil
 1356,BR,BRAZIL,ITZ,BRITZ,Itapemirim,itapemirim,brazil,,BRITZ | BR | ITZ | Itapemirim | BRAZIL | itapemirim | brazil
 1357,BR,BRAZIL,IQI,BRIQI,Itaqui,itaqui,brazil,,BRIQI | BR | IQI | Itaqui | BRAZIL | itaqui | brazil
@@ -1375,12 +1375,12 @@
 1374,BR,BRAZIL,OUT,BROUT,Outeiro,outeiro,brazil,,BROUT | BR | OUT | Outeiro | BRAZIL | outeiro | brazil
 1375,BR,BRAZIL,PNG,BRPNG,Paranagua,paranagua,brazil,,BRPNG | BR | PNG | Paranagua | BRAZIL | paranagua | brazil
 1376,BR,BRAZIL,PHB,BRPHB,Parnaiba,parnaiba,brazil,,BRPHB | BR | PHB | Parnaiba | BRAZIL | parnaiba | brazil
-1377,BR,BRAZIL,PEC,BRPEC,Pecem Pt/Sao Goncalo do Amarante,pecem pt sao goncalo do amarante,brazil,,BRPEC | BR | PEC | Pecem Pt/Sao Goncalo do Amarante | BRAZIL | pecem pt sao goncalo do amarante | brazil
+1377,BR,BRAZIL,PEC,BRPEC,Pecem/Sao Goncalo do Amarante,pecem/sao goncalo do amarante,brazil,,BRPEC | BR | PEC | Pecem/Sao Goncalo do Amarante | BRAZIL | pecem/sao goncalo do amarante | brazil
 1378,BR,BRAZIL,PEN,BRPEN,Pedras Negras,pedras negras,brazil,,BRPEN | BR | PEN | Pedras Negras | BRAZIL | pedras negras | brazil
 1379,BR,BRAZIL,PET,BRPET,Pelotas,pelotas,brazil,,BRPET | BR | PET | Pelotas | BRAZIL | pelotas | brazil
 1380,BR,BRAZIL,POM,BRPOM,Pomerode,pomerode,brazil,,BRPOM | BR | POM | Pomerode | BRAZIL | pomerode | brazil
 1381,BR,BRAZIL,PMA,BRPMA,Ponta da Madeira,ponta da madeira,brazil,,BRPMA | BR | PMA | Ponta da Madeira | BRAZIL | ponta da madeira | brazil
-1382,BR,BRAZIL,POU,BRPOU,Ponta do Ubu Pt/Anchieta,ponta do ubu pt anchieta,brazil,,BRPOU | BR | POU | Ponta do Ubu Pt/Anchieta | BRAZIL | ponta do ubu pt anchieta | brazil
+1382,BR,BRAZIL,POU,BRPOU,Ponta do Ubu/Anchieta,ponta do ubu/anchieta,brazil,,BRPOU | BR | POU | Ponta do Ubu/Anchieta | BRAZIL | ponta do ubu/anchieta | brazil
 1383,BR,BRAZIL,POA,BRPOA,Porto Alegre,porto alegre,brazil,,BRPOA | BR | POA | Porto Alegre | BRAZIL | porto alegre | brazil
 1384,BR,BRAZIL,CSI,BRCSI,Porto de Sauipe,porto de sauipe,brazil,,BRCSI | BR | CSI | Porto de Sauipe | BRAZIL | porto de sauipe | brazil
 1385,BR,BRAZIL,BPS,BRBPS,Porto Seguro,porto seguro,brazil,,BRBPS | BR | BPS | Porto Seguro | BRAZIL | porto seguro | brazil
@@ -1407,12 +1407,12 @@
 1406,BR,BRAZIL,SUA,BRSUA,Suape,suape,brazil,,BRSUA | BR | SUA | Suape | BRAZIL | suape | brazil
 1407,BR,BRAZIL,ROA,BRROA,Tres Coroas,tres coroas,brazil,,BRROA | BR | ROA | Tres Coroas | BRAZIL | tres coroas | brazil
 1408,BR,BRAZIL,TTE,BRTTE,Tubarao,tubarao,brazil,,BRTTE | BR | TTE | Tubarao | BRAZIL | tubarao | brazil
-1409,BR,BRAZIL,TUB,BRTUB,Tubarao Pt./Vitoria,tubarao pt vitoria,brazil,,BRTUB | BR | TUB | Tubarao Pt./Vitoria | BRAZIL | tubarao pt vitoria | brazil
+1409,BR,BRAZIL,TUB,BRTUB,Tubarao./Vitoria,tubarao./vitoria,brazil,,BRTUB | BR | TUB | Tubarao./Vitoria | BRAZIL | tubarao./vitoria | brazil
 1410,BR,BRAZIL,TUT,BRTUT,Tutoia,tutoia,brazil,,BRTUT | BR | TUT | Tutoia | BRAZIL | tutoia | brazil
-1411,BR,BRAZIL,PSB,BRPSB,Usiba Pt.,usiba pt,brazil,,BRPSB | BR | PSB | Usiba Pt. | BRAZIL | usiba pt | brazil
+1411,BR,BRAZIL,PSB,BRPSB,Usiba.,usiba.,brazil,,BRPSB | BR | PSB | Usiba. | BRAZIL | usiba. | brazil
 1412,BR,BRAZIL,VZC,BRVZC,Vera Cruz,vera cruz,brazil,,BRVZC | BR | VZC | Vera Cruz | BRAZIL | vera cruz | brazil
-1413,BR,BRAZIL,VDC,BRVDC,Vila do Conde Pt/Barcarena,vila do conde pt barcarena,brazil,,BRVDC | BR | VDC | Vila do Conde Pt/Barcarena | BRAZIL | vila do conde pt barcarena | brazil
-1414,BR,BRAZIL,VIX,BRVIX,Vitoria Pt,vitoria pt,brazil,,BRVIX | BR | VIX | Vitoria Pt | BRAZIL | vitoria pt | brazil
+1413,BR,BRAZIL,VDC,BRVDC,Vila do Conde/Barcarena,vila do conde/barcarena,brazil,,BRVDC | BR | VDC | Vila do Conde/Barcarena | BRAZIL | vila do conde/barcarena | brazil
+1414,BR,BRAZIL,VIX,BRVIX,Vitoria,vitoria,brazil,,BRVIX | BR | VIX | Vitoria | BRAZIL | vitoria | brazil
 1415,BS,BAHAMAS,ASD,BSASD,"Andros Town, Andros Island",andros town andros island,bahamas,,"BSASD | BS | ASD | Andros Town, Andros Island | BAHAMAS | andros town andros island | bahamas"
 1416,BS,BAHAMAS,BKC,BSBKC,Bock Cay,bock cay,bahamas,,BSBKC | BS | BKC | Bock Cay | BAHAMAS | bock cay | bahamas
 1417,BS,BAHAMAS,CEL,BSCEL,Cape Eleuthera,cape eleuthera,bahamas,,BSCEL | BS | CEL | Cape Eleuthera | BAHAMAS | cape eleuthera | bahamas
@@ -2248,10 +2248,10 @@
 2247,CM,CAMEROON,MOU,CMMOU,Moudi Terminal,moudi terminal,cameroon,,CMMOU | CM | MOU | Moudi Terminal | CAMEROON | moudi terminal | cameroon
 2248,CM,CAMEROON,TKC,CMTKC,Tiko,tiko,cameroon,,CMTKC | CM | TKC | Tiko | CAMEROON | tiko | cameroon
 2249,CN,CHINA,APP,CNAPP,Anpu,anpu,china,,CNAPP | CN | APP | Anpu | CHINA | anpu | china
-2250,CN,CHINA,AQG,CNAQG,Anqing Pt,anqing pt,china,,CNAQG | CN | AQG | Anqing Pt | CHINA | anqing pt | china
+2250,CN,CHINA,AQG,CNAQG,Anqing,anqing,china,,CNAQG | CN | AQG | Anqing | CHINA | anqing | china
 2251,CN,CHINA,ANQ,CNANQ,Anqiu,anqiu,china,,CNANQ | CN | ANQ | Anqiu | CHINA | anqiu | china
 2252,CN,CHINA,ANT,CNANT,Anting,anting,china,,CNANT | CN | ANT | Anting | CHINA | anting | china
-2253,CN,CHINA,AJG,CNAJG,Aojiang Pt,aojiang pt,china,,CNAJG | CN | AJG | Aojiang Pt | CHINA | aojiang pt | china
+2253,CN,CHINA,AJG,CNAJG,Aojiang,aojiang,china,,CNAJG | CN | AJG | Aojiang | CHINA | aojiang | china
 2254,CN,CHINA,ASW,CNASW,Aoshanwei,aoshanwei,china,,CNASW | CN | ASW | Aoshanwei | CHINA | aoshanwei | china
 2255,CN,CHINA,BCO,CNBCO,Bacao,bacao,china,,CNBCO | CN | BCO | Bacao | CHINA | bacao | china
 2256,CN,CHINA,BDG,CNBDG,Badong,badong,china,,CNBDG | CN | BDG | Badong | CHINA | badong | china
@@ -2264,16 +2264,16 @@
 2263,CN,CHINA,BSI,CNBSI,Baishi,baishi,china,,CNBSI | CN | BSI | Baishi | CHINA | baishi | china
 2264,CN,CHINA,BYG,CNBYG,Baiyang,baiyang,china,,CNBYG | CN | BYG | Baiyang | CHINA | baiyang | china
 2265,CN,CHINA,BLI,CNBLI,Bali,bali,china,,CNBLI | CN | BLI | Bali | CHINA | bali | china
-2266,CN,CHINA,BSD,CNBSD,Baoshan Pt,baoshan pt,china,,CNBSD | CN | BSD | Baoshan Pt | CHINA | baoshan pt | china
-2267,CN,CHINA,BSP,CNBSP,Basuo Pt,basuo pt,china,,CNBSP | CN | BSP | Basuo Pt | CHINA | basuo pt | china
+2266,CN,CHINA,BSD,CNBSD,Baoshan,baoshan,china,,CNBSD | CN | BSD | Baoshan | CHINA | baoshan | china
+2267,CN,CHINA,BSP,CNBSP,Basuo,basuo,china,,CNBSP | CN | BSP | Basuo | CHINA | basuo | china
 2268,CN,CHINA,BAU,CNBAU,Baxu,baxu,china,,CNBAU | CN | BAU | Baxu | CHINA | baxu | china
 2269,CN,CHINA,BYA,CNBYA,Bayan,bayan,china,,CNBYA | CN | BYA | Bayan | CHINA | bayan | china
 2270,CN,CHINA,BYQ,CNBYQ,Bayuquan,bayuquan,china,,CNBYQ | CN | BYQ | Bayuquan | CHINA | bayuquan | china
 2271,CN,CHINA,BIC,CNBIC,Beicun,beicun,china,,CNBIC | CN | BIC | Beicun | CHINA | beicun | china
-2272,CN,CHINA,BIH,CNBIH,Beihai Pt,beihai pt,china,,CNBIH | CN | BIH | Beihai Pt | CHINA | beihai pt | china
+2272,CN,CHINA,BIH,CNBIH,Beihai,beihai,china,,CNBIH | CN | BIH | Beihai | CHINA | beihai | china
 2273,CN,CHINA,BIJ,CNBIJ,Beijiao,beijiao,china,,CNBIJ | CN | BIJ | Beijiao | CHINA | beijiao | china
 2274,CN,CHINA,BEI,CNBEI,Beilun,beilun,china,,CNBEI | CN | BEI | Beilun | CHINA | beilun | china
-2275,CN,CHINA,BLG,CNBLG,Beilun Pt,beilun pt,china,,CNBLG | CN | BLG | Beilun Pt | CHINA | beilun pt | china
+2275,CN,CHINA,BLG,CNBLG,Beilun,beilun,china,,CNBLG | CN | BLG | Beilun | CHINA | beilun | china
 2276,CN,CHINA,SXB,CNSXB,Beitan,beitan,china,,CNSXB | CN | SXB | Beitan | CHINA | beitan | china
 2277,CN,CHINA,BIY,CNBIY,Beiyao,beiyao,china,,CNBIY | CN | BIY | Beiyao | CHINA | beiyao | china
 2278,CN,CHINA,PHB,CNPHB,Bijia,bijia,china,,CNPHB | CN | PHB | Bijia | CHINA | bijia | china
@@ -2285,7 +2285,7 @@
 2284,CN,CHINA,BHE,CNBHE,Buhe,buhe,china,,CNBHE | CN | BHE | Buhe | CHINA | buhe | china
 2285,CN,CHINA,GSA,CNGSA,Cangshan,cangshan,china,,CNGSA | CN | GSA | Cangshan | CHINA | cangshan | china
 2286,CN,CHINA,CGW,CNCGW,Cangwu,cangwu,china,,CNCGW | CN | CGW | Cangwu | CHINA | cangwu | china
-2287,CN,CHINA,CFD,CNCFD,Caofeidian Pt,caofeidian pt,china,,CNCFD | CN | CFD | Caofeidian Pt | CHINA | caofeidian pt | china
+2287,CN,CHINA,CFD,CNCFD,Caofeidian,caofeidian,china,,CNCFD | CN | CFD | Caofeidian | CHINA | caofeidian | china
 2288,CN,CHINA,CJG,CNCJG,Caojing,caojing,china,,CNCJG | CN | CJG | Caojing | CHINA | caojing | china
 2289,CN,CHINA,CDH,CNCDH,Changdianhekou,changdianhekou,china,,CNCDH | CN | CDH | Changdianhekou | CHINA | changdianhekou | china
 2290,CN,CHINA,CAH,CNCAH,Changhua,changhua,china,,CNCAH | CN | CAH | Changhua | CHINA | changhua | china
@@ -2293,25 +2293,25 @@
 2292,CN,CHINA,CSH,CNCSH,Changsha,changsha,china,,CNCSH | CN | CSH | Changsha | CHINA | changsha | china
 2293,CN,CHINA,CSJ,CNCSJ,Changshou,changshou,china,,CNCSJ | CN | CSJ | Changshou | CHINA | changshou | china
 2294,CN,CHINA,CSO,CNCSO,Changshou,changshou,china,,CNCSO | CN | CSO | Changshou | CHINA | changshou | china
-2295,CN,CHINA,CGS,CNCGS,Changshu Pt,changshu pt,china,,CNCGS | CN | CGS | Changshu Pt | CHINA | changshu pt | china
-2296,CN,CHINA,CZX,CNCZX,Changzhou Pt,changzhou pt,china,,CNCZX | CN | CZX | Changzhou Pt | CHINA | changzhou pt | china
+2295,CN,CHINA,CGS,CNCGS,Changshu,changshu,china,,CNCGS | CN | CGS | Changshu | CHINA | changshu | china
+2296,CN,CHINA,CZX,CNCZX,Changzhou,changzhou,china,,CNCZX | CN | CZX | Changzhou | CHINA | changzhou | china
 2297,CN,CHINA,CHU,CNCHU,Chaohu,chaohu,china,,CNCHU | CN | CHU | Chaohu | CHINA | chaohu | china
-2298,CN,CHINA,CHY,CNCHY,Chaoyang Pt,chaoyang pt,china,,CNCHY | CN | CHY | Chaoyang Pt | CHINA | chaoyang pt | china
-2299,CN,CHINA,COZ,CNCOZ,Chaozhou Pt,chaozhou pt,china,,CNCOZ | CN | COZ | Chaozhou Pt | CHINA | chaozhou pt | china
+2298,CN,CHINA,CHY,CNCHY,Chaoyang,chaoyang,china,,CNCHY | CN | CHY | Chaoyang | CHINA | chaoyang | china
+2299,CN,CHINA,COZ,CNCOZ,Chaozhou,chaozhou,china,,CNCOZ | CN | COZ | Chaozhou | CHINA | chaozhou | china
 2300,CN,CHINA,CBG,CNCBG,Chen Barag,chen barag,china,,CNCBG | CN | CBG | Chen Barag | CHINA | chen barag | china
 2301,CN,CHINA,CUN,CNCUN,Chencun,chencun,china,,CNCUN | CN | CUN | Chencun | CHINA | chencun | china
 2302,CN,CHINA,CHE,CNCHE,Chengaogang,chengaogang,china,,CNCHE | CN | CHE | Chengaogang | CHINA | chengaogang | china
 2303,CN,CHINA,CNG,CNCNG,Chengde,chengde,china,,CNCNG | CN | CNG | Chengde | CHINA | chengde | china
 2304,CN,CHINA,CJI,CNCJI,Chengjiang,chengjiang,china,,CNCJI | CN | CJI | Chengjiang | CHINA | chengjiang | china
-2305,CN,CHINA,CLJ,CNCLJ,Chenglingji Pt,chenglingji pt,china,,CNCLJ | CN | CLJ | Chenglingji Pt | CHINA | chenglingji pt | china
+2305,CN,CHINA,CLJ,CNCLJ,Chenglingji,chenglingji,china,,CNCLJ | CN | CLJ | Chenglingji | CHINA | chenglingji | china
 2306,CN,CHINA,CHX,CNCHX,Chengxi,chengxi,china,,CNCHX | CN | CHX | Chengxi | CHINA | chengxi | china
 2307,CN,CHINA,CIG,CNCIG,Chenjiagang,chenjiagang,china,,CNCIG | CN | CIG | Chenjiagang | CHINA | chenjiagang | china
 2308,CN,CHINA,CBI,CNCBI,Chibi,chibi,china,,CNCBI | CN | CBI | Chibi | CHINA | chibi | china
-2309,CN,CHINA,CWN,CNCWN,Chiwan Pt,chiwan pt,china,,CNCWN | CN | CWN | Chiwan Pt | CHINA | chiwan pt | china
-2310,CN,CHINA,CHI,CNCHI,Chizhou Pt,chizhou pt,china,,CNCHI | CN | CHI | Chizhou Pt | CHINA | chizhou pt | china
+2309,CN,CHINA,CWN,CNCWN,Chiwan,chiwan,china,,CNCWN | CN | CWN | Chiwan | CHINA | chiwan | china
+2310,CN,CHINA,CHI,CNCHI,Chizhou,chizhou,china,,CNCHI | CN | CHI | Chizhou | CHINA | chizhou | china
 2311,CN,CHINA,CGM,CNCGM,Chongming,chongming,china,,CNCGM | CN | CGM | Chongming | CHINA | chongming | china
 2312,CN,CHINA,CQI,CNCQI,Chongqing,chongqing,china,,CNCQI | CN | CQI | Chongqing | CHINA | chongqing | china
-2313,CN,CHINA,CHQ,CNCHQ,Chongqing Pt,chongqing pt,china,,CNCHQ | CN | CHQ | Chongqing Pt | CHINA | chongqing pt | china
+2313,CN,CHINA,CHQ,CNCHQ,Chongqing,chongqing,china,,CNCHQ | CN | CHQ | Chongqing | CHINA | chongqing | china
 2314,CN,CHINA,QZC,CNQZC,Chongwu,chongwu,china,,CNQZC | CN | QZC | Chongwu | CHINA | chongwu | china
 2315,CN,CHINA,CGZ,CNCGZ,Chongzuo,chongzuo,china,,CNCGZ | CN | CGZ | Chongzuo | CHINA | chongzuo | china
 2316,CN,CHINA,CHS,CNCHS,Chuanshan,chuanshan,china,,CNCHS | CN | CHS | Chuanshan | CHINA | chuanshan | china
@@ -2325,16 +2325,16 @@
 2324,CN,CHINA,DDD,CNDDD,Dadeng I.,dadeng i,china,,CNDDD | CN | DDD | Dadeng I. | CHINA | dadeng i | china
 2325,CN,CHINA,DIZ,CNDIZ,Dadingzi,dadingzi,china,,CNDIZ | CN | DIZ | Dadingzi | CHINA | dadingzi | china
 2326,CN,CHINA,DDK,CNDDK,Dadukou,dadukou,china,,CNDDK | CN | DDK | Dadukou | CHINA | dadukou | china
-2327,CN,CHINA,DFG,CNDFG,Dafeng Pt,dafeng pt,china,,CNDFG | CN | DFG | Dafeng Pt | CHINA | dafeng pt | china
+2327,CN,CHINA,DFG,CNDFG,Dafeng,dafeng,china,,CNDFG | CN | DFG | Dafeng | CHINA | dafeng | china
 2328,CN,CHINA,DAA,CNDAA,Dagang,dagang,china,,CNDAA | CN | DAA | Dagang | CHINA | dagang | china
 2329,CN,CHINA,DHP,CNDHP,Dahuangpu,dahuangpu,china,,CNDHP | CN | DHP | Dahuangpu | CHINA | dahuangpu | china
 2330,CN,CHINA,DJI,CNDJI,Dajing,dajing,china,,CNDJI | CN | DJI | Dajing | CHINA | dajing | china
 2331,CN,CHINA,DAL,CNDAL,Dalian,dalian,china,,CNDAL | CN | DAL | Dalian | CHINA | dalian | china
-2332,CN,CHINA,DAG,CNDAG,Dalian Pt,dalian pt,china,,CNDAG | CN | DAG | Dalian Pt | CHINA | dalian pt | china
+2332,CN,CHINA,DAG,CNDAG,Dalian,dalian,china,,CNDAG | CN | DAG | Dalian | CHINA | dalian | china
 2333,CN,CHINA,DLD,CNDLD,Dalu Island,dalu island,china,,CNDLD | CN | DLD | Dalu Island | CHINA | dalu island | china
 2334,CN,CHINA,DMY,CNDMY,Damaiyu,damaiyu,china,,CNDMY | CN | DMY | Damaiyu | CHINA | damaiyu | china
 2335,CN,CHINA,DDZ,CNDDZ,Dandong,dandong,china,,CNDDZ | CN | DDZ | Dandong | CHINA | dandong | china
-2336,CN,CHINA,DDG,CNDDG,Dandong Pt,dandong pt,china,,CNDDG | CN | DDG | Dandong Pt | CHINA | dandong pt | china
+2336,CN,CHINA,DDG,CNDDG,Dandong,dandong,china,,CNDDG | CN | DDG | Dandong | CHINA | dandong | china
 2337,CN,CHINA,FZL,CNFZL,Dantou,dantou,china,,CNFZL | CN | FZL | Dantou | CHINA | dantou | china
 2338,CN,CHINA,DNT,CNDNT,Dantu,dantu,china,,CNDNT | CN | DNT | Dantu | CHINA | dantu | china
 2339,CN,CHINA,DZM,CNDZM,Danzhimatou,danzhimatou,china,,CNDZM | CN | DZM | Danzhimatou | CHINA | danzhimatou | china
@@ -2347,7 +2347,7 @@
 2346,CN,CHINA,DSO,CNDSO,Dasong,dasong,china,,CNDSO | CN | DSO | Dasong | CHINA | dasong | china
 2347,CN,CHINA,DTZ,CNDTZ,Dataizi,dataizi,china,,CNDTZ | CN | DTZ | Dataizi | CHINA | dataizi | china
 2348,CN,CHINA,DWN,CNDWN,Dawan,dawan,china,,CNDWN | CN | DWN | Dawan | CHINA | dawan | china
-2349,CN,CHINA,DAX,CNDAX,Daxie Pt,daxie pt,china,,CNDAX | CN | DAX | Daxie Pt | CHINA | daxie pt | china
+2349,CN,CHINA,DAX,CNDAX,Daxie,daxie,china,,CNDAX | CN | DAX | Daxie | CHINA | daxie | china
 2350,CN,CHINA,DXU,CNDXU,Daxu,daxu,china,,CNDXU | CN | DXU | Daxu | CHINA | daxu | china
 2351,CN,CHINA,DYW,CNDYW,Dayaowan,dayaowan,china,,CNDYW | CN | DYW | Dayaowan | CHINA | dayaowan | china
 2352,CN,CHINA,DAY,CNDAY,Dayawan,dayawan,china,,CNDAY | CN | DAY | Dayawan | CHINA | dayawan | china
@@ -2362,35 +2362,35 @@
 2361,CN,CHINA,DFN,CNDFN,Dongfeng,dongfeng,china,,CNDFN | CN | DFN | Dongfeng | CHINA | dongfeng | china
 2362,CN,CHINA,DGN,CNDGN,Donggang,donggang,china,,CNDGN | CN | DGN | Donggang | CHINA | donggang | china
 2363,CN,CHINA,DGU,CNDGU,Donggu,donggu,china,,CNDGU | CN | DGU | Donggu | CHINA | donggu | china
-2364,CN,CHINA,DGG,CNDGG,Dongguan Pt,dongguan pt,china,,CNDGG | CN | DGG | Dongguan Pt | CHINA | dongguan pt | china
+2364,CN,CHINA,DGG,CNDGG,Dongguan,dongguan,china,,CNDGG | CN | DGG | Dongguan | CHINA | dongguan | china
 2365,CN,CHINA,DNG,CNDNG,Donghai,donghai,china,,CNDNG | CN | DNG | Donghai | CHINA | donghai | china
 2366,CN,CHINA,DJG,CNDJG,Dongjiang Port Area,dongjiang port area,china,,CNDJG | CN | DJG | Dongjiang Port Area | CHINA | dongjiang port area | china
 2367,CN,CHINA,DJK,CNDJK,Dongjiangkou,dongjiangkou,china,,CNDJK | CN | DJK | Dongjiangkou | CHINA | dongjiangkou | china
-2368,CN,CHINA,DJT,CNDJT,Dongjiaotou Pt,dongjiaotou pt,china,,CNDJT | CN | DJT | Dongjiaotou Pt | CHINA | dongjiaotou pt | china
+2368,CN,CHINA,DJT,CNDJT,Dongjiaotou,dongjiaotou,china,,CNDJT | CN | DJT | Dongjiaotou | CHINA | dongjiaotou | china
 2369,CN,CHINA,DOP,CNDOP,Donglian Port,donglian port,china,,CNDOP | CN | DOP | Donglian Port | CHINA | donglian port | china
 2370,CN,CHINA,DLI,CNDLI,Dongliu,dongliu,china,,CNDLI | CN | DLI | Dongliu | CHINA | dongliu | china
 2371,CN,CHINA,DGP,CNDGP,Dongping,dongping,china,,CNDGP | CN | DGP | Dongping | CHINA | dongping | china
-2372,CN,CHINA,DSN,CNDSN,Dongshan Pt,dongshan pt,china,,CNDSN | CN | DSN | Dongshan Pt | CHINA | dongshan pt | china
+2372,CN,CHINA,DSN,CNDSN,Dongshan,dongshan,china,,CNDSN | CN | DSN | Dongshan | CHINA | dongshan | china
 2373,CN,CHINA,DSH,CNDSH,Dongshi,dongshi,china,,CNDSH | CN | DSH | Dongshi | CHINA | dongshi | china
 2374,CN,CHINA,DSI,CNDSI,Dongshi,dongshi,china,,CNDSI | CN | DSI | Dongshi | CHINA | dongshi | china
 2375,CN,CHINA,DSB,CNDSB,Dongsunba,dongsunba,china,,CNDSB | CN | DSB | Dongsunba | CHINA | dongsunba | china
 2376,CN,CHINA,DOX,CNDOX,Dongxing,dongxing,china,,CNDOX | CN | DOX | Dongxing | CHINA | dongxing | china
-2377,CN,CHINA,DYN,CNDYN,Dongying Pt,dongying pt,china,,CNDYN | CN | DYN | Dongying Pt | CHINA | dongying pt | china
+2377,CN,CHINA,DYN,CNDYN,Dongying,dongying,china,,CNDYN | CN | DYN | Dongying | CHINA | dongying | china
 2378,CN,CHINA,DOZ,CNDOZ,Dongzhang,dongzhang,china,,CNDOZ | CN | DOZ | Dongzhang | CHINA | dongzhang | china
 2379,CN,CHINA,DHD,CNDHD,Douhudi,douhudi,china,,CNDHD | CN | DHD | Douhudi | CHINA | douhudi | china
-2380,CN,CHINA,DOU,CNDOU,Doumen Pt,doumen pt,china,,CNDOU | CN | DOU | Doumen Pt | CHINA | doumen pt | china
+2380,CN,CHINA,DOU,CNDOU,Doumen,doumen,china,,CNDOU | CN | DOU | Doumen | CHINA | doumen | china
 2381,CN,CHINA,DCG,CNDCG,Ducheng,ducheng,china,,CNDCG | CN | DCG | Ducheng | CHINA | ducheng | china
 2382,CN,CHINA,ECG,CNECG,Echeng,echeng,china,,CNECG | CN | ECG | Echeng | CHINA | echeng | china
 2383,CN,CHINA,EBA,CNEBA,Erba,erba,china,,CNEBA | CN | EBA | Erba | CHINA | erba | china
 2384,CN,CHINA,EGN,CNEGN,Ergun,ergun,china,,CNEGN | CN | EGN | Ergun | CHINA | ergun | china
 2385,CN,CHINA,ETK,CNETK,Ertaokou,ertaokou,china,,CNETK | CN | ETK | Ertaokou | CHINA | ertaokou | china
 2386,CN,CHINA,EZH,CNEZH,Ezhou,ezhou,china,,CNEZH | CN | EZH | Ezhou | CHINA | ezhou | china
-2387,CN,CHINA,FAN,CNFAN,Fangcheng Pt,fangcheng pt,china,,CNFAN | CN | FAN | Fangcheng Pt | CHINA | fangcheng pt | china
+2387,CN,CHINA,FAN,CNFAN,Fangcheng,fangcheng,china,,CNFAN | CN | FAN | Fangcheng | CHINA | fangcheng | china
 2388,CN,CHINA,FCH,CNFCH,Fengcheng,fengcheng,china,,CNFCH | CN | FCH | Fengcheng | CHINA | fengcheng | china
 2389,CN,CHINA,FDU,CNFDU,Fengdu,fengdu,china,,CNFDU | CN | FDU | Fengdu | CHINA | fengdu | china
 2390,CN,CHINA,FJE,CNFJE,Fengjie,fengjie,china,,CNFJE | CN | FJE | Fengjie | CHINA | fengjie | china
 2391,CN,CHINA,FKI,CNFKI,Fengkai,fengkai,china,,CNFKI | CN | FKI | Fengkai | CHINA | fengkai | china
-2392,CN,CHINA,FRT,CNFRT,Foshan New Pt,foshan new pt,china,,CNFRT | CN | FRT | Foshan New Pt | CHINA | foshan new pt | china
+2392,CN,CHINA,FRT,CNFRT,Foshan New,foshan new,china,,CNFRT | CN | FRT | Foshan New | CHINA | foshan new | china
 2393,CN,CHINA,FUC,CNFUC,Fucheng,fucheng,china,,CNFUC | CN | FUC | Fucheng | CHINA | fucheng | china
 2394,CN,CHINA,FAG,CNFAG,Fugang,fugang,china,,CNFAG | CN | FAG | Fugang | CHINA | fugang | china
 2395,CN,CHINA,FUJ,CNFUJ,Fujin,fujin,china,,CNFUJ | CN | FUJ | Fujin | CHINA | fujin | china
@@ -2402,14 +2402,14 @@
 2401,CN,CHINA,FNG,CNFNG,Fuyong,fuyong,china,,CNFNG | CN | FNG | Fuyong | CHINA | fuyong | china
 2402,CN,CHINA,FUY,CNFUY,Fuyuan,fuyuan,china,,CNFUY | CN | FUY | Fuyuan | CHINA | fuyuan | china
 2403,CN,CHINA,FZH,CNFZH,Fuzhou,fuzhou,china,,CNFZH | CN | FZH | Fuzhou | CHINA | fuzhou | china
-2404,CN,CHINA,FZG,CNFZG,Fuzhou Pt,fuzhou pt,china,,CNFZG | CN | FZG | Fuzhou Pt | CHINA | fuzhou pt | china
+2404,CN,CHINA,FZG,CNFZG,Fuzhou,fuzhou,china,,CNFZG | CN | FZG | Fuzhou | CHINA | fuzhou | china
 2405,CN,CHINA,FZX,CNFZX,Fuzhouxingang,fuzhouxingang,china,,CNFZX | CN | FZX | Fuzhouxingang | CHINA | fuzhouxingang | china
 2406,CN,CHINA,GUL,CNGUL,Gangluan,gangluan,china,,CNGUL | CN | GUL | Gangluan | CHINA | gangluan | china
 2407,CN,CHINA,GAO,CNGAO,Gaogang,gaogang,china,,CNGAO | CN | GAO | Gaogang | CHINA | gaogang | china
 2408,CN,CHINA,GON,CNGON,Gaolan,gaolan,china,,CNGON | CN | GON | Gaolan | CHINA | gaolan | china
 2409,CN,CHINA,GLN,CNGLN,Gaolan,gaolan,china,,CNGLN | CN | GLN | Gaolan | CHINA | gaolan | china
 2410,CN,CHINA,GLG,CNGLG,Gaoleng,gaoleng,china,,CNGLG | CN | GLG | Gaoleng | CHINA | gaoleng | china
-2411,CN,CHINA,GOM,CNGOM,Gaoming Pt,gaoming pt,china,,CNGOM | CN | GOM | Gaoming Pt | CHINA | gaoming pt | china
+2411,CN,CHINA,GOM,CNGOM,Gaoming,gaoming,china,,CNGOM | CN | GOM | Gaoming | CHINA | gaoming | china
 2412,CN,CHINA,GSH,CNGSH,Gaosha,gaosha,china,,CNGSH | CN | GSH | Gaosha | CHINA | gaosha | china
 2413,CN,CHINA,GDI,CNGDI,Gedian,gedian,china,,CNGDI | CN | GDI | Gedian | CHINA | gedian | china
 2414,CN,CHINA,GGN,CNGGN,Gongan,gongan,china,,CNGGN | CN | GGN | Gongan | CHINA | gongan | china
@@ -2417,16 +2417,16 @@
 2416,CN,CHINA,GGK,CNGGK,Gongkou,gongkou,china,,CNGGK | CN | GGK | Gongkou | CHINA | gongkou | china
 2417,CN,CHINA,GOG,CNGOG,Gongming,gongming,china,,CNGOG | CN | GOG | Gongming | CHINA | gongming | china
 2418,CN,CHINA,TSG,CNTSG,Gongyi,gongyi,china,,CNTSG | CN | TSG | Gongyi | CHINA | gongyi | china
-2419,CN,CHINA,GBG,CNGBG,Guanbu Pt,guanbu pt,china,,CNGBG | CN | GBG | Guanbu Pt | CHINA | guanbu pt | china
+2419,CN,CHINA,GBG,CNGBG,Guanbu,guanbu,china,,CNGBG | CN | GBG | Guanbu | CHINA | guanbu | china
 2420,CN,CHINA,GCH,CNGCH,Guancheng,guancheng,china,,CNGCH | CN | GCH | Guancheng | CHINA | guancheng | china
 2421,CN,CHINA,GBT,CNGBT,Guangbaotong,guangbaotong,china,,CNGBT | CN | GBT | Guangbaotong | CHINA | guangbaotong | china
 2422,CN,CHINA,GUT,CNGUT,Guangdong Terminal,guangdong terminal,china,,CNGUT | CN | GUT | Guangdong Terminal | CHINA | guangdong terminal | china
-2423,CN,CHINA,GHI,CNGHI,Guanghai Pt,guanghai pt,china,,CNGHI | CN | GHI | Guanghai Pt | CHINA | guanghai pt | china
+2423,CN,CHINA,GHI,CNGHI,Guanghai,guanghai,china,,CNGHI | CN | GHI | Guanghai | CHINA | guanghai | china
 2424,CN,CHINA,GLI,CNGLI,Guangli,guangli,china,,CNGLI | CN | GLI | Guangli | CHINA | guangli | china
 2425,CN,CHINA,GNI,CNGNI,Guangning,guangning,china,,CNGNI | CN | GNI | Guangning | CHINA | guangning | china
 2426,CN,CHINA,GNG,CNGNG,Guangning,guangning,china,,CNGNG | CN | GNG | Guangning | CHINA | guangning | china
 2427,CN,CHINA,GGZ,CNGGZ,Guangzhou,guangzhou,china,,CNGGZ | CN | GGZ | Guangzhou | CHINA | guangzhou | china
-2428,CN,CHINA,GZG,CNGZG,Guangzhou Pt,guangzhou pt,china,,CNGZG | CN | GZG | Guangzhou Pt | CHINA | guangzhou pt | china
+2428,CN,CHINA,GZG,CNGZG,Guangzhou,guangzhou,china,,CNGZG | CN | GZG | Guangzhou | CHINA | guangzhou | china
 2429,CN,CHINA,GZC,CNGZC,Guangzhouchuanchang,guangzhouchuanchang,china,,CNGZC | CN | GZC | Guangzhouchuanchang | CHINA | guangzhouchuanchang | china
 2430,CN,CHINA,GYO,CNGYO,Guanyao,guanyao,china,,CNGYO | CN | GYO | Guanyao | CHINA | guanyao | china
 2431,CN,CHINA,GUG,CNGUG,Guigang,guigang,china,,CNGUG | CN | GUG | Guigang | CHINA | guigang | china
@@ -2438,8 +2438,8 @@
 2437,CN,CHINA,HDN,CNHDN,Haidian,haidian,china,,CNHDN | CN | HDN | Haidian | CHINA | haidian | china
 2438,CN,CHINA,HGN,CNHGN,Haigeng,haigeng,china,,CNHGN | CN | HGN | Haigeng | CHINA | haigeng | china
 2439,CN,CHINA,HKO,CNHKO,Haikou,haikou,china,,CNHKO | CN | HKO | Haikou | CHINA | haikou | china
-2440,CN,CHINA,HXG,CNHXG,Haikou New Pt,haikou new pt,china,,CNHXG | CN | HXG | Haikou New Pt | CHINA | haikou new pt | china
-2441,CN,CHINA,HIG,CNHIG,Haikou Pt,haikou pt,china,,CNHIG | CN | HIG | Haikou Pt | CHINA | haikou pt | china
+2440,CN,CHINA,HXG,CNHXG,Haikou New,haikou new,china,,CNHXG | CN | HXG | Haikou New | CHINA | haikou new | china
+2441,CN,CHINA,HIG,CNHIG,Haikou,haikou,china,,CNHIG | CN | HIG | Haikou | CHINA | haikou | china
 2442,CN,CHINA,HME,CNHME,Haimen,haimen,china,,CNHME | CN | HME | Haimen | CHINA | haimen | china
 2443,CN,CHINA,CYH,CNCYH,Haimen,haimen,china,,CNCYH | CN | CYH | Haimen | CHINA | haimen | china
 2444,CN,CHINA,HIM,CNHIM,Haimiao,haimiao,china,,CNHIM | CN | HIM | Haimiao | CHINA | haimiao | china
@@ -2447,7 +2447,7 @@
 2446,CN,CHINA,HTO,CNHTO,Haitou,haitou,china,,CNHTO | CN | HTO | Haitou | CHINA | haitou | china
 2447,CN,CHINA,HXE,CNHXE,Haoxue,haoxue,china,,CNHXE | CN | HXE | Haoxue | CHINA | haoxue | china
 2448,CN,CHINA,HRN,CNHRN,Harbin,harbin,china,,CNHRN | CN | HRN | Harbin | CHINA | harbin | china
-2449,CN,CHINA,HBG,CNHBG,Harbin Pt,harbin pt,china,,CNHBG | CN | HBG | Harbin Pt | CHINA | harbin pt | china
+2449,CN,CHINA,HBG,CNHBG,Harbin,harbin,china,,CNHBG | CN | HBG | Harbin | CHINA | harbin | china
 2450,CN,CHINA,HEB,CNHEB,Hebei,hebei,china,,CNHEB | CN | HEB | Hebei | CHINA | hebei | china
 2451,CN,CHINA,HEK,CNHEK,Heihe,heihe,china,,CNHEK | CN | HEK | Heihe | CHINA | heihe | china
 2452,CN,CHINA,HST,CNHST,Heishantou,heishantou,china,,CNHST | CN | HST | Heishantou | CHINA | heishantou | china
@@ -2457,30 +2457,30 @@
 2456,CN,CHINA,HNI,CNHNI,Hengli,hengli,china,,CNHNI | CN | HNI | Hengli | CHINA | hengli | china
 2457,CN,CHINA,HXA,CNHXA,Hengxian,hengxian,china,,CNHXA | CN | HXA | Hengxian | CHINA | hengxian | china
 2458,CN,CHINA,HAS,CNHAS,Heshan,heshan,china,,CNHAS | CN | HAS | Heshan | CHINA | heshan | china
-2459,CN,CHINA,HSN,CNHSN,Heshan Pt,heshan pt,china,,CNHSN | CN | HSN | Heshan Pt | CHINA | heshan pt | china
+2459,CN,CHINA,HSN,CNHSN,Heshan,heshan,china,,CNHSN | CN | HSN | Heshan | CHINA | heshan | china
 2460,CN,CHINA,HTG,CNHTG,Hetang,hetang,china,,CNHTG | CN | HTG | Hetang | CHINA | hetang | china
 2461,CN,CHINA,HOD,CNHOD,Hongdu,hongdu,china,,CNHOD | CN | HOD | Hongdu | CHINA | hongdu | china
-2462,CN,CHINA,HGG,CNHGG,Hongguang Pt,hongguang pt,china,,CNHGG | CN | HGG | Hongguang Pt | CHINA | hongguang pt | china
-2463,CN,CHINA,BLX,CNBLX,Honghai Pt,honghai pt,china,,CNBLX | CN | BLX | Honghai Pt | CHINA | honghai pt | china
+2462,CN,CHINA,HGG,CNHGG,Hongguang,hongguang,china,,CNHGG | CN | HGG | Hongguang | CHINA | hongguang | china
+2463,CN,CHINA,BLX,CNBLX,Honghai,honghai,china,,CNBLX | CN | BLX | Honghai | CHINA | honghai | china
 2464,CN,CHINA,HOH,CNHOH,Honghu,honghu,china,,CNHOH | CN | HOH | Honghu | CHINA | honghu | china
 2465,CN,CHINA,HGA,CNHGA,Honghua,honghua,china,,CNHGA | CN | HGA | Honghua | CHINA | honghua | china
 2466,CN,CHINA,HOQ,CNHOQ,Hongqi,hongqi,china,,CNHOQ | CN | HOQ | Hongqi | CHINA | hongqi | china
 2467,CN,CHINA,HOU,CNHOU,Houjie,houjie,china,,CNHOU | CN | HOU | Houjie | CHINA | houjie | china
 2468,CN,CHINA,HZU,CNHZU,Houzhu,houzhu,china,,CNHZU | CN | HZU | Houzhu | CHINA | houzhu | china
 2469,CN,CHINA,HCN,CNHCN,Huachuan,huachuan,china,,CNHCN | CN | HCN | Huachuan | CHINA | huachuan | china
-2470,CN,CHINA,HDG,CNHDG,Huadu Pt,huadu pt,china,,CNHDG | CN | HDG | Huadu Pt | CHINA | huadu pt | china
+2470,CN,CHINA,HDG,CNHDG,Huadu,huadu,china,,CNHDG | CN | HDG | Huadu | CHINA | huadu | china
 2471,CN,CHINA,HIJ,CNHIJ,Huaiji,huaiji,china,,CNHIJ | CN | HIJ | Huaiji | CHINA | huaiji | china
 2472,CN,CHINA,HLI,CNHLI,Huailai,huailai,china,,CNHLI | CN | HLI | Huailai | CHINA | huailai | china
 2473,CN,CHINA,AIN,CNAIN,Huaiyin,huaiyin,china,,CNAIN | CN | AIN | Huaiyin | CHINA | huaiyin | china
 2474,CN,CHINA,HNH,CNHNH,Huanghua,huanghua,china,,CNHNH | CN | HNH | Huanghua | CHINA | huanghua | china
-2475,CN,CHINA,HUH,CNHUH,Huanghua Pt,huanghua pt,china,,CNHUH | CN | HUH | Huanghua Pt | CHINA | huanghua pt | china
+2475,CN,CHINA,HUH,CNHUH,Huanghua,huanghua,china,,CNHUH | CN | HUH | Huanghua | CHINA | huanghua | china
 2476,CN,CHINA,HJI,CNHJI,Huangjiang,huangjiang,china,,CNHJI | CN | HJI | Huangjiang | CHINA | huangjiang | china
 2477,CN,CHINA,HGJ,CNHGJ,Huangjiang,huangjiang,china,,CNHGJ | CN | HGJ | Huangjiang | CHINA | huangjiang | china
 2478,CN,CHINA,WCH,CNWCH,Huangpo,huangpo,china,,CNWCH | CN | WCH | Huangpo | CHINA | huangpo | china
-2479,CN,CHINA,HUA,CNHUA,Huangpu Pt,huangpu pt,china,,CNHUA | CN | HUA | Huangpu Pt | CHINA | huangpu pt | china
+2479,CN,CHINA,HUA,CNHUA,Huangpu,huangpu,china,,CNHUA | CN | HUA | Huangpu | CHINA | huangpu | china
 2480,CN,CHINA,HAQ,CNHAQ,Huangqi/Nanhai,huangqi nanhai,china,,CNHAQ | CN | HAQ | Huangqi/Nanhai | CHINA | huangqi nanhai | china
 2481,CN,CHINA,HSK,CNHSK,Huangsangkou,huangsangkou,china,,CNHSK | CN | HSK | Huangsangkou | CHINA | huangsangkou | china
-2482,CN,CHINA,HSI,CNHSI,Huangshi Pt,huangshi pt,china,,CNHSI | CN | HSI | Huangshi Pt | CHINA | huangshi pt | china
+2482,CN,CHINA,HSI,CNHSI,Huangshi,huangshi,china,,CNHSI | CN | HSI | Huangshi | CHINA | huangshi | china
 2483,CN,CHINA,ANG,CNANG,Huangxian,huangxian,china,,CNANG | CN | ANG | Huangxian | CHINA | huangxian | china
 2484,CN,CHINA,HYN,CNHYN,Huangyan,huangyan,china,,CNHYN | CN | HYN | Huangyan | CHINA | huangyan | china
 2485,CN,CHINA,HZO,CNHZO,Huangzhou,huangzhou,china,,CNHZO | CN | HZO | Huangzhou | CHINA | huangzhou | china
@@ -2488,18 +2488,18 @@
 2487,CN,CHINA,HUS,CNHUS,Huashi,huashi,china,,CNHUS | CN | HUS | Huashi | CHINA | huashi | china
 2488,CN,CHINA,HUY,CNHUY,Huayang,huayang,china,,CNHUY | CN | HUY | Huayang | CHINA | huayang | china
 2489,CN,CHINA,HUE,CNHUE,Huchen,huchen,china,,CNHUE | CN | HUE | Huchen | CHINA | huchen | china
-2490,CN,CHINA,HID,CNHID,Huidong Pt,huidong pt,china,,CNHID | CN | HID | Huidong Pt | CHINA | huidong pt | china
+2490,CN,CHINA,HID,CNHID,Huidong,huidong,china,,CNHID | CN | HID | Huidong | CHINA | huidong | china
 2491,CN,CHINA,HIK,CNHIK,Huikou,huikou,china,,CNHIK | CN | HIK | Huikou | CHINA | huikou | china
-2492,CN,CHINA,HUI,CNHUI,Huizhou Pt,huizhou pt,china,,CNHUI | CN | HUI | Huizhou Pt | CHINA | huizhou pt | china
+2492,CN,CHINA,HUI,CNHUI,Huizhou,huizhou,china,,CNHUI | CN | HUI | Huizhou | CHINA | huizhou | china
 2493,CN,CHINA,HKU,CNHKU,Hukou,hukou,china,,CNHKU | CN | HKU | Hukou | CHINA | hukou | china
 2494,CN,CHINA,HLE,CNHLE,Hulan Ergi,hulan ergi,china,,CNHLE | CN | HLE | Hulan Ergi | CHINA | hulan ergi | china
 2495,CN,CHINA,HUL,CNHUL,Hulin,hulin,china,,CNHUL | CN | HUL | Hulin | CHINA | hulin | china
-2496,CN,CHINA,HUD,CNHUD,Huludao Pt,huludao pt,china,,CNHUD | CN | HUD | Huludao Pt | CHINA | huludao pt | china
+2496,CN,CHINA,HUD,CNHUD,Huludao,huludao,china,,CNHUD | CN | HUD | Huludao | CHINA | huludao | china
 2497,CN,CHINA,HUM,CNHUM,Huma,huma,china,,CNHUM | CN | HUM | Huma | CHINA | huma | china
-2498,CN,CHINA,HMN,CNHMN,Humen Pt,humen pt,china,,CNHMN | CN | HMN | Humen Pt | CHINA | humen pt | china
-2499,CN,CHINA,HUP,CNHUP,Huo Pt,huo pt,china,,CNHUP | CN | HUP | Huo Pt | CHINA | huo pt | china
-2500,CN,CHINA,HZH,CNHZH,Huzhou Pt,huzhou pt,china,,CNHZH | CN | HZH | Huzhou Pt | CHINA | huzhou pt | china
-2501,CN,CHINA,JMS,CNJMS,Jiamusi Pt,jiamusi pt,china,,CNJMS | CN | JMS | Jiamusi Pt | CHINA | jiamusi pt | china
+2498,CN,CHINA,HMN,CNHMN,Humen,humen,china,,CNHMN | CN | HMN | Humen | CHINA | humen | china
+2499,CN,CHINA,HUP,CNHUP,Huo,huo,china,,CNHUP | CN | HUP | Huo | CHINA | huo | china
+2500,CN,CHINA,HZH,CNHZH,Huzhou,huzhou,china,,CNHZH | CN | HZH | Huzhou | CHINA | huzhou | china
+2501,CN,CHINA,JMS,CNJMS,Jiamusi,jiamusi,china,,CNJMS | CN | JMS | Jiamusi | CHINA | jiamusi | china
 2502,CN,CHINA,JBI,CNJBI,Jianbi,jianbi,china,,CNJBI | CN | JBI | Jianbi | CHINA | jianbi | china
 2503,CN,CHINA,JAA,CNJAA,Jiang'an,jiang an,china,,CNJAA | CN | JAA | Jiang'an | CHINA | jiang an | china
 2504,CN,CHINA,JCH,CNJCH,Jiangcheng,jiangcheng,china,,CNJCH | CN | JCH | Jiangcheng | CHINA | jiangcheng | china
@@ -2507,18 +2507,18 @@
 2506,CN,CHINA,JGJ,CNJGJ,Jiangjin,jiangjin,china,,CNJGJ | CN | JGJ | Jiangjin | CHINA | jiangjin | china
 2507,CN,CHINA,JKO,CNJKO,Jiangkou,jiangkou,china,,CNJKO | CN | JKO | Jiangkou | CHINA | jiangkou | china
 2508,CN,CHINA,FKJ,CNFKJ,Jiangkou,jiangkou,china,,CNFKJ | CN | FKJ | Jiangkou | CHINA | jiangkou | china
-2509,CN,CHINA,JMN,CNJMN,Jiangmen Pt,jiangmen pt,china,,CNJMN | CN | JMN | Jiangmen Pt | CHINA | jiangmen pt | china
+2509,CN,CHINA,JMN,CNJMN,Jiangmen,jiangmen,china,,CNJMN | CN | JMN | Jiangmen | CHINA | jiangmen | china
 2510,CN,CHINA,JIP,CNJIP,Jiangping,jiangping,china,,CNJIP | CN | JIP | Jiangping | CHINA | jiangping | china
 2511,CN,CHINA,JPU,CNJPU,Jiangpu,jiangpu,china,,CNJPU | CN | JPU | Jiangpu | CHINA | jiangpu | china
-2512,CN,CHINA,JIS,CNJIS,Jiangshan Pt,jiangshan pt,china,,CNJIS | CN | JIS | Jiangshan Pt | CHINA | jiangshan pt | china
+2512,CN,CHINA,JIS,CNJIS,Jiangshan,jiangshan,china,,CNJIS | CN | JIS | Jiangshan | CHINA | jiangshan | china
 2513,CN,CHINA,JGY,CNJGY,Jiangyin,jiangyin,china,,CNJGY | CN | JGY | Jiangyin | CHINA | jiangyin | china
-2514,CN,CHINA,JIA,CNJIA,Jiangyin Pt,jiangyin pt,china,,CNJIA | CN | JIA | Jiangyin Pt | CHINA | jiangyin pt | china
+2514,CN,CHINA,JIA,CNJIA,Jiangyin,jiangyin,china,,CNJIA | CN | JIA | Jiangyin | CHINA | jiangyin | china
 2515,CN,CHINA,JLI,CNJLI,Jianli,jianli,china,,CNJLI | CN | JLI | Jianli | CHINA | jianli | china
 2516,CN,CHINA,JTO,CNJTO,Jiantiao,jiantiao,china,,CNJTO | CN | JTO | Jiantiao | CHINA | jiantiao | china
 2517,CN,CHINA,JXN,CNJXN,Jiao Xin,jiao xin,china,,CNJXN | CN | JXN | Jiao Xin | CHINA | jiao xin | china
 2518,CN,CHINA,JOK,CNJOK,Jiaokou,jiaokou,china,,CNJOK | CN | JOK | Jiaokou | CHINA | jiaokou | china
-2519,CN,CHINA,JSG,CNJSG,Jiaoshan Pt,jiaoshan pt,china,,CNJSG | CN | JSG | Jiaoshan Pt | CHINA | jiaoshan pt | china
-2520,CN,CHINA,JAX,CNJAX,Jiaxing Pt,jiaxing pt,china,,CNJAX | CN | JAX | Jiaxing Pt | CHINA | jiaxing pt | china
+2519,CN,CHINA,JSG,CNJSG,Jiaoshan,jiaoshan,china,,CNJSG | CN | JSG | Jiaoshan | CHINA | jiaoshan | china
+2520,CN,CHINA,JAX,CNJAX,Jiaxing,jiaxing,china,,CNJAX | CN | JAX | Jiaxing | CHINA | jiaxing | china
 2521,CN,CHINA,JAY,CNJAY,Jiayin,jiayin,china,,CNJAY | CN | JAY | Jiayin | CHINA | jiayin | china
 2522,CN,CHINA,JIZ,CNJIZ,Jiazi,jiazi,china,,CNJIZ | CN | JIZ | Jiazi | CHINA | jiazi | china
 2523,CN,CHINA,JES,CNJES,Jieshi,jieshi,china,,CNJES | CN | JES | Jieshi | CHINA | jieshi | china
@@ -2526,36 +2526,36 @@
 2525,CN,CHINA,DMJ,CNDMJ,Jingan,jingan,china,,CNDMJ | CN | DMJ | Jingan | CHINA | jingan | china
 2526,CN,CHINA,HLJ,CNHLJ,Jinghai,jinghai,china,,CNHLJ | CN | HLJ | Jinghai | CHINA | jinghai | china
 2527,CN,CHINA,JOG,CNJOG,Jinghong,jinghong,china,,CNJOG | CN | JOG | Jinghong | CHINA | jinghong | china
-2528,CN,CHINA,JIJ,CNJIJ,Jingjiang Pt,jingjiang pt,china,,CNJIJ | CN | JIJ | Jingjiang Pt | CHINA | jingjiang pt | china
-2529,CN,CHINA,JTG,CNJTG,Jingtang Pt,jingtang pt,china,,CNJTG | CN | JTG | Jingtang Pt | CHINA | jingtang pt | china
+2528,CN,CHINA,JIJ,CNJIJ,Jingjiang,jingjiang,china,,CNJIJ | CN | JIJ | Jingjiang | CHINA | jingjiang | china
+2529,CN,CHINA,JTG,CNJTG,Jingtang,jingtang,china,,CNJTG | CN | JTG | Jingtang | CHINA | jingtang | china
 2530,CN,CHINA,JGU,CNJGU,Jinguzhou,jinguzhou,china,,CNJGU | CN | JGU | Jinguzhou | CHINA | jinguzhou | china
-2531,CN,CHINA,JZK,CNJZK,Jingzhou Pt,jingzhou pt,china,,CNJZK | CN | JZK | Jingzhou Pt | CHINA | jingzhou pt | china
+2531,CN,CHINA,JZK,CNJZK,Jingzhou,jingzhou,china,,CNJZK | CN | JZK | Jingzhou | CHINA | jingzhou | china
 2532,CN,CHINA,JNH,CNJNH,Jinhaian,jinhaian,china,,CNJNH | CN | JNH | Jinhaian | CHINA | jinhaian | china
 2533,CN,CHINA,JHK,CNJHK,Jinhekou,jinhekou,china,,CNJHK | CN | JHK | Jinhekou | CHINA | jinhekou | china
 2534,CN,CHINA,PTJ,CNPTJ,Jinjing,jinjing,china,,CNPTJ | CN | PTJ | Jinjing | CHINA | jinjing | china
 2535,CN,CHINA,JNL,CNJNL,Jinli,jinli,china,,CNJNL | CN | JNL | Jinli | CHINA | jinli | china
 2536,CN,CHINA,JPI,CNJPI,Jinpai,jinpai,china,,CNJPI | CN | JPI | Jinpai | CHINA | jinpai | china
-2537,CN,CHINA,JNZ,CNJNZ,Jinzhou Pt,jinzhou pt,china,,CNJNZ | CN | JNZ | Jinzhou Pt | CHINA | jinzhou pt | china
+2537,CN,CHINA,JNZ,CNJNZ,Jinzhou,jinzhou,china,,CNJNZ | CN | JNZ | Jinzhou | CHINA | jinzhou | china
 2538,CN,CHINA,JUJ,CNJUJ,Jiujiang,jiujiang,china,,CNJUJ | CN | JUJ | Jiujiang | CHINA | jiujiang | china
-2539,CN,CHINA,JIU,CNJIU,Jiujiang Pt,jiujiang pt,china,,CNJIU | CN | JIU | Jiujiang Pt | CHINA | jiujiang pt | china
+2539,CN,CHINA,JIU,CNJIU,Jiujiang,jiujiang,china,,CNJIU | CN | JIU | Jiujiang | CHINA | jiujiang | china
 2540,CN,CHINA,JUL,CNJUL,Jiuli,jiuli,china,,CNJUL | CN | JUL | Jiuli | CHINA | jiuli | china
-2541,CN,CHINA,JLP,CNJLP,Jiulongpo Pt,jiulongpo pt,china,,CNJLP | CN | JLP | Jiulongpo Pt | CHINA | jiulongpo pt | china
+2541,CN,CHINA,JLP,CNJLP,Jiulongpo,jiulongpo,china,,CNJLP | CN | JLP | Jiulongpo | CHINA | jiulongpo | china
 2542,CN,CHINA,JUZ,CNJUZ,Jiuzhen,jiuzhen,china,,CNJUZ | CN | JUZ | Jiuzhen | CHINA | jiuzhen | china
-2543,CN,CHINA,JZU,CNJZU,Jiuzhou Pt,jiuzhou pt,china,,CNJZU | CN | JZU | Jiuzhou Pt | CHINA | jiuzhou pt | china
+2543,CN,CHINA,JZU,CNJZU,Jiuzhou,jiuzhou,china,,CNJZU | CN | JZU | Jiuzhou | CHINA | jiuzhou | china
 2544,CN,CHINA,JRG,CNJRG,Jurong,jurong,china,,CNJRG | CN | JRG | Jurong | CHINA | jurong | china
 2545,CN,CHINA,KFG,CNKFG,Kaifeng,kaifeng,china,,CNKFG | CN | KFG | Kaifeng | CHINA | kaifeng | china
-2546,CN,CHINA,KZG,CNKZG,Kangzhou Pt,kangzhou pt,china,,CNKZG | CN | KZG | Kangzhou Pt | CHINA | kangzhou pt | china
+2546,CN,CHINA,KZG,CNKZG,Kangzhou,kangzhou,china,,CNKZG | CN | KZG | Kangzhou | CHINA | kangzhou | china
 2547,CN,CHINA,KMN,CNKMN,Kanmen,kanmen,china,,CNKMN | CN | KMN | Kanmen | CHINA | kanmen | china
 2548,CN,CHINA,CSL,CNCSL,Laiwu,laiwu,china,,CNCSL | CN | CSL | Laiwu | CHINA | laiwu | china
-2549,CN,CHINA,LZO,CNLZO,Laizhou Pt,laizhou pt,china,,CNLZO | CN | LZO | Laizhou Pt | CHINA | laizhou pt | china
-2550,CN,CHINA,LSN,CNLSN,Lanshan Pt,lanshan pt,china,,CNLSN | CN | LSN | Lanshan Pt | CHINA | lanshan pt | china
+2549,CN,CHINA,LZO,CNLZO,Laizhou,laizhou,china,,CNLZO | CN | LZO | Laizhou | CHINA | laizhou | china
+2550,CN,CHINA,LSN,CNLSN,Lanshan,lanshan,china,,CNLSN | CN | LSN | Lanshan | CHINA | lanshan | china
 2551,CN,CHINA,LNS,CNLNS,Lanshi,lanshi,china,,CNLNS | CN | LNS | Lanshi | CHINA | lanshi | china
 2552,CN,CHINA,LXI,CNLXI,Lanxi,lanxi,china,,CNLXI | CN | LXI | Lanxi | CHINA | lanxi | china
 2553,CN,CHINA,LDK,CNLDK,Laodukou,laodukou,china,,CNLDK | CN | LDK | Laodukou | CHINA | laodukou | china
 2554,CN,CHINA,LAL,CNLAL,Laolong,laolong,china,,CNLAL | CN | LAL | Laolong | CHINA | laolong | china
 2555,CN,CHINA,LXH,CNLXH,Laoxiahe,laoxiahe,china,,CNLXH | CN | LXH | Laoxiahe | CHINA | laoxiahe | china
-2556,CN,CHINA,LTP,CNLTP,Letianxi Pt,letianxi pt,china,,CNLTP | CN | LTP | Letianxi Pt | CHINA | letianxi pt | china
-2557,CN,CHINA,LIH,CNLIH,Lianhuashan Pt,lianhuashan pt,china,,CNLIH | CN | LIH | Lianhuashan Pt | CHINA | lianhuashan pt | china
+2556,CN,CHINA,LTP,CNLTP,Letianxi,letianxi,china,,CNLTP | CN | LTP | Letianxi | CHINA | letianxi | china
+2557,CN,CHINA,LIH,CNLIH,Lianhuashan,lianhuashan,china,,CNLIH | CN | LIH | Lianhuashan | CHINA | lianhuashan | china
 2558,CN,CHINA,LYG,CNLYG,Lianyungang,lianyungang,china,,CNLYG | CN | LYG | Lianyungang | CHINA | lianyungang | china
 2559,CN,CHINA,LIZ,CNLIZ,Lianzhou,lianzhou,china,,CNLIZ | CN | LIZ | Lianzhou | CHINA | lianzhou | china
 2560,CN,CHINA,LID,CNLID,Lidao,lidao,china,,CNLID | CN | LID | Lidao | CHINA | lidao | china
@@ -2565,29 +2565,29 @@
 2564,CN,CHINA,TNC,CNTNC,Lintao,lintao,china,,CNTNC | CN | TNC | Lintao | CHINA | lintao | china
 2565,CN,CHINA,LUI,CNLUI,Lisui,lisui,china,,CNLUI | CN | LUI | Lisui | CHINA | lisui | china
 2566,CN,CHINA,LUD,CNLUD,Liudu,liudu,china,,CNLUD | CN | LUD | Liudu | CHINA | liudu | china
-2567,CN,CHINA,LJP,CNLJP,Liujia Pt,liujia pt,china,,CNLJP | CN | LJP | Liujia Pt | CHINA | liujia pt | china
+2567,CN,CHINA,LJP,CNLJP,Liujia,liujia,china,,CNLJP | CN | LJP | Liujia | CHINA | liujia | china
 2568,CN,CHINA,LJD,CNLJD,Liujiadu,liujiadu,china,,CNLJD | CN | LJD | Liujiadu | CHINA | liujiadu | china
 2569,CN,CHINA,LJN,CNLJN,Liujing,liujing,china,,CNLJN | CN | LJN | Liujing | CHINA | liujing | china
-2570,CN,CHINA,LKP,CNLKP,Liukou Pt,liukou pt,china,,CNLKP | CN | LKP | Liukou Pt | CHINA | liukou pt | china
+2570,CN,CHINA,LKP,CNLKP,Liukou,liukou,china,,CNLKP | CN | LKP | Liukou | CHINA | liukou | china
 2571,CN,CHINA,LZL,CNLZL,Liusha,liusha,china,,CNLZL | CN | LZL | Liusha | CHINA | liusha | china
 2572,CN,CHINA,XML,CNXML,Liuwudian,liuwudian,china,,CNXML | CN | XML | Liuwudian | CHINA | liuwudian | china
 2573,CN,CHINA,LIU,CNLIU,Liuyang,liuyang,china,,CNLIU | CN | LIU | Liuyang | CHINA | liuyang | china
-2574,CN,CHINA,LZH,CNLZH,Liuzhou Pt,liuzhou pt,china,,CNLZH | CN | LZH | Liuzhou Pt | CHINA | liuzhou pt | china
-2575,CN,CHINA,LZP,CNLZP,Liuzuo Pt,liuzuo pt,china,,CNLZP | CN | LZP | Liuzuo Pt | CHINA | liuzuo pt | china
-2576,CN,CHINA,LYP,CNLYP,Liying Pt,liying pt,china,,CNLYP | CN | LYP | Liying Pt | CHINA | liying pt | china
+2574,CN,CHINA,LZH,CNLZH,Liuzhou,liuzhou,china,,CNLZH | CN | LZH | Liuzhou | CHINA | liuzhou | china
+2575,CN,CHINA,LZP,CNLZP,Liuzuo,liuzuo,china,,CNLZP | CN | LZP | Liuzuo | CHINA | liuzuo | china
+2576,CN,CHINA,LYP,CNLYP,Liying,liying,china,,CNLYP | CN | LYP | Liying | CHINA | liying | china
 2577,CN,CHINA,LGA,CNLGA,Long'an,long an,china,,CNLGA | CN | LGA | Long'an | CHINA | long an | china
 2578,CN,CHINA,LGU,CNLGU,Longguan,longguan,china,,CNLGU | CN | LGU | Longguan | CHINA | longguan | china
 2579,CN,CHINA,LGI,CNLGI,Longhai,longhai,china,,CNLGI | CN | LGI | Longhai | CHINA | longhai | china
-2580,CN,CHINA,LKU,CNLKU,Longkou Pt,longkou pt,china,,CNLKU | CN | LKU | Longkou Pt | CHINA | longkou pt | china
+2580,CN,CHINA,LKU,CNLKU,Longkou,longkou,china,,CNLKU | CN | LKU | Longkou | CHINA | longkou | china
 2581,CN,CHINA,LMN,CNLMN,Longmen,longmen,china,,CNLMN | CN | LMN | Longmen | CHINA | longmen | china
-2582,CN,CHINA,LPP,CNLPP,Longping Pt,longping pt,china,,CNLPP | CN | LPP | Longping Pt | CHINA | longping pt | china
+2582,CN,CHINA,LPP,CNLPP,Longping,longping,china,,CNLPP | CN | LPP | Longping | CHINA | longping | china
 2583,CN,CHINA,LGW,CNLGW,Longwu,longwu,china,,CNLGW | CN | LGW | Longwu | CHINA | longwu | china
-2584,CN,CHINA,LGY,CNLGY,Longyan Pt,longyan pt,china,,CNLGY | CN | LGY | Longyan Pt | CHINA | longyan pt | china
+2584,CN,CHINA,LGY,CNLGY,Longyan,longyan,china,,CNLGY | CN | LGY | Longyan | CHINA | longyan | china
 2585,CN,CHINA,LOZ,CNLOZ,Longzhou,longzhou,china,,CNLOZ | CN | LOZ | Longzhou | CHINA | longzhou | china
 2586,CN,CHINA,LUN,CNLUN,Lu'an,lu an,china,,CNLUN | CN | LUN | Lu'an | CHINA | lu an | china
 2587,CN,CHINA,LJK,CNLJK,Luanjiakou,luanjiakou,china,,CNLJK | CN | LJK | Luanjiakou | CHINA | luanjiakou | china
 2588,CN,CHINA,UBU,CNUBU,Lubu,lubu,china,,CNUBU | CN | UBU | Lubu | CHINA | lubu | china
-2589,CN,CHINA,LCP,CNLCP,Lucheng Pt,lucheng pt,china,,CNLCP | CN | LCP | Lucheng Pt | CHINA | lucheng pt | china
+2589,CN,CHINA,LCP,CNLCP,Lucheng,lucheng,china,,CNLCP | CN | LCP | Lucheng | CHINA | lucheng | china
 2590,CN,CHINA,LFN,CNLFN,Lufeng,lufeng,china,,CNLFN | CN | LFN | Lufeng | CHINA | lufeng | china
 2591,CN,CHINA,LUH,CNLUH,Lu-hua Shan,lu hua shan,china,,CNLUH | CN | LUH | Lu-hua Shan | CHINA | lu hua shan | china
 2592,CN,CHINA,LNN,CNLNN,Lunan,lunan,china,,CNLNN | CN | LNN | Lunan | CHINA | lunan | china
@@ -2595,12 +2595,12 @@
 2594,CN,CHINA,LOH,CNLOH,Luohuang,luohuang,china,,CNLOH | CN | LOH | Luohuang | CHINA | luohuang | china
 2595,CN,CHINA,LJT,CNLJT,Luojingtan,luojingtan,china,,CNLJT | CN | LJT | Luojingtan | CHINA | luojingtan | china
 2596,CN,CHINA,LQI,CNLQI,Luoqi,luoqi,china,,CNLQI | CN | LQI | Luoqi | CHINA | luoqi | china
-2597,CN,CHINA,LSH,CNLSH,Lushun New Pt,lushun new pt,china,,CNLSH | CN | LSH | Lushun New Pt | CHINA | lushun new pt | china
+2597,CN,CHINA,LSH,CNLSH,Lushun New,lushun new,china,,CNLSH | CN | LSH | Lushun New | CHINA | lushun new | china
 2598,CN,CHINA,LUS,CNLUS,Lusi,lusi,china,,CNLUS | CN | LUS | Lusi | CHINA | lusi | china
-2599,CN,CHINA,LXP,CNLXP,Luxikou Pt,luxikou pt,china,,CNLXP | CN | LXP | Luxikou Pt | CHINA | luxikou pt | china
+2599,CN,CHINA,LXP,CNLXP,Luxikou,luxikou,china,,CNLXP | CN | LXP | Luxikou | CHINA | luxikou | china
 2600,CN,CHINA,LZI,CNLZI,Luzhai,luzhai,china,,CNLZI | CN | LZI | Luzhai | CHINA | luzhai | china
 2601,CN,CHINA,LUZ,CNLUZ,Luzhou,luzhou,china,,CNLUZ | CN | LUZ | Luzhou | CHINA | luzhou | china
-2602,CN,CHINA,MAA,CNMAA,Maanshan Pt,maanshan pt,china,,CNMAA | CN | MAA | Maanshan Pt | CHINA | maanshan pt | china
+2602,CN,CHINA,MAA,CNMAA,Maanshan,maanshan,china,,CNMAA | CN | MAA | Maanshan | CHINA | maanshan | china
 2603,CN,CHINA,MBI,CNMBI,Mabian Island,mabian island,china,,CNMBI | CN | MBI | Mabian Island | CHINA | mabian island | china
 2604,CN,CHINA,MAC,CNMAC,Macun,macun,china,,CNMAC | CN | MAC | Macun | CHINA | macun | china
 2605,CN,CHINA,SHM,CNSHM,Mafang,mafang,china,,CNSHM | CN | SHM | Mafang | CHINA | mafang | china
@@ -2609,18 +2609,18 @@
 2608,CN,CHINA,MAJ,CNMAJ,Majistan/Zhoushan,majistan zhoushan,china,,CNMAJ | CN | MAJ | Majistan/Zhoushan | CHINA | majistan zhoushan | china
 2609,CN,CHINA,MOG,CNMOG,Maogang,maogang,china,,CNMOG | CN | MOG | Maogang | CHINA | maogang | china
 2610,CN,CHINA,MLG,CNMLG,Maoling,maoling,china,,CNMLG | CN | MLG | Maoling | CHINA | maoling | china
-2611,CN,CHINA,MPP,CNMPP,Maoping Pt,maoping pt,china,,CNMPP | CN | MPP | Maoping Pt | CHINA | maoping pt | china
-2612,CN,CHINA,MSP,CNMSP,Maoshan Pt,maoshan pt,china,,CNMSP | CN | MSP | Maoshan Pt | CHINA | maoshan pt | china
+2611,CN,CHINA,MPP,CNMPP,Maoping,maoping,china,,CNMPP | CN | MPP | Maoping | CHINA | maoping | china
+2612,CN,CHINA,MSP,CNMSP,Maoshan,maoshan,china,,CNMSP | CN | MSP | Maoshan | CHINA | maoshan | china
 2613,CN,CHINA,MTZ,CNMTZ,Matouzhen,matouzhen,china,,CNMTZ | CN | MTZ | Matouzhen | CHINA | matouzhen | china
-2614,CN,CHINA,MWN,CNMWN,Mawan Pt,mawan pt,china,,CNMWN | CN | MWN | Mawan Pt | CHINA | mawan pt | china
-2615,CN,CHINA,MAW,CNMAW,Mawei Pt,mawei pt,china,,CNMAW | CN | MAW | Mawei Pt | CHINA | mawei pt | china
+2614,CN,CHINA,MWN,CNMWN,Mawan,mawan,china,,CNMWN | CN | MWN | Mawan | CHINA | mawan | china
+2615,CN,CHINA,MAW,CNMAW,Mawei,mawei,china,,CNMAW | CN | MAW | Mawei | CHINA | mawei | china
 2616,CN,CHINA,MAY,CNMAY,Mayong,mayong,china,,CNMAY | CN | MAY | Mayong | CHINA | mayong | china
 2617,CN,CHINA,MIO,CNMIO,Meiao,meiao,china,,CNMIO | CN | MIO | Meiao | CHINA | meiao | china
 2618,CN,CHINA,MGG,CNMGG,Meigeng,meigeng,china,,CNMGG | CN | MGG | Meigeng | CHINA | meigeng | china
 2619,CN,CHINA,MLI,CNMLI,Meilin,meilin,china,,CNMLI | CN | MLI | Meilin | CHINA | meilin | china
-2620,CN,CHINA,MSA,CNMSA,Meisha Pt,meisha pt,china,,CNMSA | CN | MSA | Meisha Pt | CHINA | meisha pt | china
+2620,CN,CHINA,MSA,CNMSA,Meisha,meisha,china,,CNMSA | CN | MSA | Meisha | CHINA | meisha | china
 2621,CN,CHINA,MSN,CNMSN,Meishan,meishan,china,,CNMSN | CN | MSN | Meishan | CHINA | meishan | china
-2622,CN,CHINA,MSG,CNMSG,Meishan Pt,meishan pt,china,,CNMSG | CN | MSG | Meishan Pt | CHINA | meishan pt | china
+2622,CN,CHINA,MSG,CNMSG,Meishan,meishan,china,,CNMSG | CN | MSG | Meishan | CHINA | meishan | china
 2623,CN,CHINA,MZW,CNMZW,Meizhouwan,meizhouwan,china,,CNMZW | CN | MZW | Meizhouwan | CHINA | meizhouwan | china
 2624,CN,CHINA,MOT,CNMOT,Miaotou,miaotou,china,,CNMOT | CN | MOT | Miaotou | CHINA | miaotou | china
 2625,CN,CHINA,MHG,CNMHG,Minxing,minxing,china,,CNMHG | CN | MHG | Minxing | CHINA | minxing | china
@@ -2630,16 +2630,16 @@
 2629,CN,CHINA,MYM,CNMYM,Moupingyangmadao,moupingyangmadao,china,,CNMYM | CN | MYM | Moupingyangmadao | CHINA | moupingyangmadao | china
 2630,CN,CHINA,MZU,CNMZU,Muzhou,muzhou,china,,CNMZU | CN | MZU | Muzhou | CHINA | muzhou | china
 2631,CN,CHINA,GYN,CNGYN,Nanan,nanan,china,,CNGYN | CN | GYN | Nanan | CHINA | nanan | china
-2632,CN,CHINA,NAN,CNNAN,Nanao Pt,nanao pt,china,,CNNAN | CN | NAN | Nanao Pt | CHINA | nanao pt | china
+2632,CN,CHINA,NAN,CNNAN,Nanao,nanao,china,,CNNAN | CN | NAN | Nanao | CHINA | nanao | china
 2633,CN,CHINA,NAD,CNNAD,Nandu,nandu,china,,CNNAD | CN | NAD | Nandu | CHINA | nandu | china
-2634,CN,CHINA,NAH,CNNAH,Nanhai Pt,nanhai pt,china,,CNNAH | CN | NAH | Nanhai Pt | CHINA | nanhai pt | china
+2634,CN,CHINA,NAH,CNNAH,Nanhai,nanhai,china,,CNNAH | CN | NAH | Nanhai | CHINA | nanhai | china
 2635,CN,CHINA,NJK,CNNJK,Nanjiangkou,nanjiangkou,china,,CNNJK | CN | NJK | Nanjiangkou | CHINA | nanjiangkou | china
 2636,CN,CHINA,NJI,CNNJI,Nanjing,nanjing,china,,CNNJI | CN | NJI | Nanjing | CHINA | nanjing | china
-2637,CN,CHINA,NJG,CNNJG,Nanjing Pt,nanjing pt,china,,CNNJG | CN | NJG | Nanjing Pt | CHINA | nanjing pt | china
+2637,CN,CHINA,NJG,CNNJG,Nanjing,nanjing,china,,CNNJG | CN | NJG | Nanjing | CHINA | nanjing | china
 2638,CN,CHINA,NIN,CNNIN,Nanning,nanning,china,,CNNIN | CN | NIN | Nanning | CHINA | nanning | china
-2639,CN,CHINA,NIG,CNNIG,Nanning Pt,nanning pt,china,,CNNIG | CN | NIG | Nanning Pt | CHINA | nanning pt | china
-2640,CN,CHINA,NSA,CNNSA,Nansha Pt,nansha pt,china,,CNNSA | CN | NSA | Nansha Pt | CHINA | nansha pt | china
-2641,CN,CHINA,NTG,CNNTG,Nantong Pt,nantong pt,china,,CNNTG | CN | NTG | Nantong Pt | CHINA | nantong pt | china
+2639,CN,CHINA,NIG,CNNIG,Nanning,nanning,china,,CNNIG | CN | NIG | Nanning | CHINA | nanning | china
+2640,CN,CHINA,NSA,CNNSA,Nansha,nansha,china,,CNNSA | CN | NSA | Nansha | CHINA | nansha | china
+2641,CN,CHINA,NTG,CNNTG,Nantong,nantong,china,,CNNTG | CN | NTG | Nantong | CHINA | nantong | china
 2642,CN,CHINA,NNX,CNNNX,Nanxi,nanxi,china,,CNNNX | CN | NNX | Nanxi | CHINA | nanxi | china
 2643,CN,CHINA,NXI,CNNXI,Nanxiang,nanxiang,china,,CNNXI | CN | NXI | Nanxiang | CHINA | nanxiang | china
 2644,CN,CHINA,ZNZ,CNZNZ,Naozhou,naozhou,china,,CNZNZ | CN | ZNZ | Naozhou | CHINA | naozhou | china
@@ -2647,7 +2647,7 @@
 2646,CN,CHINA,NSY,CNNSY,Nianshanyapojiao,nianshanyapojiao,china,,CNNSY | CN | NSY | Nianshanyapojiao | CHINA | nianshanyapojiao | china
 2647,CN,CHINA,NCA,CNNCA,Nicha,nicha,china,,CNNCA | CN | NCA | Nicha | CHINA | nicha | china
 2648,CN,CHINA,NBO,CNNBO,Ningbo,ningbo,china,,CNNBO | CN | NBO | Ningbo | CHINA | ningbo | china
-2649,CN,CHINA,NBG,CNNBG,Ningbo Pt,ningbo pt,china,,CNNBG | CN | NBG | Ningbo Pt | CHINA | ningbo pt | china
+2649,CN,CHINA,NBG,CNNBG,Ningbo,ningbo,china,,CNNBG | CN | NBG | Ningbo | CHINA | ningbo | china
 2650,CN,CHINA,NDE,CNNDE,Ningde,ningde,china,,CNNDE | CN | NDE | Ningde | CHINA | ningde | china
 2651,CN,CHINA,NMI,CNNMI,Ningming,ningming,china,,CNNMI | CN | NMI | Ningming | CHINA | ningming | china
 2652,CN,CHINA,NKL,CNNKL,Niuguling,niuguling,china,,CNNKL | CN | NKL | Niuguling | CHINA | niuguling | china
@@ -2656,7 +2656,7 @@
 2655,CN,CHINA,PZO,CNPZO,Paizhou,paizhou,china,,CNPZO | CN | PZO | Paizhou | CHINA | paizhou | china
 2656,CN,CHINA,PAJ,CNPAJ,Panjin,panjin,china,,CNPAJ | CN | PAJ | Panjin | CHINA | panjin | china
 2657,CN,CHINA,PNT,CNPNT,Pantang,pantang,china,,CNPNT | CN | PNT | Pantang | CHINA | pantang | china
-2658,CN,CHINA,PLI,CNPLI,Penglai Pt,penglai pt,china,,CNPLI | CN | PLI | Penglai Pt | CHINA | penglai pt | china
+2658,CN,CHINA,PLI,CNPLI,Penglai,penglai,china,,CNPLI | CN | PLI | Penglai | CHINA | penglai | china
 2659,CN,CHINA,PZE,CNPZE,Pengze,pengze,china,,CNPZE | CN | PZE | Pengze | CHINA | pengze | china
 2660,CN,CHINA,PKO,CNPKO,Pikou,pikou,china,,CNPKO | CN | PKO | Pikou | CHINA | pikou | china
 2661,CN,CHINA,PIL,CNPIL,Pingle,pingle,china,,CNPIL | CN | PIL | Pingle | CHINA | pingle | china
@@ -2667,7 +2667,7 @@
 2666,CN,CHINA,PJS,CNPJS,Pizhou,pizhou,china,,CNPJS | CN | PJS | Pizhou | CHINA | pizhou | china
 2667,CN,CHINA,PJO,CNPJO,Pojiao,pojiao,china,,CNPJO | CN | PJO | Pojiao | CHINA | pojiao | china
 2668,CN,CHINA,PDG,CNPDG,Pudong/Shanghai,pudong shanghai,china,,CNPDG | CN | PDG | Pudong/Shanghai | CHINA | pudong shanghai | china
-2669,CN,CHINA,PDX,CNPDX,Pudongxinqu Pt,pudongxinqu pt,china,,CNPDX | CN | PDX | Pudongxinqu Pt | CHINA | pudongxinqu pt | china
+2669,CN,CHINA,PDX,CNPDX,Pudongxinqu,pudongxinqu,china,,CNPDX | CN | PDX | Pudongxinqu | CHINA | pudongxinqu | china
 2670,CN,CHINA,PQI,CNPQI,Puqi,puqi,china,,CNPQI | CN | PQI | Puqi | CHINA | puqi | china
 2671,CN,CHINA,PQA,CNPQA,Puqian,puqian,china,,CNPQA | CN | PQA | Puqian | CHINA | puqian | china
 2672,CN,CHINA,PUT,CNPUT,Putian,putian,china,,CNPUT | CN | PUT | Putian | CHINA | putian | china
@@ -2681,38 +2681,38 @@
 2680,CN,CHINA,QMN,CNQMN,Qimen,qimen,china,,CNQMN | CN | QMN | Qimen | CHINA | qimen | china
 2681,CN,CHINA,QDL,CNQDL,Qindeli,qindeli,china,,CNQDL | CN | QDL | Qindeli | CHINA | qindeli | china
 2682,CN,CHINA,QIN,CNQIN,Qingdao,qingdao,china,,CNQIN | CN | QIN | Qingdao | CHINA | qingdao | china
-2683,CN,CHINA,QDG,CNQDG,Qingdao Pt,qingdao pt,china,,CNQDG | CN | QDG | Qingdao Pt | CHINA | qingdao pt | china
+2683,CN,CHINA,QDG,CNQDG,Qingdao,qingdao,china,,CNQDG | CN | QDG | Qingdao | CHINA | qingdao | china
 2684,CN,CHINA,QGG,CNQGG,Qingge,qingge,china,,CNQGG | CN | QGG | Qingge | CHINA | qingge | china
 2685,CN,CHINA,QIG,CNQIG,Qingguji / Shangqiu,qingguji shangqiu,china,,CNQIG | CN | QIG | Qingguji / Shangqiu | CHINA | qingguji shangqiu | china
 2686,CN,CHINA,QHE,CNQHE,Qinghe,qinghe,china,,CNQHE | CN | QHE | Qinghe | CHINA | qinghe | china
 2687,CN,CHINA,QJI,CNQJI,Qingjiang,qingjiang,china,,CNQJI | CN | QJI | Qingjiang | CHINA | qingjiang | china
-2688,CN,CHINA,QLN,CNQLN,Qinglan Pt,qinglan pt,china,,CNQLN | CN | QLN | Qinglan Pt | CHINA | qinglan pt | china
+2688,CN,CHINA,QLN,CNQLN,Qinglan,qinglan,china,,CNQLN | CN | QLN | Qinglan | CHINA | qinglan | china
 2689,CN,CHINA,QGS,CNQGS,Qingshi,qingshi,china,,CNQGS | CN | QGS | Qingshi | CHINA | qingshi | china
 2690,CN,CHINA,QSE,CNQSE,Qingshuihe/Shenzhen,qingshuihe shenzhen,china,,CNQSE | CN | QSE | Qingshuihe/Shenzhen | CHINA | qingshuihe shenzhen | china
 2691,CN,CHINA,QYA,CNQYA,Qingyang,qingyang,china,,CNQYA | CN | QYA | Qingyang | CHINA | qingyang | china
 2692,CN,CHINA,QGY,CNQGY,Qingyuan,qingyuan,china,,CNQGY | CN | QGY | Qingyuan | CHINA | qingyuan | china
-2693,CN,CHINA,SHP,CNSHP,Qinhuangdao Pt,qinhuangdao pt,china,,CNSHP | CN | SHP | Qinhuangdao Pt | CHINA | qinhuangdao pt | china
+2693,CN,CHINA,SHP,CNSHP,Qinhuangdao,qinhuangdao,china,,CNSHP | CN | SHP | Qinhuangdao | CHINA | qinhuangdao | china
 2694,CN,CHINA,QJG,CNQJG,Qinjiang,qinjiang,china,,CNQJG | CN | QJG | Qinjiang | CHINA | qinjiang | china
-2695,CN,CHINA,QZH,CNQZH,Qinzhou Pt,qinzhou pt,china,,CNQZH | CN | QZH | Qinzhou Pt | CHINA | qinzhou pt | china
+2695,CN,CHINA,QZH,CNQZH,Qinzhou,qinzhou,china,,CNQZH | CN | QZH | Qinzhou | CHINA | qinzhou | china
 2696,CN,CHINA,SAJ,CNSAJ,Qinzhoushajing,qinzhoushajing,china,,CNSAJ | CN | SAJ | Qinzhoushajing | CHINA | qinzhoushajing | china
-2697,CN,CHINA,QSA,CNQSA,Qisha Pt,qisha pt,china,,CNQSA | CN | QSA | Qisha Pt | CHINA | qisha pt | china
+2697,CN,CHINA,QSA,CNQSA,Qisha,qisha,china,,CNQSA | CN | QSA | Qisha | CHINA | qisha | china
 2698,CN,CHINA,QXT,CNQXT,Qixingtai,qixingtai,china,,CNQXT | CN | QXT | Qixingtai | CHINA | qixingtai | china
 2699,CN,CHINA,QZO,CNQZO,Qizhou,qizhou,china,,CNQZO | CN | QZO | Qizhou | CHINA | qizhou | china
 2700,CN,CHINA,QZL,CNQZL,Quanzhou,quanzhou,china,,CNQZL | CN | QZL | Quanzhou | CHINA | quanzhou | china
-2701,CN,CHINA,QZJ,CNQZJ,Quanzhou Pt,quanzhou pt,china,,CNQZJ | CN | QZJ | Quanzhou Pt | CHINA | quanzhou pt | china
+2701,CN,CHINA,QZJ,CNQZJ,Quanzhou,quanzhou,china,,CNQZJ | CN | QZJ | Quanzhou | CHINA | quanzhou | china
 2702,CN,CHINA,QKU,CNQKU,Qukou,qukou,china,,CNQKU | CN | QKU | Qukou | CHINA | qukou | china
 2703,CN,CHINA,JDR,CNJDR,Quxi,quxi,china,,CNJDR | CN | JDR | Quxi | CHINA | quxi | china
 2704,CN,CHINA,ROH,CNROH,Raohe,raohe,china,,CNROH | CN | ROH | Raohe | CHINA | raohe | china
 2705,CN,CHINA,RPG,CNRPG,Raoping,raoping,china,,CNRPG | CN | RPG | Raoping | CHINA | raoping | china
-2706,CN,CHINA,RZH,CNRZH,Rizhao Pt,rizhao pt,china,,CNRZH | CN | RZH | Rizhao Pt | CHINA | rizhao pt | china
+2706,CN,CHINA,RZH,CNRZH,Rizhao,rizhao,china,,CNRZH | CN | RZH | Rizhao | CHINA | rizhao | china
 2707,CN,CHINA,RGA,CNRGA,Rong'an,rong an,china,,CNRGA | CN | RGA | Rong'an | CHINA | rong an | china
 2708,CN,CHINA,RCG,CNRCG,Rongcheng,rongcheng,china,,CNRCG | CN | RCG | Rongcheng | CHINA | rongcheng | china
 2709,CN,CHINA,RCH,CNRCH,Rongcheng,rongcheng,china,,CNRCH | CN | RCH | Rongcheng | CHINA | rongcheng | china
 2710,CN,CHINA,RGC,CNRGC,Rongcheng,rongcheng,china,,CNRGC | CN | RGC | Rongcheng | CHINA | rongcheng | china
 2711,CN,CHINA,RJG,CNRJG,Rongjiang,rongjiang,china,,CNRJG | CN | RJG | Rongjiang | CHINA | rongjiang | china
-2712,CN,CHINA,ROQ,CNROQ,Rongqi Pt,rongqi pt,china,,CNROQ | CN | ROQ | Rongqi Pt | CHINA | rongqi pt | china
+2712,CN,CHINA,ROQ,CNROQ,Rongqi,rongqi,china,,CNROQ | CN | ROQ | Rongqi | CHINA | rongqi | china
 2713,CN,CHINA,RSI,CNRSI,Rongshui,rongshui,china,,CNRSI | CN | RSI | Rongshui | CHINA | rongshui | china
-2714,CN,CHINA,RUG,CNRUG,Rugao Pt,rugao pt,china,,CNRUG | CN | RUG | Rugao Pt | CHINA | rugao pt | china
+2714,CN,CHINA,RUG,CNRUG,Rugao,rugao,china,,CNRUG | CN | RUG | Rugao | CHINA | rugao | china
 2715,CN,CHINA,RIA,CNRIA,Ruian,ruian,china,,CNRIA | CN | RIA | Ruian | CHINA | ruian | china
 2716,CN,CHINA,RAG,CNRAG,Ruichang,ruichang,china,,CNRAG | CN | RAG | Ruichang | CHINA | ruichang | china
 2717,CN,CHINA,RJN,CNRJN,Runjiang,runjiang,china,,CNRJN | CN | RJN | Runjiang | CHINA | runjiang | china
@@ -2720,7 +2720,7 @@
 2719,CN,CHINA,RSN,CNRSN,Rushankou,rushankou,china,,CNRSN | CN | RSN | Rushankou | CHINA | rushankou | china
 2720,CN,CHINA,SIQ,CNSIQ,Saiqi,saiqi,china,,CNSIQ | CN | SIQ | Saiqi | CHINA | saiqi | china
 2721,CN,CHINA,SBM,CNSBM,Sanbaimen,sanbaimen,china,,CNSBM | CN | SBM | Sanbaimen | CHINA | sanbaimen | china
-2722,CN,CHINA,SBU,CNSBU,Sanbu Pt,sanbu pt,china,,CNSBU | CN | SBU | Sanbu Pt | CHINA | sanbu pt | china
+2722,CN,CHINA,SBU,CNSBU,Sanbu,sanbu,china,,CNSBU | CN | SBU | Sanbu | CHINA | sanbu | china
 2723,CN,CHINA,SDP,CNSDP,Sandouping,sandouping,china,,CNSDP | CN | SDP | Sandouping | CHINA | sandouping | china
 2724,CN,CHINA,SAA,CNSAA,Sanhua,sanhua,china,,CNSAA | CN | SAA | Sanhua | CHINA | sanhua | china
 2725,CN,CHINA,SIG,CNSIG,Sanjiang,sanjiang,china,,CNSIG | CN | SIG | Sanjiang | CHINA | sanjiang | china
@@ -2730,7 +2730,7 @@
 2729,CN,CHINA,SNS,CNSNS,Sansha,sansha,china,,CNSNS | CN | SNS | Sansha | CHINA | sansha | china
 2730,CN,CHINA,NHS,CNNHS,Sanshan pt,sanshan pt,china,,CNNHS | CN | NHS | Sanshan pt | CHINA | sanshan pt | china
 2731,CN,CHINA,SJQ,CNSJQ,Sanshui,sanshui,china,,CNSJQ | CN | SJQ | Sanshui | CHINA | sanshui | china
-2732,CN,CHINA,SYA,CNSYA,Sanya Pt,sanya pt,china,,CNSYA | CN | SYA | Sanya Pt | CHINA | sanya pt | china
+2732,CN,CHINA,SYA,CNSYA,Sanya,sanya,china,,CNSYA | CN | SYA | Sanya | CHINA | sanya | china
 2733,CN,CHINA,SNA,CNSNA,Sanyang,sanyang,china,,CNSNA | CN | SNA | Sanyang | CHINA | sanyang | china
 2734,CN,CHINA,SZA,CNSZA,Sanzao,sanzao,china,,CNSZA | CN | SZA | Sanzao | CHINA | sanzao | china
 2735,CN,CHINA,SZO,CNSZO,Sanzhou,sanzhou,china,,CNSZO | CN | SZO | Sanzhou | CHINA | sanzhou | china
@@ -2739,13 +2739,13 @@
 2738,CN,CHINA,SEZ,CNSEZ,Shahezi,shahezi,china,,CNSEZ | CN | SEZ | Shahezi | CHINA | shahezi | china
 2739,CN,CHINA,SHO,CNSHO,Shajiao,shajiao,china,,CNSHO | CN | SHO | Shajiao | CHINA | shajiao | china
 2740,CN,CHINA,SGH,CNSGH,Shanghai,shanghai,china,,CNSGH | CN | SGH | Shanghai | CHINA | shanghai | china
-2741,CN,CHINA,SHG,CNSHG,Shanghai Pt,shanghai pt,china,,CNSHG | CN | SHG | Shanghai Pt | CHINA | shanghai pt | china
+2741,CN,CHINA,SHG,CNSHG,Shanghai,shanghai,china,,CNSHG | CN | SHG | Shanghai | CHINA | shanghai | china
 2742,CN,CHINA,SGU,CNSGU,Shangyu,shangyu,china,,CNSGU | CN | SGU | Shangyu | CHINA | shangyu | china
 2743,CN,CHINA,SXJ,CNSXJ,Shanshan,shanshan,china,,CNSXJ | CN | SXJ | Shanshan | CHINA | shanshan | china
-2744,CN,CHINA,STG,CNSTG,Shantou Pt,shantou pt,china,,CNSTG | CN | STG | Shantou Pt | CHINA | shantou pt | china
+2744,CN,CHINA,STG,CNSTG,Shantou,shantou,china,,CNSTG | CN | STG | Shantou | CHINA | shantou | china
 2745,CN,CHINA,SAW,CNSAW,Shanwai,shanwai,china,,CNSAW | CN | SAW | Shanwai | CHINA | shanwai | china
-2746,CN,CHINA,SWE,CNSWE,Shanwei Pt,shanwei pt,china,,CNSWE | CN | SWE | Shanwei Pt | CHINA | shanwei pt | china
-2747,CN,CHINA,HSC,CNHSC,Shaoguan New Pt,shaoguan new pt,china,,CNHSC | CN | HSC | Shaoguan New Pt | CHINA | shaoguan new pt | china
+2746,CN,CHINA,SWE,CNSWE,Shanwei,shanwei,china,,CNSWE | CN | SWE | Shanwei | CHINA | shanwei | china
+2747,CN,CHINA,HSC,CNHSC,Shaoguan New,shaoguan new,china,,CNHSC | CN | HSC | Shaoguan New | CHINA | shaoguan new | china
 2748,CN,CHINA,SPA,CNSPA,Shapa,shapa,china,,CNSPA | CN | SPA | Shapa | CHINA | shapa | china
 2749,CN,CHINA,SAP,CNSAP,Shaping,shaping,china,,CNSAP | CN | SAP | Shaping | CHINA | shaping | china
 2750,CN,CHINA,SSN,CNSSN,Shashan,shashan,china,,CNSSN | CN | SSN | Shashan | CHINA | shashan | china
@@ -2753,19 +2753,19 @@
 2752,CN,CHINA,STI,CNSTI,Shatian,shatian,china,,CNSTI | CN | STI | Shatian | CHINA | shatian | china
 2753,CN,CHINA,SHT,CNSHT,Shating,shating,china,,CNSHT | CN | SHT | Shating | CHINA | shating | china
 2754,CN,CHINA,SYC,CNSYC,Shayuchong,shayuchong,china,,CNSYC | CN | SYC | Shayuchong | CHINA | shayuchong | china
-2755,CN,CHINA,SHK,CNSHK,Shekou Pt,shekou pt,china,,CNSHK | CN | SHK | Shekou Pt | CHINA | shekou pt | china
+2755,CN,CHINA,SHK,CNSHK,Shekou,shekou,china,,CNSHK | CN | SHK | Shekou | CHINA | shekou | china
 2756,CN,CHINA,SNH,CNSNH,Shenhu,shenhu,china,,CNSNH | CN | SNH | Shenhu | CHINA | shenhu | china
 2757,CN,CHINA,SQN,CNSQN,Shenquan,shenquan,china,,CNSQN | CN | SQN | Shenquan | CHINA | shenquan | china
 2758,CN,CHINA,SNW,CNSNW,Shenwan,shenwan,china,,CNSNW | CN | SNW | Shenwan | CHINA | shenwan | china
 2759,CN,CHINA,SNZ,CNSNZ,Shenzhen,shenzhen,china,,CNSNZ | CN | SNZ | Shenzhen | CHINA | shenzhen | china
-2760,CN,CHINA,SZP,CNSZP,Shenzhen Pt,shenzhen pt,china,,CNSZP | CN | SZP | Shenzhen Pt | CHINA | shenzhen pt | china
+2760,CN,CHINA,SZP,CNSZP,Shenzhen,shenzhen,china,,CNSZP | CN | SZP | Shenzhen | CHINA | shenzhen | china
 2761,CN,CHINA,SEY,CNSEY,Sheyang,sheyang,china,,CNSEY | CN | SEY | Sheyang | CHINA | sheyang | china
 2762,CN,CHINA,SBH,CNSBH,Shibahe,shibahe,china,,CNSBH | CN | SBH | Shibahe | CHINA | shibahe | china
-2763,CN,CHINA,SHD,CNSHD,Shidao Pt,shidao pt,china,,CNSHD | CN | SHD | Shidao Pt | CHINA | shidao pt | china
+2763,CN,CHINA,SHD,CNSHD,Shidao,shidao,china,,CNSHD | CN | SHD | Shidao | CHINA | shidao | china
 2764,CN,CHINA,SIJ,CNSIJ,Shijing,shijing,china,,CNSIJ | CN | SIJ | Shijing | CHINA | shijing | china
 2765,CN,CHINA,SJJ,CNSJJ,Shijingjiaoxin,shijingjiaoxin,china,,CNSJJ | CN | SJJ | Shijingjiaoxin | CHINA | shijingjiaoxin | china
 2766,CN,CHINA,SJO,CNSJO,Shijitou,shijitou,china,,CNSJO | CN | SJO | Shijitou | CHINA | shijitou | china
-2767,CN,CHINA,SJU,CNSJU,Shijiu Pt,shijiu pt,china,,CNSJU | CN | SJU | Shijiu Pt | CHINA | shijiu pt | china
+2767,CN,CHINA,SJU,CNSJU,Shijiu,shijiu,china,,CNSJU | CN | SJU | Shijiu | CHINA | shijiu | china
 2768,CN,CHINA,SLG,CNSLG,Shiliugang,shiliugang,china,,CNSLG | CN | SLG | Shiliugang | CHINA | shiliugang | china
 2769,CN,CHINA,SLO,CNSLO,Shilou,shilou,china,,CNSLO | CN | SLO | Shilou | CHINA | shilou | china
 2770,CN,CHINA,ZSM,CNZSM,Shima,shima,china,,CNZSM | CN | ZSM | Shima | CHINA | shima | china
@@ -2773,17 +2773,17 @@
 2772,CN,CHINA,XSP,CNXSP,Shipu,shipu,china,,CNXSP | CN | XSP | Shipu | CHINA | shipu | china
 2773,CN,CHINA,SHQ,CNSHQ,Shiqi,shiqi,china,,CNSHQ | CN | SHQ | Shiqi | CHINA | shiqi | china
 2774,CN,CHINA,PNY,CNPNY,Shiqiao,shiqiao,china,,CNPNY | CN | PNY | Shiqiao | CHINA | shiqiao | china
-2775,CN,CHINA,SIP,CNSIP,Shiqu Pt,shiqu pt,china,,CNSIP | CN | SIP | Shiqu Pt | CHINA | shiqu pt | china
+2775,CN,CHINA,SIP,CNSIP,Shiqu,shiqu,china,,CNSIP | CN | SIP | Shiqu | CHINA | shiqu | china
 2776,CN,CHINA,SHH,CNSHH,Shishi,shishi,china,,CNSHH | CN | SHH | Shishi | CHINA | shishi | china
-2777,CN,CHINA,STB,CNSTB,Shitoubu Pt,shitoubu pt,china,,CNSTB | CN | STB | Shitoubu Pt | CHINA | shitoubu pt | china
+2777,CN,CHINA,STB,CNSTB,Shitoubu,shitoubu,china,,CNSTB | CN | STB | Shitoubu | CHINA | shitoubu | china
 2778,CN,CHINA,SAN,CNSAN,Shiwan,shiwan,china,,CNSAN | CN | SAN | Shiwan | CHINA | shiwan | china
 2779,CN,CHINA,SWI,CNSWI,Shiwei,shiwei,china,,CNSWI | CN | SWI | Shiwei | CHINA | shiwei | china
 2780,CN,CHINA,SYG,CNSYG,Shiyang,shiyang,china,,CNSYG | CN | SYG | Shiyang | CHINA | shiyang | china
 2781,CN,CHINA,SIU,CNSIU,Shizhu,shizhu,china,,CNSIU | CN | SIU | Shizhu | CHINA | shizhu | china
 2782,CN,CHINA,SSP,CNSSP,Shuangshui,shuangshui,china,,CNSSP | CN | SSP | Shuangshui | CHINA | shuangshui | china
-2783,CN,CHINA,SDG,CNSDG,Shuidong Pt,shuidong pt,china,,CNSDG | CN | SDG | Shuidong Pt | CHINA | shuidong pt | china
+2783,CN,CHINA,SDG,CNSDG,Shuidong,shuidong,china,,CNSDG | CN | SDG | Shuidong | CHINA | shuidong | china
 2784,CN,CHINA,SIK,CNSIK,Shuikou,shuikou,china,,CNSIK | CN | SIK | Shuikou | CHINA | shuikou | china
-2785,CN,CHINA,SUD,CNSUD,Shunde Pt,shunde pt,china,,CNSUD | CN | SUD | Shunde Pt | CHINA | shunde pt | china
+2785,CN,CHINA,SUD,CNSUD,Shunde,shunde,china,,CNSUD | CN | SUD | Shunde | CHINA | shunde | china
 2786,CN,CHINA,SHL,CNSHL,Shuolong,shuolong,china,,CNSHL | CN | SHL | Shuolong | CHINA | shuolong | china
 2787,CN,CHINA,SJT,CNSJT,Sijitun,sijitun,china,,CNSJT | CN | SJT | Sijitun | CHINA | sijitun | china
 2788,CN,CHINA,SKS,CNSKS,Sikuaishi,sikuaishi,china,,CNSKS | CN | SKS | Sikuaishi | CHINA | sikuaishi | china
@@ -2791,7 +2791,7 @@
 2790,CN,CHINA,SOG,CNSOG,Songgai,songgai,china,,CNSOG | CN | SOG | Songgai | CHINA | songgai | china
 2791,CN,CHINA,SGJ,CNSGJ,Songjiang,songjiang,china,,CNSGJ | CN | SGJ | Songjiang | CHINA | songjiang | china
 2792,CN,CHINA,SMN,CNSMN,Songmen,songmen,china,,CNSMN | CN | SMN | Songmen | CHINA | songmen | china
-2793,CN,CHINA,SON,CNSON,Songxia Pt,songxia pt,china,,CNSON | CN | SON | Songxia Pt | CHINA | songxia pt | china
+2793,CN,CHINA,SON,CNSON,Songxia,songxia,china,,CNSON | CN | SON | Songxia | CHINA | songxia | china
 2794,CN,CHINA,SZK,CNSZK,Songzikou,songzikou,china,,CNSZK | CN | SZK | Songzikou | CHINA | songzikou | china
 2795,CN,CHINA,SBN,CNSBN,Suibin,suibin,china,,CNSBN | CN | SBN | Suibin | CHINA | suibin | china
 2796,CN,CHINA,CFF,CNCFF,Suidong,suidong,china,,CNCFF | CN | CFF | Suidong | CHINA | suidong | china
@@ -2799,34 +2799,34 @@
 2798,CN,CHINA,SIZ,CNSIZ,Suizhong,suizhong,china,,CNSIZ | CN | SIZ | Suizhong | CHINA | suizhong | china
 2799,CN,CHINA,SUW,CNSUW,Sunwu,sunwu,china,,CNSUW | CN | SUW | Sunwu | CHINA | sunwu | china
 2800,CN,CHINA,SZH,CNSZH,Suzhou,suzhou,china,,CNSZH | CN | SZH | Suzhou | CHINA | suzhou | china
-2801,CN,CHINA,SZG,CNSZG,Suzhou Pt,suzhou pt,china,,CNSZG | CN | SZG | Suzhou Pt | CHINA | suzhou pt | china
-2802,CN,CHINA,TAC,CNTAC,Taicang Pt,taicang pt,china,,CNTAC | CN | TAC | Taicang Pt | CHINA | taicang pt | china
+2801,CN,CHINA,SZG,CNSZG,Suzhou,suzhou,china,,CNSZG | CN | SZG | Suzhou | CHINA | suzhou | china
+2802,CN,CHINA,TAC,CNTAC,Taicang,taicang,china,,CNTAC | CN | TAC | Taicang | CHINA | taicang | china
 2803,CN,CHINA,TJG,CNTJG,Taijiang,taijiang,china,,CNTJG | CN | TJG | Taijiang | CHINA | taijiang | china
 2804,CN,CHINA,TAP,CNTAP,Taiping,taiping,china,,CNTAP | CN | TAP | Taiping | CHINA | taiping | china
 2805,CN,CHINA,TPK,CNTPK,Taipingkou,taipingkou,china,,CNTPK | CN | TPK | Taipingkou | CHINA | taipingkou | china
 2806,CN,CHINA,TPW,CNTPW,Taipingwan,taipingwan,china,,CNTPW | CN | TPW | Taipingwan | CHINA | taipingwan | china
 2807,CN,CHINA,TIS,CNTIS,Taishan,taishan,china,,CNTIS | CN | TIS | Taishan | CHINA | taishan | china
 2808,CN,CHINA,TZO,CNTZO,Taizhou,taizhou,china,,CNTZO | CN | TZO | Taizhou | CHINA | taizhou | china
-2809,CN,CHINA,TZU,CNTZU,Taizhou Pt,taizhou pt,china,,CNTZU | CN | TZU | Taizhou Pt | CHINA | taizhou pt | china
-2810,CN,CHINA,TAZ,CNTAZ,Taizhou Pt,taizhou pt,china,,CNTAZ | CN | TAZ | Taizhou Pt | CHINA | taizhou pt | china
+2809,CN,CHINA,TZU,CNTZU,Taizhou,taizhou,china,,CNTZU | CN | TZU | Taizhou | CHINA | taizhou | china
+2810,CN,CHINA,TAZ,CNTAZ,Taizhou,taizhou,china,,CNTAZ | CN | TAZ | Taizhou | CHINA | taizhou | china
 2811,CN,CHINA,TNO,CNTNO,Tanggou,tanggou,china,,CNTNO | CN | TNO | Tanggou | CHINA | tanggou | china
 2812,CN,CHINA,TGG,CNTGG,Tanggu,tanggu,china,,CNTGG | CN | TGG | Tanggu | CHINA | tanggu | china
 2813,CN,CHINA,TJA,CNTJA,Tangjia,tangjia,china,,CNTJA | CN | TJA | Tangjia | CHINA | tangjia | china
-2814,CN,CHINA,TGS,CNTGS,Tangshan Pt,tangshan pt,china,,CNTGS | CN | TGS | Tangshan Pt | CHINA | tangshan pt | china
+2814,CN,CHINA,TGS,CNTGS,Tangshan,tangshan,china,,CNTGS | CN | TGS | Tangshan | CHINA | tangshan | china
 2815,CN,CHINA,QNH,CNQNH,Tanmen,tanmen,china,,CNQNH | CN | QNH | Tanmen | CHINA | tanmen | china
 2816,CN,CHINA,YKU,CNYKU,Taokou,taokou,china,,CNYKU | CN | YKU | Taokou | CHINA | taokou | china
 2817,CN,CHINA,TXI,CNTXI,Tengxian,tengxian,china,,CNTXI | CN | TXI | Tengxian | CHINA | tengxian | china
 2818,CN,CHINA,TID,CNTID,Tiandong,tiandong,china,,CNTID | CN | TID | Tiandong | CHINA | tiandong | china
 2819,CN,CHINA,TNJ,CNTNJ,Tianjin,tianjin,china,,CNTNJ | CN | TNJ | Tianjin | CHINA | tianjin | china
-2820,CN,CHINA,TNG,CNTNG,Tianjin Pt,tianjin pt,china,,CNTNG | CN | TNG | Tianjin Pt | CHINA | tianjin pt | china
-2821,CN,CHINA,TXG,CNTXG,Tianjin Xingang Pt,tianjin xingang pt,china,,CNTXG | CN | TXG | Tianjin Xingang Pt | CHINA | tianjin xingang pt | china
+2820,CN,CHINA,TNG,CNTNG,Tianjin,tianjin,china,,CNTNG | CN | TNG | Tianjin | CHINA | tianjin | china
+2821,CN,CHINA,TXG,CNTXG,Tianjin Xingang,tianjin xingang,china,,CNTXG | CN | TXG | Tianjin Xingang | CHINA | tianjin xingang | china
 2822,CN,CHINA,TBS,CNTBS,Tianjinbaoshuiqu,tianjinbaoshuiqu,china,,CNTBS | CN | TBS | Tianjinbaoshuiqu | CHINA | tianjinbaoshuiqu | china
 2823,CN,CHINA,TIY,CNTIY,Tianyang,tianyang,china,,CNTIY | CN | TIY | Tianyang | CHINA | tianyang | china
 2824,CN,CHINA,TZE,CNTZE,Tianzhen,tianzhen,china,,CNTZE | CN | TZE | Tianzhen | CHINA | tianzhen | china
 2825,CN,CHINA,BHT,CNBHT,Tieshan,tieshan,china,,CNBHT | CN | BHT | Tieshan | CHINA | tieshan | china
 2826,CN,CHINA,TOH,CNTOH,Tonghe,tonghe,china,,CNTOH | CN | TOH | Tonghe | CHINA | tonghe | china
 2827,CN,CHINA,TOJ,CNTOJ,Tongjiang,tongjiang,china,,CNTOJ | CN | TOJ | Tongjiang | CHINA | tongjiang | china
-2828,CN,CHINA,TOL,CNTOL,Tongling Pt,tongling pt,china,,CNTOL | CN | TOL | Tongling Pt | CHINA | tongling pt | china
+2828,CN,CHINA,TOL,CNTOL,Tongling,tongling,china,,CNTOL | CN | TOL | Tongling | CHINA | tongling | china
 2829,CN,CHINA,TXZ,CNTXZ,Tongxiang,tongxiang,china,,CNTXZ | CN | TXZ | Tongxiang | CHINA | tongxiang | china
 2830,CN,CHINA,TOX,CNTOX,Tongxing,tongxing,china,,CNTOX | CN | TOX | Tongxing | CHINA | tongxing | china
 2831,CN,CHINA,TOZ,CNTOZ,Tongzhao,tongzhao,china,,CNTOZ | CN | TOZ | Tongzhao | CHINA | tongzhao | china
@@ -2834,44 +2834,44 @@
 2833,CN,CHINA,TJD,CNTJD,Tuojidao,tuojidao,china,,CNTJD | CN | TJD | Tuojidao | CHINA | tuojidao | china
 2834,CN,CHINA,TQO,CNTQO,Tuqiao,tuqiao,china,,CNTQO | CN | TQO | Tuqiao | CHINA | tuqiao | china
 2835,CN,CHINA,WIG,CNWIG,Waigang,waigang,china,,CNWIG | CN | WIG | Waigang | CHINA | waigang | china
-2836,CN,CHINA,WGQ,CNWGQ,Waigaoqiao Pt,waigaoqiao pt,china,,CNWGQ | CN | WGQ | Waigaoqiao Pt | CHINA | waigaoqiao pt | china
+2836,CN,CHINA,WGQ,CNWGQ,Waigaoqiao,waigaoqiao,china,,CNWGQ | CN | WGQ | Waigaoqiao | CHINA | waigaoqiao | china
 2837,CN,CHINA,WIH,CNWIH,Waihai,waihai,china,,CNWIH | CN | WIH | Waihai | CHINA | waihai | china
 2838,CN,CHINA,WJG,CNWJG,Wangjiang,wangjiang,china,,CNWJG | CN | WJG | Wangjiang | CHINA | wangjiang | china
-2839,CN,CHINA,WAS,CNWAS,Wanshan Pt,wanshan pt,china,,CNWAS | CN | WAS | Wanshan Pt | CHINA | wanshan pt | china
+2839,CN,CHINA,WAS,CNWAS,Wanshan,wanshan,china,,CNWAS | CN | WAS | Wanshan | CHINA | wanshan | china
 2840,CN,CHINA,WAX,CNWAX,Wanxian,wanxian,china,,CNWAX | CN | WAX | Wanxian | CHINA | wanxian | china
 2841,CN,CHINA,WAZ,CNWAZ,Wanzai,wanzai,china,,CNWAZ | CN | WAZ | Wanzai | CHINA | wanzai | china
 2842,CN,CHINA,WZH,CNWZH,Wanzhou,wanzhou,china,,CNWZH | CN | WZH | Wanzhou | CHINA | wanzhou | china
-2843,CN,CHINA,WEF,CNWEF,Weifang Pt,weifang pt,china,,CNWEF | CN | WEF | Weifang Pt | CHINA | weifang pt | china
+2843,CN,CHINA,WEF,CNWEF,Weifang,weifang,china,,CNWEF | CN | WEF | Weifang | CHINA | weifang | china
 2844,CN,CHINA,WEI,CNWEI,Weihai,weihai,china,,CNWEI | CN | WEI | Weihai | CHINA | weihai | china
 2845,CN,CHINA,WEH,CNWEH,Weihai Dashuipo Apt,weihai dashuipo apt,china,,CNWEH | CN | WEH | Weihai Dashuipo Apt | CHINA | weihai dashuipo apt | china
-2846,CN,CHINA,WEG,CNWEG,Weihai Pt,weihai pt,china,,CNWEG | CN | WEG | Weihai Pt | CHINA | weihai pt | china
+2846,CN,CHINA,WEG,CNWEG,Weihai,weihai,china,,CNWEG | CN | WEG | Weihai | CHINA | weihai | china
 2847,CN,CHINA,WIT,CNWIT,Weitou,weitou,china,,CNWIT | CN | WIT | Weitou | CHINA | weitou | china
 2848,CN,CHINA,WYK,CNWYK,Weiyuankou,weiyuankou,china,,CNWYK | CN | WYK | Weiyuankou | CHINA | weiyuankou | china
 2849,CN,CHINA,LMG,CNLMG,Wenling Longmen Port,wenling longmen port,china,,CNLMG | CN | LMG | Wenling Longmen Port | CHINA | wenling longmen port | china
 2850,CN,CHINA,WSH,CNWSH,Wenshan,wenshan,china,,CNWSH | CN | WSH | Wenshan | CHINA | wenshan | china
-2851,CN,CHINA,WZO,CNWZO,Wenzhou Pt,wenzhou pt,china,,CNWZO | CN | WZO | Wenzhou Pt | CHINA | wenzhou pt | china
+2851,CN,CHINA,WZO,CNWZO,Wenzhou,wenzhou,china,,CNWZO | CN | WZO | Wenzhou | CHINA | wenzhou | china
 2852,CN,CHINA,WHU,CNWHU,Wuchuan,wuchuan,china,,CNWHU | CN | WHU | Wuchuan | CHINA | wuchuan | china
 2853,CN,CHINA,NHN,CNNHN,Wuhan,wuhan,china,,CNNHN | CN | NHN | Wuhan | CHINA | wuhan | china
-2854,CN,CHINA,WHG,CNWHG,Wuhan Pt,wuhan pt,china,,CNWHG | CN | WHG | Wuhan Pt | CHINA | wuhan pt | china
+2854,CN,CHINA,WHG,CNWHG,Wuhan,wuhan,china,,CNWHG | CN | WHG | Wuhan | CHINA | wuhan | china
 2855,CN,CHINA,WHE,CNWHE,Wuhe,wuhe,china,,CNWHE | CN | WHE | Wuhe | CHINA | wuhe | china
-2856,CN,CHINA,WHI,CNWHI,Wuhu Pt,wuhu pt,china,,CNWHI | CN | WHI | Wuhu Pt | CHINA | wuhu pt | china
+2856,CN,CHINA,WHI,CNWHI,Wuhu,wuhu,china,,CNWHI | CN | WHI | Wuhu | CHINA | wuhu | china
 2857,CN,CHINA,WJI,CNWJI,Wujin,wujin,china,,CNWJI | CN | WJI | Wujin | CHINA | wujin | china
 2858,CN,CHINA,WUK,CNWUK,Wukan,wukan,china,,CNWUK | CN | WUK | Wukan | CHINA | wukan | china
 2859,CN,CHINA,WSA,CNWSA,Wusha,wusha,china,,CNWSA | CN | WSA | Wusha | CHINA | wusha | china
 2860,CN,CHINA,WSN,CNWSN,Wushan,wushan,china,,CNWSN | CN | WSN | Wushan | CHINA | wushan | china
-2861,CN,CHINA,WUG,CNWUG,Wusong Pt,wusong pt,china,,CNWUG | CN | WUG | Wusong Pt | CHINA | wusong pt | china
+2861,CN,CHINA,WUG,CNWUG,Wusong,wusong,china,,CNWUG | CN | WUG | Wusong | CHINA | wusong | china
 2862,CN,CHINA,WXS,CNWXS,Wuxi,wuxi,china,,CNWXS | CN | WXS | Wuxi | CHINA | wuxi | china
 2863,CN,CHINA,WXA,CNWXA,Wuxuan,wuxuan,china,,CNWXA | CN | WXA | Wuxuan | CHINA | wuxuan | china
-2864,CN,CHINA,WXP,CNWXP,Wuxue Pt,wuxue pt,china,,CNWXP | CN | WXP | Wuxue Pt | CHINA | wuxue pt | china
+2864,CN,CHINA,WXP,CNWXP,Wuxue,wuxue,china,,CNWXP | CN | WXP | Wuxue | CHINA | wuxue | china
 2865,CN,CHINA,WYP,CNWYP,Wuyapao,wuyapao,china,,CNWYP | CN | WYP | Wuyapao | CHINA | wuyapao | china
-2866,CN,CHINA,WUZ,CNWUZ,Wuzhou Pt,wuzhou pt,china,,CNWUZ | CN | WUZ | Wuzhou Pt | CHINA | wuzhou pt | china
+2866,CN,CHINA,WUZ,CNWUZ,Wuzhou,wuzhou,china,,CNWUZ | CN | WUZ | Wuzhou | CHINA | wuzhou | china
 2867,CN,CHINA,XDJ,CNXDJ,Xiadaiji,xiadaiji,china,,CNXDJ | CN | XDJ | Xiadaiji | CHINA | xiadaiji | china
 2868,CN,CHINA,XIH,CNXIH,Xiahai,xiahai,china,,CNXIH | CN | XIH | Xiahai | CHINA | xiahai | china
 2869,CN,CHINA,XUA,CNXUA,Xiahua,xiahua,china,,CNXUA | CN | XUA | Xiahua | CHINA | xiahua | china
 2870,CN,CHINA,FQX,CNFQX,Xialong,xialong,china,,CNFQX | CN | FQX | Xialong | CHINA | xialong | china
 2871,CN,CHINA,XAM,CNXAM,Xiamen,xiamen,china,,CNXAM | CN | XAM | Xiamen | CHINA | xiamen | china
 2872,CN,CHINA,XMH,CNXMH,Xiamen Haicang,xiamen haicang,china,,CNXMH | CN | XMH | Xiamen Haicang | CHINA | xiamen haicang | china
-2873,CN,CHINA,XMG,CNXMG,Xiamen Pt,xiamen pt,china,,CNXMG | CN | XMG | Xiamen Pt | CHINA | xiamen pt | china
+2873,CN,CHINA,XMG,CNXMG,Xiamen,xiamen,china,,CNXMG | CN | XMG | Xiamen | CHINA | xiamen | china
 2874,CN,CHINA,XIA,CNXIA,Xian,xian,china,,CNXIA | CN | XIA | Xian | CHINA | xian | china
 2875,CN,CHINA,XGK,CNXGK,Xiangkou,xiangkou,china,,CNXGK | CN | XGK | Xiangkou | CHINA | xiangkou | china
 2876,CN,CHINA,XSI,CNXSI,Xiangshui,xiangshui,china,,CNXSI | CN | XSI | Xiangshui | CHINA | xiangshui | china
@@ -2884,7 +2884,7 @@
 2883,CN,CHINA,XNG,CNXNG,Xianing,xianing,china,,CNXNG | CN | XNG | Xianing | CHINA | xianing | china
 2884,CN,CHINA,XTN,CNXTN,Xiantan,xiantan,china,,CNXTN | CN | XTN | Xiantan | CHINA | xiantan | china
 2885,CN,CHINA,XCI,CNXCI,Xiaochi,xiaochi,china,,CNXCI | CN | XCI | Xiaochi | CHINA | xiaochi | china
-2886,CN,CHINA,XCU,CNXCU,Xiaocuo Pt,xiaocuo pt,china,,CNXCU | CN | XCU | Xiaocuo Pt | CHINA | xiaocuo pt | china
+2886,CN,CHINA,XCU,CNXCU,Xiaocuo,xiaocuo,china,,CNXCU | CN | XCU | Xiaocuo | CHINA | xiaocuo | china
 2887,CN,CHINA,XHO,CNXHO,Xiaohudao,xiaohudao,china,,CNXHO | CN | XHO | Xiaohudao | CHINA | xiaohudao | china
 2888,CN,CHINA,XJB,CNXJB,Xiaojiangba,xiaojiangba,china,,CNXJB | CN | XJB | Xiaojiangba | CHINA | xiaojiangba | china
 2889,CN,CHINA,XAO,CNXAO,Xiaolan,xiaolan,china,,CNXAO | CN | XAO | Xiaolan | CHINA | xiaolan | china
@@ -2892,7 +2892,7 @@
 2891,CN,CHINA,XAS,CNXAS,Xiashan,xiashan,china,,CNXAS | CN | XAS | Xiashan | CHINA | xiashan | china
 2892,CN,CHINA,XYN,CNXYN,Xiaying,xiaying,china,,CNXYN | CN | XYN | Xiaying | CHINA | xiaying | china
 2893,CN,CHINA,ZXZ,CNZXZ,Xiazhai,xiazhai,china,,CNZXZ | CN | ZXZ | Xiazhai | CHINA | xiazhai | china
-2894,CN,CHINA,XCG,CNXCG,Xichong Pt,xichong pt,china,,CNXCG | CN | XCG | Xichong Pt | CHINA | xichong pt | china
+2894,CN,CHINA,XCG,CNXCG,Xichong,xichong,china,,CNXCG | CN | XCG | Xichong | CHINA | xichong | china
 2895,CN,CHINA,XTI,CNXTI,Xidi,xidi,china,,CNXTI | CN | XTI | Xidi | CHINA | xidi | china
 2896,CN,CHINA,XEX,CNXEX,Xiexu,xiexu,china,,CNXEX | CN | XEX | Xiexu | CHINA | xiexu | china
 2897,CN,CHINA,XIJ,CNXIJ,Xijiang,xijiang,china,,CNXIJ | CN | XIJ | Xijiang | CHINA | xijiang | china
@@ -2909,17 +2909,17 @@
 2908,CN,CHINA,XGD,CNXGD,Xingdong,xingdong,china,,CNXGD | CN | XGD | Xingdong | CHINA | xingdong | china
 2909,CN,CHINA,XHK,CNXHK,Xinhekou,xinhekou,china,,CNXHK | CN | XHK | Xinhekou | CHINA | xinhekou | china
 2910,CN,CHINA,DMX,CNDMX,Xinhuan,xinhuan,china,,CNDMX | CN | DMX | Xinhuan | CHINA | xinhuan | china
-2911,CN,CHINA,XIN,CNXIN,Xinhui Pt,xinhui pt,china,,CNXIN | CN | XIN | Xinhui Pt | CHINA | xinhui pt | china
+2911,CN,CHINA,XIN,CNXIN,Xinhui,xinhui,china,,CNXIN | CN | XIN | Xinhui | CHINA | xinhui | china
 2912,CN,CHINA,XIK,CNXIK,Xinkai,xinkai,china,,CNXIK | CN | XIK | Xinkai | CHINA | xinkai | china
 2913,CN,CHINA,XNA,CNXNA,Xinsha,xinsha,china,,CNXNA | CN | XNA | Xinsha | CHINA | xinsha | china
-2914,CN,CHINA,XIT,CNXIT,Xintang Pt,xintang pt,china,,CNXIT | CN | XIT | Xintang Pt | CHINA | xintang pt | china
+2914,CN,CHINA,XIT,CNXIT,Xintang,xintang,china,,CNXIT | CN | XIT | Xintang | CHINA | xintang | china
 2915,CN,CHINA,XNI,CNXNI,Xinxing,xinxing,china,,CNXNI | CN | XNI | Xinxing | CHINA | xinxing | china
 2916,CN,CHINA,CNX,CNCNX,Xinxu,xinxu,china,,CNCNX | CN | CNX | Xinxu | CHINA | xinxu | china
 2917,CN,CHINA,ING,CNING,Xinyang,xinyang,china,,CNING | CN | ING | Xinyang | CHINA | xinyang | china
 2918,CN,CHINA,XYI,CNXYI,Xinying,xinying,china,,CNXYI | CN | XYI | Xinying | CHINA | xinying | china
 2919,CN,CHINA,XTO,CNXTO,Xitou,xitou,china,,CNXTO | CN | XTO | Xitou | CHINA | xitou | china
 2920,CN,CHINA,XUL,CNXUL,Xiulin,xiulin,china,,CNXUL | CN | XUL | Xiulin | CHINA | xiulin | china
-2921,CN,CHINA,XYG,CNXYG,Xiuyu Pt,xiuyu pt,china,,CNXYG | CN | XYG | Xiuyu Pt | CHINA | xiuyu pt | china
+2921,CN,CHINA,XYG,CNXYG,Xiuyu,xiuyu,china,,CNXYG | CN | XYG | Xiuyu | CHINA | xiuyu | china
 2922,CN,CHINA,XUM,CNXUM,Xuanmen,xuanmen,china,,CNXUM | CN | XUM | Xuanmen | CHINA | xuanmen | china
 2923,CN,CHINA,XEO,CNXEO,Xueao,xueao,china,,CNXEO | CN | XEO | Xueao | CHINA | xueao | china
 2924,CN,CHINA,XJD,CNXJD,Xuejiadao,xuejiadao,china,,CNXJD | CN | XJD | Xuejiadao | CHINA | xuejiadao | china
@@ -2927,31 +2927,31 @@
 2926,CN,CHINA,XUK,CNXUK,Xunke,xunke,china,,CNXUK | CN | XUK | Xunke | CHINA | xunke | china
 2927,CN,CHINA,YBG,CNYBG,Yabagou,yabagou,china,,CNYBG | CN | YBG | Yabagou | CHINA | yabagou | china
 2928,CN,CHINA,YJC,CNYJC,Yangjiachang,yangjiachang,china,,CNYJC | CN | YJC | Yangjiachang | CHINA | yangjiachang | china
-2929,CN,CHINA,YJI,CNYJI,Yangjiang Pt,yangjiang pt,china,,CNYJI | CN | YJI | Yangjiang Pt | CHINA | yangjiang pt | china
+2929,CN,CHINA,YJI,CNYJI,Yangjiang,yangjiang,china,,CNYJI | CN | YJI | Yangjiang | CHINA | yangjiang | china
 2930,CN,CHINA,YGK,CNYGK,Yangkou,yangkou,china,,CNYGK | CN | YGK | Yangkou | CHINA | yangkou | china
-2931,CN,CHINA,YKG,CNYKG,Yangkou Pt,yangkou pt,china,,CNYKG | CN | YKG | Yangkou Pt | CHINA | yangkou pt | china
+2931,CN,CHINA,YKG,CNYKG,Yangkou,yangkou,china,,CNYKG | CN | YKG | Yangkou | CHINA | yangkou | china
 2932,CN,CHINA,YLI,CNYLI,Yangli,yangli,china,,CNYLI | CN | YLI | Yangli | CHINA | yangli | china
 2933,CN,CHINA,YMD,CNYMD,Yangmadao,yangmadao,china,,CNYMD | CN | YMD | Yangmadao | CHINA | yangmadao | china
 2934,CN,CHINA,YPE,CNYPE,Yangpeng,yangpeng,china,,CNYPE | CN | YPE | Yangpeng | CHINA | yangpeng | china
-2935,CN,CHINA,YPG,CNYPG,Yangpu Pt,yangpu pt,china,,CNYPG | CN | YPG | Yangpu Pt | CHINA | yangpu pt | china
+2935,CN,CHINA,YPG,CNYPG,Yangpu,yangpu,china,,CNYPG | CN | YPG | Yangpu | CHINA | yangpu | china
 2936,CN,CHINA,YSN,CNYSN,Yangshan,yangshan,china,,CNYSN | CN | YSN | Yangshan | CHINA | yangshan | china
-2937,CN,CHINA,YSA,CNYSA,Yangshan Pt,yangshan pt,china,,CNYSA | CN | YSA | Yangshan Pt | CHINA | yangshan pt | china
+2937,CN,CHINA,YSA,CNYSA,Yangshan,yangshan,china,,CNYSA | CN | YSA | Yangshan | CHINA | yangshan | china
 2938,CN,CHINA,YSO,CNYSO,Yangshuo,yangshuo,china,,CNYSO | CN | YSO | Yangshuo | CHINA | yangshuo | china
 2939,CN,CHINA,YGX,CNYGX,Yangxi,yangxi,china,,CNYGX | CN | YGX | Yangxi | CHINA | yangxi | china
 2940,CN,CHINA,YXT,CNYXT,Yangxifengtou,yangxifengtou,china,,CNYXT | CN | YXT | Yangxifengtou | CHINA | yangxifengtou | china
 2941,CN,CHINA,YNG,CNYNG,Yangzhong,yangzhong,china,,CNYNG | CN | YNG | Yangzhong | CHINA | yangzhong | china
-2942,CN,CHINA,YZH,CNYZH,Yangzhou Pt,yangzhou pt,china,,CNYZH | CN | YZH | Yangzhou Pt | CHINA | yangzhou pt | china
+2942,CN,CHINA,YZH,CNYZH,Yangzhou,yangzhou,china,,CNYZH | CN | YZH | Yangzhou | CHINA | yangzhou | china
 2943,CN,CHINA,YJA,CNYJA,Yanjia,yanjia,china,,CNYJA | CN | YJA | Yanjia | CHINA | yanjia | china
 2944,CN,CHINA,YAT,CNYAT,Yantai,yantai,china,,CNYAT | CN | YAT | Yantai | CHINA | yantai | china
-2945,CN,CHINA,YTG,CNYTG,Yantai Pt,yantai pt,china,,CNYTG | CN | YTG | Yantai Pt | CHINA | yantai pt | china
-2946,CN,CHINA,YTN,CNYTN,Yantian Pt,yantian pt,china,,CNYTN | CN | YTN | Yantian Pt | CHINA | yantian pt | china
+2945,CN,CHINA,YTG,CNYTG,Yantai,yantai,china,,CNYTG | CN | YTG | Yantai | CHINA | yantai | china
+2946,CN,CHINA,YTN,CNYTN,Yantian,yantian,china,,CNYTN | CN | YTN | Yantian | CHINA | yantian | china
 2947,CN,CHINA,YGO,CNYGO,Yaogou,yaogou,china,,CNYGO | CN | YGO | Yaogou | CHINA | yaogou | china
-2948,CN,CHINA,YJP,CNYJP,Yaojia Pt,yaojia pt,china,,CNYJP | CN | YJP | Yaojia Pt | CHINA | yaojia pt | china
+2948,CN,CHINA,YJP,CNYJP,Yaojia,yaojia,china,,CNYJP | CN | YJP | Yaojia | CHINA | yaojia | china
 2949,CN,CHINA,YIB,CNYIB,Yibin,yibin,china,,CNYIB | CN | YIB | Yibin | CHINA | yibin | china
-2950,CN,CHINA,YCG,CNYCG,Yichang Pt,yichang pt,china,,CNYCG | CN | YCG | Yichang Pt | CHINA | yichang pt | china
+2950,CN,CHINA,YCG,CNYCG,Yichang,yichang,china,,CNYCG | CN | YCG | Yichang | CHINA | yichang | china
 2951,CN,CHINA,YCA,CNYCA,Yingchuan,yingchuan,china,,CNYCA | CN | YCA | Yingchuan | CHINA | yingchuan | china
 2952,CN,CHINA,YGD,CNYGD,Yingde,yingde,china,,CNYGD | CN | YGD | Yingde | CHINA | yingde | china
-2953,CN,CHINA,YIK,CNYIK,Yingkou Pt,yingkou pt,china,,CNYIK | CN | YIK | Yingkou Pt | CHINA | yingkou pt | china
+2953,CN,CHINA,YIK,CNYIK,Yingkou,yingkou,china,,CNYIK | CN | YIK | Yingkou | CHINA | yingkou | china
 2954,CN,CHINA,LJY,CNLJY,Yingzai,yingzai,china,,CNLJY | CN | LJY | Yingzai | CHINA | yingzai | china
 2955,CN,CHINA,YXS,CNYXS,Yixing,yixing,china,,CNYXS | CN | YXS | Yixing | CHINA | yixing | china
 2956,CN,CHINA,YIZ,CNYIZ,Yizheng,yizheng,china,,CNYIZ | CN | YIZ | Yizheng | CHINA | yizheng | china
@@ -2965,7 +2965,7 @@
 2964,CN,CHINA,YLA,CNYLA,Yuelai,yuelai,china,,CNYLA | CN | YLA | Yuelai | CHINA | yuelai | china
 2965,CN,CHINA,YYA,CNYYA,Yueyang,yueyang,china,,CNYYA | CN | YYA | Yueyang | CHINA | yueyang | china
 2966,CN,CHINA,YUH,CNYUH,Yuhuan,yuhuan,china,,CNYUH | CN | YUH | Yuhuan | CHINA | yuhuan | china
-2967,CN,CHINA,YYP,CNYYP,Yuyue Pt,yuyue pt,china,,CNYYP | CN | YYP | Yuyue Pt | CHINA | yuyue pt | china
+2967,CN,CHINA,YYP,CNYYP,Yuyue,yuyue,china,,CNYYP | CN | YYP | Yuyue | CHINA | yuyue | china
 2968,CN,CHINA,YZU,CNYZU,Yuzhu,yuzhu,china,,CNYZU | CN | YZU | Yuzhu | CHINA | yuzhu | china
 2969,CN,CHINA,ZAG,CNZAG,Zhanghu,zhanghu,china,,CNZAG | CN | ZAG | Zhanghu | CHINA | zhanghu | china
 2970,CN,CHINA,ZJB,CNZJB,Zhangjiabian,zhangjiabian,china,,CNZJB | CN | ZJB | Zhangjiabian | CHINA | zhangjiabian | china
@@ -2973,35 +2973,35 @@
 2972,CN,CHINA,ZJG,CNZJG,Zhangjiagang,zhangjiagang,china,,CNZJG | CN | ZJG | Zhangjiagang | CHINA | zhangjiagang | china
 2973,CN,CHINA,ZGS,CNZGS,Zhangshan,zhangshan,china,,CNZGS | CN | ZGS | Zhangshan | CHINA | zhangshan | china
 2974,CN,CHINA,ZGW,CNZGW,Zhangwan,zhangwan,china,,CNZGW | CN | ZGW | Zhangwan | CHINA | zhangwan | china
-2975,CN,CHINA,ZZU,CNZZU,Zhangzhou Pt,zhangzhou pt,china,,CNZZU | CN | ZZU | Zhangzhou Pt | CHINA | zhangzhou pt | china
-2976,CN,CHINA,ZNG,CNZNG,Zhanjiang Pt,zhanjiang pt,china,,CNZNG | CN | ZNG | Zhanjiang Pt | CHINA | zhanjiang pt | china
+2975,CN,CHINA,ZZU,CNZZU,Zhangzhou,zhangzhou,china,,CNZZU | CN | ZZU | Zhangzhou | CHINA | zhangzhou | china
+2976,CN,CHINA,ZNG,CNZNG,Zhanjiang,zhanjiang,china,,CNZNG | CN | ZNG | Zhanjiang | CHINA | zhanjiang | china
 2977,CN,CHINA,ZDO,CNZDO,Zhaodong,zhaodong,china,,CNZDO | CN | ZDO | Zhaodong | CHINA | zhaodong | china
 2978,CN,CHINA,ZHG,CNZHG,Zhaogang,zhaogang,china,,CNZHG | CN | ZHG | Zhaogang | CHINA | zhaogang | china
 2979,CN,CHINA,ZPI,CNZPI,Zhaoping,zhaoping,china,,CNZPI | CN | ZPI | Zhaoping | CHINA | zhaoping | china
-2980,CN,CHINA,ZQG,CNZQG,Zhaoqing Pt,zhaoqing pt,china,,CNZQG | CN | ZQG | Zhaoqing Pt | CHINA | zhaoqing pt | china
+2980,CN,CHINA,ZQG,CNZQG,Zhaoqing,zhaoqing,china,,CNZQG | CN | ZQG | Zhaoqing | CHINA | zhaoqing | china
 2981,CN,CHINA,ZHY,CNZHY,Zhaoyuan,zhaoyuan,china,,CNZHY | CN | ZHY | Zhaoyuan | CHINA | zhaoyuan | china
 2982,CN,CHINA,ZPO,CNZPO,Zhapo,zhapo,china,,CNZPO | CN | ZPO | Zhapo | CHINA | zhapo | china
 2983,CN,CHINA,ZPK,CNZPK,Zhapoyouku,zhapoyouku,china,,CNZPK | CN | ZPK | Zhapoyouku | CHINA | zhapoyouku | china
-2984,CN,CHINA,ZPU,CNZPU,Zhapu Pt,zhapu pt,china,,CNZPU | CN | ZPU | Zhapu Pt | CHINA | zhapu pt | china
+2984,CN,CHINA,ZPU,CNZPU,Zhapu,zhapu,china,,CNZPU | CN | ZPU | Zhapu | CHINA | zhapu | china
 2985,CN,CHINA,ZEL,CNZEL,Zhelin,zhelin,china,,CNZEL | CN | ZEL | Zhelin | CHINA | zhelin | china
-2986,CN,CHINA,ZPG,CNZPG,zhengpugang Pt,zhengpugang pt,china,,CNZPG | CN | ZPG | zhengpugang Pt | CHINA | zhengpugang pt | china
-2987,CN,CHINA,ZHI,CNZHI,Zhenhai Pt,zhenhai pt,china,,CNZHI | CN | ZHI | Zhenhai Pt | CHINA | zhenhai pt | china
-2988,CN,CHINA,ZHE,CNZHE,Zhenjiang Pt,zhenjiang pt,china,,CNZHE | CN | ZHE | Zhenjiang Pt | CHINA | zhenjiang pt | china
+2986,CN,CHINA,ZPG,CNZPG,zhengpugang,zhengpugang,china,,CNZPG | CN | ZPG | zhengpugang | CHINA | zhengpugang | china
+2987,CN,CHINA,ZHI,CNZHI,Zhenhai,zhenhai,china,,CNZHI | CN | ZHI | Zhenhai | CHINA | zhenhai | china
+2988,CN,CHINA,ZHE,CNZHE,Zhenjiang,zhenjiang,china,,CNZHE | CN | ZHE | Zhenjiang | CHINA | zhenjiang | china
 2989,CN,CHINA,ZXI,CNZXI,Zhexiang,zhexiang,china,,CNZXI | CN | ZXI | Zhexiang | CHINA | zhexiang | china
 2990,CN,CHINA,ZCG,CNZCG,Zhicheng,zhicheng,china,,CNZCG | CN | ZCG | Zhicheng | CHINA | zhicheng | china
-2991,CN,CHINA,ZSN,CNZSN,Zhongshan Pt,zhongshan pt,china,,CNZSN | CN | ZSN | Zhongshan Pt | CHINA | zhongshan pt | china
+2991,CN,CHINA,ZSN,CNZSN,Zhongshan,zhongshan,china,,CNZSN | CN | ZSN | Zhongshan | CHINA | zhongshan | china
 2992,CN,CHINA,ZGT,CNZGT,Zhongtang,zhongtang,china,,CNZGT | CN | ZGT | Zhongtang | CHINA | zhongtang | china
 2993,CN,CHINA,ZXN,CNZXN,Zhongxian,zhongxian,china,,CNZXN | CN | ZXN | Zhongxian | CHINA | zhongxian | china
 2994,CN,CHINA,ZQJ,CNZQJ,Zhouqujia,zhouqujia,china,,CNZQJ | CN | ZQJ | Zhouqujia | CHINA | zhouqujia | china
-2995,CN,CHINA,ZOS,CNZOS,Zhoushan Pt,zhoushan pt,china,,CNZOS | CN | ZOS | Zhoushan Pt | CHINA | zhoushan pt | china
+2995,CN,CHINA,ZOS,CNZOS,Zhoushan,zhoushan,china,,CNZOS | CN | ZOS | Zhoushan | CHINA | zhoushan | china
 2996,CN,CHINA,ZZG,CNZZG,Zhouzhuang,zhouzhuang,china,,CNZZG | CN | ZZG | Zhouzhuang | CHINA | zhouzhuang | china
-2997,CN,CHINA,ZHH,CNZHH,Zhuanghe Pt,zhuanghe pt,china,,CNZHH | CN | ZHH | Zhuanghe Pt | CHINA | zhuanghe pt | china
+2997,CN,CHINA,ZHH,CNZHH,Zhuanghe,zhuanghe,china,,CNZHH | CN | ZHH | Zhuanghe | CHINA | zhuanghe | china
 2998,CN,CHINA,ZYO,CNZYO,Zhuangyuanao,zhuangyuanao,china,,CNZYO | CN | ZYO | Zhuangyuanao | CHINA | zhuangyuanao | china
-2999,CN,CHINA,ZUH,CNZUH,Zhuhai Pt,zhuhai pt,china,,CNZUH | CN | ZUH | Zhuhai Pt | CHINA | zhuhai pt | china
+2999,CN,CHINA,ZUH,CNZUH,Zhuhai,zhuhai,china,,CNZUH | CN | ZUH | Zhuhai | CHINA | zhuhai | china
 3000,CN,CHINA,ZLO,CNZLO,Zhuliao,zhuliao,china,,CNZLO | CN | ZLO | Zhuliao | CHINA | zhuliao | china
 3001,CN,CHINA,ZUS,CNZUS,Zhushan,zhushan,china,,CNZUS | CN | ZUS | Zhushan | CHINA | zhushan | china
 3002,CN,CHINA,ZUY,CNZUY,Zhuyang,zhuyang,china,,CNZUY | CN | ZUY | Zhuyang | CHINA | zhuyang | china
-3003,CN,CHINA,ZIY,CNZIY,Ziyuan Pt,ziyuan pt,china,,CNZIY | CN | ZIY | Ziyuan Pt | CHINA | ziyuan pt | china
+3003,CN,CHINA,ZIY,CNZIY,Ziyuan,ziyuan,china,,CNZIY | CN | ZIY | Ziyuan | CHINA | ziyuan | china
 3004,CN,CHINA,ZYG,CNZYG,Zongyang,zongyang,china,,CNZYG | CN | ZYG | Zongyang | CHINA | zongyang | china
 3005,CO,COLOMBIA,ACM,COACM,Arica,arica,colombia,,COACM | CO | ACM | Arica | COLOMBIA | arica | colombia
 3006,CO,COLOMBIA,BAL,COBAL,Balboa,balboa,colombia,,COBAL | CO | BAL | Balboa | COLOMBIA | balboa | colombia
@@ -3028,7 +3028,7 @@
 3027,CO,COLOMBIA,PUL,COPUL,Puerto Limon,puerto limon,colombia,,COPUL | CO | PUL | Puerto Limon | COLOMBIA | puerto limon | colombia
 3028,CO,COLOMBIA,RCO,CORCO,Rio Cordoba,rio cordoba,colombia,,CORCO | CO | RCO | Rio Cordoba | COLOMBIA | rio cordoba | colombia
 3029,CO,COLOMBIA,RCH,CORCH,Riohacha,riohacha,colombia,,CORCH | CO | RCH | Riohacha | COLOMBIA | riohacha | colombia
-3030,CO,COLOMBIA,SMR,COSMR,Santa Marta = Puerto drummond,santa marta puerto drummond,colombia,,COSMR | CO | SMR | Santa Marta = Puerto drummond | COLOMBIA | santa marta puerto drummond | colombia
+3030,CO,COLOMBIA,SMR,COSMR,Puerto drummond,puerto drummond,colombia,,COSMR | CO | SMR | Puerto drummond | COLOMBIA | puerto drummond | colombia
 3031,CO,COLOMBIA,SMR,COSMR,Puerto drummond,puerto drummond,colombia,,COSMR | CO | SMR | Puerto drummond | COLOMBIA | puerto drummond | colombia
 3032,CO,COLOMBIA,PSB,COPSB,Simon Bolivar,simon bolivar,colombia,,COPSB | CO | PSB | Simon Bolivar | COLOMBIA | simon bolivar | colombia
 3033,CO,COLOMBIA,SPC,COSPC,Sociedad Portuaria Regional Cartagena,sociedad portuaria regional cartagena,colombia,,COSPC | CO | SPC | Sociedad Portuaria Regional Cartagena | COLOMBIA | sociedad portuaria regional cartagena | colombia
@@ -5130,55 +5130,55 @@
 5129,ES,SPAIN,Z8N,ESZ8N,Zalain,zalain,spain,,ESZ8N | ES | Z8N | Zalain | SPAIN | zalain | spain
 5130,ES,SPAIN,ZAZ,ESZAZ,Zaragoza,zaragoza,spain,,ESZAZ | ES | ZAZ | Zaragoza | SPAIN | zaragoza | spain
 5131,ES,SPAIN,ZUE,ESZUE,Zuera,zuera,spain,,ESZUE | ES | ZUE | Zuera | SPAIN | zuera | spain
-5132,FI,FINLAND,TKU,FITKU,Abo (Turku),abo turku,finland,,FITKU | FI | TKU | Abo (Turku) | FINLAND | abo turku | finland
+5132,FI,FINLAND,TKU,FITKU,Turku (Abo),turku (abo),finland,,FITKU | FI | TKU | Turku (Abo) | FINLAND | turku (abo) | finland
 5133,FI,FINLAND,AJO,FIAJO,Ajos,ajos,finland,,FIAJO | FI | AJO | Ajos | FINLAND | ajos | finland
 5134,FI,FINLAND,AHL,FIAHL,Alholmen,alholmen,finland,,FIAHL | FI | AHL | Alholmen | FINLAND | alholmen | finland
 5135,FI,FINLAND,AKK,FIAKK,Asikkala,asikkala,finland,,FIAKK | FI | AKK | Asikkala | FINLAND | asikkala | finland
 5136,FI,FINLAND,BAR,FIBAR,Baronsalmi,baronsalmi,finland,,FIBAR | FI | BAR | Baronsalmi | FINLAND | baronsalmi | finland
-5137,FI,FINLAND,POR,FIPOR,Bjorneborg (Pori),bjorneborg pori,finland,,FIPOR | FI | POR | Bjorneborg (Pori) | FINLAND | bjorneborg pori | finland
-5138,FI,FINLAND,PRV,FIPRV,Borga (Porvoo),borga porvoo,finland,,FIPRV | FI | PRV | Borga (Porvoo) | FINLAND | borga porvoo | finland
-5139,FI,FINLAND,RAA,FIRAA,Brahestad (Raahe),brahestad raahe,finland,,FIRAA | FI | RAA | Brahestad (Raahe) | FINLAND | brahestad raahe | finland
+5137,FI,FINLAND,POR,FIPOR,Pori (Bjorneborg),pori (bjorneborg),finland,,FIPOR | FI | POR | Pori (Bjorneborg) | FINLAND | pori (bjorneborg) | finland
+5138,FI,FINLAND,PRV,FIPRV,Porvoo (Borga),porvoo (borga),finland,,FIPRV | FI | PRV | Porvoo (Borga) | FINLAND | porvoo (borga) | finland
+5139,FI,FINLAND,RAA,FIRAA,Raahe (Brahestad),raahe (brahestad),finland,,FIRAA | FI | RAA | Raahe (Brahestad) | FINLAND | raahe (brahestad) | finland
 5140,FI,FINLAND,BRO,FIBRO,Bromarv,bromarv,finland,,FIBRO | FI | BRO | Bromarv | FINLAND | bromarv | finland
-5141,FI,FINLAND,DLS,FIDLS,Dalsbruk (Taalintehdas),dalsbruk taalintehdas,finland,,FIDLS | FI | DLS | Dalsbruk (Taalintehdas) | FINLAND | dalsbruk taalintehdas | finland
+5141,FI,FINLAND,DLS,FIDLS,Taalintehdas (Dalsbruk),taalintehdas (dalsbruk),finland,,FIDLS | FI | DLS | Taalintehdas (Dalsbruk) | FINLAND | taalintehdas (dalsbruk) | finland
 5142,FI,FINLAND,DEG,FIDEG,Degerby,degerby,finland,,FIDEG | FI | DEG | Degerby | FINLAND | degerby | finland
 5143,FI,FINLAND,DRA,FIDRA,Dragsfjard,dragsfjard,finland,,FIDRA | FI | DRA | Dragsfjard | FINLAND | dragsfjard | finland
-5144,FI,FINLAND,TAI,FITAI,Ekenas (Tammisaari),ekenas tammisaari,finland,,FITAI | FI | TAI | Ekenas (Tammisaari) | FINLAND | ekenas tammisaari | finland
+5144,FI,FINLAND,TAI,FITAI,Tammisaari (Ekenas),tammisaari (ekenas),finland,,FITAI | FI | TAI | Tammisaari (Ekenas) | FINLAND | tammisaari (ekenas) | finland
 5145,FI,FINLAND,EM2,FIEM2,Elamajarvi,elamajarvi,finland,,FIEM2 | FI | EM2 | Elamajarvi | FINLAND | elamajarvi | finland
 5146,FI,FINLAND,ENK,FIENK,Enonkoski,enonkoski,finland,,FIENK | FI | ENK | Enonkoski | FINLAND | enonkoski | finland
-5147,FI,FINLAND,ESP,FIESP,Esbo (Espoo),esbo espoo,finland,,FIESP | FI | ESP | Esbo (Espoo) | FINLAND | esbo espoo | finland
+5147,FI,FINLAND,ESP,FIESP,Espoo (Esbo),espoo (esbo),finland,,FIESP | FI | ESP | Espoo (Esbo) | FINLAND | espoo (esbo) | finland
 5148,FI,FINLAND,ESP,FIESP,Espoo (Esbo),espoo esbo,finland,,FIESP | FI | ESP | Espoo (Esbo) | FINLAND | espoo esbo | finland
-5149,FI,FINLAND,EJO,FIEJO,Euraaminne (Eurajoki),euraaminne eurajoki,finland,,FIEJO | FI | EJO | Euraaminne (Eurajoki) | FINLAND | euraaminne eurajoki | finland
+5149,FI,FINLAND,EJO,FIEJO,Eurajoki (Euraaminne),eurajoki (euraaminne),finland,,FIEJO | FI | EJO | Eurajoki (Euraaminne) | FINLAND | eurajoki (euraaminne) | finland
 5150,FI,FINLAND,EJO,FIEJO,Eurajoki (Euraaminne),eurajoki euraaminne,finland,,FIEJO | FI | EJO | Eurajoki (Euraaminne) | FINLAND | eurajoki euraaminne | finland
 5151,FI,FINLAND,FAR,FIFAR,Farjsundet,farjsundet,finland,,FIFAR | FI | FAR | Farjsundet | FINLAND | farjsundet | finland
 5152,FI,FINLAND,SAR,FISAR,Finby (Sarkisalo),finby sarkisalo,finland,,FISAR | FI | SAR | Finby (Sarkisalo) | FINLAND | finby sarkisalo | finland
 5153,FI,FINLAND,FOR,FIFOR,Forby,forby,finland,,FIFOR | FI | FOR | Forby | FINLAND | forby | finland
-5154,FI,FINLAND,HMN,FIHMN,Fredrikshamn (Hamina),fredrikshamn hamina,finland,,FIHMN | FI | HMN | Fredrikshamn (Hamina) | FINLAND | fredrikshamn hamina | finland
+5154,FI,FINLAND,HMN,FIHMN,Hamina (Fredrikshamn),hamina (fredrikshamn),finland,,FIHMN | FI | HMN | Hamina (Fredrikshamn) | FINLAND | hamina (fredrikshamn) | finland
 5155,FI,FINLAND,GDB,FIGDB,Gottby (Godby),gottby godby,finland,,FIGDB | FI | GDB | Gottby (Godby) | FINLAND | gottby godby | finland
-5156,FI,FINLAND,KUS,FIKUS,Gustavs (Kustavi),gustavs kustavi,finland,,FIKUS | FI | KUS | Gustavs (Kustavi) | FINLAND | gustavs kustavi | finland
+5156,FI,FINLAND,KUS,FIKUS,Kustavi (Gustavs),kustavi (gustavs),finland,,FIKUS | FI | KUS | Kustavi (Gustavs) | FINLAND | kustavi (gustavs) | finland
 5157,FI,FINLAND,HAO,FIHAO,Hailuoto,hailuoto,finland,,FIHAO | FI | HAO | Hailuoto | FINLAND | hailuoto | finland
 5158,FI,FINLAND,HAK,FIHAK,Hakkola,hakkola,finland,,FIHAK | FI | HAK | Hakkola | FINLAND | hakkola | finland
 5159,FI,FINLAND,HAL,FIHAL,Halonen,halonen,finland,,FIHAL | FI | HAL | Halonen | FINLAND | halonen | finland
 5160,FI,FINLAND,LHO,FILHO,Halosenlahti,halosenlahti,finland,,FILHO | FI | LHO | Halosenlahti | FINLAND | halosenlahti | finland
 5161,FI,FINLAND,HMN,FIHMN,Hamina (Fredrikshamn),hamina fredrikshamn,finland,,FIHMN | FI | HMN | Hamina (Fredrikshamn) | FINLAND | hamina fredrikshamn | finland
-5162,FI,FINLAND,HKO,FIHKO,Hango (Hanko),hango hanko,finland,,FIHKO | FI | HKO | Hango (Hanko) | FINLAND | hango hanko | finland
+5162,FI,FINLAND,HKO,FIHKO,Hanko (Hango),hanko (hango),finland,,FIHKO | FI | HKO | Hanko (Hango) | FINLAND | hanko (hango) | finland
 5163,FI,FINLAND,HKO,FIHKO,Hanko (Hango),hanko hango,finland,,FIHKO | FI | HKO | Hanko (Hango) | FINLAND | hanko hango | finland
 5164,FI,FINLAND,HAR,FIHAR,Harvaluoto,harvaluoto,finland,,FIHAR | FI | HAR | Harvaluoto | FINLAND | harvaluoto | finland
 5165,FI,FINLAND,HAU,FIHAU,Haukipudas,haukipudas,finland,,FIHAU | FI | HAU | Haukipudas | FINLAND | haukipudas | finland
-5166,FI,FINLAND,HEL,FIHEL,Helsingfors (Helsinki),helsingfors helsinki,finland,,FIHEL | FI | HEL | Helsingfors (Helsinki) | FINLAND | helsingfors helsinki | finland
+5166,FI,FINLAND,HEL,FIHEL,Helsinki (Helsingfors),helsinki (helsingfors),finland,,FIHEL | FI | HEL | Helsinki (Helsingfors) | FINLAND | helsinki (helsingfors) | finland
 5167,FI,FINLAND,HEL,FIHEL,Helsinki (Helsingfors),helsinki helsingfors,finland,,FIHEL | FI | HEL | Helsinki (Helsingfors) | FINLAND | helsinki helsingfors | finland
 5168,FI,FINLAND,HIT,FIHIT,Hiitinen,hiitinen,finland,,FIHIT | FI | HIT | Hiitinen | FINLAND | hiitinen | finland
 5169,FI,FINLAND,HIM,FIHIM,Himanka,himanka,finland,,FIHIM | FI | HIM | Himanka | FINLAND | himanka | finland
 5170,FI,FINLAND,HVM,FIHVM,Hirvensalmi,hirvensalmi,finland,,FIHVM | FI | HVM | Hirvensalmi | FINLAND | hirvensalmi | finland
 5171,FI,FINLAND,HOG,FIHOG,Hogsara,hogsara,finland,,FIHOG | FI | HOG | Hogsara | FINLAND | hogsara | finland
-5172,FI,FINLAND,HOU,FIHOU,Houtskar (Houtskari),houtskar houtskari,finland,,FIHOU | FI | HOU | Houtskar (Houtskari) | FINLAND | houtskar houtskari | finland
+5172,FI,FINLAND,HOU,FIHOU,Houtskari (Houtskar),houtskari (houtskar),finland,,FIHOU | FI | HOU | Houtskari (Houtskar) | FINLAND | houtskari (houtskar) | finland
 5173,FI,FINLAND,HOU,FIHOU,Houtskari (Houtskar),houtskari houtskar,finland,,FIHOU | FI | HOU | Houtskari (Houtskar) | FINLAND | houtskari houtskar | finland
-5174,FI,FINLAND,IIS,FIIIS,Idensalmi (Iisalmi),idensalmi iisalmi,finland,,FIIIS | FI | IIS | Idensalmi (Iisalmi) | FINLAND | idensalmi iisalmi | finland
+5174,FI,FINLAND,IIS,FIIIS,Iisalmi (Idensalmi),iisalmi (idensalmi),finland,,FIIIS | FI | IIS | Iisalmi (Idensalmi) | FINLAND | iisalmi (idensalmi) | finland
 5175,FI,FINLAND,IIS,FIIIS,Iisalmi (Idensalmi),iisalmi idensalmi,finland,,FIIIS | FI | IIS | Iisalmi (Idensalmi) | FINLAND | iisalmi idensalmi | finland
 5176,FI,FINLAND,IMA,FIIMA,Imatra,imatra,finland,,FIIMA | FI | IMA | Imatra | FINLAND | imatra | finland
-5177,FI,FINLAND,INK,FIINK,Inga (Inkoo),inga inkoo,finland,,FIINK | FI | INK | Inga (Inkoo) | FINLAND | inga inkoo | finland
+5177,FI,FINLAND,INK,FIINK,Inkoo (Inga),inkoo (inga),finland,,FIINK | FI | INK | Inkoo (Inga) | FINLAND | inkoo (inga) | finland
 5178,FI,FINLAND,INK,FIINK,Inkoo (Inga),inkoo inga,finland,,FIINK | FI | INK | Inkoo (Inga) | FINLAND | inkoo inga | finland
 5179,FI,FINLAND,ISN,FIISN,Isnas,isnas,finland,,FIISN | FI | ISN | Isnas | FINLAND | isnas | finland
-5180,FI,FINLAND,PRS,FIPRS,Jakobstad (Pietarsaari),jakobstad pietarsaari,finland,,FIPRS | FI | PRS | Jakobstad (Pietarsaari) | FINLAND | jakobstad pietarsaari | finland
+5180,FI,FINLAND,PRS,FIPRS,Pietarsaari (Jakobstad),pietarsaari (jakobstad),finland,,FIPRS | FI | PRS | Pietarsaari (Jakobstad) | FINLAND | pietarsaari (jakobstad) | finland
 5181,FI,FINLAND,JAN,FIJAN,Janakkala,janakkala,finland,,FIJAN | FI | JAN | Janakkala | FINLAND | janakkala | finland
 5182,FI,FINLAND,JOE,FIJOE,Joensuu,joensuu,finland,,FIJOE | FI | JOE | Joensuu | FINLAND | joensuu | finland
 5183,FI,FINLAND,JOU,FIJOU,Joutseno,joutseno,finland,,FIJOU | FI | JOU | Joutseno | FINLAND | joutseno | finland
@@ -5190,15 +5190,15 @@
 5189,FI,FINLAND,KLV,FIKLV,Kallviken,kallviken,finland,,FIKLV | FI | KLV | Kallviken | FINLAND | kallviken | finland
 5190,FI,FINLAND,KAN,FIKAN,Kantlax (Kaitalahti),kantlax kaitalahti,finland,,FIKAN | FI | KAN | Kantlax (Kaitalahti) | FINLAND | kantlax kaitalahti | finland
 5191,FI,FINLAND,KNT,FIKNT,Kantvik,kantvik,finland,,FIKNT | FI | KNT | Kantvik | FINLAND | kantvik | finland
-5192,FI,FINLAND,KOK,FIKOK,Karleby (Kokkola),karleby kokkola,finland,,FIKOK | FI | KOK | Karleby (Kokkola) | FINLAND | karleby kokkola | finland
-5193,FI,FINLAND,KAS,FIKAS,Kaskinen (Kasko),kaskinen kasko,finland,,FIKAS | FI | KAS | Kaskinen (Kasko) | FINLAND | kaskinen kasko | finland
+5192,FI,FINLAND,KOK,FIKOK,Kokkola (Karleby),kokkola (karleby),finland,,FIKOK | FI | KOK | Kokkola (Karleby) | FINLAND | kokkola (karleby) | finland
+5193,FI,FINLAND,KAS,FIKAS,Kasko (Kaskinen),kasko (kaskinen),finland,,FIKAS | FI | KAS | Kasko (Kaskinen) | FINLAND | kasko (kaskinen) | finland
 5194,FI,FINLAND,KAS,FIKAS,Kasko (Kaskinen),kasko kaskinen,finland,,FIKAS | FI | KAS | Kasko (Kaskinen) | FINLAND | kasko kaskinen | finland
 5195,FI,FINLAND,KSN,FIKSN,Kasnas,kasnas,finland,,FIKSN | FI | KSN | Kasnas | FINLAND | kasnas | finland
-5196,FI,FINLAND,KEM,FIKEM,Kemi/Tornea (Kemi/Tornio),kemi tornea kemi tornio,finland,,FIKEM | FI | KEM | Kemi/Tornea (Kemi/Tornio) | FINLAND | kemi tornea kemi tornio | finland
+5196,FI,FINLAND,KEM,FIKEM,Kemi/Tornio (Kemi/Tornea),kemi/tornio (kemi/tornea),finland,,FIKEM | FI | KEM | Kemi/Tornio (Kemi/Tornea) | FINLAND | kemi/tornio (kemi/tornea) | finland
 5197,FI,FINLAND,KEM,FIKEM,Kemi/Tornio (Kemi/Tornea),kemi tornio kemi tornea,finland,,FIKEM | FI | KEM | Kemi/Tornio (Kemi/Tornea) | FINLAND | kemi tornio kemi tornea | finland
-5198,FI,FINLAND,KIM,FIKIM,Kemio (Kimito),kemio kimito,finland,,FIKIM | FI | KIM | Kemio (Kimito) | FINLAND | kemio kimito | finland
+5198,FI,FINLAND,KIM,FIKIM,Kimito (Kemio),kimito (kemio),finland,,FIKIM | FI | KIM | Kimito (Kemio) | FINLAND | kimito (kemio) | finland
 5199,FI,FINLAND,KES,FIKES,Kesalahti,kesalahti,finland,,FIKES | FI | KES | Kesalahti | FINLAND | kesalahti | finland
-5200,FI,FINLAND,SKV,FISKV,Kilpilahti (Skoldvik),kilpilahti skoldvik,finland,,FISKV | FI | SKV | Kilpilahti (Skoldvik) | FINLAND | kilpilahti skoldvik | finland
+5200,FI,FINLAND,SKV,FISKV,Skoldvik (Kilpilahti),skoldvik (kilpilahti),finland,,FISKV | FI | SKV | Skoldvik (Kilpilahti) | FINLAND | skoldvik (kilpilahti) | finland
 5201,FI,FINLAND,KIM,FIKIM,Kimito (Kemio),kimito kemio,finland,,FIKIM | FI | KIM | Kimito (Kemio) | FINLAND | kimito kemio | finland
 5202,FI,FINLAND,KIR,FIKIR,Kirkniemi,kirkniemi,finland,,FIKIR | FI | KIR | Kirkniemi | FINLAND | kirkniemi | finland
 5203,FI,FINLAND,KTQ,FIKTQ,Kitee,kitee,finland,,FIKTQ | FI | KTQ | Kitee | FINLAND | kitee | finland
@@ -5206,13 +5206,13 @@
 5205,FI,FINLAND,KOJ,FIKOJ,Kojonkulma,kojonkulma,finland,,FIKOJ | FI | KOJ | Kojonkulma | FINLAND | kojonkulma | finland
 5206,FI,FINLAND,KKR,FIKKR,Kokar,kokar,finland,,FIKKR | FI | KKR | Kokar | FINLAND | kokar | finland
 5207,FI,FINLAND,KOK,FIKOK,Kokkola (Karleby),kokkola karleby,finland,,FIKOK | FI | KOK | Kokkola (Karleby) | FINLAND | kokkola karleby | finland
-5208,FI,FINLAND,KOR,FIKOR,Korpo (Korppoo),korpo korppoo,finland,,FIKOR | FI | KOR | Korpo (Korppoo) | FINLAND | korpo korppoo | finland
+5208,FI,FINLAND,KOR,FIKOR,Korppoo (Korpo),korppoo (korpo),finland,,FIKOR | FI | KOR | Korppoo (Korpo) | FINLAND | korppoo (korpo) | finland
 5209,FI,FINLAND,KOR,FIKOR,Korppoo (Korpo),korppoo korpo,finland,,FIKOR | FI | KOR | Korppoo (Korpo) | FINLAND | korppoo korpo | finland
 5210,FI,FINLAND,KKV,FIKKV,Koskenkorva,koskenkorva,finland,,FIKKV | FI | KKV | Koskenkorva | FINLAND | koskenkorva | finland
 5211,FI,FINLAND,KTK,FIKTK,Kotka,kotka,finland,,FIKTK | FI | KTK | Kotka | FINLAND | kotka | finland
-5212,FI,FINLAND,KVH,FIKVH,Koverhaara (Koverhar),koverhaara koverhar,finland,,FIKVH | FI | KVH | Koverhaara (Koverhar) | FINLAND | koverhaara koverhar | finland
+5212,FI,FINLAND,KVH,FIKVH,Koverhar (Koverhaara),koverhar (koverhaara),finland,,FIKVH | FI | KVH | Koverhar (Koverhaara) | FINLAND | koverhar (koverhaara) | finland
 5213,FI,FINLAND,KVH,FIKVH,Koverhar (Koverhaara),koverhar koverhaara,finland,,FIKVH | FI | KVH | Koverhar (Koverhaara) | FINLAND | koverhar koverhaara | finland
-5214,FI,FINLAND,KRS,FIKRS,Kristiinankaupunki (Kristinestad),kristiinankaupunki kristinestad,finland,,FIKRS | FI | KRS | Kristiinankaupunki (Kristinestad) | FINLAND | kristiinankaupunki kristinestad | finland
+5214,FI,FINLAND,KRS,FIKRS,Kristinestad (Kristiinankaupunki),kristinestad (kristiinankaupunki),finland,,FIKRS | FI | KRS | Kristinestad (Kristiinankaupunki) | FINLAND | kristinestad (kristiinankaupunki) | finland
 5215,FI,FINLAND,KRS,FIKRS,Kristinestad (Kristiinankaupunki),kristinestad kristiinankaupunki,finland,,FIKRS | FI | KRS | Kristinestad (Kristiinankaupunki) | FINLAND | kristinestad kristiinankaupunki | finland
 5216,FI,FINLAND,KRO,FIKRO,Kronvik,kronvik,finland,,FIKRO | FI | KRO | Kronvik | FINLAND | kronvik | finland
 5217,FI,FINLAND,KUM,FIKUM,Kumlinge,kumlinge,finland,,FIKUM | FI | KUM | Kumlinge | FINLAND | kumlinge | finland
@@ -5223,66 +5223,66 @@
 5222,FI,FINLAND,LAN,FILAN,Langnas,langnas,finland,,FILAN | FI | LAN | Langnas | FINLAND | langnas | finland
 5223,FI,FINLAND,LLO,FILLO,Lapaluoto,lapaluoto,finland,,FILLO | FI | LLO | Lapaluoto | FINLAND | lapaluoto | finland
 5224,FI,FINLAND,LPJ,FILPJ,Lappajarvi,lappajarvi,finland,,FILPJ | FI | LPJ | Lappajarvi | FINLAND | lappajarvi | finland
-5225,FI,FINLAND,LPP,FILPP,Lappeenranta (Villmanstrand),lappeenranta villmanstrand,finland,,FILPP | FI | LPP | Lappeenranta (Villmanstrand) | FINLAND | lappeenranta villmanstrand | finland
-5226,FI,FINLAND,LAP,FILAP,Lappohja (Lappvik),lappohja lappvik,finland,,FILAP | FI | LAP | Lappohja (Lappvik) | FINLAND | lappohja lappvik | finland
+5225,FI,FINLAND,LPP,FILPP,Villmanstrand (Lappeenranta),villmanstrand (lappeenranta),finland,,FILPP | FI | LPP | Villmanstrand (Lappeenranta) | FINLAND | villmanstrand (lappeenranta) | finland
+5226,FI,FINLAND,LAP,FILAP,Lappvik (Lappohja),lappvik (lappohja),finland,,FILAP | FI | LAP | Lappvik (Lappohja) | FINLAND | lappvik (lappohja) | finland
 5227,FI,FINLAND,LAP,FILAP,Lappvik (Lappohja),lappvik lappohja,finland,,FILAP | FI | LAP | Lappvik (Lappohja) | FINLAND | lappvik lappohja | finland
 5228,FI,FINLAND,LUK,FILUK,Laukaa,laukaa,finland,,FILUK | FI | LUK | Laukaa | FINLAND | laukaa | finland
 5229,FI,FINLAND,LLX,FILLX,Lielax,lielax,finland,,FILLX | FI | LLX | Lielax | FINLAND | lielax | finland
 5230,FI,FINLAND,LSK,FILSK,Lindkoski,lindkoski,finland,,FILSK | FI | LSK | Lindkoski | FINLAND | lindkoski | finland
 5231,FI,FINLAND,LVB,FILVB,Lovbole,lovbole,finland,,FILVB | FI | LVB | Lovbole | FINLAND | lovbole | finland
-5232,FI,FINLAND,LOV,FILOV,Loviisa (Lovisa),loviisa lovisa,finland,,FILOV | FI | LOV | Loviisa (Lovisa) | FINLAND | loviisa lovisa | finland
+5232,FI,FINLAND,LOV,FILOV,Lovisa (Loviisa),lovisa (loviisa),finland,,FILOV | FI | LOV | Lovisa (Loviisa) | FINLAND | lovisa (loviisa) | finland
 5233,FI,FINLAND,LOV,FILOV,Lovisa (Loviisa),lovisa loviisa,finland,,FILOV | FI | LOV | Lovisa (Loviisa) | FINLAND | lovisa loviisa | finland
 5234,FI,FINLAND,LUA,FILUA,Luumaki,luumaki,finland,,FILUA | FI | LUA | Luumaki | FINLAND | luumaki | finland
 5235,FI,FINLAND,LUV,FILUV,Luvia,luvia,finland,,FILUV | FI | LUV | Luvia | FINLAND | luvia | finland
 5236,FI,FINLAND,MAA,FIMAA,Maaninka,maaninka,finland,,FIMAA | FI | MAA | Maaninka | FINLAND | maaninka | finland
-5237,FI,FINLAND,MHQ,FIMHQ,Maarianhamina (Mariehamn),maarianhamina mariehamn,finland,,FIMHQ | FI | MHQ | Maarianhamina (Mariehamn) | FINLAND | maarianhamina mariehamn | finland
+5237,FI,FINLAND,MHQ,FIMHQ,Mariehamn (Maarianhamina),mariehamn (maarianhamina),finland,,FIMHQ | FI | MHQ | Mariehamn (Maarianhamina) | FINLAND | mariehamn (maarianhamina) | finland
 5238,FI,FINLAND,MTY,FIMTY,Mantyluoto,mantyluoto,finland,,FIMTY | FI | MTY | Mantyluoto | FINLAND | mantyluoto | finland
 5239,FI,FINLAND,MHQ,FIMHQ,Mariehamn (Maarianhamina),mariehamn maarianhamina,finland,,FIMHQ | FI | MHQ | Mariehamn (Maarianhamina) | FINLAND | mariehamn maarianhamina | finland
 5240,FI,FINLAND,MRS,FIMRS,Marsund,marsund,finland,,FIMRS | FI | MRS | Marsund | FINLAND | marsund | finland
-5241,FI,FINLAND,MER,FIMER,Merikarvia (Sastmola),merikarvia sastmola,finland,,FIMER | FI | MER | Merikarvia (Sastmola) | FINLAND | merikarvia sastmola | finland
-5242,FI,FINLAND,MIK,FIMIK,Mikkeli (Sankt Michel),mikkeli sankt michel,finland,,FIMIK | FI | MIK | Mikkeli (Sankt Michel) | FINLAND | mikkeli sankt michel | finland
+5241,FI,FINLAND,MER,FIMER,Sastmola (Merikarvia),sastmola (merikarvia),finland,,FIMER | FI | MER | Sastmola (Merikarvia) | FINLAND | sastmola (merikarvia) | finland
+5242,FI,FINLAND,MIK,FIMIK,Sankt Michel (Mikkeli),sankt michel (mikkeli),finland,,FIMIK | FI | MIK | Sankt Michel (Mikkeli) | FINLAND | sankt michel (mikkeli) | finland
 5243,FI,FINLAND,MUL,FIMUL,Multia,multia,finland,,FIMUL | FI | MUL | Multia | FINLAND | multia | finland
 5244,FI,FINLAND,MUN,FIMUN,Munsala,munsala,finland,,FIMUN | FI | MUN | Munsala | FINLAND | munsala | finland
 5245,FI,FINLAND,MUS,FIMUS,Mustola,mustola,finland,,FIMUS | FI | MUS | Mustola | FINLAND | mustola | finland
-5246,FI,FINLAND,NLI,FINLI,Naantali (Nadendal),naantali nadendal,finland,,FINLI | FI | NLI | Naantali (Nadendal) | FINLAND | naantali nadendal | finland
+5246,FI,FINLAND,NLI,FINLI,Nadendal (Naantali),nadendal (naantali),finland,,FINLI | FI | NLI | Nadendal (Naantali) | FINLAND | nadendal (naantali) | finland
 5247,FI,FINLAND,NLI,FINLI,Nadendal (Naantali),nadendal naantali,finland,,FINLI | FI | NLI | Nadendal (Naantali) | FINLAND | nadendal naantali | finland
-5248,FI,FINLAND,NAU,FINAU,Nagu (Nauvo),nagu nauvo,finland,,FINAU | FI | NAU | Nagu (Nauvo) | FINLAND | nagu nauvo | finland
+5248,FI,FINLAND,NAU,FINAU,Nauvo (Nagu),nauvo (nagu),finland,,FINAU | FI | NAU | Nauvo (Nagu) | FINLAND | nauvo (nagu) | finland
 5249,FI,FINLAND,NAU,FINAU,Nauvo (Nagu),nauvo nagu,finland,,FINAU | FI | NAU | Nauvo (Nagu) | FINLAND | nauvo nagu | finland
 5250,FI,FINLAND,NLS,FINLS,Nilsia,nilsia,finland,,FINLS | FI | NLS | Nilsia | FINLAND | nilsia | finland
 5251,FI,FINLAND,NOU,FINOU,Nousiainen (Nousis),nousiainen nousis,finland,,FINOU | FI | NOU | Nousiainen (Nousis) | FINLAND | nousiainen nousis | finland
 5252,FI,FINLAND,NUR,FINUR,Nurmes,nurmes,finland,,FINUR | FI | NUR | Nurmes | FINLAND | nurmes | finland
-5253,FI,FINLAND,UKP,FIUKP,Nykarleby (Uusikaarlepyy),nykarleby uusikaarlepyy,finland,,FIUKP | FI | UKP | Nykarleby (Uusikaarlepyy) | FINLAND | nykarleby uusikaarlepyy | finland
-5254,FI,FINLAND,SVL,FISVL,Nyslott (Savonlinna),nyslott savonlinna,finland,,FISVL | FI | SVL | Nyslott (Savonlinna) | FINLAND | nyslott savonlinna | finland
-5255,FI,FINLAND,UKI,FIUKI,Nystad (Uusikaupunki),nystad uusikaupunki,finland,,FIUKI | FI | UKI | Nystad (Uusikaupunki) | FINLAND | nystad uusikaupunki | finland
+5253,FI,FINLAND,UKP,FIUKP,Uusikaarlepyy (Nykarleby),uusikaarlepyy (nykarleby),finland,,FIUKP | FI | UKP | Uusikaarlepyy (Nykarleby) | FINLAND | uusikaarlepyy (nykarleby) | finland
+5254,FI,FINLAND,SVL,FISVL,Savonlinna (Nyslott),savonlinna (nyslott),finland,,FISVL | FI | SVL | Savonlinna (Nyslott) | FINLAND | savonlinna (nyslott) | finland
+5255,FI,FINLAND,UKI,FIUKI,Uusikaupunki (Nystad),uusikaupunki (nystad),finland,,FIUKI | FI | UKI | Uusikaupunki (Nystad) | FINLAND | uusikaupunki (nystad) | finland
 5256,FI,FINLAND,OLK,FIOLK,Olkiluoto,olkiluoto,finland,,FIOLK | FI | OLK | Olkiluoto | FINLAND | olkiluoto | finland
-5257,FI,FINLAND,OUL,FIOUL,Oulu (Uleaborg),oulu uleaborg,finland,,FIOUL | FI | OUL | Oulu (Uleaborg) | FINLAND | oulu uleaborg | finland
-5258,FI,FINLAND,PAR,FIPAR,Parainen (Pargas),parainen pargas,finland,,FIPAR | FI | PAR | Parainen (Pargas) | FINLAND | parainen pargas | finland
+5257,FI,FINLAND,OUL,FIOUL,Uleaborg (Oulu),uleaborg (oulu),finland,,FIOUL | FI | OUL | Uleaborg (Oulu) | FINLAND | uleaborg (oulu) | finland
+5258,FI,FINLAND,PAR,FIPAR,Pargas (Parainen),pargas (parainen),finland,,FIPAR | FI | PAR | Pargas (Parainen) | FINLAND | pargas (parainen) | finland
 5259,FI,FINLAND,PAR,FIPAR,Pargas (Parainen),pargas parainen,finland,,FIPAR | FI | PAR | Pargas (Parainen) | FINLAND | pargas parainen | finland
 5260,FI,FINLAND,PAH,FIPAH,Parhalahti,parhalahti,finland,,FIPAH | FI | PAH | Parhalahti | FINLAND | parhalahti | finland
 5261,FI,FINLAND,PRK,FIPRK,Parikkala,parikkala,finland,,FIPRK | FI | PRK | Parikkala | FINLAND | parikkala | finland
 5262,FI,FINLAND,PAA,FIPAA,Parola,parola,finland,,FIPAA | FI | PAA | Parola | FINLAND | parola | finland
 5263,FI,FINLAND,PNL,FIPNL,Pennala,pennala,finland,,FIPNL | FI | PNL | Pennala | FINLAND | pennala | finland
-5264,FI,FINLAND,PER,FIPER,Perna (Pernaja),perna pernaja,finland,,FIPER | FI | PER | Perna (Pernaja) | FINLAND | perna pernaja | finland
+5264,FI,FINLAND,PER,FIPER,Pernaja (Perna),pernaja (perna),finland,,FIPER | FI | PER | Pernaja (Perna) | FINLAND | pernaja (perna) | finland
 5265,FI,FINLAND,PER,FIPER,Pernaja (Perna),pernaja perna,finland,,FIPER | FI | PER | Pernaja (Perna) | FINLAND | pernaja perna | finland
 5266,FI,FINLAND,ZBQ,FIZBQ,Perttula,perttula,finland,,FIZBQ | FI | ZBQ | Perttula | FINLAND | perttula | finland
 5267,FI,FINLAND,PRS,FIPRS,Pietarsaari (Jakobstad),pietarsaari jakobstad,finland,,FIPRS | FI | PRS | Pietarsaari (Jakobstad) | FINLAND | pietarsaari jakobstad | finland
 5268,FI,FINLAND,PT2,FIPT2,Pihtipudas,pihtipudas,finland,,FIPT2 | FI | PT2 | Pihtipudas | FINLAND | pihtipudas | finland
-5269,FI,FINLAND,POH,FIPOH,Pohjankuru (Skuru),pohjankuru skuru,finland,,FIPOH | FI | POH | Pohjankuru (Skuru) | FINLAND | pohjankuru skuru | finland
+5269,FI,FINLAND,POH,FIPOH,Skuru (Pohjankuru),skuru (pohjankuru),finland,,FIPOH | FI | POH | Skuru (Pohjankuru) | FINLAND | skuru (pohjankuru) | finland
 5270,FI,FINLAND,PSI,FIPSI,Poitsila,poitsila,finland,,FIPSI | FI | PSI | Poitsila | FINLAND | poitsila | finland
 5271,FI,FINLAND,POR,FIPOR,Pori (Bjorneborg),pori bjorneborg,finland,,FIPOR | FI | POR | Pori (Bjorneborg) | FINLAND | pori bjorneborg | finland
 5272,FI,FINLAND,PRV,FIPRV,Porvoo (Borga),porvoo borga,finland,,FIPRV | FI | PRV | Porvoo (Borga) | FINLAND | porvoo borga | finland
 5273,FI,FINLAND,PUH,FIPUH,Puhos,puhos,finland,,FIPUH | FI | PUH | Puhos | FINLAND | puhos | finland
 5274,FI,FINLAND,PUU,FIPUU,Puumala,puumala,finland,,FIPUU | FI | PUU | Puumala | FINLAND | puumala | finland
 5275,FI,FINLAND,RAA,FIRAA,Raahe (Brahestad),raahe brahestad,finland,,FIRAA | FI | RAA | Raahe (Brahestad) | FINLAND | raahe brahestad | finland
-5276,FI,FINLAND,RAU,FIRAU,Rauma (Raumo),rauma raumo,finland,,FIRAU | FI | RAU | Rauma (Raumo) | FINLAND | rauma raumo | finland
+5276,FI,FINLAND,RAU,FIRAU,Raumo (Rauma),raumo (rauma),finland,,FIRAU | FI | RAU | Raumo (Rauma) | FINLAND | raumo (rauma) | finland
 5277,FI,FINLAND,RAU,FIRAU,Raumo (Rauma),raumo rauma,finland,,FIRAU | FI | RAU | Raumo (Rauma) | FINLAND | raumo rauma | finland
 5278,FI,FINLAND,RTR,FIRTR,Rautaruukki,rautaruukki,finland,,FIRTR | FI | RTR | Rautaruukki | FINLAND | rautaruukki | finland
 5279,FI,FINLAND,REP,FIREP,Reposaari,reposaari,finland,,FIREP | FI | REP | Reposaari | FINLAND | reposaari | finland
-5280,FI,FINLAND,RYM,FIRYM,Rimito (Rymattyla),rimito rymattyla,finland,,FIRYM | FI | RYM | Rimito (Rymattyla) | FINLAND | rimito rymattyla | finland
+5280,FI,FINLAND,RYM,FIRYM,Rymattyla (Rimito),rymattyla (rimito),finland,,FIRYM | FI | RYM | Rymattyla (Rimito) | FINLAND | rymattyla (rimito) | finland
 5281,FI,FINLAND,RIS,FIRIS,Ristiina,ristiina,finland,,FIRIS | FI | RIS | Ristiina | FINLAND | ristiina | finland
 5282,FI,FINLAND,RHU,FIRHU,Rouhu,rouhu,finland,,FIRHU | FI | RHU | Rouhu | FINLAND | rouhu | finland
 5283,FI,FINLAND,RVN,FIRVN,Rovaniemi,rovaniemi,finland,,FIRVN | FI | RVN | Rovaniemi | FINLAND | rovaniemi | finland
-5284,FI,FINLAND,RUO,FIRUO,Ruotsinpyhtaa (Stromfors),ruotsinpyhtaa stromfors,finland,,FIRUO | FI | RUO | Ruotsinpyhtaa (Stromfors) | FINLAND | ruotsinpyhtaa stromfors | finland
+5284,FI,FINLAND,RUO,FIRUO,Stromfors (Ruotsinpyhtaa),stromfors (ruotsinpyhtaa),finland,,FIRUO | FI | RUO | Stromfors (Ruotsinpyhtaa) | FINLAND | stromfors (ruotsinpyhtaa) | finland
 5285,FI,FINLAND,RUI,FIRUI,Ruovesi,ruovesi,finland,,FIRUI | FI | RUI | Ruovesi | FINLAND | ruovesi | finland
 5286,FI,FINLAND,RYM,FIRYM,Rymattyla (Rimito),rymattyla rimito,finland,,FIRYM | FI | RYM | Rymattyla (Rimito) | FINLAND | rymattyla rimito | finland
 5287,FI,FINLAND,SAL,FISAL,Salo,salo,finland,,FISAL | FI | SAL | Salo | FINLAND | salo | finland
@@ -5291,7 +5291,7 @@
 5290,FI,FINLAND,SSI,FISSI,Sarkisalmi,sarkisalmi,finland,,FISSI | FI | SSI | Sarkisalmi | FINLAND | sarkisalmi | finland
 5291,FI,FINLAND,MER,FIMER,Sastmola (Merikarvia),sastmola merikarvia,finland,,FIMER | FI | MER | Sastmola (Merikarvia) | FINLAND | sastmola merikarvia | finland
 5292,FI,FINLAND,SVL,FISVL,Savonlinna (Nyslott),savonlinna nyslott,finland,,FISVL | FI | SVL | Savonlinna (Nyslott) | FINLAND | savonlinna nyslott | finland
-5293,FI,FINLAND,SIP,FISIP,Sibbo (Sipoo),sibbo sipoo,finland,,FISIP | FI | SIP | Sibbo (Sipoo) | FINLAND | sibbo sipoo | finland
+5293,FI,FINLAND,SIP,FISIP,Sipoo (Sibbo),sipoo (sibbo),finland,,FISIP | FI | SIP | Sipoo (Sibbo) | FINLAND | sipoo (sibbo) | finland
 5294,FI,FINLAND,SII,FISII,Siilinjarvi,siilinjarvi,finland,,FISII | FI | SII | Siilinjarvi | FINLAND | siilinjarvi | finland
 5295,FI,FINLAND,SLY,FISLY,Siltakyla (Broby),siltakyla broby,finland,,FISLY | FI | SLY | Siltakyla (Broby) | FINLAND | siltakyla broby | finland
 5296,FI,FINLAND,SIP,FISIP,Sipoo (Sibbo),sipoo sibbo,finland,,FISIP | FI | SIP | Sipoo (Sibbo) | FINLAND | sipoo sibbo | finland
@@ -5306,12 +5306,12 @@
 5305,FI,FINLAND,SVK,FISVK,Sulkava,sulkava,finland,,FISVK | FI | SVK | Sulkava | FINLAND | sulkava | finland
 5306,FI,FINLAND,SMA,FISMA,Summa,summa,finland,,FISMA | FI | SMA | Summa | FINLAND | summa | finland
 5307,FI,FINLAND,SUL,FISUL,Sunila,sunila,finland,,FISUL | FI | SUL | Sunila | FINLAND | sunila | finland
-5308,FI,FINLAND,SBG,FISBG,Suomenlinna (Sveaborg),suomenlinna sveaborg,finland,,FISBG | FI | SBG | Suomenlinna (Sveaborg) | FINLAND | suomenlinna sveaborg | finland
+5308,FI,FINLAND,SBG,FISBG,Sveaborg (Suomenlinna),sveaborg (suomenlinna),finland,,FISBG | FI | SBG | Sveaborg (Suomenlinna) | FINLAND | sveaborg (suomenlinna) | finland
 5309,FI,FINLAND,SBG,FISBG,Sveaborg (Suomenlinna),sveaborg suomenlinna,finland,,FISBG | FI | SBG | Sveaborg (Suomenlinna) | FINLAND | sveaborg suomenlinna | finland
 5310,FI,FINLAND,DLS,FIDLS,Taalintehdas (Dalsbruk),taalintehdas dalsbruk,finland,,FIDLS | FI | DLS | Taalintehdas (Dalsbruk) | FINLAND | taalintehdas dalsbruk | finland
 5311,FI,FINLAND,THK,FITHK,Tahkoluoto,tahkoluoto,finland,,FITHK | FI | THK | Tahkoluoto | FINLAND | tahkoluoto | finland
-5312,FI,FINLAND,TVS,FITVS,Taivassalo (Tovsala),taivassalo tovsala,finland,,FITVS | FI | TVS | Taivassalo (Tovsala) | FINLAND | taivassalo tovsala | finland
-5313,FI,FINLAND,TMP,FITMP,Tammerfors (Tampere),tammerfors tampere,finland,,FITMP | FI | TMP | Tammerfors (Tampere) | FINLAND | tammerfors tampere | finland
+5312,FI,FINLAND,TVS,FITVS,Tovsala (Taivassalo),tovsala (taivassalo),finland,,FITVS | FI | TVS | Tovsala (Taivassalo) | FINLAND | tovsala (taivassalo) | finland
+5313,FI,FINLAND,TMP,FITMP,Tampere (Tammerfors),tampere (tammerfors),finland,,FITMP | FI | TMP | Tampere (Tammerfors) | FINLAND | tampere (tammerfors) | finland
 5314,FI,FINLAND,TAI,FITAI,Tammisaari (Ekenas),tammisaari ekenas,finland,,FITAI | FI | TAI | Tammisaari (Ekenas) | FINLAND | tammisaari ekenas | finland
 5315,FI,FINLAND,TMP,FITMP,Tampere (Tammerfors),tampere tammerfors,finland,,FITMP | FI | TMP | Tampere (Tammerfors) | FINLAND | tampere tammerfors | finland
 5316,FI,FINLAND,TEI,FITEI,Teijo,teijo,finland,,FITEI | FI | TEI | Teijo | FINLAND | teijo | finland
@@ -5319,9 +5319,9 @@
 5318,FI,FINLAND,TJO,FITJO,Tessjo (Tesjoki),tessjo tesjoki,finland,,FITJO | FI | TJO | Tessjo (Tesjoki) | FINLAND | tessjo tesjoki | finland
 5319,FI,FINLAND,TES,FITES,Tessvar,tessvar,finland,,FITES | FI | TES | Tessvar | FINLAND | tessvar | finland
 5320,FI,FINLAND,TOJ,FITOJ,Tojby,tojby,finland,,FITOJ | FI | TOJ | Tojby | FINLAND | tojby | finland
-5321,FI,FINLAND,TOK,FITOK,Tolkis (Tolkkinen),tolkis tolkkinen,finland,,FITOK | FI | TOK | Tolkis (Tolkkinen) | FINLAND | tolkis tolkkinen | finland
+5321,FI,FINLAND,TOK,FITOK,Tolkkinen (Tolkis),tolkkinen (tolkis),finland,,FITOK | FI | TOK | Tolkkinen (Tolkis) | FINLAND | tolkkinen (tolkis) | finland
 5322,FI,FINLAND,TOK,FITOK,Tolkkinen (Tolkis),tolkkinen tolkis,finland,,FITOK | FI | TOK | Tolkkinen (Tolkis) | FINLAND | tolkkinen tolkis | finland
-5323,FI,FINLAND,TOR,FITOR,Tornea (Tornio),tornea tornio,finland,,FITOR | FI | TOR | Tornea (Tornio) | FINLAND | tornea tornio | finland
+5323,FI,FINLAND,TOR,FITOR,Tornio (Tornea),tornio (tornea),finland,,FITOR | FI | TOR | Tornio (Tornea) | FINLAND | tornio (tornea) | finland
 5324,FI,FINLAND,TOR,FITOR,Tornio (Tornea),tornio tornea,finland,,FITOR | FI | TOR | Tornio (Tornea) | FINLAND | tornio tornea | finland
 5325,FI,FINLAND,TOT,FITOT,Tottesund,tottesund,finland,,FITOT | FI | TOT | Tottesund | FINLAND | tottesund | finland
 5326,FI,FINLAND,TVS,FITVS,Tovsala (Taivassalo),tovsala taivassalo,finland,,FITVS | FI | TVS | Tovsala (Taivassalo) | FINLAND | tovsala taivassalo | finland
@@ -5334,8 +5334,8 @@
 5333,FI,FINLAND,UKP,FIUKP,Uusikaarlepyy (Nykarleby),uusikaarlepyy nykarleby,finland,,FIUKP | FI | UKP | Uusikaarlepyy (Nykarleby) | FINLAND | uusikaarlepyy nykarleby | finland
 5334,FI,FINLAND,UKI,FIUKI,Uusikaupunki (Nystad),uusikaupunki nystad,finland,,FIUKI | FI | UKI | Uusikaupunki (Nystad) | FINLAND | uusikaupunki nystad | finland
 5335,FI,FINLAND,UUS,FIUUS,Uusi-Valamo/Heinavesi,uusi valamo heinavesi,finland,,FIUUS | FI | UUS | Uusi-Valamo/Heinavesi | FINLAND | uusi valamo heinavesi | finland
-5336,FI,FINLAND,VAA,FIVAA,Vaasa (Vasa),vaasa vasa,finland,,FIVAA | FI | VAA | Vaasa (Vasa) | FINLAND | vaasa vasa | finland
-5337,FI,FINLAND,VKO,FIVKO,Valko (Valkom),valko valkom,finland,,FIVKO | FI | VKO | Valko (Valkom) | FINLAND | valko valkom | finland
+5336,FI,FINLAND,VAA,FIVAA,Vasa (Vaasa),vasa (vaasa),finland,,FIVAA | FI | VAA | Vasa (Vaasa) | FINLAND | vasa (vaasa) | finland
+5337,FI,FINLAND,VKO,FIVKO,Valkom (Valko),valkom (valko),finland,,FIVKO | FI | VKO | Valkom (Valko) | FINLAND | valkom (valko) | finland
 5338,FI,FINLAND,VKO,FIVKO,Valkom (Valko),valkom valko,finland,,FIVKO | FI | VKO | Valkom (Valko) | FINLAND | valkom valko | finland
 5339,FI,FINLAND,VJK,FIVJK,Varjakka,varjakka,finland,,FIVJK | FI | VJK | Varjakka | FINLAND | varjakka | finland
 5340,FI,FINLAND,VRK,FIVRK,Varkaus,varkaus,finland,,FIVRK | FI | VRK | Varkaus | FINLAND | varkaus | finland
@@ -8128,7 +8128,7 @@
 8127,GB,UNITED KINGDOM,LBE,GBLBE,Loch Buie (Mull),loch buie mull,united kingdom,,GBLBE | GB | LBE | Loch Buie (Mull) | UNITED KINGDOM | loch buie mull | united kingdom
 8128,GB,UNITED KINGDOM,LCC,GBLCC,Loch Carnan,loch carnan,united kingdom,,GBLCC | GB | LCC | Loch Carnan | UNITED KINGDOM | loch carnan | united kingdom
 8129,GB,UNITED KINGDOM,LCG,GBLCG,Loch Long,loch long,united kingdom,,GBLCG | GB | LCG | Loch Long | UNITED KINGDOM | loch long | united kingdom
-8130,GB,UNITED KINGDOM,LRP,GBLRP,Loch Ryan Pt,loch ryan pt,united kingdom,,GBLRP | GB | LRP | Loch Ryan Pt | UNITED KINGDOM | loch ryan pt | united kingdom
+8130,GB,UNITED KINGDOM,LRP,GBLRP,Loch Ryan,loch ryan,united kingdom,,GBLRP | GB | LRP | Loch Ryan | UNITED KINGDOM | loch ryan | united kingdom
 8131,GB,UNITED KINGDOM,LSC,GBLSC,Loch Scridain (Isle Mull),loch scridain isle mull,united kingdom,,GBLSC | GB | LSC | Loch Scridain (Isle Mull) | UNITED KINGDOM | loch scridain isle mull | united kingdom
 8132,GB,UNITED KINGDOM,LHS,GBLHS,Loch Striven,loch striven,united kingdom,,GBLHS | GB | LHS | Loch Striven | UNITED KINGDOM | loch striven | united kingdom
 8133,GB,UNITED KINGDOM,LCD,GBLCD,Loch Torridon,loch torridon,united kingdom,,GBLCD | GB | LCD | Loch Torridon | UNITED KINGDOM | loch torridon | united kingdom
@@ -8932,8 +8932,8 @@
 8931,GR,GREECE,GYT,GRGYT,Gythion,gythion,greece,,GRGYT | GR | GYT | Gythion | GREECE | gythion | greece
 8932,GR,GREECE,HAL,GRHAL,Halki Dodekanison,halki dodekanison,greece,,GRHAL | GR | HAL | Halki Dodekanison | GREECE | halki dodekanison | greece
 8933,GR,GREECE,HRK,GRHRK,Herakleia Kykladon,herakleia kykladon,greece,,GRHRK | GR | HRK | Herakleia Kykladon | GREECE | herakleia kykladon | greece
-8934,GR,GREECE,HER,GRHER,Heraklion (Iraklion),heraklion iraklion,greece,,GRHER | GR | HER | Heraklion (Iraklion) | GREECE | heraklion iraklion | greece
-8935,GR,GREECE,HYD,GRHYD,Hydra (Idhra),hydra idhra,greece,,GRHYD | GR | HYD | Hydra (Idhra) | GREECE | hydra idhra | greece
+8934,GR,GREECE,HER,GRHER,Iraklion (Heraklion),iraklion (heraklion),greece,,GRHER | GR | HER | Iraklion (Heraklion) | GREECE | iraklion (heraklion) | greece
+8935,GR,GREECE,HYD,GRHYD,Idhra (Hydra),idhra (hydra),greece,,GRHYD | GR | HYD | Idhra (Hydra) | GREECE | idhra (hydra) | greece
 8936,GR,GREECE,HYD,GRHYD,Idhra (Hydra),idhra hydra,greece,,GRHYD | GR | HYD | Idhra (Hydra) | GREECE | idhra hydra | greece
 8937,GR,GREECE,IER,GRIER,Ierapetra,ierapetra,greece,,GRIER | GR | IER | Ierapetra | GREECE | ierapetra | greece
 8938,GR,GREECE,IES,GRIES,Ierissos,ierissos,greece,,GRIES | GR | IES | Ierissos | GREECE | ierissos | greece
@@ -8976,7 +8976,7 @@
 8975,GR,GREECE,CSF,GRCSF,Khora Sfakion,khora sfakion,greece,,GRCSF | GR | CSF | Khora Sfakion | GREECE | khora sfakion | greece
 8976,GR,GREECE,KIO,GRKIO,Kiato,kiato,greece,,GRKIO | GR | KIO | Kiato | GREECE | kiato | greece
 8977,GR,GREECE,KYM,GRKYM,Kimasi,kimasi,greece,,GRKYM | GR | KYM | Kimasi | GREECE | kimasi | greece
-8978,GR,GREECE,KIM,GRKIM,Kimi (Kymi),kimi kymi,greece,,GRKIM | GR | KIM | Kimi (Kymi) | GREECE | kimi kymi | greece
+8978,GR,GREECE,KIM,GRKIM,Kymi (Kimi),kymi (kimi),greece,,GRKIM | GR | KIM | Kymi (Kimi) | GREECE | kymi (kimi) | greece
 8979,GR,GREECE,KMS,GRKMS,Kimolos,kimolos,greece,,GRKMS | GR | KMS | Kimolos | GREECE | kimolos | greece
 8980,GR,GREECE,KIP,GRKIP,Kiparissia,kiparissia,greece,,GRKIP | GR | KIP | Kiparissia | GREECE | kiparissia | greece
 8981,GR,GREECE,KLI,GRKLI,Klima,klima,greece,,GRKLI | GR | KLI | Klima | GREECE | klima | greece
@@ -8994,9 +8994,9 @@
 8993,GR,GREECE,PKK,GRPKK,Lakkion,lakkion,greece,,GRPKK | GR | PKK | Lakkion | GREECE | lakkion | greece
 8994,GR,GREECE,LAR,GRLAR,Lardos Rhodes,lardos rhodes,greece,,GRLAR | GR | LAR | Lardos Rhodes | GREECE | lardos rhodes | greece
 8995,GR,GREECE,LRY,GRLRY,Larymna,larymna,greece,,GRLRY | GR | LRY | Larymna | GREECE | larymna | greece
-8996,GR,GREECE,LAV,GRLAV,Laurium (Lavrion),laurium lavrion,greece,,GRLAV | GR | LAV | Laurium (Lavrion) | GREECE | laurium lavrion | greece
+8996,GR,GREECE,LAV,GRLAV,Lavrion (Laurium),lavrion (laurium),greece,,GRLAV | GR | LAV | Lavrion (Laurium) | GREECE | lavrion (laurium) | greece
 8997,GR,GREECE,LAV,GRLAV,Lavrion (Laurium),lavrion laurium,greece,,GRLAV | GR | LAV | Lavrion (Laurium) | GREECE | lavrion laurium | greece
-8998,GR,GREECE,LEV,GRLEV,Lefkada (Lefkas),lefkada lefkas,greece,,GRLEV | GR | LEV | Lefkada (Lefkas) | GREECE | lefkada lefkas | greece
+8998,GR,GREECE,LEV,GRLEV,Lefkas (Lefkada),lefkas (lefkada),greece,,GRLEV | GR | LEV | Lefkas (Lefkada) | GREECE | lefkas (lefkada) | greece
 8999,GR,GREECE,LEF,GRLEF,Lefkandi,lefkandi,greece,,GRLEF | GR | LEF | Lefkandi | GREECE | lefkandi | greece
 9000,GR,GREECE,LEV,GRLEV,Lefkas (Lefkada),lefkas lefkada,greece,,GRLEV | GR | LEV | Lefkas (Lefkada) | GREECE | lefkas lefkada | greece
 9001,GR,GREECE,LFK,GRLFK,Lefkimmi,lefkimmi,greece,,GRLFK | GR | LFK | Lefkimmi | GREECE | lefkimmi | greece
@@ -9083,7 +9083,7 @@
 9082,GR,GREECE,PLC,GRPLC,Polychnitos Lesvou,polychnitos lesvou,greece,,GRPLC | GR | PLC | Polychnitos Lesvou | GREECE | polychnitos lesvou | greece
 9083,GR,GREECE,PKE,GRPKE,Poros Kefallinias,poros kefallinias,greece,,GRPKE | GR | PKE | Poros Kefallinias | GREECE | poros kefallinias | greece
 9084,GR,GREECE,PTR,GRPTR,Poros Trizinias,poros trizinias,greece,,GRPTR | GR | PTR | Poros Trizinias | GREECE | poros trizinias | greece
-9085,GR,GREECE,VTH,GRVTH,Port Vathy (Vathy),port vathy vathy,greece,,GRVTH | GR | VTH | Port Vathy (Vathy) | GREECE | port vathy vathy | greece
+9085,GR,GREECE,VTH,GRVTH,Vathy (Port Vathy),vathy (port vathy),greece,,GRVTH | GR | VTH | Vathy (Port Vathy) | GREECE | vathy (port vathy) | greece
 9086,GR,GREECE,PHE,GRPHE,Porto Heli,porto heli,greece,,GRPHE | GR | PHE | Porto Heli | GREECE | porto heli | greece
 9087,GR,GREECE,POA,GRPOA,Potamos Antikithera,potamos antikithera,greece,,GRPOA | GR | POA | Potamos Antikithera | GREECE | potamos antikithera | greece
 9088,GR,GREECE,PVK,GRPVK,Preveza/Lefkas,preveza lefkas,greece,,GRPVK | GR | PVK | Preveza/Lefkas | GREECE | preveza lefkas | greece
@@ -9134,11 +9134,11 @@
 9133,GR,GREECE,SCR,GRSCR,Stavrochorion,stavrochorion,greece,,GRSCR | GR | SCR | Stavrochorion | GREECE | stavrochorion | greece
 9134,GR,GREECE,SHA,GRSHA,Stavros Halkidikis,stavros halkidikis,greece,,GRSHA | GR | SHA | Stavros Halkidikis | GREECE | stavros halkidikis | greece
 9135,GR,GREECE,STI,GRSTI,Stratoni,stratoni,greece,,GRSTI | GR | STI | Stratoni | GREECE | stratoni | greece
-9136,GR,GREECE,SYS,GRSYS,Stylida (Stylis),stylida stylis,greece,,GRSYS | GR | SYS | Stylida (Stylis) | GREECE | stylida stylis | greece
+9136,GR,GREECE,SYS,GRSYS,Stylis (Stylida),stylis (stylida),greece,,GRSYS | GR | SYS | Stylis (Stylida) | GREECE | stylis (stylida) | greece
 9137,GR,GREECE,SYS,GRSYS,Stylis (Stylida),stylis stylida,greece,,GRSYS | GR | SYS | Stylis (Stylida) | GREECE | stylis stylida | greece
 9138,GR,GREECE,SUD,GRSUD,Suda Bay,suda bay,greece,,GRSUD | GR | SUD | Suda Bay | GREECE | suda bay | greece
 9139,GR,GREECE,SYM,GRSYM,Symi,symi,greece,,GRSYM | GR | SYM | Symi | GREECE | symi | greece
-9140,GR,GREECE,JSY,GRJSY,Syra (Syros),syra syros,greece,,GRJSY | GR | JSY | Syra (Syros) | GREECE | syra syros | greece
+9140,GR,GREECE,JSY,GRJSY,Syros (Syra),syros (syra),greece,,GRJSY | GR | JSY | Syros (Syra) | GREECE | syros (syra) | greece
 9141,GR,GREECE,JSY,GRJSY,Syros (Syra),syros syra,greece,,GRJSY | GR | JSY | Syros (Syra) | GREECE | syros syra | greece
 9142,GR,GREECE,SYV,GRSYV,Syvota,syvota,greece,,GRSYV | GR | SYV | Syvota | GREECE | syvota | greece
 9143,GR,GREECE,TVR,GRTVR,Tavros,tavros,greece,,GRTVR | GR | TVR | Tavros | GREECE | tavros | greece
@@ -9471,7 +9471,7 @@
 9470,ID,INDONESIA,APN,IDAPN,Ampana,ampana,indonesia,,IDAPN | ID | APN | Ampana | INDONESIA | ampana | indonesia
 9471,ID,INDONESIA,AMP,IDAMP,"Ampenan, Bali",ampenan bali,indonesia,,"IDAMP | ID | AMP | Ampenan, Bali | INDONESIA | ampenan bali | indonesia"
 9472,ID,INDONESIA,ANG,IDANG,Angar,angar,indonesia,,IDANG | ID | ANG | Angar | INDONESIA | angar | indonesia
-9473,ID,INDONESIA,ANO,IDANO,Anoa Natuna Pt.,anoa natuna pt,indonesia,,IDANO | ID | ANO | Anoa Natuna Pt. | INDONESIA | anoa natuna pt | indonesia
+9473,ID,INDONESIA,ANO,IDANO,Anoa Natuna.,anoa natuna.,indonesia,,IDANO | ID | ANO | Anoa Natuna. | INDONESIA | anoa natuna. | indonesia
 9474,ID,INDONESIA,ANR,IDANR,Anyer Kidul,anyer kidul,indonesia,,IDANR | ID | ANR | Anyer Kidul | INDONESIA | anyer kidul | indonesia
 9475,ID,INDONESIA,AJN,IDAJN,"Arjuna, Java",arjuna java,indonesia,,"IDAJN | ID | AJN | Arjuna, Java | INDONESIA | arjuna java | indonesia"
 9476,ID,INDONESIA,ARB,IDARB,Aroe Bay,aroe bay,indonesia,,IDARB | ID | ARB | Aroe Bay | INDONESIA | aroe bay | indonesia
@@ -10004,7 +10004,7 @@
 10003,IN,INDIA,JTP,INJTP,Jaitapur,jaitapur,india,,INJTP | IN | JTP | Jaitapur | INDIA | jaitapur | india
 10004,IN,INDIA,JAK,INJAK,Jakhau,jakhau,india,,INJAK | IN | JAK | Jakhau | INDIA | jakhau | india
 10005,IN,INDIA,IXJ,INIXJ,Jammu,jammu,india,,INIXJ | IN | IXJ | Jammu | INDIA | jammu | india
-10006,IN,INDIA,NSA,INNSA,Jawaharlal Nehru (Nhava Sheva),jawaharlal nehru nhava sheva,india,,INNSA | IN | NSA | Jawaharlal Nehru (Nhava Sheva) | INDIA | jawaharlal nehru nhava sheva | india
+10006,IN,INDIA,NSA,INNSA,Nhava Sheva (Jawaharlal Nehru),nhava sheva (jawaharlal nehru),india,,INNSA | IN | NSA | Nhava Sheva (Jawaharlal Nehru) | INDIA | nhava sheva (jawaharlal nehru) | india
 10007,IN,INDIA,JDG,INJDG,Jodhpur,jodhpur,india,,INJDG | IN | JDG | Jodhpur | INDIA | jodhpur | india
 10008,IN,INDIA,JDA,INJDA,Jodia,jodia,india,,INJDA | IN | JDA | Jodia | INDIA | jodia | india
 10009,IN,INDIA,KDI,INKDI,Kadmat Is,kadmat is,india,,INKDI | IN | KDI | Kadmat Is | INDIA | kadmat is | india
@@ -10060,7 +10060,7 @@
 10059,IN,INDIA,IXE,INIXE,Mangalore,mangalore,india,,INIXE | IN | IXE | Mangalore | INDIA | mangalore | india
 10060,IN,INDIA,MGR,INMGR,Mangrol,mangrol,india,,INMGR | IN | MGR | Mangrol | INDIA | mangrol | india
 10061,IN,INDIA,MNR,INMNR,Manori,manori,india,,INMNR | IN | MNR | Manori | INDIA | manori | india
-10062,IN,INDIA,MRM,INMRM,Marmagao (Marmugao),marmagao marmugao,india,,INMRM | IN | MRM | Marmagao (Marmugao) | INDIA | marmagao marmugao | india
+10062,IN,INDIA,MRM,INMRM,Marmugao (Marmagao),marmugao (marmagao),india,,INMRM | IN | MRM | Marmugao (Marmagao) | INDIA | marmugao (marmagao) | india
 10063,IN,INDIA,MRM,INMRM,Marmugao (Marmagao),marmugao marmagao,india,,INMRM | IN | MRM | Marmugao (Marmagao) | INDIA | marmugao marmagao | india
 10064,IN,INDIA,MLI,INMLI,Maroli,maroli,india,,INMLI | IN | MLI | Maroli | INDIA | maroli | india
 10065,IN,INDIA,MAP,INMAP,Masulipatnam,masulipatnam,india,,INMAP | IN | MAP | Masulipatnam | INDIA | masulipatnam | india
@@ -10212,7 +10212,7 @@
 10211,IQ,IRAQ,UQR,IQUQR,Umm Qasr Port,umm qasr port,iraq,,IQUQR | IQ | UQR | Umm Qasr Port | IRAQ | umm qasr port | iraq
 10212,IQ,IRAQ,ZAO,IQZAO,Zakho,zakho,iraq,,IQZAO | IQ | ZAO | Zakho | IRAQ | zakho | iraq
 10213,IR,"IRAN, ISLAMIC REPUBLIC OF",ABD,IRABD,Abadan,abadan,iran islamic republic of,,"IRABD | IR | ABD | Abadan | IRAN, ISLAMIC REPUBLIC OF | abadan | iran islamic republic of"
-10214,IR,"IRAN, ISLAMIC REPUBLIC OF",AMP,IRAMP,Amir Abad Pt,amir abad pt,iran islamic republic of,,"IRAMP | IR | AMP | Amir Abad Pt | IRAN, ISLAMIC REPUBLIC OF | amir abad pt | iran islamic republic of"
+10214,IR,"IRAN, ISLAMIC REPUBLIC OF",AMP,IRAMP,Amir Abad,amir abad,"iran, islamic republic of",,"IRAMP | IR | AMP | Amir Abad | IRAN, ISLAMIC REPUBLIC OF | amir abad | iran, islamic republic of"
 10215,IR,"IRAN, ISLAMIC REPUBLIC OF",BAM,IRBAM,Amirabad,amirabad,iran islamic republic of,,"IRBAM | IR | BAM | Amirabad | IRAN, ISLAMIC REPUBLIC OF | amirabad | iran islamic republic of"
 10216,IR,"IRAN, ISLAMIC REPUBLIC OF",ASA,IRASA,Asaluyeh,asaluyeh,iran islamic republic of,,"IRASA | IR | ASA | Asaluyeh | IRAN, ISLAMIC REPUBLIC OF | asaluyeh | iran islamic republic of"
 10217,IR,"IRAN, ISLAMIC REPUBLIC OF",BND,IRBND,Bandar Abbas,bandar abbas,iran islamic republic of,,"IRBND | IR | BND | Bandar Abbas | IRAN, ISLAMIC REPUBLIC OF | bandar abbas | iran islamic republic of"
@@ -10230,7 +10230,7 @@
 10229,IR,"IRAN, ISLAMIC REPUBLIC OF",ZBR,IRZBR,Chah Bahar,chah bahar,iran islamic republic of,,"IRZBR | IR | ZBR | Chah Bahar | IRAN, ISLAMIC REPUBLIC OF | chah bahar | iran islamic republic of"
 10230,IR,"IRAN, ISLAMIC REPUBLIC OF",FKR,IRFKR,Freidoon Kenar,freidoon kenar,iran islamic republic of,,"IRFKR | IR | FKR | Freidoon Kenar | IRAN, ISLAMIC REPUBLIC OF | freidoon kenar | iran islamic republic of"
 10231,IR,"IRAN, ISLAMIC REPUBLIC OF",IMH,IRIMH,Imam Hasan,imam hasan,iran islamic republic of,,"IRIMH | IR | IMH | Imam Hasan | IRAN, ISLAMIC REPUBLIC OF | imam hasan | iran islamic republic of"
-10232,IR,"IRAN, ISLAMIC REPUBLIC OF",BIK,IRBIK,Imam Khomeini Pt/ Mahshahr City,imam khomeini pt mahshahr city,iran islamic republic of,,"IRBIK | IR | BIK | Imam Khomeini Pt/ Mahshahr City | IRAN, ISLAMIC REPUBLIC OF | imam khomeini pt mahshahr city | iran islamic republic of"
+10232,IR,"IRAN, ISLAMIC REPUBLIC OF",BIK,IRBIK,Imam Khomeini/ Mahshahr City,imam khomeini/ mahshahr city,"iran, islamic republic of",,"IRBIK | IR | BIK | Imam Khomeini/ Mahshahr City | IRAN, ISLAMIC REPUBLIC OF | imam khomeini/ mahshahr city | iran, islamic republic of"
 10233,IR,"IRAN, ISLAMIC REPUBLIC OF",IFN,IRIFN,Isfahan,isfahan,iran islamic republic of,,"IRIFN | IR | IFN | Isfahan | IRAN, ISLAMIC REPUBLIC OF | isfahan | iran islamic republic of"
 10234,IR,"IRAN, ISLAMIC REPUBLIC OF",KAS,IRKAS,Kashan,kashan,iran islamic republic of,,"IRKAS | IR | KAS | Kashan | IRAN, ISLAMIC REPUBLIC OF | kashan | iran islamic republic of"
 10235,IR,"IRAN, ISLAMIC REPUBLIC OF",KSH,IRKSH,Kermanshah (Bakhtaran),kermanshah bakhtaran,iran islamic republic of,,"IRKSH | IR | KSH | Kermanshah (Bakhtaran) | IRAN, ISLAMIC REPUBLIC OF | kermanshah bakhtaran | iran islamic republic of"
@@ -10244,7 +10244,7 @@
 10243,IR,"IRAN, ISLAMIC REPUBLIC OF",SIX,IRSIX,Sari,sari,iran islamic republic of,,"IRSIX | IR | SIX | Sari | IRAN, ISLAMIC REPUBLIC OF | sari | iran islamic republic of"
 10244,IR,"IRAN, ISLAMIC REPUBLIC OF",SRA,IRSRA,Sarooj Anchorage,sarooj anchorage,iran islamic republic of,,"IRSRA | IR | SRA | Sarooj Anchorage | IRAN, ISLAMIC REPUBLIC OF | sarooj anchorage | iran islamic republic of"
 10245,IR,"IRAN, ISLAMIC REPUBLIC OF",SBR,IRSBR,Shahid Bahonar,shahid bahonar,iran islamic republic of,,"IRSBR | IR | SBR | Shahid Bahonar | IRAN, ISLAMIC REPUBLIC OF | shahid bahonar | iran islamic republic of"
-10246,IR,"IRAN, ISLAMIC REPUBLIC OF",SRP,IRSRP,Shahid Rajaee Pt/Bandar Abbas,shahid rajaee pt bandar abbas,iran islamic republic of,,"IRSRP | IR | SRP | Shahid Rajaee Pt/Bandar Abbas | IRAN, ISLAMIC REPUBLIC OF | shahid rajaee pt bandar abbas | iran islamic republic of"
+10246,IR,"IRAN, ISLAMIC REPUBLIC OF",SRP,IRSRP,Shahid Rajaee/Bandar Abbas,shahid rajaee/bandar abbas,"iran, islamic republic of",,"IRSRP | IR | SRP | Shahid Rajaee/Bandar Abbas | IRAN, ISLAMIC REPUBLIC OF | shahid rajaee/bandar abbas | iran, islamic republic of"
 10247,IR,"IRAN, ISLAMIC REPUBLIC OF",SYZ,IRSYZ,Shiraz,shiraz,iran islamic republic of,,"IRSYZ | IR | SYZ | Shiraz | IRAN, ISLAMIC REPUBLIC OF | shiraz | iran islamic republic of"
 10248,IR,"IRAN, ISLAMIC REPUBLIC OF",SXI,IRSXI,Sirri Island,sirri island,iran islamic republic of,,"IRSXI | IR | SXI | Sirri Island | IRAN, ISLAMIC REPUBLIC OF | sirri island | iran islamic republic of"
 10249,IR,"IRAN, ISLAMIC REPUBLIC OF",CYT,IRCYT,Soroosh (Cyrus) Terminal,soroosh cyrus terminal,iran islamic republic of,,"IRCYT | IR | CYT | Soroosh (Cyrus) Terminal | IRAN, ISLAMIC REPUBLIC OF | soroosh cyrus terminal | iran islamic republic of"
@@ -10406,7 +10406,7 @@
 10405,IT,ITALY,FAV,ITFAV,Favignana,favignana,italy,,ITFAV | IT | FAV | Favignana | ITALY | favignana | italy
 10406,IT,ITALY,FPO,ITFPO,Filicudi Porto,filicudi porto,italy,,ITFPO | IT | FPO | Filicudi Porto | ITALY | filicudi porto | italy
 10407,IT,ITALY,FNL,ITFNL,Finale Ligure,finale ligure,italy,,ITFNL | IT | FNL | Finale Ligure | ITALY | finale ligure | italy
-10408,IT,ITALY,FCO,ITFCO,Fiumicino,fiumicino,italy,,ITFCO | IT | FCO | Fiumicino | ITALY | fiumicino | italy
+10408,IT,ITALY,FCO,ITFCO,Fiumicino Apt/Roma,fiumicino apt/roma,italy,,ITFCO | IT | FCO | Fiumicino Apt/Roma | ITALY | fiumicino apt/roma | italy
 10409,IT,ITALY,FCO,ITFCO,Fiumicino Apt/Roma,fiumicino apt roma,italy,,ITFCO | IT | FCO | Fiumicino Apt/Roma | ITALY | fiumicino apt roma | italy
 10410,IT,ITALY,FCV,ITFCV,Foce Varano,foce varano,italy,,ITFCV | IT | FCV | Foce Varano | ITALY | foce varano | italy
 10411,IT,ITALY,FOL,ITFOL,Follonica,follonica,italy,,ITFOL | IT | FOL | Follonica | ITALY | follonica | italy
@@ -10535,7 +10535,7 @@
 10534,IT,ITALY,PDI,ITPDI,Porto d'Ischia,porto d ischia,italy,,ITPDI | IT | PDI | Porto d'Ischia | ITALY | porto d ischia | italy
 10535,IT,ITALY,PEM,ITPEM,Porto Empedocle,porto empedocle,italy,,ITPEM | IT | PEM | Porto Empedocle | ITALY | porto empedocle | italy
 10536,IT,ITALY,PTH,ITPTH,Porto Ercole,porto ercole,italy,,ITPTH | IT | PTH | Porto Ercole | ITALY | porto ercole | italy
-10537,IT,ITALY,PFX,ITPFX,Porto Foxi (Sarroch),porto foxi sarroch,italy,,ITPFX | IT | PFX | Porto Foxi (Sarroch) | ITALY | porto foxi sarroch | italy
+10537,IT,ITALY,PFX,ITPFX,Sarroch (Porto Foxi),sarroch (porto foxi),italy,,ITPFX | IT | PFX | Sarroch (Porto Foxi) | ITALY | sarroch (porto foxi) | italy
 10538,IT,ITALY,PGA,ITPGA,Porto Garibaldi,porto garibaldi,italy,,ITPGA | IT | PGA | Porto Garibaldi | ITALY | porto garibaldi | italy
 10539,IT,ITALY,PVT,ITPVT,Porto Levante,porto levante,italy,,ITPVT | IT | PVT | Porto Levante | ITALY | porto levante | italy
 10540,IT,ITALY,PLI,ITPLI,Porto Lignano,porto lignano,italy,,ITPLI | IT | PLI | Porto Lignano | ITALY | porto lignano | italy
@@ -12284,7 +12284,7 @@
 12283,KR,"KOREA, REPUBLIC OF",DBL,KRDBL,Daebul/Yeongam-gun,daebul yeongam gun,korea republic of,,"KRDBL | KR | DBL | Daebul/Yeongam-gun | KOREA, REPUBLIC OF | daebul yeongam gun | korea republic of"
 12284,KR,"KOREA, REPUBLIC OF",DCN,KRDCN,Daecheon,daecheon,korea republic of,,"KRDCN | KR | DCN | Daecheon | KOREA, REPUBLIC OF | daecheon | korea republic of"
 12285,KR,"KOREA, REPUBLIC OF",DHS,KRDHS,Daeheuksando,daeheuksando,korea republic of,,"KRDHS | KR | DHS | Daeheuksando | KOREA, REPUBLIC OF | daeheuksando | korea republic of"
-12286,KR,"KOREA, REPUBLIC OF",TSN,KRTSN,Daesan/Seosan,daesan seosan,korea republic of,,"KRTSN | KR | TSN | Daesan/Seosan | KOREA, REPUBLIC OF | daesan seosan | korea republic of"
+12286,KR,"KOREA, REPUBLIC OF",TSN,KRTSN,Daesan,daesan,"korea, republic of",,"KRTSN | KR | TSN | Daesan | KOREA, REPUBLIC OF | daesan | korea, republic of"
 12287,KR,"KOREA, REPUBLIC OF",TJI,KRTJI,Dangjin,dangjin,korea republic of,,"KRTJI | KR | TJI | Dangjin | KOREA, REPUBLIC OF | dangjin | korea republic of"
 12288,KR,"KOREA, REPUBLIC OF",DDO,KRDDO,Dokdo,dokdo,korea republic of,,"KRDDO | KR | DDO | Dokdo | KOREA, REPUBLIC OF | dokdo | korea republic of"
 12289,KR,"KOREA, REPUBLIC OF",TGH,KRTGH,Donghae,donghae,korea republic of,,"KRTGH | KR | TGH | Donghae | KOREA, REPUBLIC OF | donghae | korea republic of"
@@ -12306,9 +12306,9 @@
 12305,KR,"KOREA, REPUBLIC OF",HPO,KRHPO,Hupo,hupo,korea republic of,,"KRHPO | KR | HPO | Hupo | KOREA, REPUBLIC OF | hupo | korea republic of"
 12306,KR,"KOREA, REPUBLIC OF",HHP,KRHHP,Hwahungpo,hwahungpo,korea republic of,,"KRHHP | KR | HHP | Hwahungpo | KOREA, REPUBLIC OF | hwahungpo | korea republic of"
 12307,KR,"KOREA, REPUBLIC OF",HSN,KRHSN,Hwasun,hwasun,korea republic of,,"KRHSN | KR | HSN | Hwasun | KOREA, REPUBLIC OF | hwasun | korea republic of"
-12308,KR,"KOREA, REPUBLIC OF",INC,KRINC,Incheon,incheon,korea republic of,,"KRINC | KR | INC | Incheon | KOREA, REPUBLIC OF | incheon | korea republic of"
+12308,KR,"KOREA, REPUBLIC OF",INC,KRINC,Yeongheung,yeongheung,"korea, republic of",,"KRINC | KR | INC | Yeongheung | KOREA, REPUBLIC OF | yeongheung | korea, republic of"
 12309,KR,"KOREA, REPUBLIC OF",INC,KRINC,Yeongheung,yeongheung,korea republic of,,"KRINC | KR | INC | Yeongheung | KOREA, REPUBLIC OF | yeongheung | korea republic of"
-12310,KR,"KOREA, REPUBLIC OF",CHG,KRCHG,Janghang/Seocheon-gun,janghang seocheon gun,korea republic of,,"KRCHG | KR | CHG | Janghang/Seocheon-gun | KOREA, REPUBLIC OF | janghang seocheon gun | korea republic of"
+12310,KR,"KOREA, REPUBLIC OF",CHG,KRCHG,Janghang,janghang,"korea, republic of",,"KRCHG | KR | CHG | Janghang | KOREA, REPUBLIC OF | janghang | korea, republic of"
 12311,KR,"KOREA, REPUBLIC OF",CHA,KRCHA,Jeju,jeju,korea republic of,,"KRCHA | KR | CHA | Jeju | KOREA, REPUBLIC OF | jeju | korea republic of"
 12312,KR,"KOREA, REPUBLIC OF",CHF,KRCHF,Jinhae,jinhae,korea republic of,,"KRCHF | KR | CHF | Jinhae | KOREA, REPUBLIC OF | jinhae | korea republic of"
 12313,KR,"KOREA, REPUBLIC OF",JMJ,KRJMJ,Jumunjin,jumunjin,korea republic of,,"KRJMJ | KR | JMJ | Jumunjin | KOREA, REPUBLIC OF | jumunjin | korea republic of"
@@ -12316,18 +12316,18 @@
 12315,KR,"KOREA, REPUBLIC OF",KDO,KRKDO,Kukdo,kukdo,korea republic of,,"KRKDO | KR | KDO | Kukdo | KOREA, REPUBLIC OF | kukdo | korea republic of"
 12316,KR,"KOREA, REPUBLIC OF",KWA,KRKWA,Kwangyang,kwangyang,korea republic of,,"KRKWA | KR | KWA | Kwangyang | KOREA, REPUBLIC OF | kwangyang | korea republic of"
 12317,KR,"KOREA, REPUBLIC OF",MAS,KRMAS,Masan,masan,korea republic of,,"KRMAS | KR | MAS | Masan | KOREA, REPUBLIC OF | masan | korea republic of"
-12318,KR,"KOREA, REPUBLIC OF",MIP,KRMIP,Mipo/Ulsan,mipo ulsan,korea republic of,,"KRMIP | KR | MIP | Mipo/Ulsan | KOREA, REPUBLIC OF | mipo ulsan | korea republic of"
+12318,KR,"KOREA, REPUBLIC OF",MIP,KRMIP,Mipo,mipo,"korea, republic of",,"KRMIP | KR | MIP | Mipo | KOREA, REPUBLIC OF | mipo | korea, republic of"
 12319,KR,"KOREA, REPUBLIC OF",MOK,KRMOK,Mokpo,mokpo,korea republic of,,"KRMOK | KR | MOK | Mokpo | KOREA, REPUBLIC OF | mokpo | korea republic of"
-12320,KR,"KOREA, REPUBLIC OF",MUK,KRMUK,Mukho/Donghae,mukho donghae,korea republic of,,"KRMUK | KR | MUK | Mukho/Donghae | KOREA, REPUBLIC OF | mukho donghae | korea republic of"
+12320,KR,"KOREA, REPUBLIC OF",MUK,KRMUK,Mukho,mukho,"korea, republic of",,"KRMUK | KR | MUK | Mukho | KOREA, REPUBLIC OF | mukho | korea, republic of"
 12321,KR,"KOREA, REPUBLIC OF",NRD,KRNRD,Narodo,narodo,korea republic of,,"KRNRD | KR | NRD | Narodo | KOREA, REPUBLIC OF | narodo | korea republic of"
 12322,KR,"KOREA, REPUBLIC OF",NDS,KRNDS,Nokdongsin,nokdongsin,korea republic of,,"KRNDS | KR | NDS | Nokdongsin | KOREA, REPUBLIC OF | nokdongsin | korea republic of"
-12323,KR,"KOREA, REPUBLIC OF",OKK,KROKK,Okgye/Gangneung,okgye gangneung,korea republic of,,"KROKK | KR | OKK | Okgye/Gangneung | KOREA, REPUBLIC OF | okgye gangneung | korea republic of"
-12324,KR,"KOREA, REPUBLIC OF",OKP,KROKP,Okpo/Geoje,okpo geoje,korea republic of,,"KROKP | KR | OKP | Okpo/Geoje | KOREA, REPUBLIC OF | okpo geoje | korea republic of"
-12325,KR,"KOREA, REPUBLIC OF",ONS,KRONS,Onsan/Ulsan,onsan ulsan,korea republic of,,"KRONS | KR | ONS | Onsan/Ulsan | KOREA, REPUBLIC OF | onsan ulsan | korea republic of"
+12323,KR,"KOREA, REPUBLIC OF",OKK,KROKK,Okgye,okgye,"korea, republic of",,"KROKK | KR | OKK | Okgye | KOREA, REPUBLIC OF | okgye | korea, republic of"
+12324,KR,"KOREA, REPUBLIC OF",OKP,KROKP,Okpo,okpo,"korea, republic of",,"KROKP | KR | OKP | Okpo | KOREA, REPUBLIC OF | okpo | korea, republic of"
+12325,KR,"KOREA, REPUBLIC OF",ONS,KRONS,Onsan,onsan,"korea, republic of",,"KRONS | KR | ONS | Onsan | KOREA, REPUBLIC OF | onsan | korea, republic of"
 12326,KR,"KOREA, REPUBLIC OF",KPO,KRKPO,Pohang,pohang,korea republic of,,"KRKPO | KR | KPO | Pohang | KOREA, REPUBLIC OF | pohang | korea republic of"
 12327,KR,"KOREA, REPUBLIC OF",PTK,KRPTK,Pyeongtaek,pyeongtaek,korea republic of,,"KRPTK | KR | PTK | Pyeongtaek | KOREA, REPUBLIC OF | pyeongtaek | korea republic of"
 12328,KR,"KOREA, REPUBLIC OF",SUK,KRSUK,Samcheok,samcheok,korea republic of,,"KRSUK | KR | SUK | Samcheok | KOREA, REPUBLIC OF | samcheok | korea republic of"
-12329,KR,"KOREA, REPUBLIC OF",SCP,KRSCP,Samcheonpo/Sacheon,samcheonpo sacheon,korea republic of,,"KRSCP | KR | SCP | Samcheonpo/Sacheon | KOREA, REPUBLIC OF | samcheonpo sacheon | korea republic of"
+12329,KR,"KOREA, REPUBLIC OF",SCP,KRSCP,Samcheonpo,samcheonpo,"korea, republic of",,"KRSCP | KR | SCP | Samcheonpo | KOREA, REPUBLIC OF | samcheonpo | korea, republic of"
 12330,KR,"KOREA, REPUBLIC OF",SWD,KRSWD,Sangwangdeungdo,sangwangdeungdo,korea republic of,,"KRSWD | KR | SWD | Sangwangdeungdo | KOREA, REPUBLIC OF | sangwangdeungdo | korea republic of"
 12331,KR,"KOREA, REPUBLIC OF",SPO,KRSPO,Seogwipo,seogwipo,korea republic of,,"KRSPO | KR | SPO | Seogwipo | KOREA, REPUBLIC OF | seogwipo | korea republic of"
 12332,KR,"KOREA, REPUBLIC OF",SSP,KRSSP,Seongsan-po,seongsan po,korea republic of,,"KRSSP | KR | SSP | Seongsan-po | KOREA, REPUBLIC OF | seongsan po | korea republic of"
@@ -12841,7 +12841,7 @@
 12840,MY,MALAYSIA,MKM,MYMKM,"Mukah, Sarawak",mukah sarawak,malaysia,,"MYMKM | MY | MKM | Mukah, Sarawak | MALAYSIA | mukah sarawak | malaysia"
 12841,MY,MALAYSIA,MEN,MYMEN,Nenasi,nenasi,malaysia,,MYMEN | MY | MEN | Nenasi | MALAYSIA | nenasi | malaysia
 12842,MY,MALAYSIA,NII,MYNII,Nilai,nilai,malaysia,,MYNII | MY | NII | Nilai | MALAYSIA | nilai | malaysia
-12843,MY,MALAYSIA,SNP,MYSNP,North Pt,north pt,malaysia,,MYSNP | MY | SNP | North Pt | MALAYSIA | north pt | malaysia
+12843,MY,MALAYSIA,SNP,MYSNP,North,north,malaysia,,MYSNP | MY | SNP | North | MALAYSIA | north | malaysia
 12844,MY,MALAYSIA,LPK,MYLPK,Northport/Pt Klang,northport pt klang,malaysia,,MYLPK | MY | LPK | Northport/Pt Klang | MALAYSIA | northport pt klang | malaysia
 12845,MY,MALAYSIA,PAL,MYPAL,"Paloh, Sarawak",paloh sarawak,malaysia,,"MYPAL | MY | PAL | Paloh, Sarawak | MALAYSIA | paloh sarawak | malaysia"
 12846,MY,MALAYSIA,PAN,MYPAN,Panchang,panchang,malaysia,,MYPAN | MY | PAN | Panchang | MALAYSIA | panchang | malaysia
@@ -16047,7 +16047,7 @@
 16046,TH,THAILAND,TAB,THTAB,Tak Bai Customs House,tak bai customs house,thailand,,THTAB | TH | TAB | Tak Bai Customs House | THAILAND | tak bai customs house | thailand
 16047,TH,THAILAND,THA,THTHA,Tha Sala,tha sala,thailand,,THTHA | TH | THA | Tha Sala | THAILAND | tha sala | thailand
 16048,TH,THAILAND,TRG,THTRG,Trang,trang,thailand,,THTRG | TH | TRG | Trang | THAILAND | trang | thailand
-16049,TH,THAILAND,TPP,THTPP,Tungprong Pt,tungprong pt,thailand,,THTPP | TH | TPP | Tungprong Pt | THAILAND | tungprong pt | thailand
+16049,TH,THAILAND,TPP,THTPP,Tungprong,tungprong,thailand,,THTPP | TH | TPP | Tungprong | THAILAND | tungprong | thailand
 16050,TH,THAILAND,UCT,THUCT,Unithai Container Terminal,unithai container terminal,thailand,,THUCT | TH | UCT | Unithai Container Terminal | THAILAND | unithai container terminal | thailand
 16051,TK,TOKELAU,AFU,TKAFU,Atafu,atafu,tokelau,,TKAFU | TK | AFU | Atafu | TOKELAU | atafu | tokelau
 16052,TK,TOKELAU,FKO,TKFKO,Fakaofo,fakaofo,tokelau,,TKFKO | TK | FKO | Fakaofo | TOKELAU | fakaofo | tokelau
@@ -16318,7 +16318,7 @@
 16317,US,UNITED STATES,DIA,USDIA,Adrian,adrian,united states,,USDIA | US | DIA | Adrian | UNITED STATES | adrian | united states
 16318,US,UNITED STATES,AFK,USAFK,Afognak,afognak,united states,,USAFK | US | AFK | Afognak | UNITED STATES | afognak | united states
 16319,US,UNITED STATES,AF5,USAF5,Afton,afton,united states,,USAF5 | US | AF5 | Afton | UNITED STATES | afton | united states
-16320,US,UNITED STATES,AA2,USAA2,Alabama Pt.,alabama pt,united states,,USAA2 | US | AA2 | Alabama Pt. | UNITED STATES | alabama pt | united states
+16320,US,UNITED STATES,AA2,USAA2,Alabama.,alabama.,united states,,USAA2 | US | AA2 | Alabama. | UNITED STATES | alabama. | united states
 16321,US,UNITED STATES,AHU,USAHU,Alachua,alachua,united states,,USAHU | US | AHU | Alachua | UNITED STATES | alachua | united states
 16322,US,UNITED STATES,NGZ,USNGZ,Alameda,alameda,united states,,USNGZ | US | NGZ | Alameda | UNITED STATES | alameda | united states
 16323,US,UNITED STATES,YAN,USYAN,Alanson,alanson,united states,,USYAN | US | YAN | Alanson | UNITED STATES | alanson | united states
@@ -16848,7 +16848,7 @@
 16847,US,UNITED STATES,NJF,USNJF,Fairton,fairton,united states,,USNJF | US | NJF | Fairton | UNITED STATES | fairton | united states
 16848,US,UNITED STATES,TX3,USTX3,Fairview,fairview,united states,,USTX3 | US | TX3 | Fairview | UNITED STATES | fairview | united states
 16849,US,UNITED STATES,FVP,USFVP,Fairview Park,fairview park,united states,,USFVP | US | FVP | Fairview Park | UNITED STATES | fairview park | united states
-16850,US,UNITED STATES,EWB,USEWB,Fall River-New Bedford Apt,fall river new bedford apt,united states,,USEWB | US | EWB | Fall River-New Bedford Apt | UNITED STATES | fall river new bedford apt | united states
+16850,US,UNITED STATES,EWB,USEWB,New Bedford-Fall River Apt,new bedford-fall river apt,united states,,USEWB | US | EWB | New Bedford-Fall River Apt | UNITED STATES | new bedford-fall river apt | united states
 16851,US,UNITED STATES,FSY,USFSY,Falls City,falls city,united states,,USFSY | US | FSY | Falls City | UNITED STATES | falls city | united states
 16852,US,UNITED STATES,FA3,USFA3,Farmington,farmington,united states,,USFA3 | US | FA3 | Farmington | UNITED STATES | farmington | united states
 16853,US,UNITED STATES,QFM,USQFM,Farmington Hill,farmington hill,united states,,USQFM | US | QFM | Farmington Hill | UNITED STATES | farmington hill | united states
@@ -16991,7 +16991,7 @@
 16990,US,UNITED STATES,HS6,USHS6,Hallstead,hallstead,united states,,USHS6 | US | HS6 | Hallstead | UNITED STATES | hallstead | united states
 16991,US,UNITED STATES,HMR,USHMR,Hamer,hamer,united states,,USHMR | US | HMR | Hamer | UNITED STATES | hamer | united states
 16992,US,UNITED STATES,HM7,USHM7,Hamilton,hamilton,united states,,USHM7 | US | HM7 | Hamilton | UNITED STATES | hamilton | united states
-16993,US,UNITED STATES,HR3,USHR3,Hampton Roads Pt,hampton roads pt,united states,,USHR3 | US | HR3 | Hampton Roads Pt | UNITED STATES | hampton roads pt | united states
+16993,US,UNITED STATES,HR3,USHR3,Hampton Roads,hampton roads,united states,,USHR3 | US | HR3 | Hampton Roads | UNITED STATES | hampton roads | united states
 16994,US,UNITED STATES,H2N,USH2N,Hancock,hancock,united states,,USH2N | US | H2N | Hancock | UNITED STATES | hancock | united states
 16995,US,UNITED STATES,HB4,USHB4,Harbor Beach,harbor beach,united states,,USHB4 | US | HB4 | Harbor Beach | UNITED STATES | harbor beach | united states
 16996,US,UNITED STATES,HJS,USHJS,Harbor Island,harbor island,united states,,USHJS | US | HJS | Harbor Island | UNITED STATES | harbor island | united states
@@ -17467,7 +17467,7 @@
 17466,US,UNITED STATES,3VC,US3VC,Outlook,outlook,united states,,US3VC | US | 3VC | Outlook | UNITED STATES | outlook | united states
 17467,US,UNITED STATES,ZOD,USZOD,Oviedo,oviedo,united states,,USZOD | US | ZOD | Oviedo | UNITED STATES | oviedo | united states
 17468,US,UNITED STATES,OWB,USOWB,Owensboro,owensboro,united states,,USOWB | US | OWB | Owensboro | UNITED STATES | owensboro | united states
-17469,US,UNITED STATES,OXR,USOXR,Oxnard-Ventura Apt,oxnard ventura apt,united states,,USOXR | US | OXR | Oxnard-Ventura Apt | UNITED STATES | oxnard ventura apt | united states
+17469,US,UNITED STATES,OXR,USOXR,Ventura-Oxnard Apt,ventura-oxnard apt,united states,,USOXR | US | OXR | Ventura-Oxnard Apt | UNITED STATES | ventura-oxnard apt | united states
 17470,US,UNITED STATES,PAH,USPAH,Paducah,paducah,united states,,USPAH | US | PAH | Paducah | UNITED STATES | paducah | united states
 17471,US,UNITED STATES,PGE,USPGE,Pagedale,pagedale,united states,,USPGE | US | PGE | Pagedale | UNITED STATES | pagedale | united states
 17472,US,UNITED STATES,PY6,USPY6,Paisley,paisley,united states,,USPY6 | US | PY6 | Paisley | UNITED STATES | paisley | united states

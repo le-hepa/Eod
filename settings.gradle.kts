@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Eod"
 include(":app")
+include(":gaugingtool")

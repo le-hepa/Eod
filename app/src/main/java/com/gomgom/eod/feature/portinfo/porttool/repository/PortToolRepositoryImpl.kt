@@ -17,6 +17,8 @@ import com.gomgom.eod.feature.portinfo.porttool.entity.PortToolType
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
@@ -30,6 +32,10 @@ class PortToolRepositoryImpl(
     private val conditionDao: PortConditionDao,
     private val attachmentDao: PortAttachmentDao
 ) : PortToolRepository {
+    private val queryCacheMutex = Mutex()
+    private var countryPortCache: Pair<Pair<String, String>, List<PortRecordEntity>>? = null
+    private var fullSearchCache: Pair<Pair<String, String>, List<PortRecordEntity>>? = null
+    private var unlocodeCache: Pair<String, List<PortRecordEntity>>? = null
 
     override fun observeRecords(): Flow<List<PortRecordEntity>> = recordDao.observeAll()
 
@@ -45,20 +51,44 @@ class PortToolRepositoryImpl(
     }
 
     override suspend fun searchCountryPort(country: String, port: String): List<PortRecordEntity> = withContext(Dispatchers.IO) {
-        recordDao.searchCountryPort(country.normalizeSearch(), port.normalizeSearch())
+        val normalizedCountry = country.normalizeSearch()
+        val normalizedPort = port.normalizeSearch()
+        queryCacheMutex.withLock {
+            countryPortCache?.takeIf { it.first == (normalizedCountry to normalizedPort) }?.second
+        } ?: recordDao.searchCountryPort(normalizedCountry, normalizedPort).also { result ->
+            queryCacheMutex.withLock {
+                countryPortCache = (normalizedCountry to normalizedPort) to result
+            }
+        }
     }
 
     override suspend fun searchAll(country: String, query: String): List<PortRecordEntity> = withContext(Dispatchers.IO) {
-        recordDao.searchAll(country.normalizeSearch(), query.normalizeSearch())
+        val normalizedCountry = country.normalizeSearch()
+        val normalizedQuery = query.normalizeSearch()
+        queryCacheMutex.withLock {
+            fullSearchCache?.takeIf { it.first == (normalizedCountry to normalizedQuery) }?.second
+        } ?: recordDao.searchAll(normalizedCountry, normalizedQuery).also { result ->
+            queryCacheMutex.withLock {
+                fullSearchCache = (normalizedCountry to normalizedQuery) to result
+            }
+        }
     }
 
     override suspend fun searchByUnlocode(unlocode: String): List<PortRecordEntity> = withContext(Dispatchers.IO) {
-        recordDao.searchByUnlocode(unlocode.trim())
+        val normalizedUnlocode = unlocode.normalizeSearch()
+        queryCacheMutex.withLock {
+            unlocodeCache?.takeIf { it.first == normalizedUnlocode }?.second
+        } ?: recordDao.searchByUnlocode(normalizedUnlocode).also { result ->
+            queryCacheMutex.withLock {
+                unlocodeCache = normalizedUnlocode to result
+            }
+        }
     }
 
     override suspend fun saveRecordBundle(bundle: PortRecordBundle) = withContext(Dispatchers.IO) {
         val now = System.currentTimeMillis()
         val record = bundle.record.withDerivedSearchFields().withContentHash()
+        invalidateSearchCaches()
         recordDao.upsert(record)
         operationDao.softDeleteByRecordId(record.id, now)
         locationDao.softDeleteByRecordId(record.id, now)
@@ -72,6 +102,7 @@ class PortToolRepositoryImpl(
 
     override suspend fun deleteRecord(recordId: Long) = withContext(Dispatchers.IO) {
         val now = System.currentTimeMillis()
+        invalidateSearchCaches()
         operationDao.softDeleteByRecordId(recordId, now)
         locationDao.softDeleteByRecordId(recordId, now)
         conditionDao.softDeleteByRecordId(recordId, now)
@@ -132,6 +163,7 @@ class PortToolRepositoryImpl(
     override suspend fun importJson(json: String) = withContext(Dispatchers.IO) {
         val root = JSONObject(json)
         if (root.optString("toolType") != PortToolType.PORT) error("Port toolType mismatch")
+        invalidateSearchCaches()
 
         val records = root.optJSONArray("records").toRecordList()
         val operations = root.optJSONArray("operations").toOperationList()
@@ -178,6 +210,14 @@ class PortToolRepositoryImpl(
             }
         }
     }
+
+    private suspend fun invalidateSearchCaches() {
+        queryCacheMutex.withLock {
+            countryPortCache = null
+            fullSearchCache = null
+            unlocodeCache = null
+        }
+    }
 }
 
 private fun PortRecordEntity.withContentHash(): PortRecordEntity = copy(contentHash = sha256(stablePortJson(this)))
@@ -193,10 +233,15 @@ private fun PortRecordEntity.withDerivedSearchFields(): PortRecordEntity {
         company,
         anchorageName,
         supplyStatus,
+        freshWaterStatus,
+        storeSpareStatus,
+        provisionsStatus,
         supplyRemark,
         wasteStatus,
+        slopStatus,
         wasteRemark,
         crewChangeStatus,
+        externalAuditStatus,
         crewChangeRemark,
         cargoName,
         cargoRemark,
@@ -239,7 +284,9 @@ private fun stablePortJson(record: PortRecordEntity): String {
         "countryName" to normalizeForHash(record.countryName),
         "crewChangeRemark" to normalizeForHash(record.crewChangeRemark),
         "crewChangeStatus" to normalizeForHash(record.crewChangeStatus),
+        "externalAuditStatus" to normalizeForHash(record.externalAuditStatus),
         "dischargeInfo" to normalizeForHash(record.dischargeInfo),
+        "freshWaterStatus" to normalizeForHash(record.freshWaterStatus),
         "generalRemark" to normalizeForHash(record.generalRemark),
         "manifoldClass" to normalizeForHash(record.manifoldClass),
         "manifoldConnectionType" to normalizeForHash(record.manifoldConnectionType),
@@ -249,9 +296,12 @@ private fun stablePortJson(record: PortRecordEntity): String {
         "manifoldUnit" to normalizeForHash(record.manifoldUnit),
         "operatorName" to normalizeForHash(record.operatorName),
         "portName" to normalizeForHash(record.portName),
+        "provisionsStatus" to normalizeForHash(record.provisionsStatus),
         "safetyOfficerName" to normalizeForHash(record.safetyOfficerName),
         "searchAll" to normalizeForHash(record.searchAll),
         "searchCountryPort" to normalizeForHash(record.searchCountryPort),
+        "slopStatus" to normalizeForHash(record.slopStatus),
+        "storeSpareStatus" to normalizeForHash(record.storeSpareStatus),
         "supplyRemark" to normalizeForHash(record.supplyRemark),
         "supplyStatus" to normalizeForHash(record.supplyStatus),
         "surveyorName" to normalizeForHash(record.surveyorName),
@@ -276,7 +326,7 @@ private fun sha256(value: String): String =
     MessageDigest.getInstance("SHA-256").digest(value.toByteArray()).joinToString("") { "%02x".format(it) }
 
 private fun escape(value: String): String = value.replace("\\", "\\\\").replace("\"", "\\\"")
-private fun String.normalizeSearch(): String = lowercase().replace(" ", "")
+private fun String.normalizeSearch(): String = lowercase().replace(" ", "").replace("-", "")
 
 private fun <T> List<T>.toJsonArray(transform: (T) -> JSONObject): JSONArray = JSONArray().also { a -> forEach { a.put(transform(it)) } }
 private fun String.csv(): String = "\"" + replace("\"", "\"\"") + "\""
@@ -284,9 +334,9 @@ private fun String.csv(): String = "\"" + replace("\"", "\"\"") + "\""
 private fun PortRecordEntity.toJson(): JSONObject = JSONObject()
     .put("id", id).put("countryCode", countryCode).put("countryName", countryName).put("portName", portName)
     .put("unlocode", unlocode).put("anchorageName", anchorageName).put("berthName", berthName).put("company", company)
-    .put("supplyStatus", supplyStatus).put("supplyRemark", supplyRemark)
-    .put("wasteStatus", wasteStatus).put("wasteRemark", wasteRemark)
-    .put("crewChangeStatus", crewChangeStatus).put("crewChangeRemark", crewChangeRemark)
+    .put("supplyStatus", supplyStatus).put("freshWaterStatus", freshWaterStatus).put("storeSpareStatus", storeSpareStatus).put("provisionsStatus", provisionsStatus).put("supplyRemark", supplyRemark)
+    .put("wasteStatus", wasteStatus).put("slopStatus", slopStatus).put("wasteRemark", wasteRemark)
+    .put("crewChangeStatus", crewChangeStatus).put("externalAuditStatus", externalAuditStatus).put("crewChangeRemark", crewChangeRemark)
     .put("cargoName", cargoName).put("cargoRemark", cargoRemark)
     .put("manifoldConnectionType", manifoldConnectionType).put("manifoldStandard", manifoldStandard)
     .put("manifoldSize", manifoldSize).put("manifoldUnit", manifoldUnit).put("manifoldClass", manifoldClass)
@@ -300,7 +350,7 @@ private fun PortRecordEntity.toJson(): JSONObject = JSONObject()
 
 private fun PortOperationEntity.toJson(): JSONObject = JSONObject()
     .put("id", id).put("recordId", recordId).put("operationType", operationType).put("channelGroup", channelGroup)
-    .put("channelValue", channelValue).put("remark", remark).put("normalizedText", normalizedText)
+    .put("channelValue", channelValue).put("arrivalDate", arrivalDate).put("remark", remark).put("normalizedText", normalizedText)
     .put("isDeleted", isDeleted).put("createdAt", createdAt).put("updatedAt", updatedAt)
 
 private fun PortLocationEntity.toJson(): JSONObject = JSONObject()
@@ -333,10 +383,15 @@ private fun JSONArray?.toRecordList(): List<PortRecordEntity> = buildList {
                 berthName = item.optString("berthName"),
                 company = item.optString("company"),
                 supplyStatus = item.optString("supplyStatus"),
+                freshWaterStatus = item.optString("freshWaterStatus"),
+                storeSpareStatus = item.optString("storeSpareStatus"),
+                provisionsStatus = item.optString("provisionsStatus"),
                 supplyRemark = item.optString("supplyRemark"),
                 wasteStatus = item.optString("wasteStatus"),
+                slopStatus = item.optString("slopStatus"),
                 wasteRemark = item.optString("wasteRemark"),
                 crewChangeStatus = item.optString("crewChangeStatus"),
+                externalAuditStatus = item.optString("externalAuditStatus"),
                 crewChangeRemark = item.optString("crewChangeRemark"),
                 cargoName = item.optString("cargoName"),
                 cargoRemark = item.optString("cargoRemark"),
@@ -374,7 +429,21 @@ private fun JSONArray?.toOperationList(): List<PortOperationEntity> = buildList 
     if (this@toOperationList == null) return@buildList
     for (i in 0 until length()) {
         val item = getJSONObject(i)
-        add(PortOperationEntity(item.getLong("id"), item.getLong("recordId"), item.optString("operationType"), item.optString("channelGroup"), item.optString("channelValue"), item.optString("remark"), item.optString("normalizedText"), item.optBoolean("isDeleted"), item.getLong("createdAt"), item.getLong("updatedAt")))
+        add(
+            PortOperationEntity(
+                id = item.getLong("id"),
+                recordId = item.getLong("recordId"),
+                operationType = item.optString("operationType"),
+                channelGroup = item.optString("channelGroup"),
+                channelValue = item.optString("channelValue"),
+                arrivalDate = item.optString("arrivalDate"),
+                remark = item.optString("remark"),
+                normalizedText = item.optString("normalizedText"),
+                isDeleted = item.optBoolean("isDeleted"),
+                createdAt = item.getLong("createdAt"),
+                updatedAt = item.getLong("updatedAt")
+            )
+        )
     }
 }
 

@@ -40,10 +40,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.gomgom.eod.R
 import com.gomgom.eod.core.common.AppLanguageManager
 import com.gomgom.eod.feature.portinfo.porttool.repository.PortUnlocodeLookupRepository
 import com.gomgom.eod.feature.portinfo.porttool.wrapper.PortToolSession
@@ -83,7 +85,7 @@ fun PortInfoRecordEditorScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 IconButton(onClick = onBackClick) {
-                    Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back", tint = Color(0xFF123A73))
+                    Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.port_info_back), tint = Color(0xFF123A73))
                 }
                 Spacer(modifier = Modifier.weight(1f))
                 Text(
@@ -98,32 +100,32 @@ fun PortInfoRecordEditorScreen(
                         onClick = { viewModel.saveCurrent() },
                         enabled = tempState.hasPendingChanges
                     ) {
-                        Icon(Icons.Filled.Save, contentDescription = "Save")
+                        Icon(Icons.Filled.Save, contentDescription = stringResource(R.string.common_save))
                     }
                 }
                 IconButton(onClick = { showMenu = true }) {
-                    Icon(Icons.Filled.Menu, contentDescription = "Menu", tint = Color(0xFF123A73))
+                    Icon(Icons.Filled.Menu, contentDescription = stringResource(R.string.common_home), tint = Color(0xFF123A73))
                 }
                 DropdownMenu(expanded = showMenu, onDismissRequest = { showMenu = false }) {
-                    DropdownMenuItem(text = { Text("Home") }, onClick = {
+                    DropdownMenuItem(text = { Text(stringResource(R.string.home_menu_home)) }, onClick = {
                         showMenu = false
                         onBackClick()
                     })
-                    DropdownMenuItem(text = { Text("KOR") }, onClick = {
+                    DropdownMenuItem(text = { Text(stringResource(R.string.home_menu_kor)) }, onClick = {
                         showMenu = false
                         AppLanguageManager.applyKor(context)
                         (context as? Activity)?.recreate()
                     })
-                    DropdownMenuItem(text = { Text("ENG") }, onClick = {
+                    DropdownMenuItem(text = { Text(stringResource(R.string.home_menu_eng)) }, onClick = {
                         showMenu = false
                         AppLanguageManager.applyEng(context)
                         (context as? Activity)?.recreate()
                     })
-                    DropdownMenuItem(text = { Text("App Info") }, onClick = {
+                    DropdownMenuItem(text = { Text(stringResource(R.string.home_menu_app_info)) }, onClick = {
                         showMenu = false
-                        Toast.makeText(context, "Version ${context.packageManager.getPackageInfo(context.packageName, 0).versionName}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, context.getString(R.string.port_info_version_toast, context.packageManager.getPackageInfo(context.packageName, 0).versionName), Toast.LENGTH_SHORT).show()
                     })
-                    DropdownMenuItem(text = { Text("Contact") }, onClick = {
+                    DropdownMenuItem(text = { Text(stringResource(R.string.home_menu_contact)) }, onClick = {
                         showMenu = false
                         val intent = Intent(Intent.ACTION_SENDTO).apply {
                             data = Uri.parse("mailto:")
@@ -135,7 +137,7 @@ fun PortInfoRecordEditorScreen(
                         }
                         runCatching { context.startActivity(intent) }
                     })
-                    DropdownMenuItem(text = { Text("Exit") }, onClick = {
+                    DropdownMenuItem(text = { Text(stringResource(R.string.home_menu_exit)) }, onClick = {
                         showMenu = false
                         (context as? Activity)?.finish()
                     })
@@ -157,9 +159,11 @@ fun PortInfoRecordEditorScreen(
             if (bundle != null) {
                 PortInfoRecordContent(
                     editable = editable,
-                    bundle = bundle,
-                    countrySuggestions = emptyList(),
-                    portSuggestions = emptyList(),
+                    searchCardEditable = editable,
+                    record = bundle.record,
+                    operations = bundle.operations,
+                    locations = bundle.locations,
+                    attachments = bundle.attachments,
                     isVesselReportingExpanded = tempState.isVesselReportingExpanded,
                     isAnchorageExpanded = tempState.isAnchorageExpanded,
                     isBerthExpanded = tempState.isBerthExpanded,
@@ -167,8 +171,9 @@ fun PortInfoRecordEditorScreen(
                     onToggleAnchorage = viewModel::toggleAnchorage,
                     onToggleBerth = viewModel::toggleBerth,
                     onBundleChange = viewModel::updateEditorBundle,
-                    onCountrySuggestionClick = viewModel::applyCountrySuggestion,
-                    onPortSuggestionClick = viewModel::applyPortSuggestion,
+                    onEditorFieldFocusChange = viewModel::updateFieldFocus,
+                    onFieldSearchInputChange = viewModel::updateFieldSearchInput,
+                    onFormFieldSearchInputChange = viewModel::updateFormFieldSearchInput,
                     onAddAttachmentClick = {},
                     onDeleteAttachmentClick = viewModel::removeAttachment
                 )
